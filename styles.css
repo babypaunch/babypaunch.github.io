@@ -280,7 +280,7 @@ h2 {
   background: var(--ink);
   color: var(--paper);
 }
-.home-music-index { margin: clamp(3rem, 8vw, 7rem) 0 0; color: var(--accent); font: 400 clamp(3rem, 7vw, 6rem)/1 var(--serif); }
+.home-music-index { margin: clamp(3rem, 8vw, 7rem) 0 0; color: var(--accent); }
 .home-music-content { max-width: 760px; }
 .home-music h2 { margin-block: 1rem 2rem; }
 .home-music h2 em { color: var(--accent); font-weight: 400; }
