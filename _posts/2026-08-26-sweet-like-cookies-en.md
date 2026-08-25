@@ -63,7 +63,7 @@ Perhaps that was also how I felt about memory. Our time together had ended, but 
 
 ## A music video that existed in my head first
 
-The first inspiration for the music video came from `Singin' in the Rain`. Its image of a man with an umbrella on a rainy street helped me picture the scenes in the song.
+The first inspiration for the music video came from `Singin' in the Rain`. Its image of a man carrying an umbrella as he walks down a street after the rain helped me picture the scenes in the song.
 
 As I wrote the lyrics, I could already see the music video clearly: a man in a suit holding an umbrella, two people passing one another, and an imagined future appearing for a moment before fading away.
 
