@@ -4,17 +4,18 @@
 
 ## 로컬 확인
 
-저장소 루트에서 다음 명령을 실행한 뒤 `http://localhost:8000`에 접속합니다.
+저장소 루트에서 Jekyll 결과물을 생성합니다. 로컬 Ruby 환경에 의존하지 않도록 Docker를 사용합니다.
 
 ```powershell
-python -m http.server 8000
+docker run --rm -v "${PWD}:/srv/jekyll" -w /srv/jekyll jekyll/jekyll:3.8 jekyll build
+python -m http.server 8000 --directory _site
 ```
 
-별도 빌드 과정 없이 `main` 브랜치의 정적 파일을 GitHub Pages로 배포합니다.
+`http://localhost:8000`에서 확인할 수 있습니다. GitHub Pages는 `main` 브랜치의 Jekyll 소스를 자동으로 빌드하고 배포합니다.
 
 ## 언어 구조
 
 - `/`: 한국어
 - `/en/`: English
 
-두 언어 페이지는 루트의 `styles.css`를 공통으로 사용합니다.
+페이지 구조는 `_layouts`, 공통 헤더와 푸터는 `_includes`, 언어별 문구는 `_data/ko.yml`과 `_data/en.yml`에서 관리합니다. 두 언어 페이지는 루트의 `styles.css`를 공통으로 사용합니다.

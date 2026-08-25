@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{% assign t = site.data[page.locale] %}
+<main id="main" class="page-shell">
+  <p class="eyebrow">Clear rules, no small print</p>
+  <h1>Policies</h1>
+  <p class="page-intro">{{ t.policies.intro }}</p>
+  <ul class="policy-list">
+    {% for policy in t.policies.links %}
+    <li><a href="{{ policy.url }}"><span>{{ policy.label }}</span><span aria-hidden="true">→</span></a></li>
+    {% endfor %}
+  </ul>
+</main>

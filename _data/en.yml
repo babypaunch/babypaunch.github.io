@@ -1,0 +1,54 @@
+lang: en
+language_label: EN
+skip_link: Skip to content
+brand_label: BabyPaunch home
+nav_label: Main navigation
+routes:
+  home: /en/
+  blog: /en/blog/
+  policies: /en/policies/
+  not_found: /en/
+pages:
+  home:
+    title: BabyPaunch — Small apps, thoughtfully made.
+    description: The official home of BabyPaunch, an independent maker of small, useful apps.
+  blog:
+    title: Blog — BabyPaunch
+    description: Notes on products and development from BabyPaunch.
+  policies:
+    title: Policies — BabyPaunch
+    description: Policy documents for apps and services made by BabyPaunch.
+  not_found:
+    title: Page not found — BabyPaunch
+    description: The requested BabyPaunch page could not be found.
+home:
+  hero_copy: We notice the little friction in everyday life and turn it into software made to last.
+  apps_link: Explore our apps
+  about_title: Only what matters,<br>made properly.
+  about_copy: BabyPaunch is an independent studio making tools for music, content, and everyday life. We remove complexity and focus on the experience people actually need.
+  apps_title: What we are making
+  apps:
+    - name: AI Karaoke
+      description: An AI-powered karaoke tool for enjoying songs and video in a new way.
+      status: In progress
+    - name: Laftel Mania
+      description: A simple way to discover and keep track of the anime you love.
+      status: Available
+  journal_title: Notes from<br>making things.
+  journal_copy: Thoughts, lessons, and honest mistakes from building products.
+  blog_link: Read the blog
+blog:
+  intro: A place for lessons from building apps and thoughts about products.
+  empty: The first story is on its way.
+policies:
+  intro: Policy documents for the apps and services provided by BabyPaunch.
+  links:
+    - label: Laftel Mania Privacy Policy (Korean)
+      url: https://babypaunch.github.io/public-policies/laftel-mania/privacy.html
+    - label: All policy documents
+      url: https://babypaunch.github.io/public-policies/
+not_found:
+  title: We wandered<br>a little too far.
+  message: The requested page is missing or its address has changed.
+  home: English home
+

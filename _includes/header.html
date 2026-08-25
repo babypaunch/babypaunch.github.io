@@ -1,0 +1,15 @@
+<a class="skip-link" href="#main">{{ t.skip_link }}</a>
+<header class="site-header">
+  <a class="brand" href="{{ t.routes.home }}" aria-label="{{ t.brand_label }}">
+    <span class="brand-mark" aria-hidden="true">bp</span>
+    <span>BabyPaunch</span>
+  </a>
+  <nav aria-label="{{ t.nav_label }}">
+    <a href="{{ t.routes.home }}#about">About</a>
+    <a href="{{ t.routes.home }}#apps">Apps</a>
+    <a href="{{ t.routes.blog }}"{% if page.page_key == 'blog' %} aria-current="page"{% endif %}>Blog</a>
+    <a href="{{ t.routes.policies }}"{% if page.page_key == 'policies' %} aria-current="page"{% endif %}>Policies</a>
+    <a class="language-link" href="{{ other.routes[page.page_key] }}" lang="{{ other.lang }}" hreflang="{{ other.lang }}">{{ other.language_label }}</a>
+  </nav>
+</header>
+
