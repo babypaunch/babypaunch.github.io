@@ -2,8 +2,8 @@
 layout: post
 locale: en
 page_key: blog
-title: I built Laftel Mania so I would not have to set playback speed again
-description: How a small Chrome extension ran into input methods, iframes, and browser permissions.
+title: I built Laftel Mania to watch anime while coding
+description: Playback shortcuts and a clear OSD for coding on one side of the screen and watching anime on the other.
 category: Making
 date: 2026-08-26 00:00:00 +0900
 permalink: /en/blog/laftel-mania/
@@ -12,38 +12,55 @@ alternate_ko: /blog/laftel-mania/
 alternate_en: /en/blog/laftel-mania/
 ---
 
-Everyone has a playback speed they reach for. Choosing it again whenever the next video starts is a tiny inconvenience, but it happens often. Laftel Mania is a Chrome extension I built to remove that repetition.
+I often split my laptop screen. One third is for vibe coding with AI, while the other two thirds play anime on Laftel.
 
-The first goal was simple: remember the last playback speed and apply it to the next video. It now supports speeds from `0.25x` to `4.00x`, adjusted in 0.25 increments with `Shift + ,` and `Shift + .`. The selected value stays in Chrome sync storage and follows the next video.
+When coding and watching at the same time, I do not want to reach for the mouse every few minutes. But changing playback speed on Laftel meant opening the player menu and selecting the speed again.
 
-## Keyboard input was more complicated than the visible character
+That left me with two questions.
 
-Adding two shortcuts looked straightforward. With a Korean input method active, however, the browser can report the key as `Process`. Checking only the typed character meant that the same physical key sometimes stopped working.
+1. Why could I not change Laftel's playback speed with keyboard shortcuts?
+2. When I used a shortcut, could the new speed be easy to see?
 
-The extension therefore checks the physical key `code` as well. Recognizing `Comma` and `Period` keeps the shortcuts in the same place regardless of the active input language. A small test using Node's built-in assertions preserves that behavior.
+I built the Laftel Mania Chrome extension to answer those two questions.
 
-## From speed control to a viewing tool
+## Change speed without leaving the keyboard
 
-Once speed memory worked, I also wanted a way to hide the surrounding interface for a moment. Pressing `Shift + M` now dims the page and keeps the video centered in a focus mode.
+`Shift + ,` slows playback by 0.25, and `Shift + .` makes it 0.25 faster. The available range is `0.25x` to `4.00x`.
 
-The mode does not move the video element or delete the existing DOM. It applies temporary CSS classes, so playback can continue while the page changes around it. The `/` shortcut opens a help dialog with a close button, outside-click dismissal, `Esc`, and keyboard focus cycling. Even a small tool should remain usable without a mouse.
+There is no player menu to find. I can change the speed without taking my hands away from the keyboard or losing my place in the code.
 
-## The difficult part was iframe permissions
+The extension also remembers the last speed. When the next video opens, that value is applied automatically instead of making me choose it again.
 
-The actual video is not always placed directly inside a `laftel.net` document. It may play inside an external HTTPS iframe. When the extension was limited to the Laftel domain, it could not reach the video element and speed control stopped working.
+## An OSD that makes the change obvious
 
-The current implementation declares HTTPS frames as injection candidates, then immediately checks whether the current frame or one of its ancestors belongs to `laftel.net`. It exits on unrelated pages. This makes the extension less dependent on one player provider, but it creates a trade-off: Chrome presents the permission as broad site access.
+A shortcut is fast, but it is hard to trust when there is no visible response. Laftel Mania therefore shows the current playback speed near the top of the video whenever it changes.
 
-Before public release, I still want to test a narrower permission flow. One candidate is to identify the actual player origin from the Laftel page and ask the user to approve only that origin. It will replace the current approach only after the existing playback controls are proven to keep working.
+Values such as `1.25x` and `1.50x` appear immediately. The OSD stays visible for about 0.8 seconds and then fades away, so it confirms the change without covering the video for long.
 
-## One value, no developer server
+I focused on three things:
 
-Laftel Mania stores one value: the last playback speed. It remains in the user's Chrome sync storage and is not sent to a developer server. The extension does not collect login information, browsing or viewing history, or page content.
+- Make the value readable while watching the video
+- Show the exact current speed
+- Get out of the way quickly after confirmation
 
-The Ko-fi support link is optional and every feature remains free. The extension does not process payment information. Laftel Mania is an unofficial extension and is not made, approved, or endorsed by Laftel. The [privacy policy](https://babypaunch.github.io/public-policies/laftel-mania/privacy.html) documents these boundaries.
+## The same shortcuts with a Korean input method
 
-## What remains
+Browsers can report keys differently while a Korean input method is active. An early version sometimes missed the shortcut even though I pressed the same physical key.
 
-Version `1.3.0` includes speed memory, physical-key shortcuts, focus mode, help, and regression checks. The next steps are a final test against real Laftel video playback and a decision on the permission model for Chrome Web Store review.
+The extension now checks the physical key position as well as the entered character. The shortcuts stay in the same place whether the active input language is Korean or English.
 
-The feature I wanted for myself was small. It became more dependable each time it met a real edge of the browser: input methods, iframe boundaries, and permissions. That is the kind of tool I want BabyPaunch to make. Nothing grand, just one repeated annoyance removed properly.
+## A focus mode for the video
+
+Laftel's surrounding interface can feel crowded when the player only has two thirds of a laptop screen. Pressing `Shift + M` dims the surrounding page and keeps the video in the center.
+
+It does not reload or move the playing video, so playback can continue. Pressing `Shift + M` again restores the page. The `/` key opens a quick guide to every shortcut.
+
+## One stored value: playback speed
+
+Laftel Mania stores only the last playback speed. The value remains in the user's Chrome sync storage and is not sent to a separate developer server.
+
+It does not collect login details, browsing history, anime viewing history, or page content. The [privacy policy](https://babypaunch.github.io/public-policies/laftel-mania/privacy.html) explains these boundaries.
+
+Laftel Mania is an unofficial extension and is not made or approved by Laftel. The current version is `1.3.0`, and I am preparing it for a public Chrome Web Store release.
+
+The idea was simple: move the mouse less while coding and watching anime. Laftel Mania turns that small annoyance into two useful things: playback shortcuts and an OSD that is easy to see.
