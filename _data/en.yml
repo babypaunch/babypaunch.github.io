@@ -10,7 +10,7 @@ routes:
   not_found: /en/
 pages:
   home:
-    title: BabyPaunch — Small apps, thoughtfully made.
+    title: BabyPaunch — Small, but thoughtfully made.
     description: The official home of BabyPaunch, an independent maker of small, useful apps.
   blog:
     title: Blog — BabyPaunch

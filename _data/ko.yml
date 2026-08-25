@@ -10,7 +10,7 @@ routes:
   not_found: /
 pages:
   home:
-    title: BabyPaunch — Small apps, thoughtfully made.
+    title: BabyPaunch — Small, but thoughtfully made.
     description: 작지만 쓸모 있는 앱을 만드는 BabyPaunch의 공식 사이트입니다.
   blog:
     title: Blog — BabyPaunch
