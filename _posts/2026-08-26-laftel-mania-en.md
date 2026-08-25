@@ -4,7 +4,7 @@ locale: en
 page_key: blog
 title: I built Laftel Mania to watch anime while vibe coding
 description: I added playback shortcuts and a clear OSD for vibe coding on one side of the screen and watching anime on the other.
-image: /assets/images/blog/laftel-mania-vibe-coding-workspace.png
+image: /assets/images/blog/laftel-mania-vibe-coding-workspace.webp
 image_alt: A laptop screen showing vibe coding beside the Laftel Mania playback-speed OSD
 category: Making
 date: 2026-08-26 00:00:00 +0900
@@ -33,7 +33,7 @@ That led me to this thought.
 Laftel Mania is a Chrome extension I built to solve this inconvenience.
 
 <figure class="article-figure">
-  <img src="/assets/images/blog/laftel-mania-vibe-coding-workspace.png" alt="A split laptop screen with vibe coding on the left and the Laftel player showing a 1.50x OSD on the right" width="1604" height="981" loading="lazy">
+  <img src="/assets/images/blog/laftel-mania-vibe-coding-workspace.webp" alt="A split laptop screen with vibe coding on the left and the Laftel player showing a 1.50x OSD on the right" width="1604" height="981" loading="lazy">
   <figcaption>Vibe coding and watching anime on the same screen. The video is a copyright-free sample used to demonstrate the feature.</figcaption>
 </figure>
 

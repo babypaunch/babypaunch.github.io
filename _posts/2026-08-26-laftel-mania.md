@@ -4,7 +4,7 @@ locale: ko
 page_key: blog
 title: 바이브 코딩하면서 애니를 보기 위해 만든 Laftel Mania
 description: 화면 한쪽에서 바이브 코딩하고 다른 쪽에서 애니를 볼 때 필요한 배속 단축키와 OSD를 만들었다.
-image: /assets/images/blog/laftel-mania-vibe-coding-workspace.png
+image: /assets/images/blog/laftel-mania-vibe-coding-workspace.webp
 image_alt: 노트북 화면에서 바이브 코딩과 Laftel Mania의 재생속도 OSD를 함께 사용하는 모습
 category: Making
 date: 2026-08-26 00:00:00 +0900
@@ -33,7 +33,7 @@ tags:
 Laftel Mania는 이 불편함을 해결하려고 만든 Chrome 확장 프로그램이다.
 
 <figure class="article-figure">
-  <img src="/assets/images/blog/laftel-mania-vibe-coding-workspace.png" alt="노트북 화면 왼쪽에서 바이브 코딩을 하고 오른쪽 라프텔 플레이어에서 1.50배속 OSD를 확인하는 모습" width="1604" height="981" loading="lazy">
+  <img src="/assets/images/blog/laftel-mania-vibe-coding-workspace.webp" alt="노트북 화면 왼쪽에서 바이브 코딩을 하고 오른쪽 라프텔 플레이어에서 1.50배속 OSD를 확인하는 모습" width="1604" height="981" loading="lazy">
   <figcaption>바이브 코딩과 애니메이션 시청을 한 화면에서 함께하는 모습. 영상은 기능 설명을 위한 저작권 없는 샘플이다.</figcaption>
 </figure>
 
