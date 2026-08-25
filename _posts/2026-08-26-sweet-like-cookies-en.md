@@ -61,7 +61,7 @@ Perhaps that was also how I felt about memory. Our time together had ended, but 
 
 ## A music video that existed in my head first
 
-The first inspiration for the music video came from *Singin' in the Rain*. Its image of a man with an umbrella on a rainy street helped me picture the scenes in the song.
+The first inspiration for the music video came from `Singin' in the Rain`. Its image of a man with an umbrella on a rainy street helped me picture the scenes in the song.
 
 As I wrote the lyrics, I could already see the music video clearly: a man in a suit holding an umbrella, two people passing one another, and an imagined future appearing for a moment before fading away.
 
@@ -69,7 +69,7 @@ The opening and closing scenes of the music video are deliberately different. It
 
 Finishing both the song and the video by myself took time.
 
-I created the images with Midjourney. Precise composition and narrative mattered more to me than making every shot move naturally, so I chose a sequence of still images. I shaped each angle, glance, and transition until the result came close to the film I had imagined.
+I created the images with `Midjourney`. Precise composition and narrative mattered more to me than making every shot move naturally, so I chose a sequence of still images. I shaped each angle, glance, and transition until the result came close to the film I had imagined.
 
 I first sketched all the lyrics in Korean, then used a translator to build the English version. A direct translation would not sing well, so I kept revising the words to preserve their meaning while making the pronunciation, length, and rhyme flow naturally.
 
