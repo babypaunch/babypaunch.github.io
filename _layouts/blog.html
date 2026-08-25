@@ -3,7 +3,7 @@ layout: default
 ---
 {% assign t = site.data[page.locale] %}
 <main id="main" class="page-shell">
-  <p class="eyebrow">Notes from the workshop</p>
+  <p class="eyebrow" lang="en">Notes from the workshop</p>
   <h1>Blog</h1>
   <p class="page-intro">{{ t.blog.intro }}</p>
   {% assign posts = site.posts | where: 'locale', page.locale %}
@@ -29,6 +29,7 @@ layout: default
     {% endfor %}
   </ol>
   <p class="tag-empty" data-tag-empty hidden>{{ t.blog.no_matches }}</p>
+  <p class="visually-hidden" data-tag-status data-results-template="{{ t.blog.results_count }}" role="status" aria-live="polite" aria-atomic="true"></p>
   <script src="/blog-tags.js" defer></script>
   {% else %}
   <p class="empty-note">{{ t.blog.empty }}</p>

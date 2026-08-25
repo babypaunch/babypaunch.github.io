@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Gowun+Batang:wght@400;700&family=Manrope:wght@500;600;700&display=swap');
 
 :root {
+  color-scheme: light;
   --paper: #f3eddf;
   --ink: #1d2420;
   --muted: #5f665f;
   --accent: #e04b34;
+  --accent-strong: #c03926;
+  --accent-on-dark: #e9634c;
   --line: #a8aa9f;
   --serif: 'DM Serif Display', 'Gowun Batang', serif;
   --sans: 'Manrope', sans-serif;
@@ -296,7 +299,7 @@ h2 {
   background: var(--ink);
   color: var(--paper);
 }
-.home-music-index { margin: clamp(3rem, 8vw, 7rem) 0 0; color: var(--accent); }
+.home-music-index { margin: clamp(3rem, 8vw, 7rem) 0 0; color: var(--accent-on-dark); }
 .home-music-content { max-width: 760px; }
 .home-music h2 { margin-block: 1rem 2rem; }
 .home-music h2 em { color: var(--accent); font-weight: 400; }
@@ -316,7 +319,7 @@ footer {
 footer div { display: flex; gap: 1.5rem; }
 footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
 .support-link { padding: .65rem 1rem; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); font-weight: 700; text-decoration: none; transition: background-color 180ms var(--ease-out), border-color 180ms var(--ease-out), transform 180ms var(--ease-out); }
-.support-link:hover, .support-link:focus-visible { border-color: var(--accent); background: var(--accent); transform: translateY(-2px); }
+.support-link:hover, .support-link:focus-visible { border-color: var(--accent-strong); background: var(--accent-strong); transform: translateY(-2px); }
 .footer-note { text-align: right; font-family: var(--serif); font-style: italic; }
 
 .music-shell { padding-block: clamp(4rem, 9vw, 8rem); }
@@ -333,12 +336,13 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .page-shell { min-height: calc(100vh - 82px); padding-block: clamp(4rem, 9vw, 8rem); }
 .page-shell h1 { max-width: 850px; margin: 0 0 2rem; font: 400 clamp(3.8rem, 9vw, 8rem)/.9 var(--serif); letter-spacing: -.04em; }
 .page-intro { max-width: 620px; color: var(--muted); font: 1.1rem/1.8 'Gowun Batang', serif; }
-.privacy-shell { width: min(100% - (var(--page-gutters) * 2), 850px); }
+.privacy-shell,
+.accessibility-shell { width: min(100% - (var(--page-gutters) * 2), 850px); }
 .empty-note { margin-top: 5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
 .tag-filter { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin-top: 4rem; }
-.tag-filter a { min-height: 44px; text-decoration: none; }
+.tag-filter a { display: inline-flex; min-height: 44px; align-items: center; text-decoration: none; }
 .tag-filter a::before { content: none; }
-.tag-filter a:hover, .tag-filter a:focus-visible, .tag-filter a[aria-current] { color: var(--accent); text-decoration: underline; text-underline-offset: .35rem; }
+.tag-filter a:hover, .tag-filter a:focus-visible, .tag-filter a[aria-current] { color: var(--accent-strong); text-decoration: underline; text-underline-offset: .35rem; }
 .post-list { margin: 1.5rem 0 0; padding: 0; border-top: 1px solid var(--ink); list-style: none; }
 .post-list a { display: grid; grid-template-columns: auto 8rem 1fr; gap: 2rem; align-items: start; padding: 1.75rem 0; border-bottom: 1px solid var(--line); text-decoration: none; }
 .post-list a::before { margin-right: 0; }
@@ -426,4 +430,15 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
     transform: none !important;
     transition-duration: .01ms !important;
   }
+}
+
+@media (prefers-contrast: more) {
+  :root { --muted: var(--ink); --line: var(--ink); }
+}
+
+@media (forced-colors: active) {
+  .brand-mark circle { fill: ButtonText; }
+  .brand-mark g { fill: ButtonFace; stroke: ButtonFace; }
+  main a::before,
+  footer a::before { background: LinkText; }
 }

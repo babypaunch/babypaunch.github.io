@@ -4,7 +4,11 @@
 {% assign canonical_url = page.url | replace: 'index.html', '' | absolute_url %}
 {% assign seo_image = page.image %}
 {% if seo_image and seo_image contains '://' %}{% assign seo_image_url = seo_image %}{% elsif seo_image %}{% assign seo_image_url = seo_image | absolute_url %}{% endif %}
+{% assign schema_type = 'WebPage' %}
+{% assign schema_name = seo_title %}
+{% if page.layout == 'post' %}{% assign schema_type = 'BlogPosting' %}{% elsif page.page_key == 'home' %}{% assign schema_type = 'WebSite' %}{% assign schema_name = site.title %}{% endif %}
   <meta name="description" content="{{ seo_description | escape }}">
+  <meta name="robots" content="{{ page.robots | default: 'index,follow,max-image-preview:large' }}">
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="alternate" hreflang="ko" href="{{ site.url }}{{ page.alternate_ko | default: site.data.ko.routes[page.page_key] }}">
   <link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.alternate_en | default: site.data.en.routes[page.page_key] }}">
@@ -15,22 +19,33 @@
   <meta property="og:description" content="{{ seo_description | escape }}">
   <meta property="og:url" content="{{ canonical_url }}">
   <meta property="og:locale" content="{{ t.og_locale }}">
+  <meta property="og:locale:alternate" content="{{ other.og_locale }}">
 {% if seo_image_url %}  <meta property="og:image" content="{{ seo_image_url }}">
+{% if page.image_alt %}  <meta property="og:image:alt" content="{{ page.image_alt | escape }}">
+{% endif %}{% if page.layout == 'post' %}  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{% endif %}  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:card" content="summary_large_image">
 {% else %}  <meta name="twitter:card" content="summary">
 {% endif %}
   <meta name="twitter:title" content="{{ seo_title | escape }}">
   <meta name="twitter:description" content="{{ seo_description | escape }}">
+{% if seo_image_url %}  <meta name="twitter:image" content="{{ seo_image_url }}">
+{% if page.image_alt %}  <meta name="twitter:image:alt" content="{{ page.image_alt | escape }}">
+{% endif %}{% endif %}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "{% if page.layout == 'post' %}BlogPosting{% else %}WebPage{% endif %}",
+    "@type": {{ schema_type | jsonify }},
     "url": {{ canonical_url | jsonify }},
-    "name": {{ seo_title | jsonify }},
+    "name": {{ schema_name | jsonify }},
     "description": {{ seo_description | jsonify }},
-    "inLanguage": {{ page.locale | jsonify }}{% if page.layout == 'post' %},
+    "inLanguage": {{ page.locale | jsonify }}{% unless page.page_key == 'home' %},
+    "isPartOf": { "@type": "WebSite", "name": "BabyPaunch", "url": {{ site.url | jsonify }} }
+    {% endunless %}{% if page.layout == 'post' %},
     "headline": {{ page.title | jsonify }},
     "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+    "mainEntityOfPage": { "@type": "WebPage", "@id": {{ canonical_url | jsonify }} },
+    {% if seo_image_url %}"image": {{ seo_image_url | jsonify }},{% endif %}
     "author": { "@type": "Person", "name": "BabyPaunch" },
     "publisher": { "@type": "Organization", "name": "BabyPaunch", "url": {{ site.url | jsonify }} }
     {% endif %}

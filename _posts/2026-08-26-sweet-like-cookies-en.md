@@ -5,6 +5,7 @@ page_key: blog
 title: Sweet Like Cookies, my first song born from memory
 description: How I remembered the spark I felt when I first saw my wife's photograph and turned it into lyrics, a song, and a music video.
 image: https://img.youtube.com/vi/t6aQ-sHDGBA/maxresdefault.jpg
+image_alt: The Sweet Like Cookies music video by Humming Echo
 category: Music
 date: 2026-08-26 01:00:00 +0900
 permalink: /en/blog/sweet-like-cookies/

@@ -5,6 +5,7 @@ page_key: blog
 title: 바이브 코딩하면서 애니를 보기 위해 만든 Laftel Mania
 description: 화면 한쪽에서 바이브 코딩하고 다른 쪽에서 애니를 볼 때 필요한 배속 단축키와 OSD를 만들었다.
 image: /assets/images/blog/laftel-mania-vibe-coding-workspace.png
+image_alt: 노트북 화면에서 바이브 코딩과 Laftel Mania의 재생속도 OSD를 함께 사용하는 모습
 category: Making
 date: 2026-08-26 00:00:00 +0900
 permalink: /blog/laftel-mania/

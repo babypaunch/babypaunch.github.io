@@ -8,6 +8,8 @@
 
 ```powershell
 docker run --rm -v "${PWD}:/srv/jekyll" -w /srv/jekyll jekyll/jekyll:3.8 jekyll build
+node _tests/blog-tags.test.js
+node _tests/site-quality.test.js
 python -m http.server 8000 --directory _site
 ```
 
@@ -20,6 +22,20 @@ python -m http.server 8000 --directory _site
 - `/privacy/`, `/en/privacy/`: BabyPaunch 웹사이트 한영 개인정보처리방침
 
 공통 SEO 메타데이터는 `_includes/seo.html`에서 관리합니다. Google AdSense 또는 분석 도구를 도입할 때는 광고 코드를 적용하기 전에 한영 개인정보처리방침을 함께 갱신합니다.
+
+## 새 글 접근성·SEO 체크리스트
+
+- 한영 글에 서로를 가리키는 `alternate_ko`, `alternate_en`, `language_url`을 작성합니다.
+- 모든 글에 고유한 `title`, `description`, `permalink`를 작성합니다.
+- 대표 이미지가 있으면 `image`와 같은 언어의 `image_alt`를 함께 작성합니다.
+- 본문 이미지는 의미를 설명하는 `alt`, 실제 `width`와 `height`, `loading="lazy"`를 사용합니다.
+- iframe에는 내용을 구분하는 `title`과 `loading="lazy"`를 사용합니다.
+- 제목은 `h1` 다음 `h2` 순서로 건너뛰지 않고 작성합니다.
+- 링크 문구만 읽어도 목적지를 알 수 있게 작성하고, 새 창 링크에는 `rel="noopener noreferrer"`를 사용합니다.
+- 새 태그는 `_data/ko.yml`과 `_data/en.yml`에 함께 등록합니다.
+- 발행 전 Jekyll 빌드 후 `_tests`의 두 Node 검사를 실행합니다.
+
+접근성 목표와 알려진 제한 사항은 `/accessibility/`와 `/en/accessibility/`에서 공개합니다.
 
 ## 언어 구조
 

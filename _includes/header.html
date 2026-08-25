@@ -11,17 +11,17 @@
     <span>BabyPaunch</span>
   </a>
   <nav aria-label="{{ t.nav_label }}">
-    <a href="{{ t.routes.home }}#about">About</a>
-    <a href="{{ t.routes.home }}#apps">Apps</a>
-    <a href="{{ t.routes.music }}"{% if page.page_key == 'music' %} aria-current="page"{% endif %}>Music</a>
-    <a href="{{ t.routes.blog }}"{% if page.page_key == 'blog' %} aria-current="page"{% endif %}>Blog</a>
-    <a href="{{ t.routes.policies }}"{% if page.page_key == 'policies' %} aria-current="page"{% endif %}>Policies</a>
-    <a class="language-link" href="{{ page.language_url | default: other.routes[page.page_key] }}" lang="{{ other.lang }}" hreflang="{{ other.lang }}">
-      <span class="visually-hidden">{{ other.language_label }}</span>
+    <a href="{{ t.routes.home }}#about" lang="en">About</a>
+    <a href="{{ t.routes.home }}#apps" lang="en">Apps</a>
+    <a href="{{ t.routes.music }}" lang="en"{% if page.page_key == 'music' %} aria-current="page"{% endif %}>Music</a>
+    <a href="{{ t.routes.blog }}" lang="en"{% if page.page_key == 'blog' %} aria-current="page"{% endif %}>Blog</a>
+    <a href="{{ t.routes.policies }}" lang="en"{% if page.page_key == 'policies' or page.page_key == 'privacy' or page.page_key == 'accessibility' %} aria-current="page"{% endif %}>Policies</a>
+    <a class="language-link" href="{{ page.language_url | default: other.routes[page.page_key] }}" lang="{{ other.lang }}" hreflang="{{ other.lang }}" aria-label="{{ other.language_switch_label }}">
+      <span class="visually-hidden">{{ other.language_switch_label }}</span>
       {% if other.lang == 'ko' %}
-      <img class="language-flag" src="/assets/flags/kr.svg" alt="">
+      <img class="language-flag" src="/assets/flags/kr.svg" width="640" height="480" alt="">
       {% else %}
-      <img class="language-flag" src="/assets/flags/gb.svg" alt="">
+      <img class="language-flag" src="/assets/flags/gb.svg" width="640" height="480" alt="">
       {% endif %}
     </a>
   </nav>

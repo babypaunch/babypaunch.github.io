@@ -1,6 +1,7 @@
 lang: ko
 og_locale: ko_KR
 language_label: KO
+language_switch_label: 한국어로 보기
 skip_link: 본문으로 바로가기
 brand_label: BabyPaunch 홈
 nav_label: 주요 메뉴
@@ -10,6 +11,7 @@ routes:
   blog: /blog/
   policies: /policies/
   privacy: /privacy/
+  accessibility: /accessibility/
   not_found: /
 pages:
   home:
@@ -27,6 +29,9 @@ pages:
   privacy:
     title: 개인정보처리방침 — BabyPaunch
     description: BabyPaunch 웹사이트의 개인정보 처리와 외부 콘텐츠 사용에 관한 안내입니다.
+  accessibility:
+    title: 접근성 안내 — BabyPaunch
+    description: BabyPaunch 웹사이트의 접근성 목표, 지원 기능과 알려진 제한 사항을 안내합니다.
   not_found:
     title: 페이지를 찾을 수 없습니다 — BabyPaunch
     description: 요청한 BabyPaunch 페이지를 찾을 수 없습니다.
@@ -62,6 +67,7 @@ blog:
   tags_label: 글 태그
   all_tag: 전체
   no_matches: 선택한 태그의 글이 없습니다.
+  results_count: 글 {count}개 표시
   tags:
     chrome-extension: Chrome확장
     vibe-coding: 바이브코딩
@@ -71,6 +77,8 @@ blog:
 policies:
   intro: BabyPaunch가 제공하는 앱과 서비스의 정책 문서를 확인할 수 있습니다.
   links:
+    - label: BabyPaunch 웹사이트 접근성 안내
+      url: /accessibility/
     - label: BabyPaunch 웹사이트 개인정보처리방침
       url: /privacy/
     - label: Laftel Mania 개인정보처리방침
@@ -79,3 +87,4 @@ not_found:
   title: 길을 조금<br>벗어났네요.
   message: 요청한 페이지가 없거나 주소가 변경되었습니다.
   home: 홈으로 돌아가기
+opens_new_window: 새 창에서 열림

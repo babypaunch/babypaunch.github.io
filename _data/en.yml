@@ -1,6 +1,7 @@
 lang: en
 og_locale: en_GB
 language_label: EN
+language_switch_label: View in English
 skip_link: Skip to content
 brand_label: BabyPaunch home
 nav_label: Main navigation
@@ -10,6 +11,7 @@ routes:
   blog: /en/blog/
   policies: /en/policies/
   privacy: /en/privacy/
+  accessibility: /en/accessibility/
   not_found: /en/
 pages:
   home:
@@ -27,6 +29,9 @@ pages:
   privacy:
     title: Privacy Policy — BabyPaunch
     description: How the BabyPaunch website handles information and third-party embedded content.
+  accessibility:
+    title: Accessibility — BabyPaunch
+    description: The accessibility goals, supported features, and known limitations of the BabyPaunch website.
   not_found:
     title: Page not found — BabyPaunch
     description: The requested BabyPaunch page could not be found.
@@ -62,6 +67,7 @@ blog:
   tags_label: Post tags
   all_tag: All
   no_matches: No posts match this tag.
+  results_count: Showing {count} posts
   tags:
     chrome-extension: ChromeExtension
     vibe-coding: VibeCoding
@@ -71,6 +77,8 @@ blog:
 policies:
   intro: Policy documents for the apps and services provided by BabyPaunch.
   links:
+    - label: BabyPaunch Website Accessibility
+      url: /en/accessibility/
     - label: BabyPaunch Website Privacy Policy
       url: /en/privacy/
     - label: Laftel Mania Privacy Policy (Korean)
@@ -79,3 +87,4 @@ not_found:
   title: We wandered<br>a little too far.
   message: The requested page is missing or its address has changed.
   home: English home
+opens_new_window: opens in a new window

@@ -1,12 +1,14 @@
 (() => {
   const resolveTag = (requested, available) => available.includes(requested) ? requested : 'all';
-  if (typeof module !== 'undefined') module.exports = { resolveTag };
+  const formatResultCount = (template, count) => template.replace('{count}', count);
+  if (typeof module !== 'undefined') module.exports = { resolveTag, formatResultCount };
   if (typeof document === 'undefined') return;
 
   const filter = document.querySelector('[data-tag-filter]');
   const list = document.querySelector('[data-post-list]');
   const empty = document.querySelector('[data-tag-empty]');
-  if (!filter || !list || !empty) return;
+  const status = document.querySelector('[data-tag-status]');
+  if (!filter || !list || !empty || !status) return;
 
   const links = [...filter.querySelectorAll('[data-tag]')];
   const posts = [...list.querySelectorAll('[data-tags]')];
@@ -26,6 +28,7 @@
       if (matches) visible += 1;
     });
     empty.hidden = visible > 0;
+    status.textContent = formatResultCount(status.dataset.resultsTemplate, visible);
   };
 
   addEventListener('hashchange', applyFilter);
