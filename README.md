@@ -19,3 +19,7 @@ python -m http.server 8000 --directory _site
 - `/en/`: English
 
 페이지 구조는 `_layouts`, 공통 헤더와 푸터는 `_includes`, 언어별 문구는 `_data/ko.yml`과 `_data/en.yml`에서 관리합니다. 두 언어 페이지는 루트의 `styles.css`를 공통으로 사용합니다.
+
+## 음악 추가
+
+새 음악은 `_data/music.yml`에 항목을 추가합니다. `title`, `artist`, 한·영 `description`, `youtube_id`, `youtube_url`, `spotify_id`, `spotify_url`을 입력하면 `/music/`과 `/en/music/`에 함께 표시됩니다.

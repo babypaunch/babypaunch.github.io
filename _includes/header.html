@@ -7,6 +7,7 @@
   <nav aria-label="{{ t.nav_label }}">
     <a href="{{ t.routes.home }}#about">About</a>
     <a href="{{ t.routes.home }}#apps">Apps</a>
+    <a href="{{ t.routes.music }}"{% if page.page_key == 'music' %} aria-current="page"{% endif %}>Music</a>
     <a href="{{ t.routes.blog }}"{% if page.page_key == 'blog' %} aria-current="page"{% endif %}>Blog</a>
     <a href="{{ t.routes.policies }}"{% if page.page_key == 'policies' %} aria-current="page"{% endif %}>Policies</a>
     <a class="language-link" href="{{ page.language_url | default: other.routes[page.page_key] }}" lang="{{ other.lang }}" hreflang="{{ other.lang }}">

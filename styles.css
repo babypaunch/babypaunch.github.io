@@ -287,6 +287,28 @@ footer div { display: flex; gap: 1.5rem; }
 footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
 .footer-note { text-align: right; font-family: var(--serif); font-style: italic; }
 
+.music-shell { padding-block: clamp(4rem, 9vw, 8rem); }
+.music-header { padding-bottom: clamp(4rem, 9vw, 7rem); border-bottom: 1px solid var(--ink); }
+.music-header h1 { max-width: 1000px; margin: 1rem 0 2rem; font: 400 clamp(4rem, 9vw, 8rem)/.9 var(--serif); letter-spacing: -.04em; }
+.music-header h1 em { color: var(--accent); font-weight: 400; }
+.music-header > p:last-child { max-width: 650px; color: var(--muted); font: 1.1rem/1.8 'Gowun Batang', serif; }
+.music-release { padding-block: clamp(4rem, 9vw, 8rem); border-bottom: 1px solid var(--ink); }
+.music-release-header { display: grid; grid-template-columns: minmax(8rem, 1fr) 3fr; gap: 2rem; }
+.music-release-header > div { max-width: 760px; }
+.music-artist { margin: 0 0 .5rem; color: var(--muted); font-size: .78rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.music-release h2 { margin-bottom: 1rem; font-size: clamp(3.2rem, 7vw, 6.5rem); }
+.music-description { max-width: 580px; margin: 0; color: var(--muted); font: 1.08rem/1.8 'Gowun Batang', serif; }
+.music-video { margin-block: clamp(2.5rem, 6vw, 5rem); aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--ink); background: var(--ink); }
+.music-video iframe, .spotify-player { display: block; width: 100%; border: 0; }
+.music-video iframe { height: 100%; }
+.music-listen { display: grid; grid-template-columns: minmax(8rem, 1fr) 3fr; gap: 2rem; align-items: center; padding-block: 2rem; border-block: 1px solid var(--line); }
+.music-listen > div > p:last-child { max-width: 280px; margin: .75rem 0 0; color: var(--muted); }
+.spotify-player { height: 152px; border-radius: 12px; }
+.music-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .75rem; margin-top: 2rem; }
+.music-link { display: inline-flex; min-height: 48px; align-items: center; gap: .6rem; padding: .7rem 1rem; border: 1px solid var(--ink); text-decoration: none; transition: color 180ms ease-out, background-color 180ms ease-out; }
+.music-link:hover, .music-link:focus-visible, .music-link-primary { background: var(--ink); color: var(--paper); }
+.music-link-primary:hover, .music-link-primary:focus-visible { background: var(--accent); border-color: var(--accent); }
+
 .page-shell { min-height: calc(100vh - 82px); padding-block: clamp(4rem, 9vw, 8rem); }
 .page-shell h1 { max-width: 850px; margin: 0 0 2rem; font: 400 clamp(3.8rem, 9vw, 8rem)/.9 var(--serif); letter-spacing: -.04em; }
 .page-intro { max-width: 620px; color: var(--muted); font: 1.1rem/1.8 'Gowun Batang', serif; }
@@ -348,6 +370,12 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
   .section-heading { display: block; }
   .app-item { grid-template-columns: 3rem 1fr; }
   .app-item .status { grid-column: 2; justify-self: start; }
+  .music-release-header { grid-template-columns: 3rem 1fr; gap: 1rem; }
+  .music-video { height: max(200px, calc(56.25vw - 18px)); aspect-ratio: auto; }
+  .music-listen { grid-template-columns: 1fr; gap: 1.5rem; }
+  .music-listen > div > p:last-child { max-width: none; }
+  .music-links { justify-content: stretch; }
+  .music-link { width: 100%; justify-content: space-between; }
   footer { grid-template-columns: 1fr auto; }
   .footer-note { grid-column: 1 / -1; text-align: left; }
 }

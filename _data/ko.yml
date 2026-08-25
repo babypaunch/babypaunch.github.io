@@ -5,16 +5,20 @@ brand_label: BabyPaunch 홈
 nav_label: 주요 메뉴
 routes:
   home: /
+  music: /music/
   blog: /blog/
   policies: /policies/
   not_found: /
 pages:
   home:
     title: BabyPaunch — Small, but thoughtfully made.
-    description: 작지만 쓸모 있는 앱을 만드는 BabyPaunch의 공식 사이트입니다.
+    description: 앱과 음악, 아이디어를 만드는 BabyPaunch의 공식 사이트입니다.
   blog:
     title: Blog — BabyPaunch
     description: BabyPaunch의 개발과 제품 이야기
+  music:
+    title: Music — BabyPaunch
+    description: Humming Echo의 음악과 영상을 듣고 볼 수 있는 BabyPaunch 음악 페이지입니다.
   policies:
     title: Policies — BabyPaunch
     description: BabyPaunch 서비스의 정책 문서 모음
@@ -34,6 +38,18 @@ home:
   journal_title: 코드와 노래,<br>떠오른 생각을 기록합니다.
   journal_copy: 개발 과정, 노래와 음악, 문득 떠오른 아이디어와 그 사이의 시행착오를 가볍게 남깁니다.
   blog_link: 블로그 가기
+music:
+  eyebrow: Music · Humming Echo
+  heading: 만든 노래를,<br><em>한곳에 모읍니다.</em>
+  intro: 노래와 영상, 그리고 음악을 만든 순간을 기록합니다. YouTube와 Spotify에서 바로 재생할 수 있습니다.
+  releases_label: 음악 목록
+  youtube_player: YouTube 영상 플레이어
+  spotify_player: Spotify 음악 플레이어
+  listen_label: Listen
+  listen_copy: 영상으로 보거나, 익숙한 음악 서비스에서 이어서 들어보세요.
+  links_label: 외부 재생 링크
+  watch_youtube: YouTube에서 보기
+  listen_spotify: Spotify에서 듣기
 blog:
   intro: 배움과 아이디어를 기록할 공간입니다.
   empty: 첫 번째 글을 준비하고 있습니다.
