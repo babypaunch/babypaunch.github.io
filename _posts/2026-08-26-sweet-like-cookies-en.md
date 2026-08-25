@@ -3,7 +3,7 @@ layout: post
 locale: en
 page_key: blog
 title: Sweet Like Cookies, my first song born from memory
-description: How I remembered the first spark I felt for my wife and turned it into lyrics, a song, and a music video.
+description: How I remembered the spark I felt when I first saw my wife's photograph and turned it into lyrics, a song, and a music video.
 category: Music
 date: 2026-08-26 01:00:00 +0900
 permalink: /en/blog/sweet-like-cookies/
@@ -35,9 +35,19 @@ I turned the spark I felt when I first saw my wife's photograph into a scene of 
 
 I also slipped a joke that a friend on social media once made into the lyrics: when a man meets a woman, he immediately starts dreaming about the future. I expressed that ridiculous leap of imagination in one line.
 
+## The story inside three lines
+
+> My heart is thumpin', it's skippin' a beat
+
+It means his heart is racing so hard with excitement that it cannot even keep the beat.
+
 > I'm already grandpa, wrinkled and gray
 
-They have barely exchanged a glance, yet he is already an old man in the future they share. It is a funny image, but when someone captures your heart, even the distant future can suddenly feel close.
+They have barely exchanged a glance, yet he has already imagined their distant future by himself. In the music video, I portrayed it through the backs of two people growing old together with affection.
+
+> But that daydream was sweet like cookies
+
+It represents `iljangchunmong`: a sweet daydream that passes in an instant.
 
 ## The turn hidden inside a bright song
 
@@ -45,7 +55,7 @@ The music and lyrics are bright on the surface. His heartbeat moves lightly, and
 
 But the fantasy does not last. She walks past him, and he heads home alone again. The brief magic fades, leaving only its sweetness behind.
 
-The ending carries the feeling of `iljangchunmong`, a Korean expression for a beautiful dream that vanishes in an instant. Life can pass in ways that run against our hopes. I wanted the tender fantasy and the lonely reality to exist in the same song.
+Life can pass in ways that run against our hopes. I wanted the tender fantasy and the lonely reality to exist in the same song.
 
 Perhaps that was also how I felt about memory. Our time together had ended, but the feeling of that first spark had not disappeared.
 
