@@ -22,15 +22,12 @@ pages:
     title: Page not found — BabyPaunch
     description: The requested BabyPaunch page could not be found.
 home:
-  hero_copy: We notice the little friction in everyday life and turn it into software made to last.
+  hero_copy: Turning inconvenience into convenience.
   apps_link: Explore our apps
   about_title: Only what matters,<br>made properly.
   about_copy: BabyPaunch is an independent studio making tools for music, content, and everyday life. We remove complexity and focus on the experience people actually need.
-  apps_title: What we are making
+  apps_title: What I've made
   apps:
-    - name: AI Karaoke
-      description: An AI-powered karaoke tool for enjoying songs and video in a new way.
-      status: In progress
     - name: Laftel Mania
       description: A Chrome extension that helps you enjoy anime more comfortably while vibe coding.
       status: Available
