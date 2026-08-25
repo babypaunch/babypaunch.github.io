@@ -34,8 +34,8 @@ home:
     - name: Laftel Mania
       description: 좋아하는 애니메이션을 더 편하게 발견하고 기록하는 앱.
       status: Available
-  journal_title: 만들면서 배운 것을<br>가볍게 기록합니다.
-  journal_copy: 개발 과정, 제품에 대한 생각, 시행착오를 블로그에 남깁니다.
+  journal_title: 코드와 노래,<br>떠오른 생각을 기록합니다.
+  journal_copy: 개발 과정, 노래와 음악, 문득 떠오른 아이디어와 그 사이의 시행착오를 가볍게 남깁니다.
   blog_link: 블로그 가기
 blog:
   intro: 배움과 아이디어를 기록할 공간입니다.

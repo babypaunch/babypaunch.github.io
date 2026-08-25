@@ -34,8 +34,8 @@ home:
     - name: Laftel Mania
       description: A simple way to discover and keep track of the anime you love.
       status: Available
-  journal_title: Notes from<br>making things.
-  journal_copy: Thoughts, lessons, and honest mistakes from building products.
+  journal_title: Notes on code, songs,<br>and ideas along the way.
+  journal_copy: We write about development, songs and music, ideas that come to mind, and lessons learned along the way.
   blog_link: Read the blog
 blog:
   intro: A place to record lessons and ideas.
