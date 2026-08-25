@@ -65,7 +65,7 @@ The first inspiration for the music video came from *Singin' in the Rain*. Its i
 
 As I wrote the lyrics, I could already see the music video clearly: a man in a suit holding an umbrella, two people passing one another, and an imagined future appearing for a moment before fading away.
 
-The opening and closing scenes of the music video are deliberately different. It begins with the two people facing each other and ends with them turned away from one another. The saxophone player in the middle represents the song's instrumental break and becomes the dividing line between those two scenes.
+The opening and closing scenes of the music video are deliberately different. It begins with the two people facing each other and ends with them in crossed positions, turned away from one another. The saxophone player in the middle represents the song's instrumental break and becomes the dividing line between those two scenes.
 
 Finishing both the song and the video by myself took time.
 
