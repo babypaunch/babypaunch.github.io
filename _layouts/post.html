@@ -1,0 +1,15 @@
+---
+layout: default
+---
+{% assign t = site.data[page.locale] %}
+<main id="main" class="article-shell">
+  <header class="article-header">
+    <p class="eyebrow">{{ page.category }} · {{ page.date | date: '%Y.%m.%d' }}</p>
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.description }}</p>
+  </header>
+  <article class="article-body">
+    {{ content }}
+  </article>
+  <a class="text-link article-back" href="{{ t.routes.blog }}">{{ t.blog.back }} <span aria-hidden="true">←</span></a>
+</main>

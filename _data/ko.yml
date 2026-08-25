@@ -40,6 +40,7 @@ home:
 blog:
   intro: 앱을 만들며 배운 것과 제품에 대한 생각을 기록할 공간입니다.
   empty: 첫 번째 글을 준비하고 있습니다.
+  back: 블로그로 돌아가기
 policies:
   intro: BabyPaunch가 제공하는 앱과 서비스의 정책 문서를 확인할 수 있습니다.
   links:
@@ -51,4 +52,3 @@ not_found:
   title: 길을 조금<br>벗어났네요.
   message: 요청한 페이지가 없거나 주소가 변경되었습니다.
   home: 홈으로 돌아가기
-

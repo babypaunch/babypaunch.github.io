@@ -40,6 +40,7 @@ home:
 blog:
   intro: A place for lessons from building apps and thoughts about products.
   empty: The first story is on its way.
+  back: Back to the blog
 policies:
   intro: Policy documents for the apps and services provided by BabyPaunch.
   links:
@@ -51,4 +52,3 @@ not_found:
   title: We wandered<br>a little too far.
   message: The requested page is missing or its address has changed.
   home: English home
-

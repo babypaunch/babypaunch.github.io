@@ -9,7 +9,6 @@
     <a href="{{ t.routes.home }}#apps">Apps</a>
     <a href="{{ t.routes.blog }}"{% if page.page_key == 'blog' %} aria-current="page"{% endif %}>Blog</a>
     <a href="{{ t.routes.policies }}"{% if page.page_key == 'policies' %} aria-current="page"{% endif %}>Policies</a>
-    <a class="language-link" href="{{ other.routes[page.page_key] }}" lang="{{ other.lang }}" hreflang="{{ other.lang }}">{{ other.language_label }}</a>
+    <a class="language-link" href="{{ page.language_url | default: other.routes[page.page_key] }}" lang="{{ other.lang }}" hreflang="{{ other.lang }}">{{ other.language_label }}</a>
   </nav>
 </header>
-
