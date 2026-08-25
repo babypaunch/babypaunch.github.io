@@ -96,7 +96,8 @@ nav a {
   justify-content: center;
   text-decoration: none;
 }
-nav a:hover, nav a:focus-visible { text-decoration: underline; }
+nav a:hover, nav a:focus-visible, nav a[aria-current="page"] { text-decoration: underline; }
+nav a[aria-current="page"] { text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
 .language-link {
   padding-left: clamp(.65rem, 2vw, 1.5rem);
   border-left: 1px solid var(--line);
