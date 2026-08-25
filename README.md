@@ -1,6 +1,6 @@
-# Baby Paunch
+# BabyPaunch
 
-`https://babypaunch.github.io`에서 제공되는 Baby Paunch 공식 사이트입니다.
+`https://babypaunch.github.io`에서 제공되는 BabyPaunch 공식 사이트입니다.
 
 ## 로컬 확인
 
