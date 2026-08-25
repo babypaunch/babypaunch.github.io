@@ -5,11 +5,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ page.description | default: t.pages[page.page_key].description }}">
   <meta name="theme-color" content="#f3eddf">
   <title>{% if page.layout == 'post' %}{{ page.title }} — BabyPaunch{% else %}{{ t.pages[page.page_key].title }}{% endif %}</title>
-  <link rel="alternate" hreflang="ko" href="{{ site.url }}{{ page.alternate_ko | default: site.data.ko.routes[page.page_key] }}">
-  <link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.alternate_en | default: site.data.en.routes[page.page_key] }}">
+{% include seo.html %}
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>

@@ -1,4 +1,5 @@
 lang: ko
+og_locale: ko_KR
 language_label: KO
 skip_link: 본문으로 바로가기
 brand_label: BabyPaunch 홈
@@ -8,6 +9,7 @@ routes:
   music: /music/
   blog: /blog/
   policies: /policies/
+  privacy: /privacy/
   not_found: /
 pages:
   home:
@@ -22,6 +24,9 @@ pages:
   policies:
     title: Policies — BabyPaunch
     description: BabyPaunch 서비스의 정책 문서 모음
+  privacy:
+    title: 개인정보처리방침 — BabyPaunch
+    description: BabyPaunch 웹사이트의 개인정보 처리와 외부 콘텐츠 사용에 관한 안내입니다.
   not_found:
     title: 페이지를 찾을 수 없습니다 — BabyPaunch
     description: 요청한 BabyPaunch 페이지를 찾을 수 없습니다.
@@ -66,6 +71,8 @@ blog:
 policies:
   intro: BabyPaunch가 제공하는 앱과 서비스의 정책 문서를 확인할 수 있습니다.
   links:
+    - label: BabyPaunch 웹사이트 개인정보처리방침
+      url: /privacy/
     - label: Laftel Mania 개인정보처리방침
       url: https://babypaunch.github.io/public-policies/laftel-mania/privacy.html
     - label: 전체 정책 문서

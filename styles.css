@@ -338,6 +338,7 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .page-shell { min-height: calc(100vh - 82px); padding-block: clamp(4rem, 9vw, 8rem); }
 .page-shell h1 { max-width: 850px; margin: 0 0 2rem; font: 400 clamp(3.8rem, 9vw, 8rem)/.9 var(--serif); letter-spacing: -.04em; }
 .page-intro { max-width: 620px; color: var(--muted); font: 1.1rem/1.8 'Gowun Batang', serif; }
+.privacy-shell { width: min(100% - (var(--page-gutters) * 2), 850px); }
 .empty-note { margin-top: 5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
 .tag-filter { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin-top: 4rem; }
 .tag-filter a { min-height: 44px; text-decoration: none; }

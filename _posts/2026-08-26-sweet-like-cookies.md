@@ -4,6 +4,7 @@ locale: ko
 page_key: blog
 title: 그리움으로 만든 첫 노래, Sweet Like Cookies
 description: 아내의 사진을 처음 본 순간의 설렘을 기억하며 가사를 쓰고, 노래와 뮤직비디오로 완성한 이야기.
+image: https://img.youtube.com/vi/t6aQ-sHDGBA/maxresdefault.jpg
 category: Music
 date: 2026-08-26 01:00:00 +0900
 permalink: /blog/sweet-like-cookies/

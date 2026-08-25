@@ -13,6 +13,14 @@ python -m http.server 8000 --directory _site
 
 `http://localhost:8000`에서 확인할 수 있습니다. GitHub Pages는 `main` 브랜치의 Jekyll 소스를 자동으로 빌드하고 배포합니다.
 
+## 검색 및 정책
+
+- `/robots.txt`: 검색 로봇 접근 규칙과 sitemap 위치
+- `/sitemap.xml`: 공개 페이지와 블로그 글의 검색 색인 목록
+- `/privacy/`, `/en/privacy/`: BabyPaunch 웹사이트 한영 개인정보처리방침
+
+공통 SEO 메타데이터는 `_includes/seo.html`에서 관리합니다. Google AdSense 또는 분석 도구를 도입할 때는 광고 코드를 적용하기 전에 한영 개인정보처리방침을 함께 갱신합니다.
+
 ## 언어 구조
 
 - `/`: 한국어

@@ -1,4 +1,5 @@
 lang: en
+og_locale: en_GB
 language_label: EN
 skip_link: Skip to content
 brand_label: BabyPaunch home
@@ -8,6 +9,7 @@ routes:
   music: /en/music/
   blog: /en/blog/
   policies: /en/policies/
+  privacy: /en/privacy/
   not_found: /en/
 pages:
   home:
@@ -22,6 +24,9 @@ pages:
   policies:
     title: Policies — BabyPaunch
     description: Policy documents for apps and services made by BabyPaunch.
+  privacy:
+    title: Privacy Policy — BabyPaunch
+    description: How the BabyPaunch website handles information and third-party embedded content.
   not_found:
     title: Page not found — BabyPaunch
     description: The requested BabyPaunch page could not be found.
@@ -66,6 +71,8 @@ blog:
 policies:
   intro: Policy documents for the apps and services provided by BabyPaunch.
   links:
+    - label: BabyPaunch Website Privacy Policy
+      url: /en/privacy/
     - label: Laftel Mania Privacy Policy (Korean)
       url: https://babypaunch.github.io/public-policies/laftel-mania/privacy.html
     - label: All policy documents
