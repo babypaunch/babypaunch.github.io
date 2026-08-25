@@ -22,4 +22,4 @@ python -m http.server 8000 --directory _site
 
 ## 음악 추가
 
-새 음악은 `_data/music.yml`에 항목을 추가합니다. `title`, `artist`, 한·영 `description`, `youtube_id`, `youtube_url`, `spotify_id`, `spotify_url`을 입력하면 `/music/`과 `/en/music/`에 함께 표시됩니다.
+새 음악은 `_data/music.yml`에 항목을 추가합니다. `slug`, `title`, `youtube_id`, `spotify_id`를 입력하면 `/music/`과 `/en/music/`에 함께 표시됩니다.

@@ -11,34 +11,12 @@ layout: default
 
   <section class="music-releases" aria-label="{{ t.music.releases_label }}">
     {% for track in site.data.music %}
-    {% assign track_description = track.description[page.locale] %}
-    <article class="music-release" id="{{ track.slug }}">
-      <header class="music-release-header">
-        <p class="section-number">M—0{{ forloop.index }}</p>
-        <div>
-          <p class="music-artist">{{ track.artist }}</p>
-          <h2>{{ track.title }}</h2>
-          <p class="music-description">{{ track_description }}</p>
-        </div>
-      </header>
-
+    <section class="music-release" id="{{ track.slug }}" aria-label="{{ track.title }}">
       <div class="music-video">
         <iframe src="https://www.youtube-nocookie.com/embed/{{ track.youtube_id }}?rel=0" title="{{ track.title }} — {{ t.music.youtube_player }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
-
-      <div class="music-listen">
-        <div>
-          <p class="section-number">{{ t.music.listen_label }}</p>
-          <p>{{ t.music.listen_copy }}</p>
-        </div>
-        <iframe class="spotify-player" src="https://open.spotify.com/embed/track/{{ track.spotify_id }}?utm_source=generator&amp;theme=0" title="{{ track.title }} — {{ t.music.spotify_player }}" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-      </div>
-
-      <div class="music-links" aria-label="{{ track.title }} {{ t.music.links_label }}">
-        <a class="music-link music-link-primary" href="{{ track.youtube_url }}" target="_blank" rel="noopener">{{ t.music.watch_youtube }} <span aria-hidden="true">↗</span></a>
-        <a class="music-link" href="{{ track.spotify_url }}" target="_blank" rel="noopener">{{ t.music.listen_spotify }} <span aria-hidden="true">↗</span></a>
-      </div>
-    </article>
+      <iframe class="spotify-player" src="https://open.spotify.com/embed/track/{{ track.spotify_id }}?utm_source=generator&amp;theme=0" title="{{ track.title }} — {{ t.music.spotify_player }}" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </section>
     {% endfor %}
   </section>
 </main>

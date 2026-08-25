@@ -40,16 +40,11 @@ home:
   blog_link: 블로그 가기
 music:
   eyebrow: Music · Humming Echo
-  heading: 내 노래가<br><em>당신의 위안이 되길</em>
-  intro: 내 노래와 영상, 그리고 음악을 YouTube와 Spotify에서 바로 재생할 수 있습니다.
+  heading: 내 노래가<br>당신에게<br><em>위안이 되길</em>
+  intro: 노래와 영상, 그리고 음악을 YouTube와 Spotify에서 바로 재생할 수 있습니다.
   releases_label: 음악 목록
   youtube_player: YouTube 영상 플레이어
   spotify_player: Spotify 음악 플레이어
-  listen_label: Listen
-  listen_copy: 영상으로 보거나, 익숙한 음악 서비스에서 이어서 들어보세요.
-  links_label: 외부 재생 링크
-  watch_youtube: YouTube에서 보기
-  listen_spotify: Spotify에서 듣기
 blog:
   intro: 배움과 아이디어를 기록할 공간입니다.
   empty: 첫 번째 글을 준비하고 있습니다.
