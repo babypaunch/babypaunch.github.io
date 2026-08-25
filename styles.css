@@ -164,9 +164,27 @@ nav a[aria-current="page"] { text-decoration-color: var(--accent); text-decorati
   text-underline-offset: .45rem;
 }
 
-.text-link span { display: inline-block; transition: transform 220ms var(--ease-out); }
-.text-link:hover span,
-.text-link:focus-visible span { transform: translate(.2rem, .1rem); }
+main a::before,
+footer a::before {
+  content: '';
+  display: inline-block;
+  width: 1.1rem;
+  height: 1.1rem;
+  flex: 0 0 auto;
+  margin-right: .4rem;
+  background: currentColor;
+  vertical-align: -.15em;
+  -webkit-mask: url('/assets/icons/click-outline.svg') center / contain no-repeat;
+  mask: url('/assets/icons/click-outline.svg') center / contain no-repeat;
+}
+
+main a:hover::before,
+main a:focus-visible::before,
+footer a:hover::before,
+footer a:focus-visible::before {
+  -webkit-mask-image: url('/assets/icons/click-filled.svg');
+  mask-image: url('/assets/icons/click-filled.svg');
+}
 
 .orbit {
   position: absolute;
@@ -325,14 +343,13 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .tag-filter a { min-height: 44px; text-decoration: none; }
 .tag-filter a:hover, .tag-filter a:focus-visible, .tag-filter a[aria-current] { color: var(--accent); text-decoration: underline; text-underline-offset: .35rem; }
 .post-list { margin: 1.5rem 0 0; padding: 0; border-top: 1px solid var(--ink); list-style: none; }
-.post-list a { display: grid; grid-template-columns: 8rem 1fr auto; gap: 2rem; align-items: start; padding: 1.75rem 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+.post-list a { display: grid; grid-template-columns: auto 8rem 1fr; gap: 2rem; align-items: start; padding: 1.75rem 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+.post-list a::before { margin-right: 0; }
 .post-list time, .post-list small { color: var(--muted); }
 .post-list strong, .post-list small { display: block; }
 .post-list strong { margin-bottom: .45rem; font: 400 clamp(1.5rem, 3vw, 2.4rem)/1.15 var(--serif); }
 .post-list small { font-size: .9rem; line-height: 1.6; }
 .post-tags { display: flex; flex-wrap: wrap; gap: .35rem .8rem; margin-top: .8rem; color: var(--muted); font-size: .72rem; letter-spacing: .04em; }
-.post-list a > span:last-child { transition: transform 180ms var(--ease-out); }
-.post-list a:hover > span:last-child { transform: translateX(.25rem); }
 .tag-empty { margin-top: 1.5rem; padding-block: 2rem; border-block: 1px solid var(--line); color: var(--muted); }
 .article-shell { width: min(100% - (var(--page-gutters) * 2), 850px); margin: 0 auto; padding-block: clamp(4rem, 9vw, 8rem); }
 .article-header { padding-bottom: clamp(3rem, 7vw, 5rem); border-bottom: 1px solid var(--ink); }
@@ -354,9 +371,8 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .not-found { min-height: calc(100vh - 176px); }
 .not-found-actions { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 1rem; }
 .policy-list { margin: 4rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
-.policy-list a { display: flex; justify-content: space-between; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--line); font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.4rem); text-decoration: none; word-break: keep-all; }
-.policy-list a:hover span:last-child { transform: translateX(.25rem); }
-.policy-list span:last-child { transition: transform 180ms ease-out; }
+.policy-list a { display: flex; align-items: center; gap: .75rem; padding: 1.5rem 0; border-bottom: 1px solid var(--line); font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.4rem); text-decoration: none; word-break: keep-all; }
+.policy-list a::before { margin-right: 0; }
 
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 
@@ -374,8 +390,10 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
   .language-link { margin-left: 0; padding-left: .65rem; }
   .hero { min-height: 690px; }
   .hero h1 { margin-top: 8rem; }
-  .post-list a { grid-template-columns: 1fr auto; gap: .75rem 1rem; }
-  .post-list time { grid-column: 1 / -1; }
+  .post-list a { grid-template-columns: auto 1fr; gap: .75rem 1rem; }
+  .post-list a::before { grid-row: 1 / span 2; }
+  .post-list time,
+  .post-list a > span { grid-column: 2; }
   .orbit { top: 7rem; right: 0; width: 6.5rem; }
   .about, .journal, .home-music { grid-template-columns: 1fr; gap: 1.5rem; }
   .home-music { padding-block: 3rem; }
