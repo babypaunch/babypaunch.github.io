@@ -77,6 +77,11 @@ nav { display: flex; gap: clamp(1rem, 3vw, 2.75rem); }
 nav a, footer a { text-decoration-thickness: 1px; text-underline-offset: .3rem; }
 nav a { text-decoration: none; }
 nav a:hover, nav a:focus-visible { text-decoration: underline; }
+.language-link {
+  padding-left: clamp(.65rem, 2vw, 1.5rem);
+  border-left: 1px solid var(--line);
+  font-weight: 700;
+}
 
 .hero {
   position: relative;
@@ -232,7 +237,8 @@ footer div { display: flex; gap: 1.5rem; }
 @media (max-width: 700px) {
   .site-header { align-items: flex-start; }
   .brand > span:last-child { display: none; }
-  nav { gap: .9rem; font-size: .78rem; }
+  nav { gap: .65rem; font-size: .72rem; }
+  .language-link { padding-left: .65rem; }
   .hero { min-height: 690px; }
   .orbit { right: 0; bottom: 3rem; }
   .about, .journal { grid-template-columns: 1fr; gap: 1.5rem; }

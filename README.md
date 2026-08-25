@@ -11,3 +11,10 @@ python -m http.server 8000
 ```
 
 별도 빌드 과정 없이 `main` 브랜치의 정적 파일을 GitHub Pages로 배포합니다.
+
+## 언어 구조
+
+- `/`: 한국어
+- `/en/`: English
+
+두 언어 페이지는 루트의 `styles.css`를 공통으로 사용합니다.
