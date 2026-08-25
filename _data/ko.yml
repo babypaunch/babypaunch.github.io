@@ -38,14 +38,13 @@ home:
   journal_copy: 개발 과정, 제품에 대한 생각, 시행착오를 블로그에 남깁니다.
   blog_link: 블로그 가기
 blog:
-  intro: 앱을 만들며 배운 것과 제품에 대한 생각을 기록할 공간입니다.
+  intro: 배움과 아이디어를 기록할 공간입니다.
   empty: 첫 번째 글을 준비하고 있습니다.
   back: 블로그로 돌아가기
   tags_label: 글 태그
   all_tag: 전체
   no_matches: 선택한 태그의 글이 없습니다.
   tags:
-    app-making: 앱개발
     chrome-extension: Chrome확장
     vibe-coding: 바이브코딩
     laftel-mania: LaftelMania

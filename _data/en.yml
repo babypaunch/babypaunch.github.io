@@ -38,14 +38,13 @@ home:
   journal_copy: Thoughts, lessons, and honest mistakes from building products.
   blog_link: Read the blog
 blog:
-  intro: A place for lessons from building apps and thoughts about products.
+  intro: A place to record lessons and ideas.
   empty: The first story is on its way.
   back: Back to the blog
   tags_label: Post tags
   all_tag: All
   no_matches: No posts match this tag.
   tags:
-    app-making: AppMaking
     chrome-extension: ChromeExtension
     vibe-coding: VibeCoding
     laftel-mania: LaftelMania
