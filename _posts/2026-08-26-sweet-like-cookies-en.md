@@ -31,6 +31,8 @@ I retold our first meeting as a different scene.
 
 On his way home, a well-dressed man sees a beautiful woman walking toward him. Their eyes meet for a moment. His heart races, and before he even knows her name, he imagines an entire future with her.
 
+If you listen closely, you can hear the man's steady footsteps. I also expressed the man walking in the lyrics through sound.
+
 I turned the spark I felt when I first saw my wife's photograph into a scene of falling for a stranger passing on the street. Rather than explain the memory exactly as it happened, I wanted it to unfold like a short film.
 
 I also slipped a joke that a friend on social media once made into the lyrics: when a man meets a woman, he immediately starts dreaming about the future.
