@@ -329,6 +329,8 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .article-body p, .article-body ul { margin: 0 0 1.5rem; }
 .article-body ul { padding-left: 1.25rem; }
 .article-body code { padding: .1rem .4rem; border: 1px solid var(--ink); border-radius: .2rem; background: var(--ink); color: var(--paper); font: .9em/1.5 ui-monospace, monospace; }
+.article-body details { margin-top: 2rem; padding-block: 1rem; border-block: 1px solid var(--line); }
+.article-body summary { cursor: pointer; font-weight: 700; }
 .article-back { margin-top: 1rem; }
 .not-found { min-height: calc(100vh - 176px); }
 .not-found-actions { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 1rem; }
