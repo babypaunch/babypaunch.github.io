@@ -8,6 +8,8 @@
   --line: #a8aa9f;
   --serif: 'DM Serif Display', 'Gowun Batang', serif;
   --sans: 'Manrope', sans-serif;
+  --page-gutters: 2rem;
+  --page-max: 1200px;
 }
 
 * { box-sizing: border-box; }
@@ -41,7 +43,7 @@ a { color: inherit; }
 .site-header,
 main,
 footer {
-  width: min(100% - 2rem, 1200px);
+  width: min(calc(100% - var(--page-gutters)), var(--page-max));
   margin-inline: auto;
 }
 
@@ -234,10 +236,12 @@ footer div { display: flex; gap: 1.5rem; }
 
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 
-@media (max-width: 700px) {
+/* Mobile: 640px and below */
+@media (max-width: 640px) {
   .site-header { align-items: flex-start; }
   .brand > span:last-child { display: none; }
   nav { gap: .65rem; font-size: .72rem; }
+  nav a { display: inline-flex; min-height: 44px; align-items: center; }
   .language-link { padding-left: .65rem; }
   .hero { min-height: 690px; }
   .orbit { right: 0; bottom: 3rem; }
@@ -247,6 +251,20 @@ footer div { display: flex; gap: 1.5rem; }
   .app-item .status { grid-column: 2; justify-self: start; }
   footer { grid-template-columns: 1fr auto; }
   .footer-note { grid-column: 1 / -1; text-align: left; }
+}
+
+/* Tablet: over 640px through 1280px */
+@media (min-width: 641px) and (max-width: 1280px) {
+  :root { --page-gutters: 4rem; }
+  nav { gap: clamp(1rem, 2.5vw, 2rem); }
+  nav a { display: inline-flex; min-height: 44px; align-items: center; }
+  .hero { min-height: min(720px, calc(100vh - 82px)); }
+  .orbit { right: 0; }
+}
+
+/* PC: over 1280px */
+@media (min-width: 1281px) {
+  :root { --page-gutters: 6rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
