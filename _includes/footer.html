@@ -1,5 +1,8 @@
 <footer>
   <p>© {{ site.time | date: '%Y' }} BabyPaunch</p>
-  <div><a class="support-link" href="https://ko-fi.com/babypaunch" target="_blank" rel="noopener noreferrer"><span lang="en">Would you support me?</span><span class="visually-hidden" lang="{{ page.locale }}"> ({{ t.opens_new_window }})</span></a></div>
+  <div>
+    <a href="{{ t.routes.contact }}" lang="en">{{ t.contact_label }}</a>
+    <a class="support-link" href="https://ko-fi.com/babypaunch" target="_blank" rel="noopener noreferrer"><span lang="en">Would you support me?</span><span class="visually-hidden" lang="{{ page.locale }}"> ({{ t.opens_new_window }})</span></a>
+  </div>
   <p class="footer-note" lang="en">make small things</p>
 </footer>

@@ -64,7 +64,7 @@ for (const preference of ['prefers-reduced-motion', 'prefers-contrast', 'forced-
 }
 
 const sitemap = fs.readFileSync(path.join(siteRoot, 'sitemap.xml'), 'utf8');
-for (const url of ['/accessibility/', '/en/accessibility/']) {
+for (const url of ['/accessibility/', '/en/accessibility/', '/contact/', '/en/contact/']) {
   assert.ok(sitemap.includes(`https://babypaunch.github.io${url}`), `sitemap: ${url}`);
 }
 
