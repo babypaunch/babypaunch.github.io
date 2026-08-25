@@ -23,7 +23,7 @@ About a year later, I began writing lyrics from the moments that reminded me of 
 
 The first time I saw her photograph. I wanted to preserve that brief, unmistakable spark in a song.
 
-<p class="article-question">If I turned the first spark I felt for someone who is gone into a song, what would that memory look like?</p>
+After seeing her photograph for the first time, I began pursuing her. I had fallen for her completely.
 
 ## Like two strangers passing in the street
 
@@ -31,9 +31,9 @@ I retold our first meeting as a different scene.
 
 On his way home, a well-dressed man sees a beautiful woman walking toward him. Their eyes meet for a moment. His heart races, and before he even knows her name, he imagines an entire future with her.
 
-In reality, the feeling came from the first time I saw my wife's photograph. I transformed it into a moment of falling for a stranger passing on the street. Rather than explain the memory exactly as it happened, I wanted it to unfold like a short film.
+I turned the spark I felt when I first saw my wife's photograph into a scene of falling for a stranger passing on the street. Rather than explain the memory exactly as it happened, I wanted it to unfold like a short film.
 
-I also slipped in a joke that a friend on social media used to make: when a man meets a woman, he immediately starts dreaming about the future. I expressed that ridiculous leap of imagination in one line.
+I also slipped a joke that a friend on social media once made into the lyrics: when a man meets a woman, he immediately starts dreaming about the future. I expressed that ridiculous leap of imagination in one line.
 
 > I'm already grandpa, wrinkled and gray
 
@@ -59,7 +59,7 @@ I created the images with Midjourney. Precise composition and narrative mattered
 
 I first sketched all the lyrics in Korean, then used a translator to build the English version. A direct translation would not sing well, so I kept revising the words to preserve their meaning while making the pronunciation, length, and rhyme flow naturally.
 
-The process reminded me how much lyrics determine the direction of a song. I still write down new lines whenever inspiration comes. Before there is a melody, a song can already begin forming its expression and scenery inside a few sentences.
+The process reminded me how much lyrics determine the direction of a song. I still write down new lines whenever inspiration comes.
 
 ## Putting my name in my first song
 
@@ -71,7 +71,7 @@ I boldly put my own name in its opening line.
 
 It felt a little embarrassing, but I did not want to hide where the song began. It came from my own memory and carries a feeling I wanted to share directly.
 
-I hope this song might become a small serenade for someone in love. I want the spark I once held to travel through the music and reach another person's heart.
+I hope this song might become a small serenade for someone in love. I want to use the song as a vessel so the spark I once held can reach another person's heart.
 
 <div class="music-video">
   <iframe src="https://www.youtube-nocookie.com/embed/t6aQ-sHDGBA?rel=0" title="Sweet Like Cookies — YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
