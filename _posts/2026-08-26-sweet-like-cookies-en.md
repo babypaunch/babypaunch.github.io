@@ -11,9 +11,8 @@ language_url: /blog/sweet-like-cookies/
 alternate_ko: /blog/sweet-like-cookies/
 alternate_en: /en/blog/sweet-like-cookies/
 tags:
-  - music
-  - songwriting
-  - humming-echo
+  - sweet-like-cookies
+  - first-song
 ---
 
 Life became difficult in many ways from 2023 onward.

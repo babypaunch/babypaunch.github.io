@@ -56,9 +56,8 @@ blog:
     chrome-extension: ChromeExtension
     vibe-coding: VibeCoding
     laftel-mania: LaftelMania
-    music: Music
-    songwriting: Songwriting
-    humming-echo: HummingEcho
+    sweet-like-cookies: SweetLikeCookies
+    first-song: FirstSong
 policies:
   intro: Policy documents for the apps and services provided by BabyPaunch.
   links:
