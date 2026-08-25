@@ -84,15 +84,10 @@ footer {
 }
 
 .brand-mark {
-  display: grid;
+  display: block;
   width: 2rem;
-  aspect-ratio: 1;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--accent);
-  color: var(--paper);
-  font-family: var(--serif);
-  font-style: italic;
+  height: 2rem;
+  flex: 0 0 auto;
   transition: transform 220ms var(--ease-out);
 }
 
