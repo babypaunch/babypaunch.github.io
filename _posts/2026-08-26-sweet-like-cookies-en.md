@@ -33,7 +33,7 @@ On his way home, a well-dressed man sees a beautiful woman walking toward him. T
 
 I turned the spark I felt when I first saw my wife's photograph into a scene of falling for a stranger passing on the street. Rather than explain the memory exactly as it happened, I wanted it to unfold like a short film.
 
-I also slipped a joke that a friend on social media once made into the lyrics: when a man meets a woman, he immediately starts dreaming about the future. I expressed that ridiculous leap of imagination in one line.
+I also slipped a joke that a friend on social media once made into the lyrics: when a man meets a woman, he immediately starts dreaming about the future.
 
 ## The story inside three lines
 
