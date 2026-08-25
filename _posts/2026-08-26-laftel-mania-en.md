@@ -10,6 +10,11 @@ permalink: /en/blog/laftel-mania/
 language_url: /blog/laftel-mania/
 alternate_ko: /blog/laftel-mania/
 alternate_en: /en/blog/laftel-mania/
+tags:
+  - app-making
+  - chrome-extension
+  - vibe-coding
+  - laftel-mania
 ---
 
 I do a lot of development on a single laptop.

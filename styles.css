@@ -278,14 +278,19 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .page-shell h1 { max-width: 850px; margin: 0 0 2rem; font: 400 clamp(3.8rem, 9vw, 8rem)/.9 var(--serif); letter-spacing: -.04em; }
 .page-intro { max-width: 620px; color: var(--muted); font: 1.1rem/1.8 'Gowun Batang', serif; }
 .empty-note { margin-top: 5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
-.post-list { margin: 5rem 0 0; padding: 0; border-top: 1px solid var(--ink); list-style: none; }
+.tag-filter { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin-top: 4rem; }
+.tag-filter a { min-height: 44px; text-decoration: none; }
+.tag-filter a:hover, .tag-filter a:focus-visible, .tag-filter a[aria-current] { color: var(--accent); text-decoration: underline; text-underline-offset: .35rem; }
+.post-list { margin: 1.5rem 0 0; padding: 0; border-top: 1px solid var(--ink); list-style: none; }
 .post-list a { display: grid; grid-template-columns: 8rem 1fr auto; gap: 2rem; align-items: start; padding: 1.75rem 0; border-bottom: 1px solid var(--line); text-decoration: none; }
 .post-list time, .post-list small { color: var(--muted); }
 .post-list strong, .post-list small { display: block; }
 .post-list strong { margin-bottom: .45rem; font: 400 clamp(1.5rem, 3vw, 2.4rem)/1.15 var(--serif); }
 .post-list small { font-size: .9rem; line-height: 1.6; }
+.post-tags { display: flex; flex-wrap: wrap; gap: .35rem .8rem; margin-top: .8rem; color: var(--muted); font-size: .72rem; letter-spacing: .04em; }
 .post-list a > span:last-child { transition: transform 180ms var(--ease-out); }
 .post-list a:hover > span:last-child { transform: translateX(.25rem); }
+.tag-empty { margin-top: 1.5rem; padding-block: 2rem; border-block: 1px solid var(--line); color: var(--muted); }
 .article-shell { width: min(100% - (var(--page-gutters) * 2), 850px); margin: 0 auto; padding-block: clamp(4rem, 9vw, 8rem); }
 .article-header { padding-bottom: clamp(3rem, 7vw, 5rem); border-bottom: 1px solid var(--ink); }
 .article-header h1 { margin: 1rem 0 1.5rem; font: 400 clamp(3.25rem, 8vw, 7rem)/.92 var(--serif); letter-spacing: -.04em; }

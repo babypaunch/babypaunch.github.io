@@ -41,6 +41,14 @@ blog:
   intro: A place for lessons from building apps and thoughts about products.
   empty: The first story is on its way.
   back: Back to the blog
+  tags_label: Post tags
+  all_tag: All
+  no_matches: No posts match this tag.
+  tags:
+    app-making: AppMaking
+    chrome-extension: ChromeExtension
+    vibe-coding: VibeCoding
+    laftel-mania: LaftelMania
 policies:
   intro: Policy documents for the apps and services provided by BabyPaunch.
   links:

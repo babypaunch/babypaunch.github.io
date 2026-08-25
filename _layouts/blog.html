@@ -8,17 +8,29 @@ layout: default
   <p class="page-intro">{{ t.blog.intro }}</p>
   {% assign posts = site.posts | where: 'locale', page.locale %}
   {% if posts.size > 0 %}
-  <ol class="post-list">
+  <nav class="tag-filter" aria-label="{{ t.blog.tags_label }}" data-tag-filter>
+    <a href="#all" data-tag="all">#{{ t.blog.all_tag }}</a>
+    {% for tag in t.blog.tags %}
+    <a href="#{{ tag[0] }}" data-tag="{{ tag[0] }}">#{{ tag[1] }}</a>
+    {% endfor %}
+  </nav>
+  <ol class="post-list" data-post-list>
     {% for post in posts %}
-    <li>
+    <li data-tags="{{ post.tags | join: ' ' }}">
       <a href="{{ post.url }}">
         <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y.%m.%d' }}</time>
-        <span><strong>{{ post.title }}</strong><small>{{ post.description }}</small></span>
+        <span>
+          <strong>{{ post.title }}</strong>
+          <small>{{ post.description }}</small>
+          <span class="post-tags" aria-label="{{ t.blog.tags_label }}">{% for tag in post.tags %}<span>#{{ t.blog.tags[tag] }}</span>{% endfor %}</span>
+        </span>
         <span aria-hidden="true">→</span>
       </a>
     </li>
     {% endfor %}
   </ol>
+  <p class="tag-empty" data-tag-empty hidden>{{ t.blog.no_matches }}</p>
+  <script src="/blog-tags.js" defer></script>
   {% else %}
   <p class="empty-note">{{ t.blog.empty }}</p>
   {% endif %}

@@ -10,6 +10,11 @@ permalink: /blog/laftel-mania/
 language_url: /en/blog/laftel-mania/
 alternate_ko: /blog/laftel-mania/
 alternate_en: /en/blog/laftel-mania/
+tags:
+  - app-making
+  - chrome-extension
+  - vibe-coding
+  - laftel-mania
 ---
 
 나는 노트북 한 대로 개발하는 일이 많다.
