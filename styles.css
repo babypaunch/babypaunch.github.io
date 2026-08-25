@@ -299,6 +299,8 @@ footer {
 
 footer div { display: flex; gap: 1.5rem; }
 footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+.support-link { padding: .65rem 1rem; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); font-weight: 700; text-decoration: none; transition: background-color 180ms var(--ease-out), border-color 180ms var(--ease-out), transform 180ms var(--ease-out); }
+.support-link:hover, .support-link:focus-visible { border-color: var(--accent); background: var(--accent); transform: translateY(-2px); }
 .footer-note { text-align: right; font-family: var(--serif); font-style: italic; }
 
 .music-shell { padding-block: clamp(4rem, 9vw, 8rem); }
