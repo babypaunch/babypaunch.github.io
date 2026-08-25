@@ -30,6 +30,11 @@ tags:
 
 Laftel Mania는 이 불편함을 해결하려고 만든 Chrome 확장 프로그램이다.
 
+<figure class="article-figure">
+  <img src="/assets/images/blog/laftel-mania-vibe-coding-workspace.png" alt="노트북 화면 왼쪽에서 바이브 코딩을 하고 오른쪽 라프텔 플레이어에서 1.50배속 OSD를 확인하는 모습" width="1604" height="981" loading="lazy">
+  <figcaption>바이브 코딩과 애니메이션 시청을 한 화면에서 함께하는 모습. 영상은 기능 설명을 위한 저작권 없는 샘플이다.</figcaption>
+</figure>
+
 ## 마우스 대신 단축키로 배속 바꾸기
 
 `Shift + ,`를 누르면 재생속도가 0.25배 느려지고, `Shift + .`를 누르면 0.25배 빨라진다. 속도는 `0.25x`부터 `4.00x`까지 조절할 수 있다.

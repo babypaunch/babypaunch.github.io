@@ -30,6 +30,11 @@ That led me to this thought.
 
 Laftel Mania is a Chrome extension I built to solve this inconvenience.
 
+<figure class="article-figure">
+  <img src="/assets/images/blog/laftel-mania-vibe-coding-workspace.png" alt="A split laptop screen with vibe coding on the left and the Laftel player showing a 1.50x OSD on the right" width="1604" height="981" loading="lazy">
+  <figcaption>Vibe coding and watching anime on the same screen. The video is a copyright-free sample used to demonstrate the feature.</figcaption>
+</figure>
+
 ## Change playback speed with shortcuts instead of the mouse
 
 `Shift + ,` slows playback by 0.25, and `Shift + .` makes it 0.25 faster. The speed can be adjusted from `0.25x` to `4.00x`.
