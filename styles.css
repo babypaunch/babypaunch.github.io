@@ -59,6 +59,7 @@ footer {
   display: flex;
   align-items: center;
   gap: .7rem;
+  min-height: 44px;
   font-weight: 700;
   text-decoration: none;
 }
@@ -77,7 +78,14 @@ footer {
 
 nav { display: flex; gap: clamp(1rem, 3vw, 2.75rem); }
 nav a, footer a { text-decoration-thickness: 1px; text-underline-offset: .3rem; }
-nav a { text-decoration: none; }
+nav a {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
 nav a:hover, nav a:focus-visible { text-decoration: underline; }
 .language-link {
   padding-left: clamp(.65rem, 2vw, 1.5rem);
@@ -123,7 +131,9 @@ nav a:hover, nav a:focus-visible { text-decoration: underline; }
 }
 
 .text-link {
-  display: inline-block;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
   font-weight: 700;
   text-decoration-thickness: 1px;
   text-underline-offset: .45rem;
@@ -223,6 +233,7 @@ footer {
 }
 
 footer div { display: flex; gap: 1.5rem; }
+footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
 .footer-note { text-align: right; font-family: var(--serif); font-style: italic; }
 
 .page-shell { min-height: calc(100vh - 82px); padding-block: clamp(4rem, 9vw, 8rem); }
