@@ -27,7 +27,7 @@ pages:
     description: The requested BabyPaunch page could not be found.
 home:
   hero_copy: Turning inconvenience into convenience.
-  apps_link: Explore our apps
+  work_link: See what I've made
   about_title: Only what matters,<br>made properly.
   about_copy: BabyPaunch is an independent studio making tools for music, content, and everyday life. We remove complexity and focus on the experience people actually need.
   apps_title: What I've made
@@ -35,6 +35,11 @@ home:
     - name: Laftel Mania
       description: A Chrome extension that helps you enjoy anime more comfortably while vibe coding.
       status: Available
+  music_title: May my songs<br>bring you <em>comfort.</em>
+  music_copy: My first song, Sweet Like Cookies, holds the spark I felt when I first saw my wife's photograph and a sweet daydream that passes in an instant.
+  music_link: Listen to the music
+  music_story_link: Read the story
+  music_story_url: /en/blog/sweet-like-cookies/
   journal_title: Notes on code, songs,<br>and ideas along the way.
   journal_copy: We write about development, songs and music, ideas that come to mind, and lessons learned along the way.
   blog_link: Read the blog

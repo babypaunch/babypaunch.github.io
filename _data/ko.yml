@@ -27,7 +27,7 @@ pages:
     description: 요청한 BabyPaunch 페이지를 찾을 수 없습니다.
 home:
   hero_copy: 불편함에서 편리함으로 거듭나기
-  apps_link: 만든 앱 둘러보기
+  work_link: 내가 만든 것들 보기
   about_title: 필요한 만큼만,<br>제대로 만듭니다.
   about_copy: BabyPaunch는 음악, 콘텐츠, 일상의 도구를 만드는 독립 개발 스튜디오입니다. 복잡함은 덜어내고 쓰는 사람에게 필요한 경험에 집중합니다.
   apps_title: 내가 만든 것들
@@ -35,6 +35,11 @@ home:
     - name: Laftel Mania
       description: 바이브 코딩을 하면서 애니메이션을 더 편하게 즐길 수 있도록 돕는 Chrome 확장 프로그램.
       status: Available
+  music_title: 내 노래가<br>당신에게 <em>위안이 되길</em>
+  music_copy: 첫 곡 Sweet Like Cookies에 아내의 사진을 처음 본 순간의 설렘과, 한순간에 지나가는 달콤한 상상을 담았습니다.
+  music_link: 음악 듣기
+  music_story_link: 노래 이야기 읽기
+  music_story_url: /blog/sweet-like-cookies/
   journal_title: 코드와 노래,<br>떠오른 생각을 기록합니다.
   journal_copy: 개발 과정, 노래와 음악, 문득 떠오른 아이디어와 그 사이의 시행착오를 가볍게 남깁니다.
   blog_link: 블로그 가기
