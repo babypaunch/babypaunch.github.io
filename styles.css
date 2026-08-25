@@ -8,6 +8,7 @@
   --line: #a8aa9f;
   --serif: 'DM Serif Display', 'Gowun Batang', serif;
   --sans: 'Manrope', sans-serif;
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
   --page-gutters: 2rem;
   --page-max: 1200px;
 }
@@ -18,7 +19,10 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--paper);
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(circle at 12% 8%, color-mix(in srgb, var(--accent) 5%, transparent), transparent 28rem),
+    repeating-linear-gradient(0deg, transparent 0 4px, color-mix(in srgb, var(--ink) 1.2%, transparent) 5px);
   color: var(--ink);
   font-family: var(--sans);
   font-size: 16px;
@@ -76,7 +80,11 @@ footer {
   color: var(--paper);
   font-family: var(--serif);
   font-style: italic;
+  transition: transform 220ms var(--ease-out);
 }
+
+.brand:hover .brand-mark,
+.brand:focus-visible .brand-mark { transform: rotate(-8deg); }
 
 nav { display: flex; gap: clamp(1rem, 3vw, 2.75rem); }
 nav a, footer a { text-decoration-thickness: 1px; text-underline-offset: .3rem; }
@@ -141,6 +149,10 @@ nav a:hover, nav a:focus-visible { text-decoration: underline; }
   text-underline-offset: .45rem;
 }
 
+.text-link span { display: inline-block; transition: transform 220ms var(--ease-out); }
+.text-link:hover span,
+.text-link:focus-visible span { transform: translate(.2rem, .1rem); }
+
 .orbit {
   position: absolute;
   right: 1rem;
@@ -169,6 +181,29 @@ nav a:hover, nav a:focus-visible { text-decoration: underline; }
   line-height: 1.05;
   text-align: center;
 }
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(1rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal-orbit {
+  from { opacity: 0; transform: scale(.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.hero > .eyebrow,
+.hero > h1,
+.hero > .hero-copy,
+.hero > .text-link {
+  opacity: 0;
+  animation: reveal-up 700ms var(--ease-out) forwards;
+}
+
+.hero > h1 { animation-delay: 80ms; }
+.hero > .hero-copy { animation-delay: 160ms; }
+.hero > .text-link { animation-delay: 240ms; }
+.hero > .orbit { opacity: 0; animation: reveal-orbit 900ms 320ms var(--ease-out) forwards; }
 
 .about,
 .journal {
@@ -286,5 +321,10 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { transition-duration: .01ms !important; }
+  *, *::before, *::after {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition-duration: .01ms !important;
+  }
 }
