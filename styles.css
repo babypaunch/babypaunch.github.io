@@ -293,9 +293,10 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .article-body { padding-block: clamp(3rem, 7vw, 5rem); font: 1.05rem/1.9 'Gowun Batang', serif; }
 .article-body h2 { margin: 3.5rem 0 1rem; font: 400 clamp(2rem, 4vw, 3rem)/1.15 var(--serif); }
 .article-body .article-question { font: 400 clamp(1.35rem, 3vw, 1.8rem)/1.4 var(--serif); }
+.article-body .article-summary { margin-top: 3.5rem; padding: 1.5rem; border: 1px solid var(--ink); font-size: clamp(1.2rem, 2.5vw, 1.5rem); line-height: 1.65; }
 .article-body p, .article-body ul { margin: 0 0 1.5rem; }
 .article-body ul { padding-left: 1.25rem; }
-.article-body code { padding: .1rem .35rem; border: 1px solid var(--line); border-radius: .2rem; font: .9em/1.5 ui-monospace, monospace; }
+.article-body code { padding: .1rem .4rem; border: 1px solid var(--ink); border-radius: .2rem; background: var(--ink); color: var(--paper); font: .9em/1.5 ui-monospace, monospace; }
 .article-back { margin-top: 1rem; }
 .not-found { min-height: calc(100vh - 176px); }
 .not-found-actions { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 1rem; }

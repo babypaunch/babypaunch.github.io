@@ -63,4 +63,4 @@ Laftel Mania is an unofficial extension and is not made or approved by Laftel. T
 
 The idea was simple: watch anime comfortably without missing the moment when the AI finishes its work. Laftel Mania solves that small problem with playback shortcuts and an OSD that is easy to see.
 
-**In one line:** If you vibe code and watch anime on one laptop, try Laftel Mania. I recommend watching at `1.5x`.
+<p class="article-summary"><strong>In one line:</strong> If you vibe code and watch anime on one laptop, try Laftel Mania. I recommend watching at <code>1.5x</code>.</p>
