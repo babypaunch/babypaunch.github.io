@@ -32,7 +32,7 @@ home:
       description: 노래와 영상을 새로운 방식으로 즐기는 AI 기반 가라오케 도구.
       status: In progress
     - name: Laftel Mania
-      description: 좋아하는 애니메이션을 더 편하게 발견하고 기록하는 앱.
+      description: 바이브 코딩을 하면서 애니메이션을 더 편하게 즐길 수 있도록 돕는 Chrome 확장 프로그램.
       status: Available
   journal_title: 코드와 노래,<br>떠오른 생각을 기록합니다.
   journal_copy: 개발 과정, 노래와 음악, 문득 떠오른 아이디어와 그 사이의 시행착오를 가볍게 남깁니다.

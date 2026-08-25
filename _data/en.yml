@@ -32,7 +32,7 @@ home:
       description: An AI-powered karaoke tool for enjoying songs and video in a new way.
       status: In progress
     - name: Laftel Mania
-      description: A simple way to discover and keep track of the anime you love.
+      description: A Chrome extension that helps you enjoy anime more comfortably while vibe coding.
       status: Available
   journal_title: Notes on code, songs,<br>and ideas along the way.
   journal_copy: We write about development, songs and music, ideas that come to mind, and lessons learned along the way.
