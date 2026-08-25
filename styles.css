@@ -11,6 +11,7 @@
   --ease-out: cubic-bezier(.22, 1, .36, 1);
   --page-gutters: 2rem;
   --page-max: 1200px;
+  --section-inset: clamp(2rem, 8vw, 7rem);
 }
 
 * { box-sizing: border-box; }
@@ -224,12 +225,13 @@ nav a[aria-current="page"] { text-decoration-color: var(--accent); text-decorati
   display: grid;
   grid-template-columns: minmax(10rem, 1fr) 3fr;
   gap: 2rem;
-  padding-block: clamp(5rem, 10vw, 9rem);
+  padding: clamp(5rem, 10vw, 9rem) var(--section-inset);
   border-top: 1px solid var(--line);
 }
 
 .about > div,
 .journal > div { max-width: 720px; }
+.about { background: var(--ink); color: var(--paper); }
 
 h2 {
   margin: 0 0 2rem;
@@ -247,8 +249,9 @@ h2 {
   font-family: 'Gowun Batang', serif;
   font-size: 1.08rem;
 }
+.about div > p { color: color-mix(in srgb, var(--paper) 75%, var(--ink)); }
 
-.apps { padding-block: clamp(5rem, 10vw, 9rem); border-top: 1px solid var(--line); }
+.apps { padding: clamp(5rem, 10vw, 9rem) var(--section-inset); border-top: 1px solid var(--line); }
 .section-heading { display: flex; justify-content: space-between; gap: 2rem; align-items: baseline; }
 .section-heading h2 { max-width: 800px; }
 .app-list { margin-top: 2rem; border-top: 1px solid var(--ink); }
@@ -276,7 +279,7 @@ h2 {
   display: grid;
   grid-template-columns: minmax(10rem, 1fr) 3fr;
   gap: 2rem;
-  padding: clamp(4rem, 8vw, 7rem);
+  padding: clamp(4rem, 8vw, 7rem) var(--section-inset);
   background: var(--ink);
   color: var(--paper);
 }
@@ -359,6 +362,7 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 
 /* Mobile: 640px and below */
 @media (max-width: 640px) {
+  :root { --section-inset: 1.5rem; }
   .site-header {
     display: grid;
     grid-template-columns: 1fr;
@@ -374,7 +378,7 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
   .post-list time { grid-column: 1 / -1; }
   .orbit { top: 7rem; right: 0; width: 6.5rem; }
   .about, .journal, .home-music { grid-template-columns: 1fr; gap: 1.5rem; }
-  .home-music { padding: 3rem 1.5rem; }
+  .home-music { padding-block: 3rem; }
   .home-music-index { margin-top: 1.5rem; }
   .section-heading { display: block; }
   .app-item { grid-template-columns: 3rem 1fr; }
@@ -386,12 +390,12 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 
 /* Tablet: over 640px through 1280px */
 @media (min-width: 641px) and (max-width: 1280px) {
-  :root { --page-gutters: 4rem; }
+  :root { --page-gutters: 4rem; --section-inset: clamp(3rem, 6vw, 5rem); }
   nav { gap: clamp(1rem, 2.5vw, 2rem); }
   nav a { display: inline-flex; min-height: 44px; align-items: center; }
   .hero { min-height: min(720px, calc(100vh - 82px)); }
   .orbit { right: 0; }
-  .home-music { grid-template-columns: minmax(7rem, .75fr) 3fr; padding: clamp(3rem, 6vw, 5rem); }
+  .home-music { grid-template-columns: minmax(7rem, .75fr) 3fr; padding-block: clamp(3rem, 6vw, 5rem); }
 }
 
 /* PC: over 1280px */
