@@ -114,7 +114,7 @@ nav a[aria-current="page"] { text-decoration-color: var(--accent); text-decorati
   padding-left: clamp(.65rem, 2vw, 1.5rem);
   border-left: 1px solid var(--line);
 }
-.language-flag { width: 1.75rem; height: auto; border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); }
+.language-flag { display: block; width: 1.75rem; height: auto; border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); }
 
 .hero {
   position: relative;

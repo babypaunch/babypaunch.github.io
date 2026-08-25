@@ -12,27 +12,9 @@
     <a class="language-link" href="{{ page.language_url | default: other.routes[page.page_key] }}" lang="{{ other.lang }}" hreflang="{{ other.lang }}">
       <span class="visually-hidden">{{ other.language_label }}</span>
       {% if other.lang == 'ko' %}
-      <svg class="language-flag" viewBox="0 0 36 24" aria-hidden="true">
-        <rect width="36" height="24" rx="1" fill="#fff"/>
-        <g transform="translate(18 12) rotate(-33.69)">
-          <path d="M0-5a5 5 0 1 1 0 10 2.5 2.5 0 1 0 0-5 2.5 2.5 0 1 1 0-5" fill="#cd2e3a"/>
-          <path d="M0 5a5 5 0 1 1 0-10 2.5 2.5 0 1 0 0 5 2.5 2.5 0 1 1 0 5" fill="#0047a0"/>
-        </g>
-        <g fill="#111">
-          <path d="M5 5l.8-1.2 5 3.4-.8 1.2zm1.2-1.8L7 2l5 3.4-.8 1.2zm-2.4 3.6.8-1.2 5 3.4-.8 1.2z"/>
-          <path d="M25 16l.8-1.2 5 3.4-.8 1.2zm1.2-1.8.8-1.2 2.1 1.4-.8 1.2zm3 2 .8-1.2 2.1 1.4-.8 1.2zm-5.4 1.8.8-1.2 2.1 1.4-.8 1.2zm3 2 .8-1.2 2.1 1.4-.8 1.2z"/>
-          <path d="M25 8l5-3.4.8 1.2-5 3.4zm-1.2-1.8 2.1-1.4.8 1.2-2.1 1.4zm3-2 2.1-1.4.8 1.2-2.1 1.4zm.2 5.2 2.1-1.4.8 1.2-2.1 1.4zm3-2 2.1-1.4.8 1.2-2.1 1.4z"/>
-          <path d="M5 19l5-3.4.8 1.2-5 3.4zm-1.2-1.8 2.1-1.4.8 1.2-2.1 1.4zm3-2 2.1-1.4.8 1.2-2.1 1.4zm.2 5.2 2.1-1.4.8 1.2-2.1 1.4zm3-2 2.1-1.4.8 1.2-2.1 1.4z"/>
-        </g>
-      </svg>
+      <img class="language-flag" src="/assets/flags/kr.svg" alt="">
       {% else %}
-      <svg class="language-flag" viewBox="0 0 36 24" aria-hidden="true">
-        <rect width="36" height="24" rx="1" fill="#012169"/>
-        <path d="M0 0l36 24m0-24L0 24" stroke="#fff" stroke-width="5"/>
-        <path d="M0 0l36 24m0-24L0 24" stroke="#c8102e" stroke-width="2"/>
-        <path d="M18 0v24M0 12h36" stroke="#fff" stroke-width="8"/>
-        <path d="M18 0v24M0 12h36" stroke="#c8102e" stroke-width="4"/>
-      </svg>
+      <img class="language-flag" src="/assets/flags/gb.svg" alt="">
       {% endif %}
     </a>
   </nav>
