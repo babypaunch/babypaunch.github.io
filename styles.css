@@ -277,6 +277,8 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .page-shell h1 { max-width: 850px; margin: 0 0 2rem; font: 400 clamp(3.8rem, 9vw, 8rem)/.9 var(--serif); letter-spacing: -.04em; }
 .page-intro { max-width: 620px; color: var(--muted); font: 1.1rem/1.8 'Gowun Batang', serif; }
 .empty-note { margin-top: 5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.not-found { min-height: calc(100vh - 176px); }
+.not-found-actions { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 1rem; }
 .policy-list { margin: 4rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
 .policy-list a { display: flex; justify-content: space-between; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--line); font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.4rem); text-decoration: none; word-break: keep-all; }
 .policy-list a:hover span:last-child { transform: translateX(.25rem); }
