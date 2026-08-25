@@ -12,9 +12,13 @@ alternate_ko: /blog/laftel-mania/
 alternate_en: /en/blog/laftel-mania/
 ---
 
-I often split my laptop screen. One third is for vibe coding with AI, while the other two thirds play anime on Laftel.
+I do most of my development on a single laptop.
 
-When coding and watching at the same time, I do not want to reach for the mouse every few minutes. But changing playback speed on Laftel meant opening the player menu and selecting the speed again.
+Vibe coding creates short stretches of free time while the AI works. I do not want to get too absorbed in something else, because it is better to continue with the next task as soon as the current one finishes.
+
+So I split the laptop screen. One third stays on the AI coding session, while the other two thirds are available for anime or another light task.
+
+To keep track of development while watching, I wanted to avoid reaching for the mouse every few minutes. But changing playback speed on Laftel meant opening the player menu and selecting the speed again.
 
 That left me with two questions.
 
@@ -43,12 +47,6 @@ I focused on three things:
 - Show the exact current speed
 - Get out of the way quickly after confirmation
 
-## The same shortcuts with a Korean input method
-
-Browsers can report keys differently while a Korean input method is active. An early version sometimes missed the shortcut even though I pressed the same physical key.
-
-The extension now checks the physical key position as well as the entered character. The shortcuts stay in the same place whether the active input language is Korean or English.
-
 ## A focus mode for the video
 
 Laftel's surrounding interface can feel crowded when the player only has two thirds of a laptop screen. Pressing `Shift + M` dims the surrounding page and keeps the video in the center.
@@ -63,4 +61,6 @@ It does not collect login details, browsing history, anime viewing history, or p
 
 Laftel Mania is an unofficial extension and is not made or approved by Laftel. The current version is `1.3.0`, and I am preparing it for a public Chrome Web Store release.
 
-The idea was simple: move the mouse less while coding and watching anime. Laftel Mania turns that small annoyance into two useful things: playback shortcuts and an OSD that is easy to see.
+The idea was simple: watch anime comfortably without missing the moment when the AI finishes its work. Laftel Mania solves that small problem with playback shortcuts and an OSD that is easy to see.
+
+**In one line:** If you vibe code and watch anime on one laptop, try Laftel Mania. I recommend watching at `1.5x`.
