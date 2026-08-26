@@ -32,7 +32,7 @@ I had just started managing `babypaunch.github.io` as my blog and project websit
 
 This does not mean applying one policy to every project. The website is a shared entrance, while each project's documents remain separate.
 
-A small extension without accounts or payments may need only a privacy policy. A project with sign-in, server storage, or subscriptions may also need terms and data deletion instructions. Each project can include only the documents that match what it actually does.
+A small project without accounts or payments may need only a privacy policy. A project with sign-in, server storage, or subscriptions may also need terms and data deletion instructions. Each project can include only the documents that match what it actually does.
 
 Keeping them together makes their location and revision history easier to find. It does not remove the responsibility to update a policy when a feature changes. Because several projects share the same website, I also need to keep its domain and deployment healthy.
 
@@ -40,11 +40,21 @@ Keeping them together makes their location and revision history easier to find. 
 
 The default GitHub Pages address was already enough to publish policies. But I wanted a stable address that I could repeatedly submit to places such as the Chrome Web Store and Google OAuth.
 
-I bought `babypaunch.com` and connected it to GitHub Pages. The domain can remain the same even if I change hosting later, and every project can use one official address.
+I bought `babypaunch.com` and connected it to GitHub Pages. Cloudflare felt inexpensive for the domain purchase. The domain can remain the same even if I change hosting later, and every project can use one official address.
 
-The Cloudflare DNS setup added four A records and one CNAME for `www`. At first, the similar-looking records made me wonder whether something had been entered several times by mistake. The four A records were the official GitHub Pages addresses, while the fifth record connected `www.babypaunch.com` as an alias.
+Using the root domain and `www` address correctly with GitHub Pages required four A records and one CNAME in Cloudflare DNS.
 
-HTTP started working first, while HTTPS had to wait for GitHub to issue a certificate. I learned that connecting a domain is not complete the moment the values are saved. DNS propagation and certificate issuance need time.
+```text
+A     @     185.199.108.153
+A     @     185.199.109.153
+A     @     185.199.110.153
+A     @     185.199.111.153
+CNAME www   babypaunch.github.io
+```
+
+The four A records connect `babypaunch.com` to the GitHub Pages servers. The CNAME connects `www.babypaunch.com` to the default GitHub Pages address. I left every record in DNS-only mode without the Cloudflare proxy.
+
+HTTP started working first. HTTPS needed time for DNS propagation and certificate issuance, so I had to wait before I could verify it.
 
 ## Showing projects before document types
 
