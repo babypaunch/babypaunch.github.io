@@ -81,6 +81,9 @@ blog:
     laftel-mania: LaftelMania
     sweet-like-cookies: SweetLikeCookies
     first-song: 첫노래
+    project-policies: 프로젝트정책
+    github-pages: GitHubPages
+    custom-domain: 개인도메인
 policies:
   intro: BabyPaunch가 제공하는 앱과 서비스의 정책 문서를 확인할 수 있습니다.
 not_found:

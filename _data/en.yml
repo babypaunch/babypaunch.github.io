@@ -81,6 +81,9 @@ blog:
     laftel-mania: LaftelMania
     sweet-like-cookies: SweetLikeCookies
     first-song: FirstSong
+    project-policies: ProjectPolicies
+    github-pages: GitHubPages
+    custom-domain: CustomDomain
 policies:
   intro: Policy documents for the apps and services provided by BabyPaunch.
 not_found:

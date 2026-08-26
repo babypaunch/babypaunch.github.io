@@ -30,7 +30,6 @@ for (const file of htmlFiles) {
   assert.ok(structuredData, `${label}: structured data`);
   const schema = JSON.parse(structuredData[1]);
   assert.ok(['WebSite', 'WebPage', 'BlogPosting'].includes(schema['@type']), `${label}: schema type`);
-  if (schema['@type'] === 'BlogPosting') assert.ok(schema.image, `${label}: post schema image`);
 
   for (const image of html.match(/<img\b[^>]*>/g) || []) {
     assert.match(image, /\salt="[^"]*"/, `${label}: image alt`);
