@@ -58,14 +58,21 @@ HTTP 연결은 먼저 완료됐고 HTTPS는 DNS 전파와 인증서 발급 시�
 
 그래서 정책 페이지를 프로젝트별 카드로 나눴다.
 
-```text
-BabyPaunch 웹사이트
-├─ 개인정보처리방침
-└─ 접근성 안내
-
-Laftel Mania
-└─ 개인정보처리방침
-```
+<ul class="article-tree">
+  <li>
+    <strong>BabyPaunch 웹사이트</strong>
+    <ul>
+      <li>개인정보처리방침</li>
+      <li>접근성 안내</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Laftel Mania</strong>
+    <ul>
+      <li>개인정보처리방침</li>
+    </ul>
+  </li>
+</ul>
 
 주소도 같은 규칙으로 정리했다.
 

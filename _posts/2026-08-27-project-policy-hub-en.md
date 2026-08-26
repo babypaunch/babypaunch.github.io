@@ -58,14 +58,21 @@ The first Policies page placed accessibility and privacy links in one list. That
 
 I reorganized the page into project cards.
 
-```text
-BabyPaunch Website
-├─ Privacy Policy
-└─ Accessibility
-
-Laftel Mania
-└─ Privacy Policy
-```
+<ul class="article-tree">
+  <li>
+    <strong>BabyPaunch Website</strong>
+    <ul>
+      <li>Privacy Policy</li>
+      <li>Accessibility</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Laftel Mania</strong>
+    <ul>
+      <li>Privacy Policy</li>
+    </ul>
+  </li>
+</ul>
 
 The URLs now follow one rule.
 
