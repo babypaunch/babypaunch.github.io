@@ -67,7 +67,7 @@ OSD는 다음 세 가지를 중요하게 봤다.
 
 Laftel Mania가 저장하는 정보는 마지막 재생속도 하나뿐이다. 이 값은 사용자의 Chrome 동기화 저장소에 보관되며 별도 개발자 서버로 보내지 않는다.
 
-로그인 정보, 방문 기록, 애니메이션 시청 기록과 페이지 내용도 수집하지 않는다. 자세한 내용은 [개인정보처리방침](https://babypaunch.github.io/public-policies/laftel-mania/privacy.html)에서 확인할 수 있다.
+로그인 정보, 방문 기록, 애니메이션 시청 기록과 페이지 내용도 수집하지 않는다. 자세한 내용은 [개인정보처리방침](https://babypaunch.com/public-policies/laftel-mania/privacy.html)에서 확인할 수 있다.
 
 Laftel Mania는 라프텔이 만들거나 승인한 공식 제품이 아닌 비공식 확장 프로그램이다. 현재 버전은 `1.3.0`이며 Chrome Web Store 공개를 준비하고 있다.
 

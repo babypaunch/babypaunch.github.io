@@ -21,7 +21,7 @@ for (const file of htmlFiles) {
   assert.match(html, /class="skip-link" href="#main"/, `${label}: skip link`);
   assert.match(html, /<meta name="description" content="[^"]+">/, `${label}: description`);
   assert.match(html, /<meta name="robots" content="[^"]+">/, `${label}: robots directive`);
-  assert.match(html, /<link rel="canonical" href="https:\/\/babypaunch\.github\.io\//, `${label}: canonical`);
+  assert.match(html, /<link rel="canonical" href="https:\/\/babypaunch\.com\//, `${label}: canonical`);
   for (const language of ['ko', 'en', 'x-default']) {
     assert.match(html, new RegExp(`<link rel="alternate" hreflang="${language}"`), `${label}: ${language} alternate`);
   }
@@ -65,7 +65,7 @@ for (const preference of ['prefers-reduced-motion', 'prefers-contrast', 'forced-
 
 const sitemap = fs.readFileSync(path.join(siteRoot, 'sitemap.xml'), 'utf8');
 for (const url of ['/accessibility/', '/en/accessibility/', '/contact/', '/en/contact/']) {
-  assert.ok(sitemap.includes(`https://babypaunch.github.io${url}`), `sitemap: ${url}`);
+  assert.ok(sitemap.includes(`https://babypaunch.com${url}`), `sitemap: ${url}`);
 }
 
 console.log(`Site quality tests passed for ${htmlFiles.length} pages.`);

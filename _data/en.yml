@@ -86,7 +86,7 @@ policies:
     - label: BabyPaunch Website Privacy Policy
       url: /en/privacy/
     - label: Laftel Mania Privacy Policy (Korean)
-      url: https://babypaunch.github.io/public-policies/laftel-mania/privacy.html
+      url: https://babypaunch.com/public-policies/laftel-mania/privacy.html
 not_found:
   title: We wandered<br>a little too far.
   message: The requested page is missing or its address has changed.

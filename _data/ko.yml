@@ -86,7 +86,7 @@ policies:
     - label: BabyPaunch 웹사이트 개인정보처리방침
       url: /privacy/
     - label: Laftel Mania 개인정보처리방침
-      url: https://babypaunch.github.io/public-policies/laftel-mania/privacy.html
+      url: https://babypaunch.com/public-policies/laftel-mania/privacy.html
 not_found:
   title: 길을 조금<br>벗어났네요.
   message: 요청한 페이지가 없거나 주소가 변경되었습니다.
