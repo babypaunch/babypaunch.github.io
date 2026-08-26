@@ -37,7 +37,7 @@ body {
 a { color: inherit; }
 p { text-wrap: pretty; }
 h1, h2, h3 { text-wrap: balance; word-break: keep-all; }
-code, pre, kbd, samp { font-family: var(--mono); }
+code, pre, kbd, samp { font-family: var(--mono); font-variant-ligatures: none; }
 
 .visually-hidden {
   position: absolute;
@@ -369,6 +369,8 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .article-body p, .article-body ul { margin: 0 0 1.5rem; }
 .article-body ul { padding-left: 1.25rem; }
 .article-body code { padding: .1rem .4rem; border: 1px solid var(--ink); border-radius: .2rem; background: var(--ink); color: var(--paper); font: .9em/1.5 var(--mono); }
+.article-body pre { margin: 0 0 1.5rem; padding: 1.25rem; overflow-x: auto; border: 1px solid var(--ink); border-radius: .2rem; background: var(--ink); color: var(--paper); font: .9rem/1.7 var(--mono); white-space: pre; }
+.article-body pre code { padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; }
 .article-body details { margin-top: 2rem; padding-block: 1rem; border-block: 1px solid var(--line); }
 .article-body summary { cursor: pointer; font-weight: 700; }
 .article-back { margin-top: 1rem; }

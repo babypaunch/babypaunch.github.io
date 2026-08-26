@@ -21,11 +21,7 @@ I plan to keep making new projects.
 As each project appears, so do the documents that need to be public.
 
 ```text
-Privacy Policy
-Terms of Service
-Account Deletion Instructions
-Data Deletion Instructions
-Accessibility Statement
+Privacy Policy, Terms of Service, Account Deletion Instructions, Data Deletion Instructions, Accessibility Statement
 ```
 
 A Chrome extension and a web service may also need different information.
