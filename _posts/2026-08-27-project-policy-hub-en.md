@@ -3,7 +3,7 @@ layout: post
 locale: en
 page_key: blog
 title: I decided to keep every project's policies in one place
-description: I connected babypaunch.com and organized policies by project for the things I will build next.
+description: I connected a newly purchased domain to my GitHub Pages site and organized policies by project for the things I will build next.
 category: Making
 date: 2026-08-27 00:00:00 +0900
 permalink: /en/blog/project-policy-hub/
@@ -18,17 +18,27 @@ tags:
 
 I plan to keep making new projects.
 
-As each project appears, so do public documents such as privacy policies, terms, and account deletion instructions. A Chrome extension and a web service may also need different information.
+As each project appears, so do the documents that need to be public.
+
+```text
+Privacy Policy
+Terms of Service
+Account Deletion Instructions
+Data Deletion Instructions
+Accessibility Statement
+```
+
+A Chrome extension and a web service may also need different information.
 
 I could build a separate policy site for every project, but I did not want to maintain the same contact and operator information in several places.
 
 That led me to one question.
 
-<p class="article-question">Could I manage the policies for everything I build in one place?</p>
+<p class="article-question">What if I managed every project's policies in one place?</p>
 
 ## Using my website as a policy hub
 
-I had just started managing `babypaunch.github.io` as my blog and project website. Adding a policy section there meant I would not need to create another site each time I made something new.
+I had just started managing `babypaunch.github.io` as my blog and project website. Adding a policy section there meant I would not need to create another site each time I made something new. (Best of all, it is free. How good is that?!)
 
 This does not mean applying one policy to every project. The website is a shared entrance, while each project's documents remain separate.
 
@@ -43,14 +53,6 @@ The default GitHub Pages address was already enough to publish policies. But I w
 I bought `babypaunch.com` and connected it to GitHub Pages. Cloudflare felt inexpensive for the domain purchase. The domain can remain the same even if I change hosting later, and every project can use one official address.
 
 Using the root domain and `www` address correctly with GitHub Pages required four A records and one CNAME in Cloudflare DNS.
-
-```text
-A     @     185.199.108.153
-A     @     185.199.109.153
-A     @     185.199.110.153
-A     @     185.199.111.153
-CNAME www   babypaunch.github.io
-```
 
 The four A records connect `babypaunch.com` to the GitHub Pages servers. The CNAME connects `www.babypaunch.com` to the default GitHub Pages address. I left every record in DNS-only mode without the Cloudflare proxy.
 
@@ -82,8 +84,8 @@ When a new project appears, I can add its information and the policies it needs.
 
 The main advantage is that the system can grow without turning into one long mixed list. If a project needs another document, it goes under that project. Visitors can choose a project first and see only the relevant policies.
 
-There is a tradeoff. Because every policy lives under one domain, a missed renewal or deployment problem could affect several projects at once. Central management is convenient, but it also makes maintaining this website more important.
+There is a tradeoff. Because every policy lives under one domain, a missed renewal or deployment problem could affect several projects at once. Central management is convenient, but it also makes maintaining this website more important. (It is free, so I plan to use it for the rest of my life.)
 
-For now, the hub contains the BabyPaunch website and Laftel Mania. When AI-Karaoke and future projects become public, their policies will join them in the same place.
+For now, the hub contains the BabyPaunch website and Laftel Mania. Whenever I make a new project, I will add the policies it needs in the same place.
 
-<p class="article-summary"><strong>In one line:</strong> Instead of waiting for my projects to pile up, I made <code>babypaunch.com</code> the shared policy hub for everything I build next.</p>
+<p class="article-summary"><strong>In one line:</strong> Instead of waiting for my projects to pile up, I made my GitHub Pages site the shared policy hub for all of them.</p>
