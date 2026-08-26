@@ -6,9 +6,18 @@ layout: default
   <p class="eyebrow" lang="en">Clear rules, no small print</p>
   <h1>Policies</h1>
   <p class="page-intro">{{ t.policies.intro }}</p>
-  <ul class="policy-list">
-    {% for policy in t.policies.links %}
-    <li><a href="{{ policy.url }}"><span>{{ policy.label }}</span></a></li>
+  <div class="policy-projects">
+    {% for project in site.data.policies %}
+    <section class="policy-project" id="{{ project.slug }}">
+      <p class="policy-type">{{ project.type[page.locale] }}</p>
+      <h2>{{ project.name[page.locale] }}</h2>
+      <p>{{ project.description[page.locale] }}</p>
+      <ul class="policy-list">
+        {% for document in project.documents %}
+        <li><a href="{{ document.url[page.locale] }}"><span>{{ document.label[page.locale] }}</span></a></li>
+        {% endfor %}
+      </ul>
+    </section>
     {% endfor %}
-  </ul>
+  </div>
 </main>

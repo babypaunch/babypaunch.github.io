@@ -10,8 +10,8 @@ routes:
   music: /en/music/
   blog: /en/blog/
   policies: /en/policies/
-  privacy: /en/privacy/
-  accessibility: /en/accessibility/
+  privacy: /en/policies/babypaunch/privacy/
+  accessibility: /en/policies/babypaunch/accessibility/
   contact: /en/contact/
   not_found: /en/
 pages:
@@ -33,6 +33,9 @@ pages:
   accessibility:
     title: Accessibility — BabyPaunch
     description: The accessibility goals, supported features, and known limitations of the BabyPaunch website.
+  laftel_mania_privacy:
+    title: Laftel Mania Privacy Policy — BabyPaunch
+    description: What Laftel Mania stores and why it requests access to websites.
   contact:
     title: Contact — BabyPaunch
     description: How to contact BabyPaunch about apps, music, accessibility, and policies.
@@ -80,13 +83,6 @@ blog:
     first-song: FirstSong
 policies:
   intro: Policy documents for the apps and services provided by BabyPaunch.
-  links:
-    - label: BabyPaunch Website Accessibility
-      url: /en/accessibility/
-    - label: BabyPaunch Website Privacy Policy
-      url: /en/privacy/
-    - label: Laftel Mania Privacy Policy (Korean)
-      url: https://babypaunch.com/public-policies/laftel-mania/privacy.html
 not_found:
   title: We wandered<br>a little too far.
   message: The requested page is missing or its address has changed.

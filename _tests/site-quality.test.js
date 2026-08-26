@@ -64,8 +64,22 @@ for (const preference of ['prefers-reduced-motion', 'prefers-contrast', 'forced-
 }
 
 const sitemap = fs.readFileSync(path.join(siteRoot, 'sitemap.xml'), 'utf8');
-for (const url of ['/accessibility/', '/en/accessibility/', '/contact/', '/en/contact/']) {
+for (const url of [
+  '/policies/babypaunch/accessibility/',
+  '/en/policies/babypaunch/accessibility/',
+  '/policies/babypaunch/privacy/',
+  '/en/policies/babypaunch/privacy/',
+  '/policies/laftel-mania/privacy/',
+  '/en/policies/laftel-mania/privacy/',
+  '/contact/',
+  '/en/contact/',
+]) {
   assert.ok(sitemap.includes(`https://babypaunch.com${url}`), `sitemap: ${url}`);
+}
+
+const policyData = fs.readFileSync(path.join(__dirname, '..', '_data', 'policies.yml'), 'utf8');
+for (const project of ['babypaunch', 'laftel-mania']) {
+  assert.ok(policyData.includes(`slug: ${project}`), `policies.yml: ${project}`);
 }
 
 console.log(`Site quality tests passed for ${htmlFiles.length} pages.`);

@@ -67,7 +67,7 @@ The page and video are not reloaded, so playback continues. Pressing `Shift + M`
 
 Laftel Mania stores only the last playback speed. The value stays in the user's Chrome sync storage and is not sent to a separate developer server.
 
-It does not collect login information, browsing history, anime viewing history, or page content. See the [privacy policy](https://babypaunch.com/public-policies/laftel-mania/privacy.html) for details.
+It does not collect login information, browsing history, anime viewing history, or page content. See the [privacy policy](/en/policies/laftel-mania/privacy/) for details.
 
 Laftel Mania is an unofficial extension and is not made or approved by Laftel. The current version is `1.3.0`, and I am preparing it for a public Chrome Web Store release.
 

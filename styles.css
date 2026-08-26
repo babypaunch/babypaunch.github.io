@@ -372,8 +372,13 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .article-back { margin-top: 1rem; }
 .not-found { min-height: calc(100vh - 176px); }
 .not-found-actions { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 1rem; }
-.policy-list { margin: 4rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
-.policy-list a { display: flex; align-items: center; gap: .75rem; padding: 1.5rem 0; border-bottom: 1px solid var(--line); font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.4rem); text-decoration: none; word-break: keep-all; }
+.policy-projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: 2rem; margin-top: 4rem; }
+.policy-project { padding: clamp(1.5rem, 4vw, 2.5rem); border: 1px solid var(--ink); }
+.policy-project h2 { margin-bottom: 1rem; font-size: clamp(2rem, 4vw, 3.5rem); }
+.policy-project > p:not(.policy-type) { max-width: 32rem; color: var(--muted); }
+.policy-type { margin-top: 0; text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; font-weight: 700; }
+.policy-list { margin: 2rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
+.policy-list a { display: flex; align-items: center; gap: .75rem; padding: 1.25rem 0; border-bottom: 1px solid var(--line); font-family: var(--serif); font-size: clamp(1.35rem, 3vw, 2rem); text-decoration: none; word-break: keep-all; }
 .policy-list a::before { margin-right: 0; }
 
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }

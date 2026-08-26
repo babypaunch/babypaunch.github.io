@@ -19,9 +19,11 @@ python -m http.server 8000 --directory _site
 
 - `/robots.txt`: 검색 로봇 접근 규칙과 sitemap 위치
 - `/sitemap.xml`: 공개 페이지와 블로그 글의 검색 색인 목록
-- `/privacy/`, `/en/privacy/`: BabyPaunch 웹사이트 한영 개인정보처리방침
+- `/policies/`, `/en/policies/`: 프로젝트별 정책 허브
+- `/policies/<project>/<document>/`: 프로젝트별 한국어 정책 문서
+- `/en/policies/<project>/<document>/`: 프로젝트별 영문 정책 문서
 
-공통 SEO 메타데이터는 `_includes/seo.html`에서 관리합니다. Google AdSense 또는 분석 도구를 도입할 때는 광고 코드를 적용하기 전에 한영 개인정보처리방침을 함께 갱신합니다.
+정책 허브의 프로젝트와 문서 목록은 `_data/policies.yml`에서 관리합니다. 정책 본문은 해당 프로젝트 폴더에 둡니다. 공통 SEO 메타데이터는 `_includes/seo.html`에서 관리합니다. Google AdSense 또는 분석 도구를 도입할 때는 광고 코드를 적용하기 전에 한영 개인정보처리방침을 함께 갱신합니다.
 
 ## 새 글 접근성·SEO 체크리스트
 
@@ -35,7 +37,7 @@ python -m http.server 8000 --directory _site
 - 새 태그는 `_data/ko.yml`과 `_data/en.yml`에 함께 등록합니다.
 - 발행 전 Jekyll 빌드 후 `_tests`의 두 Node 검사를 실행합니다.
 
-접근성 목표와 알려진 제한 사항은 `/accessibility/`와 `/en/accessibility/`에서 공개합니다.
+접근성 목표와 알려진 제한 사항은 `/policies/babypaunch/accessibility/`와 `/en/policies/babypaunch/accessibility/`에서 공개합니다.
 
 ## 언어 구조
 
