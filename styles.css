@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Gowun+Batang:wght@400;700&family=Manrope:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Gowun+Batang:wght@400;700&family=Manrope:wght@500;600;700&family=Nanum+Gothic+Coding:wght@400;700&display=swap');
 
 :root {
   color-scheme: light;
@@ -11,6 +11,7 @@
   --line: #a8aa9f;
   --serif: 'DM Serif Display', 'Gowun Batang', serif;
   --sans: 'Manrope', sans-serif;
+  --mono: 'Nanum Gothic Coding', 'D2Coding', 'Cascadia Mono', Consolas, monospace;
   --ease-out: cubic-bezier(.22, 1, .36, 1);
   --page-gutters: 2rem;
   --page-max: 1200px;
@@ -36,6 +37,7 @@ body {
 a { color: inherit; }
 p { text-wrap: pretty; }
 h1, h2, h3 { text-wrap: balance; word-break: keep-all; }
+code, pre, kbd, samp { font-family: var(--mono); }
 
 .visually-hidden {
   position: absolute;
@@ -366,7 +368,7 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .article-figure figcaption { margin-top: .75rem; color: var(--muted); font: .85rem/1.65 var(--sans); }
 .article-body p, .article-body ul { margin: 0 0 1.5rem; }
 .article-body ul { padding-left: 1.25rem; }
-.article-body code { padding: .1rem .4rem; border: 1px solid var(--ink); border-radius: .2rem; background: var(--ink); color: var(--paper); font: .9em/1.5 ui-monospace, monospace; }
+.article-body code { padding: .1rem .4rem; border: 1px solid var(--ink); border-radius: .2rem; background: var(--ink); color: var(--paper); font: .9em/1.5 var(--mono); }
 .article-body details { margin-top: 2rem; padding-block: 1rem; border-block: 1px solid var(--line); }
 .article-body summary { cursor: pointer; font-weight: 700; }
 .article-back { margin-top: 1rem; }
