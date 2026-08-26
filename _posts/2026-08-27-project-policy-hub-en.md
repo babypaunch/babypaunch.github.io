@@ -76,10 +76,8 @@ I reorganized the page into project cards.
 
 The URLs now follow one rule.
 
-```text
-/policies/project/document/
-/en/policies/project/document/
-```
+<p><code>/policies/project/document/</code><br>
+<code>/en/policies/project/document/</code></p>
 
 When a new project appears, I can add its information and the policies it needs. Korean and English pages use the same structure.
 
