@@ -78,7 +78,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: 1.5rem;
+  padding: 1.5rem clamp(.75rem, 2vw, 1.5rem);
   border-bottom: 1px solid var(--line);
   background: color-mix(in srgb, var(--paper) 92%, transparent);
   backdrop-filter: blur(12px);
