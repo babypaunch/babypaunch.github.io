@@ -321,16 +321,19 @@ h2 {
   background: var(--ink);
   color: var(--paper);
 }
-.home-music > :not(.music-wave) { position: relative; z-index: 1; }
-.music-wave {
+.home-music > :not(.music-note) { position: relative; z-index: 1; }
+.music-note {
   position: absolute;
-  right: -5rem;
-  bottom: -1rem;
-  width: min(72rem, 88%);
-  color: color-mix(in srgb, var(--paper) 13%, transparent);
+  top: 50%;
+  right: clamp(-8rem, -4vw, -3rem);
+  color: color-mix(in srgb, var(--paper) 7%, transparent);
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(25rem, 48vw, 44rem);
+  line-height: .75;
   pointer-events: none;
+  transform: translateY(-47%) rotate(10deg);
+  transform-origin: center;
 }
-.music-wave path { fill: none; stroke: currentColor; stroke-width: 2; vector-effect: non-scaling-stroke; }
 .home-music-index { margin: clamp(3rem, 8vw, 7rem) 0 0; color: var(--accent-on-dark); }
 .home-music-content { max-width: 760px; }
 .home-music h2 { margin-block: 1rem 2rem; }
@@ -339,17 +342,14 @@ h2 {
 .home-music-links { display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; margin-top: 2rem; }
 .journal .text-link { margin-top: 1rem; }
 .journal { position: relative; overflow: hidden; }
-.journal > * { position: relative; z-index: 1; }
-.journal::after {
-  content: '';
+.journal > :not(.journal-halftone) { position: relative; z-index: 1; }
+.journal-halftone {
   position: absolute;
-  right: clamp(-5rem, -2vw, -1rem);
-  bottom: clamp(-6rem, -3vw, -2rem);
-  width: clamp(13rem, 27vw, 23rem);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background-image: radial-gradient(circle, color-mix(in srgb, var(--ink) 14%, transparent) 0 1px, transparent 1.5px);
-  background-size: 17px 17px;
+  right: clamp(-2rem, -1vw, 0rem);
+  bottom: clamp(-2rem, -1vw, 0rem);
+  width: clamp(13rem, 25vw, 21rem);
+  color: color-mix(in srgb, var(--ink) 18%, transparent);
+  fill: currentColor;
   pointer-events: none;
 }
 
@@ -463,10 +463,10 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
   .orbit { top: 7rem; right: 0; width: 6.5rem; }
   .about, .journal, .home-music { grid-template-columns: 1fr; gap: 1.5rem; }
   .home-music { padding-block: 3rem; }
-  .music-wave { right: -11rem; bottom: 1rem; width: 42rem; }
+  .music-note { right: -3.5rem; font-size: 24rem; }
   .home-music-index { margin-top: 1.5rem; }
   .section-heading { display: block; }
-  .journal::after { right: -7rem; bottom: -5rem; width: 17rem; }
+  .journal-halftone { right: -1.5rem; bottom: -1rem; width: 14rem; }
   .app-item { grid-template-columns: 3rem 1fr; }
   .app-item .status { grid-column: 2; justify-self: start; }
   .music-video { height: max(200px, calc(56.25vw - 18px)); aspect-ratio: auto; }
@@ -499,6 +499,7 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
     transition-duration: .01ms !important;
   }
   .hero::before { opacity: .045 !important; }
+  .music-note { transform: translateY(-47%) rotate(10deg) !important; }
 }
 
 @media (prefers-contrast: more) {

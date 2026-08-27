@@ -27,9 +27,7 @@ layout: default
     </div>
   </section>
   <section class="home-music" id="music-feature" aria-labelledby="music-feature-title">
-    <svg class="music-wave" viewBox="0 0 1000 260" aria-hidden="true" focusable="false">
-      <path d="M0 130c70 0 70-50 140-50s70 100 140 100S350 40 420 40s70 180 140 180 70-130 140-130 70 70 140 70 70-30 160-30"/>
-    </svg>
+    <span class="music-note" aria-hidden="true">♪</span>
     <div>
       <p class="section-number">03 / Music</p>
       <p class="app-index home-music-index" aria-hidden="true">M—01</p>
@@ -45,6 +43,15 @@ layout: default
     </div>
   </section>
   <section class="journal" aria-labelledby="journal-title">
+    <svg class="journal-halftone" viewBox="0 0 240 240" aria-hidden="true" focusable="false">
+      <circle cx="220" cy="40" r="1.5"/>
+      <circle cx="190" cy="70" r="1.5"/><circle cx="220" cy="70" r="1.8"/>
+      <circle cx="160" cy="100" r="1.5"/><circle cx="190" cy="100" r="1.8"/><circle cx="220" cy="100" r="2.1"/>
+      <circle cx="130" cy="130" r="1.5"/><circle cx="160" cy="130" r="1.8"/><circle cx="190" cy="130" r="2.1"/><circle cx="220" cy="130" r="2.4"/>
+      <circle cx="100" cy="160" r="1.5"/><circle cx="130" cy="160" r="1.8"/><circle cx="160" cy="160" r="2.1"/><circle cx="190" cy="160" r="2.4"/><circle cx="220" cy="160" r="2.7"/>
+      <circle cx="70" cy="190" r="1.5"/><circle cx="100" cy="190" r="1.8"/><circle cx="130" cy="190" r="2.1"/><circle cx="160" cy="190" r="2.4"/><circle cx="190" cy="190" r="2.7"/><circle cx="220" cy="190" r="3"/>
+      <circle cx="40" cy="220" r="1.5"/><circle cx="70" cy="220" r="1.8"/><circle cx="100" cy="220" r="2.1"/><circle cx="130" cy="220" r="2.4"/><circle cx="160" cy="220" r="2.7"/><circle cx="190" cy="220" r="3"/><circle cx="220" cy="220" r="3.3"/>
+    </svg>
     <p class="section-number">04 / Journal</p>
     <div><h2 id="journal-title">{{ t.home.journal_title }}</h2><p>{{ t.home.journal_copy }}</p><a class="text-link" href="{{ t.routes.blog }}">{{ t.home.blog_link }}</a></div>
   </section>
