@@ -69,7 +69,7 @@ Laftel Mania stores only the last playback speed. The value stays in the user's 
 
 It does not collect login information, browsing history, anime viewing history, or page content. See the [privacy policy](/en/policies/laftel-mania/privacy/) for details.
 
-Laftel Mania is an unofficial extension and is not made or approved by Laftel. The current version is `1.3.0`, and I am preparing it for a public Chrome Web Store release.
+Laftel Mania is an unofficial extension and is not made or approved by Laftel. The current version is `1.3.0` and is [available to install from the Chrome Web Store](https://chromewebstore.google.com/detail/laftel-mania/ffpoolknghcckcdkaomkbhginppamkcp).
 
 The idea was simple. I wanted to watch anime comfortably without missing the time when the AI finished its work. Laftel Mania solves that small inconvenience with shortcuts and an OSD that is easy to see.
 

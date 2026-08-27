@@ -20,7 +20,7 @@ layout: default
       {% for app in t.home.apps %}
       <article class="app-item">
         <p class="app-index">A—0{{ forloop.index }}</p>
-        <div><h3>{{ app.name }}</h3><p>{{ app.description }}</p></div>
+        <div><h3>{% if app.url %}<a href="{{ app.url }}" target="_blank" rel="noopener noreferrer">{{ app.name }}</a>{% else %}{{ app.name }}{% endif %}</h3><p>{{ app.description }}</p></div>
         <span class="status">{{ app.status }}</span>
       </article>
       {% endfor %}
