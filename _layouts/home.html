@@ -15,6 +15,17 @@ layout: default
     <div><h2 id="about-title">{{ t.home.about_title }}</h2><p>{{ t.home.about_copy }}</p></div>
   </section>
   <section class="apps" id="apps" aria-labelledby="apps-title">
+    <svg class="apps-diagram" viewBox="0 0 420 220" aria-hidden="true" focusable="false">
+      <g fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="15" y="80" width="125" height="76"/>
+        <path d="M30 98h20v15H30zm30 0h20v15H60zm30 0h20v15H90zM30 123h32v15H30zm42 0h53v15H72z"/>
+        <path d="M155 118h112m-13-10 13 10-13 10"/>
+        <circle cx="178" cy="118" r="5" fill="currentColor" stroke="none"/>
+        <circle cx="216" cy="118" r="5" fill="currentColor" stroke="none"/>
+        <rect x="285" y="52" width="120" height="132"/>
+        <path d="m332 88 34 30-34 30z"/>
+      </g>
+    </svg>
     <div class="section-heading"><p class="section-number">02 / Apps</p><h2 id="apps-title">{{ t.home.apps_title }}</h2></div>
     <div class="app-list">
       {% for app in t.home.apps %}
