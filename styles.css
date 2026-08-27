@@ -53,7 +53,7 @@ code, pre, kbd, samp { font-family: var(--mono); font-variant-ligatures: none; }
 
 .skip-link {
   position: fixed;
-  z-index: 10;
+  z-index: 30;
   top: 0;
   left: 1rem;
   padding: .7rem 1rem;
@@ -72,11 +72,16 @@ footer {
 }
 
 .site-header {
+  position: sticky;
+  z-index: 20;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-block: 1.5rem;
   border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(12px);
 }
 
 .brand {
