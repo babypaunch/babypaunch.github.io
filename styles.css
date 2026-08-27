@@ -287,17 +287,7 @@ h2 {
 }
 .about div > p { color: color-mix(in srgb, var(--paper) 75%, var(--ink)); }
 
-.apps { position: relative; padding: clamp(5rem, 10vw, 9rem) var(--section-inset); overflow: hidden; border-top: 1px solid var(--line); }
-.apps > :not(.apps-diagram) { position: relative; z-index: 1; }
-.apps-diagram {
-  position: absolute;
-  top: clamp(3rem, 7vw, 6rem);
-  right: clamp(-3rem, 1vw, 1rem);
-  width: clamp(15rem, 30vw, 25rem);
-  color: var(--ink);
-  opacity: .1;
-  pointer-events: none;
-}
+.apps { padding: clamp(5rem, 10vw, 9rem) var(--section-inset); border-top: 1px solid var(--line); }
 .section-heading { display: flex; justify-content: space-between; gap: 2rem; align-items: baseline; }
 .section-heading h2 { max-width: 800px; }
 .app-list { margin-top: 2rem; border-top: 1px solid var(--ink); }
@@ -322,13 +312,25 @@ h2 {
 .app-item div p { max-width: 520px; margin-bottom: 0; color: var(--muted); }
 .status { padding: .35rem .65rem; border: 1px solid currentColor; border-radius: 99px; }
 .home-music {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(10rem, 1fr) 3fr;
   gap: 2rem;
   padding: clamp(4rem, 8vw, 7rem) var(--section-inset);
+  overflow: hidden;
   background: var(--ink);
   color: var(--paper);
 }
+.home-music > :not(.music-wave) { position: relative; z-index: 1; }
+.music-wave {
+  position: absolute;
+  right: -5rem;
+  bottom: -1rem;
+  width: min(72rem, 88%);
+  color: color-mix(in srgb, var(--paper) 13%, transparent);
+  pointer-events: none;
+}
+.music-wave path { fill: none; stroke: currentColor; stroke-width: 2; vector-effect: non-scaling-stroke; }
 .home-music-index { margin: clamp(3rem, 8vw, 7rem) 0 0; color: var(--accent-on-dark); }
 .home-music-content { max-width: 760px; }
 .home-music h2 { margin-block: 1rem 2rem; }
@@ -336,6 +338,20 @@ h2 {
 .home-music-content > p:last-of-type { max-width: 620px; color: color-mix(in srgb, var(--paper) 75%, var(--ink)); font-family: 'Gowun Batang', serif; font-size: 1.08rem; }
 .home-music-links { display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; margin-top: 2rem; }
 .journal .text-link { margin-top: 1rem; }
+.journal { position: relative; overflow: hidden; }
+.journal > * { position: relative; z-index: 1; }
+.journal::after {
+  content: '';
+  position: absolute;
+  right: clamp(-5rem, -2vw, -1rem);
+  bottom: clamp(-6rem, -3vw, -2rem);
+  width: clamp(13rem, 27vw, 23rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-image: radial-gradient(circle, color-mix(in srgb, var(--ink) 14%, transparent) 0 1px, transparent 1.5px);
+  background-size: 17px 17px;
+  pointer-events: none;
+}
 
 footer {
   display: grid;
@@ -447,9 +463,10 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
   .orbit { top: 7rem; right: 0; width: 6.5rem; }
   .about, .journal, .home-music { grid-template-columns: 1fr; gap: 1.5rem; }
   .home-music { padding-block: 3rem; }
+  .music-wave { right: -11rem; bottom: 1rem; width: 42rem; }
   .home-music-index { margin-top: 1.5rem; }
   .section-heading { display: block; }
-  .apps-diagram { top: 3.5rem; right: -7rem; width: 20rem; opacity: .075; }
+  .journal::after { right: -7rem; bottom: -5rem; width: 17rem; }
   .app-item { grid-template-columns: 3rem 1fr; }
   .app-item .status { grid-column: 2; justify-self: start; }
   .music-video { height: max(200px, calc(56.25vw - 18px)); aspect-ratio: auto; }
@@ -482,7 +499,6 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
     transition-duration: .01ms !important;
   }
   .hero::before { opacity: .045 !important; }
-  .apps-diagram { opacity: .1 !important; }
 }
 
 @media (prefers-contrast: more) {
