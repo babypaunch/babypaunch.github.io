@@ -345,8 +345,8 @@ h2 {
 .journal > :not(.journal-halftone) { position: relative; z-index: 1; }
 .journal-halftone {
   position: absolute;
-  right: clamp(-2rem, -1vw, 0rem);
-  bottom: clamp(-2rem, -1vw, 0rem);
+  right: clamp(1rem, 2vw, 2rem);
+  bottom: clamp(1rem, 2vw, 2rem);
   width: clamp(13rem, 25vw, 21rem);
   color: color-mix(in srgb, var(--ink) 18%, transparent);
   fill: currentColor;
@@ -466,7 +466,7 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
   .music-note { right: -3.5rem; font-size: 24rem; }
   .home-music-index { margin-top: 1.5rem; }
   .section-heading { display: block; }
-  .journal-halftone { right: -1.5rem; bottom: -1rem; width: 14rem; }
+  .journal-halftone { right: 1rem; bottom: 1rem; width: 14rem; }
   .app-item { grid-template-columns: 3rem 1fr; }
   .app-item .status { grid-column: 2; justify-self: start; }
   .music-video { height: max(200px, calc(56.25vw - 18px)); aspect-ratio: auto; }
