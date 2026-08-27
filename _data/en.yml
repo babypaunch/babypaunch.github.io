@@ -84,6 +84,9 @@ blog:
     project-policies: ProjectPolicies
     github-pages: GitHubPages
     custom-domain: CustomDomain
+    saju: Saju
+    dating-app: DatingApp
+    product-design: ProductDesign
 policies:
   intro: Policy documents for the apps and services provided by BabyPaunch.
 not_found:
