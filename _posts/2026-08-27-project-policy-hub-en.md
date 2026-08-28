@@ -52,14 +52,6 @@ The four A records connect `babypaunch.com` to the GitHub Pages servers. The CNA
 
 HTTP started working first. HTTPS needed time for DNS propagation and certificate issuance, so I had to wait before I could verify it.
 
-### August 28, 2026 update: HTTPS is now working
-
-Even after more than 24 hours, the HTTPS certificate had not been created automatically. The DNS records already matched GitHub Pages' recommended values. The actual problem was a failed certificate issuance job left in GitHub Pages.
-
-I removed the custom domain from the GitHub Pages settings, waited briefly, and added `babypaunch.com` again to restart certificate issuance from the beginning. After confirming that the new certificate covered both `babypaunch.com` and `www.babypaunch.com`, I enabled HTTPS enforcement.
-
-HTTP now redirects to HTTPS automatically, and both the root domain and the `www` address use an encrypted connection. I also learned that when waiting does not solve the problem, checking the GitHub Pages certificate state should come before repeatedly changing DNS records.
-
 ## Showing projects before document types
 
 The first Policies page placed accessibility and privacy links in one list. That worked with only a few documents, but it would become unclear which policy belonged to which project as the list grew.
@@ -94,5 +86,13 @@ The main advantage is that the system can grow without turning into one long mix
 There is a tradeoff. Because every policy lives under one domain, a missed renewal or deployment problem could affect several projects at once. Central management is convenient, but it also makes maintaining this website more important. (It is free, so I plan to use it for the rest of my life.)
 
 For now, the hub contains the BabyPaunch website and Laftel Mania. Whenever I make a new project, I will add the policies it needs in the same place.
+
+### August 28, 2026 update: HTTPS is now working
+
+Even after more than 24 hours, the HTTPS certificate had not been created automatically. The DNS records already matched GitHub Pages' recommended values. The actual problem was a failed certificate issuance job left in GitHub Pages.
+
+I removed the custom domain from the GitHub Pages settings, waited briefly, and added `babypaunch.com` again to restart certificate issuance from the beginning. After confirming that the new certificate covered both `babypaunch.com` and `www.babypaunch.com`, I enabled HTTPS enforcement.
+
+HTTP now redirects to HTTPS automatically, and both the root domain and the `www` address use an encrypted connection. I also learned that when waiting does not solve the problem, checking the GitHub Pages certificate state should come before repeatedly changing DNS records.
 
 <p class="article-summary"><strong>In one line:</strong> Instead of waiting for my projects to pile up, I made my GitHub Pages site the shared policy hub for all of them.</p>
