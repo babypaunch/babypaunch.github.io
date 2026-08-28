@@ -43,7 +43,7 @@ Needing analytics did not mean it should run before a visitor had a choice.
 
 On the first visit, an analytics consent modal appears in Korean or English. The Google Analytics script itself is not loaded until the visitor selects <strong>Allow analytics</strong>. Declining does not remove or limit any site feature.
 
-The choice is stored in the browser's local storage. It can be changed later through <strong>Analytics settings</strong> at the bottom of every page. A short confirmation appears after accepting or declining and disappears automatically after two seconds.
+The choice is stored in the browser's local storage. It can be changed later through <button class="footer-button" type="button" data-analytics-settings>Analytics settings</button> at the bottom of every page. A short confirmation appears after accepting or declining and disappears automatically after two seconds.
 
 The modal is centred with a dimmed background. Keyboard focus stays inside it, and an important choice cannot be dismissed by clicking the background or pressing `Esc`.
 

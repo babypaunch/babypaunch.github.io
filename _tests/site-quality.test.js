@@ -67,6 +67,17 @@ const analyticsScript = fs.readFileSync(path.join(siteRoot, 'analytics-consent.j
 assert.match(analyticsScript, /localStorage\.setItem\(storageKey, choice\)/, 'analytics: consent choice persists');
 assert.match(analyticsScript, /analytics_storage: 'granted'/, 'analytics: granted only after consent');
 assert.match(analyticsScript, /2000/, 'analytics: toast dismisses after two seconds');
+assert.match(analyticsScript, /querySelectorAll\('\[data-analytics-settings\]'\)/, 'analytics: every settings control is connected');
+
+for (const relative of [
+  'blog/github-pages-analytics/index.html',
+  'en/blog/github-pages-analytics/index.html',
+  'policies/babypaunch/privacy/index.html',
+  'en/policies/babypaunch/privacy/index.html',
+]) {
+  const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
+  assert.ok((html.match(/data-analytics-settings/g) || []).length >= 2, `${relative}: inline and footer analytics settings controls`);
+}
 
 const sitemap = fs.readFileSync(path.join(siteRoot, 'sitemap.xml'), 'utf8');
 for (const url of [

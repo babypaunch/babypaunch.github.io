@@ -7,7 +7,7 @@
   const dialog = layer.querySelector('[role="dialog"]');
   const accept = layer.querySelector('[data-consent-accept]');
   const reject = layer.querySelector('[data-consent-reject]');
-  const settings = document.querySelector('[data-analytics-settings]');
+  const settings = document.querySelectorAll('[data-analytics-settings]');
   const toast = document.querySelector('[data-consent-toast]');
   const language = config.dataset.analyticsLanguage;
   const messages = language === 'en'
@@ -56,7 +56,7 @@
 
   accept.addEventListener('click', () => save('granted'));
   reject.addEventListener('click', () => save('denied'));
-  settings.addEventListener('click', showDialog);
+  settings.forEach((control) => control.addEventListener('click', showDialog));
   dialog.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') return;
     if (event.key !== 'Tab') return;
