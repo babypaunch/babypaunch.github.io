@@ -6,6 +6,7 @@ title: 블로그로 돈 벌고 싶다고? SEO부터 제대로 설정해야지
 description: 직접 광고나 홍보 없이 블로그 수익화를 고민하며 내 GitHub Pages의 SEO 설정과 빠진 부분을 점검하고 개선한 과정.
 category: Making
 date: 2026-08-29 07:35:00 +0900
+last_modified_at: 2026-08-29 07:44:00 +0900
 permalink: /blog/seo-before-blog-monetization/
 language_url: /en/blog/seo-before-blog-monetization/
 alternate_ko: /blog/seo-before-blog-monetization/
@@ -37,9 +38,9 @@ SEO 설정을 검토하고 마무리했는지 확인해 보니 아니었다.
 
 그래서 이번에는 내 GitHub Pages에 이미 되어 있던 설정과 빠진 부분을 하나씩 확인했다.
 
-<p class="article-question">블로그로 돈을 벌고 싶다면 광고보다 SEO 설정이 먼저 아닐까?</p>
+## 블로그로 돈을 벌고 싶다면 광고보다 SEO 설정이 먼저 아닐까?
 
-## SEO는 검색 순위를 억지로 올리는 기술이 아니다
+SEO는 검색 순위를 억지로 올리는 기술이 아니다.
 
 SEO는 `Search Engine Optimization`, 한국어로 검색엔진 최적화라는 뜻이다.
 
@@ -79,43 +80,37 @@ SEO는 방문자 수만 늘리는 작업이 아니라, 공개하려는 글만 �
 
 점검 전에도 내 사이트의 기술 SEO가 비어 있던 것은 아니며, 기본 토대는 이미 대부분 갖춰져 있었다.
 
-### HTTPS와 하나의 대표 도메인
-
-사이트는 `https://babypaunch.com`으로 접속하며, `www.babypaunch.com`으로 들어오면 기준 주소인 `babypaunch.com`으로 영구 이동한다.
-
-### robots.txt와 sitemap.xml
-
-`robots.txt`에는 검색 로봇의 공개 페이지 접근 규칙과 sitemap 주소가 있고, `sitemap.xml`에는 검색엔진이 확인해야 할 페이지와 블로그 글 주소가 있다.
-
-Search Console에도 이 sitemap을 제출해 둔 상태였다.
-
-### 페이지별 설명과 검색 허용 규칙
-
-모든 페이지에는 제목과 `meta description`이 있으며, 일반 페이지는 `index,follow`, 존재하지 않는 주소를 안내하는 404 페이지는 `noindex,follow`를 사용한다.
-
-### canonical 주소
-
-모든 페이지에는 자신의 기준 주소를 알려 주는 `canonical` 링크가 있다.
-
-검색 매개변수가 붙거나 같은 내용을 가리키는 주소가 생겨도 어느 주소를 대표로 볼지 알려 주기 위한 설정이다.
-
-### 한국어와 영어의 연결
-
-한국어와 영어 페이지는 `hreflang`으로 서로 연결하고 `ko`, `en`, 기본 언어를 뜻하는 `x-default`를 함께 제공해 같은 내용의 언어별 페이지임을 알려 준다.
-
-### 구조화 데이터
-
-홈에는 `WebSite`, 일반 페이지에는 `WebPage`, 블로그 글에는 `BlogPosting` 구조화 데이터가 있으며 글 제목·설명·언어·발행일·작성자·대표 주소를 함께 제공한다.
-
-구조화 데이터는 검색엔진이 화면의 모양만 보고 의미를 추측하지 않도록 페이지의 역할을 명시하는 방법이다.
-
-### 읽을 수 있는 HTML 구조
-
-모든 페이지에는 문서 언어가 지정되어 있고 `h1`은 하나만 있으며, 본문 제목은 순서에 맞는 heading을 사용한다.
-
-이미지에는 대체 텍스트와 크기가 있고, 내부 링크는 실제 존재하는 주소로 연결된다.
-
-이런 접근성 기본기는 검색엔진이 문서 구조를 이해하는 데에도 도움이 된다.
+<div class="data-cards">
+  <section class="data-card">
+    <h3>HTTPS와 대표 주소</h3>
+    <p>사이트는 <code>https://babypaunch.com</code>으로 접속하며, <code>www.babypaunch.com</code>으로 들어오면 기준 주소인 <code>babypaunch.com</code>으로 영구 이동한다.</p>
+    <p>모든 페이지에는 검색 매개변수나 같은 내용을 가리키는 주소가 생겨도 대표 주소를 알려 주는 <code>canonical</code> 링크가 있다.</p>
+  </section>
+  <section class="data-card">
+    <h3>robots.txt와 sitemap.xml</h3>
+    <p><code>robots.txt</code>에는 검색 로봇의 공개 페이지 접근 규칙과 sitemap 주소가 있고, <code>sitemap.xml</code>에는 검색엔진이 확인해야 할 페이지와 블로그 글 주소가 있다.</p>
+    <p>Search Console에도 이 sitemap을 제출해 둔 상태였다.</p>
+  </section>
+  <section class="data-card">
+    <h3>페이지 설명과 검색 허용</h3>
+    <p>모든 페이지에는 제목과 <code>meta description</code>이 있으며, 일반 페이지는 <code>index,follow</code>, 존재하지 않는 주소를 안내하는 404 페이지는 <code>noindex,follow</code>를 사용한다.</p>
+  </section>
+  <section class="data-card">
+    <h3>한국어와 영어의 연결</h3>
+    <p>한국어와 영어 페이지는 <code>hreflang</code>으로 서로 연결하고 <code>ko</code>, <code>en</code>, 기본 언어를 뜻하는 <code>x-default</code>를 함께 제공해 같은 내용의 언어별 페이지임을 알려 준다.</p>
+  </section>
+  <section class="data-card">
+    <h3>구조화 데이터</h3>
+    <p>홈에는 <code>WebSite</code>, 일반 페이지에는 <code>WebPage</code>, 블로그 글에는 <code>BlogPosting</code> 구조화 데이터가 있으며 글 제목·설명·언어·발행일·작성자·대표 주소를 함께 제공한다.</p>
+    <p>구조화 데이터는 검색엔진이 화면의 모양만 보고 의미를 추측하지 않도록 페이지의 역할을 명시하는 방법이다.</p>
+  </section>
+  <section class="data-card">
+    <h3>읽을 수 있는 HTML 구조</h3>
+    <p>모든 페이지에는 문서 언어가 지정되어 있고 <code>h1</code>은 하나만 있으며, 본문 제목은 순서에 맞는 heading을 사용한다.</p>
+    <p>이미지에는 대체 텍스트와 크기가 있고, 내부 링크는 실제 존재하는 주소로 연결된다.</p>
+    <p>이런 접근성 기본기는 검색엔진이 문서 구조를 이해하는 데에도 도움이 된다.</p>
+  </section>
+</div>
 
 처음에는 robots.txt와 sitemap, canonical과 구조화 데이터가 있으니 큰 문제는 없을 것이라고 생각했지만, 실제 공개 사이트를 확인하자 놓친 부분이 보였다.
 
@@ -196,12 +191,16 @@ SEO 설정은 한 번 적용해도 다음 글이나 템플릿 변경에서 다�
 
 ## 사람들이 SEO 작업에서 놓치기 쉬운 부분
 
+<div class="data-cards">
+<section class="data-card" markdown="1">
 ### sitemap은 있다고 끝나는 파일이 아니다
 
 sitemap이 HTTP `200`을 반환해도 그 안에 잘못된 주소가 들어 있을 수 있다.
 
 삭제한 페이지, 내부 문서, 중복 주소와 검색할 필요가 없는 파일이 포함되지 않았는지 실제 URL 목록을 확인해야 한다.
 
+</section>
+<section class="data-card" markdown="1">
 ### robots.txt와 noindex는 역할이 다르다
 
 robots.txt는 검색 로봇이 특정 경로를 가져가는 동작을 제어한다.
@@ -210,6 +209,8 @@ robots.txt는 검색 로봇이 특정 경로를 가져가는 동작을 제어한
 
 페이지를 robots.txt로 막아 놓고 그 페이지의 `noindex`를 읽어 주길 기대하면 의도대로 처리되지 않을 수 있다.
 
+</section>
+<section class="data-card" markdown="1">
 ### canonical은 무조건 홈을 가리키는 태그가 아니다
 
 각 글이 모두 홈을 canonical로 가리키면 검색엔진에게 모든 글이 홈의 복제본이라고 말하는 셈이 된다.
@@ -218,12 +219,16 @@ robots.txt는 검색 로봇이 특정 경로를 가져가는 동작을 제어한
 
 실제 중복 페이지가 있을 때만 대표 주소를 신중하게 선택한다.
 
+</section>
+<section class="data-card" markdown="1">
 ### hreflang은 언어 버튼만 만든다고 생기지 않는다
 
 화면에 한국어·영어 전환 버튼이 있어도 검색엔진이 두 페이지의 관계를 자동으로 정확히 이해한다고 보장할 수 없다.
 
 두 언어 페이지가 서로를 가리키고, 각 주소가 실제 존재하며, canonical과 언어 코드가 맞는지 확인해야 한다.
 
+</section>
+<section class="data-card" markdown="1">
 ### 제목과 설명은 언어별로 작성해야 한다
 
 본문만 번역하고 title과 description을 그대로 두면 검색 결과가 어색해질 수 있다.
@@ -234,24 +239,32 @@ robots.txt는 검색 로봇이 특정 경로를 가져가는 동작을 제어한
 
 Google은 검색어와 페이지 내용에 따라 작성한 title이나 description 대신 다른 문구를 보여 줄 수도 있다.
 
+</section>
+<section class="data-card" markdown="1">
 ### 구조화 데이터가 검색 노출을 보장하지 않는다
 
 유효한 `BlogPosting`을 넣었다고 특별한 검색 결과가 반드시 나타나는 것은 아니다.
 
 구조화 데이터는 실제 화면에 있는 내용과 일치해야 하며, 보이지 않는 내용을 과장해서 추가하면 안 된다.
 
+</section>
+<section class="data-card" markdown="1">
 ### 수정일은 배포일과 다르다
 
 스타일 파일이나 공통 템플릿만 바꿨다고 모든 글의 수정일을 오늘로 바꾸면 실제 콘텐츠 이력과 맞지 않는다.
 
 검색 결과를 새 글처럼 보이게 하려고 날짜만 갱신하는 방식도 피해야 한다.
 
+</section>
+<section class="data-card" markdown="1">
 ### 공유 이미지는 검색 순위와 별개지만 무시하기 어렵다
 
 Open Graph 이미지를 넣는다고 Google 순위가 바로 오르는 것은 아니다.
 
 하지만 링크가 공유될 때 제목만 보이는 것보다 일관된 이미지가 함께 보이는 편이 글을 구분하고 클릭 여부를 판단하는 데 도움이 된다.
 
+</section>
+<section class="data-card" markdown="1">
 ### Search Console의 숫자는 바로 바뀌지 않는다
 
 배포 직후 sitemap이 정상이어도 Google이 다시 가져가고 색인을 갱신하는 데 시간이 걸릴 수 있다.
@@ -260,6 +273,8 @@ Open Graph 이미지를 넣는다고 Google 순위가 바로 오르는 것은 �
 
 반대로 Search Console에 등록했다는 이유만으로 모든 페이지가 반드시 색인되는 것도 아니다.
 
+</section>
+<section class="data-card" markdown="1">
 ### GA4 동의와 검색 색인은 별개다
 
 내 사이트는 방문자가 동의하기 전에는 GA4를 불러오지 않는다.
@@ -268,16 +283,23 @@ Open Graph 이미지를 넣는다고 Google 순위가 바로 오르는 것은 �
 
 검색 로봇이 공개 HTML을 읽고 색인하는 과정과는 별개이므로 분석 동의율이 낮아도 검색 노출 자체가 막히는 것은 아니다.
 
+</section>
+<section class="data-card" markdown="1">
 ### 키워드를 반복하는 것보다 질문에 답해야 한다
 
 제목과 본문에 같은 검색어를 억지로 반복하는 것은 독자에게도 불편하다.
 
 글이 어떤 질문에 답하는지 분명히 하고, 실제 경험과 확인한 사실을 이해하기 쉬운 구조로 쓰는 편이 오래 유지된다.
 
+</section>
+</div>
+
 ## 앞으로 SEO를 운영하는 방법
 
 기본 기술 SEO를 정리한 뒤에는 설정을 더 많이 넣기보다 실제 글을 개선하는 일이 중요하다.
 
+<div class="data-cards">
+<section class="data-card" markdown="1">
 ### 글마다 고유한 대표 이미지를 천천히 추가하기
 
 공통 공유 이미지는 빈 미리보기를 막아 준다.
@@ -286,6 +308,8 @@ Open Graph 이미지를 넣는다고 Google 순위가 바로 오르는 것은 �
 
 모든 글에 급하게 이미지를 채우기보다 SNS에 실제 소개할 글부터 추가할 생각이다.
 
+</section>
+<section class="data-card" markdown="1">
 ### 서로 관련 있는 글을 자연스럽게 연결하기
 
 새 글에서 이전 글의 배경이 필요하면 설명 문장 안에서 해당 글로 연결한다.
@@ -294,6 +318,8 @@ Open Graph 이미지를 넣는다고 Google 순위가 바로 오르는 것은 �
 
 내부 링크는 독자가 다음 내용을 찾는 데 도움을 주고 검색엔진에도 글 사이의 관계를 알려 준다.
 
+</section>
+<section class="data-card" markdown="1">
 ### Search Console에서 노출과 클릭을 함께 보기
 
 검색에 한 번도 보이지 않는 글과 노출은 되지만 클릭되지 않는 글은 개선 방법이 다르다.
@@ -304,6 +330,8 @@ Open Graph 이미지를 넣는다고 Google 순위가 바로 오르는 것은 �
 
 순위 하나만 보기보다 검색어, 페이지, 노출수, 클릭수와 CTR을 함께 본다.
 
+</section>
+<section class="data-card" markdown="1">
 ### 실제 속도와 사용 경험 확인하기
 
 검색엔진만을 위한 빠른 사이트가 아니라 사람이 기다리지 않아도 되는 사이트를 유지해야 한다.
@@ -312,6 +340,8 @@ Open Graph 이미지를 넣는다고 Google 순위가 바로 오르는 것은 �
 
 새 라이브러리를 추가하기 전에 지금처럼 정적 HTML과 작은 자산으로 해결할 수 있는지 먼저 보는 편이 내 사이트에도 맞다.
 
+</section>
+<section class="data-card" markdown="1">
 ### 글이 충분히 쌓인 뒤에만 구조를 늘리기
 
 현재 글 수에서는 블로그 목록과 태그, 관련 글 링크만으로도 충분하다.
@@ -319,6 +349,9 @@ Open Graph 이미지를 넣는다고 Google 순위가 바로 오르는 것은 �
 글이 많아져 탐색이 어려워질 때 카테고리 허브, breadcrumb 구조화 데이터나 작성자 소개 페이지를 검토하면 된다.
 
 아직 필요하지 않은 SEO 기능을 미리 늘리면 관리할 설정과 오류 지점만 많아질 수 있다.
+
+</section>
+</div>
 
 ## SEO 작업 뒤에 남은 것은 결국 글이다
 
@@ -343,4 +376,3 @@ Open Graph 이미지를 넣는다고 Google 순위가 바로 오르는 것은 �
 - [Google의 Article 구조화 데이터 안내](https://developers.google.com/search/docs/appearance/structured-data/article?hl=ko)
 - [Google의 title link 작성 안내](https://developers.google.com/search/docs/appearance/title-link?hl=ko)
 - [Google의 검색 결과 snippet 및 meta description 안내](https://developers.google.com/search/docs/appearance/snippet?hl=ko)
-

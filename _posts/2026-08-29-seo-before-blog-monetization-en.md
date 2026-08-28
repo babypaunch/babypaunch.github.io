@@ -6,6 +6,7 @@ title: Want to make money from your blog? Get SEO right first
 description: How I audited and improved the missing SEO foundations on my GitHub Pages site before trying to monetize a blog without paid ads or constant promotion.
 category: Making
 date: 2026-08-29 07:35:00 +0900
+last_modified_at: 2026-08-29 07:44:00 +0900
 permalink: /en/blog/seo-before-blog-monetization/
 language_url: /blog/seo-before-blog-monetization/
 alternate_ko: /blog/seo-before-blog-monetization/
@@ -37,9 +38,9 @@ Connecting the tools does not finish SEO automatically.
 
 This time, I checked what my GitHub Pages site already had and what was still missing.
 
-<p class="article-question">If I want to make money from a blog, should SEO come before ads?</p>
+## If I want to make money from a blog, should SEO come before ads?
 
-## SEO is not a trick for forcing higher rankings
+SEO is not a trick for forcing higher rankings.
 
 SEO stands for `Search Engine Optimization`.
 
@@ -79,43 +80,37 @@ Search traffic for a blog without paid ads or constant promotion is not a lucky 
 
 The technical SEO on my site was not empty before this audit, because most of the foundation was already there.
 
-### HTTPS and one canonical domain
-
-The site uses `https://babypaunch.com`, and visits to `www.babypaunch.com` permanently redirect to the canonical `babypaunch.com` domain.
-
-### robots.txt and sitemap.xml
-
-`robots.txt` contains the crawler access rules and sitemap address, while `sitemap.xml` lists the pages and posts that search engines should inspect.
-
-I had also submitted this sitemap to Search Console.
-
-### Page descriptions and indexing rules
-
-Every page has a title and `meta description`, with `index,follow` for normal pages and `noindex,follow` for the 404 page that handles missing addresses.
-
-### Canonical addresses
-
-Every page has a `canonical` link that identifies its preferred address.
-
-This setting tells search engines which address represents the page when tracking parameters or other equivalent URLs appear.
-
-### Connecting Korean and English
-
-The Korean and English pages point to one another with `hreflang`, using `ko`, `en`, and the default `x-default` value to identify them as localized versions of the same content.
-
-### Structured data
-
-The home page provides `WebSite`, normal pages provide `WebPage`, and blog posts provide `BlogPosting` structured data with the title, description, language, publication date, author, and canonical address.
-
-Structured data explicitly describes a page's role so a search engine does not have to infer its meaning from the visual layout alone.
-
-### HTML that can be understood
-
-Every page declares its document language, uses one `h1`, and follows an ordered heading hierarchy in the body.
-
-Images have alternative text and dimensions, while internal links point to addresses that actually exist.
-
-These accessibility basics also help search engines understand the document structure.
+<div class="data-cards">
+  <section class="data-card">
+    <h3>HTTPS and the canonical address</h3>
+    <p>The site uses <code>https://babypaunch.com</code>, and visits to <code>www.babypaunch.com</code> permanently redirect to the canonical <code>babypaunch.com</code> domain.</p>
+    <p>Every page has a <code>canonical</code> link that identifies its preferred address when tracking parameters or equivalent URLs appear.</p>
+  </section>
+  <section class="data-card">
+    <h3>robots.txt and sitemap.xml</h3>
+    <p><code>robots.txt</code> contains the crawler access rules and sitemap address, while <code>sitemap.xml</code> lists the pages and posts that search engines should inspect.</p>
+    <p>I had also submitted this sitemap to Search Console.</p>
+  </section>
+  <section class="data-card">
+    <h3>Page descriptions and indexing</h3>
+    <p>Every page has a title and <code>meta description</code>, with <code>index,follow</code> for normal pages and <code>noindex,follow</code> for the 404 page that handles missing addresses.</p>
+  </section>
+  <section class="data-card">
+    <h3>Connecting Korean and English</h3>
+    <p>The Korean and English pages point to one another with <code>hreflang</code>, using <code>ko</code>, <code>en</code>, and the default <code>x-default</code> value to identify them as localized versions of the same content.</p>
+  </section>
+  <section class="data-card">
+    <h3>Structured data</h3>
+    <p>The home page provides <code>WebSite</code>, normal pages provide <code>WebPage</code>, and blog posts provide <code>BlogPosting</code> structured data with the title, description, language, publication date, author, and canonical address.</p>
+    <p>Structured data explicitly describes a page's role so a search engine does not have to infer its meaning from the visual layout alone.</p>
+  </section>
+  <section class="data-card">
+    <h3>Understandable HTML structure</h3>
+    <p>Every page declares its document language, uses one <code>h1</code>, and follows an ordered heading hierarchy in the body.</p>
+    <p>Images have alternative text and dimensions, while internal links point to addresses that actually exist.</p>
+    <p>These accessibility basics also help search engines understand the document structure.</p>
+  </section>
+</div>
 
 At first, robots.txt, the sitemap, canonical links, and structured data made the setup look complete, but checking the live site exposed several gaps.
 
@@ -196,12 +191,16 @@ I did not stop after the local Jekyll build passed, because I also checked the p
 
 ## Details people often miss when working on SEO
 
+<div class="data-cards">
+<section class="data-card" markdown="1">
 ### Having a sitemap is not enough
 
 A sitemap can return HTTP `200` and still contain incorrect addresses.
 
 The actual URL list needs to be checked for deleted pages, internal documents, duplicates, and files that do not belong in search.
 
+</section>
+<section class="data-card" markdown="1">
 ### robots.txt and noindex serve different purposes
 
 robots.txt controls whether a search crawler may fetch a path.
@@ -210,6 +209,8 @@ robots.txt controls whether a search crawler may fetch a path.
 
 Blocking a page in robots.txt while expecting the crawler to read the page's `noindex` instruction may not work as intended.
 
+</section>
+<section class="data-card" markdown="1">
 ### A canonical link should not always point home
 
 If every article points its canonical link to the home page, it effectively tells the search engine that every article is a duplicate of the home page.
@@ -218,12 +219,16 @@ An independent page normally uses its own canonical URL.
 
 A different representative address should be chosen carefully only when genuine duplicate pages exist.
 
+</section>
+<section class="data-card" markdown="1">
 ### A language button does not create hreflang
 
 A Korean and English switch on the screen does not guarantee that a search engine will understand the relationship between the two pages.
 
 Both localized pages should point to each other, the addresses should exist, and their canonical links and language codes should be correct.
 
+</section>
+<section class="data-card" markdown="1">
 ### Titles and descriptions need localization
 
 Translating the body while leaving the title and description unchanged can produce an awkward search result.
@@ -234,24 +239,32 @@ A description should tell readers what they will find before clicking instead of
 
 Google may still show different wording based on the query and page content instead of the title or description I supplied.
 
+</section>
+<section class="data-card" markdown="1">
 ### Structured data does not guarantee search exposure
 
 Adding valid `BlogPosting` data does not guarantee a special search result.
 
 Structured data should match visible content and must not exaggerate information that the page does not show.
 
+</section>
+<section class="data-card" markdown="1">
 ### A modification date is not a deployment date
 
 Changing a stylesheet or shared template does not make today the modification date of every article.
 
 Changing only the date to make an article look new in search results should also be avoided.
 
+</section>
+<section class="data-card" markdown="1">
 ### Sharing images do not directly change rankings
 
 Adding an Open Graph image does not immediately raise a Google ranking.
 
 A consistent image can still help people recognize an article and decide whether to click when a link is shared instead of showing only a title.
 
+</section>
+<section class="data-card" markdown="1">
 ### Search Console numbers do not change immediately
 
 Even with a valid sitemap after deployment, Google may need time to fetch it again and update the index.
@@ -260,6 +273,8 @@ An unchanged number immediately after deployment does not prove that the setup f
 
 Submitting a site to Search Console also does not guarantee that every page will be indexed.
 
+</section>
+<section class="data-card" markdown="1">
 ### GA4 consent and search indexing are separate
 
 My site does not load GA4 before a visitor gives consent.
@@ -268,16 +283,23 @@ That choice controls visitor analytics collection.
 
 It is separate from a search crawler reading and indexing public HTML, so a low analytics consent rate does not block search exposure.
 
+</section>
+<section class="data-card" markdown="1">
 ### Answering a question matters more than repeating a keyword
 
 Forcing the same search phrase into the title and body repeatedly is uncomfortable for readers too.
 
 An article lasts longer when it clearly answers one question and presents real experience and verified facts in an understandable structure.
 
+</section>
+</div>
+
 ## How I plan to keep working on SEO
 
 After the technical foundation is ready, improving actual articles matters more than adding more settings.
 
+<div class="data-cards">
+<section class="data-card" markdown="1">
 ### Add unique representative images gradually
 
 The shared image prevents an empty preview.
@@ -286,6 +308,8 @@ Because every article covers a different subject, however, important posts will 
 
 Instead of rushing to fill every article, I plan to start with the posts I actually share on social media.
 
+</section>
+<section class="data-card" markdown="1">
 ### Connect related articles naturally
 
 When a new article needs background from an older one, I can link to it inside the explanatory sentence.
@@ -294,6 +318,8 @@ The link text should describe its destination instead of saying only `click here
 
 Internal links help readers find the next useful article and tell search engines how posts relate to one another.
 
+</section>
+<section class="data-card" markdown="1">
 ### Compare impressions and clicks in Search Console
 
 An article that never appears in search needs a different improvement from one that appears but receives no clicks.
@@ -304,6 +330,8 @@ When impressions are high but CTR is low, I can check whether the title and desc
 
 Instead of watching one ranking number, I plan to compare queries, pages, impressions, clicks, and CTR together.
 
+</section>
+<section class="data-card" markdown="1">
 ### Check real speed and usability
 
 The goal is not a fast site only for search engines, but a site that does not make people wait.
@@ -312,6 +340,8 @@ I need to check image sizes, layout shifts, mobile reading, and click responses 
 
 Before adding another library, it also suits my site to ask whether static HTML and small assets can solve the problem as they do now.
 
+</section>
+<section class="data-card" markdown="1">
 ### Add more structure only when there is enough content
 
 With the current number of posts, the blog list, tags, and related links are enough.
@@ -319,6 +349,9 @@ With the current number of posts, the blog list, tags, and related links are eno
 When the archive becomes difficult to navigate, I can consider category hubs, Breadcrumb structured data, or an author page.
 
 Adding SEO features before they are needed only creates more settings to maintain and more places for errors.
+
+</section>
+</div>
 
 ## What remains after the SEO work is still the writing
 
