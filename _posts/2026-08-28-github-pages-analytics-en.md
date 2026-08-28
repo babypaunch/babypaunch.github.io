@@ -162,6 +162,7 @@ I kept the review schedule simple.
 - Once a month: review queries, pages, and CTR in Search Console
 - When an error notification appears: check page indexing and the sitemap in Search Console
 
+<section class="article-ai-prompt" data-no-translation markdown="1">
 ## #AI프롬프트제공
 
 Give the following prompt to an AI to configure and verify consent-based GA4, Search Console, and platform-specific UTM tracking on GitHub Pages using only free services.
@@ -197,5 +198,6 @@ Search Console property: [domain property]
 Social campaign name: [utm_campaign value]
 Supported languages: [for example, Korean and English]
 ```
+</section>
 
 <p class="article-summary"><strong>In one line:</strong> I went beyond publishing more posts and built a way to see which stories and traffic sources help while observing visitors' choices.</p>

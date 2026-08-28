@@ -365,6 +365,7 @@ Writing verified answers to questions people actually have still comes first, wh
 
 Wanting to make money from a blog may begin with adding ad code, but the real preparation begins with writing something worth finding and making sure a search engine can deliver it accurately.
 
+<section class="article-ai-prompt" data-no-translation markdown="1">
 ## #AI프롬프트제공
 
 Give the following prompt to an AI to audit missing or incorrect technical SEO settings on a GitHub Pages site against real output.
@@ -400,6 +401,7 @@ Repository path or URL: [GitHub repository]
 Environment: GitHub Pages and Jekyll [version]
 Supported languages: [for example, Korean and English]
 ```
+</section>
 
 <p class="article-summary"><strong>In one line:</strong> SEO is not a trick for forcing higher rankings, but the work of helping search engines accurately understand the addresses, languages, titles, descriptions, and history of the articles I choose to publish.</p>
 

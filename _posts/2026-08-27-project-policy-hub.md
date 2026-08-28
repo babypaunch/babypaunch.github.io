@@ -114,6 +114,7 @@ GitHub Pages 설정에서 사용자 지정 도메인을 제거한 뒤 잠시 기
 
 이제 HTTP 주소는 HTTPS로 자동 이동하고, 루트 도메인과 `www` 주소 모두 암호화된 연결로 접속된다. 기다리는 것만으로 해결되지 않을 때는 DNS를 계속 바꾸기보다 GitHub Pages의 인증서 상태를 먼저 확인해야 한다는 것도 배웠다.
 
+<section class="article-ai-prompt" data-no-translation markdown="1">
 ## #AI프롬프트제공
 
 아래 프롬프트를 AI에게 전달하면 여러 프로젝트가 함께 사용하는 정책 허브의 주소 구조, 정책 문서와 HTTPS 연결을 점검할 수 있다.
@@ -147,5 +148,6 @@ DNS 제공자: [예: Cloudflare]
 등록할 프로젝트: [프로젝트 이름과 필요한 정책]
 지원 언어: [예: 한국어, 영어]
 ```
+</section>
 
 <p class="article-summary"><strong>한 줄 요약:</strong> 프로젝트가 늘어난 뒤 정리하는 대신, 내 GitHub Pages를 모든 프로젝트가 함께 사용할 정책 허브로 만들었다.</p>

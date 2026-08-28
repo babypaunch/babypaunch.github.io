@@ -15,7 +15,7 @@ const frontMatterValue = (source, key) => {
 
 const renderedPath = (permalink) => path.join(site, permalink.replace(/^\//, ''), 'index.html');
 const articleBody = (html) => html.match(/<article class="article-body">([\s\S]*?)<\/article>/)?.[1] || '';
-const semanticUnits = (html) => [...articleBody(html).matchAll(/<(h2|h3|h4|p|li|th|td|figcaption|summary)\b[^>]*>([\s\S]*?)<\/\1>/g)]
+const semanticUnits = (html) => [...articleBody(html).replace(/<section\b[^>]*data-no-translation[^>]*>[\s\S]*?<\/section>/g, '').matchAll(/<(h2|h3|h4|p|li|th|td|figcaption|summary)\b[^>]*>([\s\S]*?)<\/\1>/g)]
   .map((match) => ({ tag: match[1], text: match[2].replace(/<[^>]+>/g, ' ').replace(/&[^;]+;/g, ' ').replace(/\s+/g, ' ').trim() }));
 const sentenceCount = (text, locale) => [...new Intl.Segmenter(locale, { granularity: 'sentence' }).segment(text)]
   .filter(({ segment }) => segment.trim()).length;

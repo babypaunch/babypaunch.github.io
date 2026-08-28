@@ -18,6 +18,7 @@
 
   const collectUnits = (root) => [...root.querySelectorAll(unitSelector)]
     .filter((element) => !(element.tagName === 'LI' && element.querySelector('li')))
+    .filter((element) => !element.closest('[data-no-translation]'))
     .filter((element) => element.textContent.trim());
 
   const normalizeText = (element) => element.textContent.replace(/\s+/g, ' ').trim();
@@ -69,6 +70,23 @@
     status.hidden = false;
     statusTimer = window.setTimeout(() => { status.hidden = true; }, 2000);
   };
+
+  document.querySelectorAll('.article-ai-prompt pre').forEach((prompt) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'article-prompt-copy';
+    button.textContent = document.documentElement.lang === 'en' ? 'Copy prompt' : '프롬프트 복사';
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(prompt.textContent.trim());
+        showStatus(document.documentElement.lang === 'en' ? 'Prompt copied.' : '프롬프트를 복사했습니다.');
+      } catch (error) {
+        console.error('Prompt copy:', error);
+        showStatus(document.documentElement.lang === 'en' ? 'Could not copy the prompt.' : '프롬프트를 복사하지 못했습니다.');
+      }
+    });
+    prompt.before(button);
+  });
 
   const hideTooltip = () => {
     if (currentUnit) currentUnit.removeAttribute('aria-describedby');

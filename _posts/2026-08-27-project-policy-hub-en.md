@@ -114,6 +114,7 @@ I removed the custom domain from the GitHub Pages settings, waited briefly, and 
 
 HTTP now redirects to HTTPS automatically, and both the root domain and the `www` address use an encrypted connection. I also learned that when waiting does not solve the problem, checking the GitHub Pages certificate state should come before repeatedly changing DNS records.
 
+<section class="article-ai-prompt" data-no-translation markdown="1">
 ## #AI프롬프트제공
 
 Give the following prompt to an AI to audit the URL structure, policy documents, and HTTPS connection of a policy hub shared by several projects.
@@ -147,5 +148,6 @@ DNS provider: [for example, Cloudflare]
 Projects to register: [project names and required policies]
 Supported languages: [for example, Korean and English]
 ```
+</section>
 
 <p class="article-summary"><strong>In one line:</strong> Instead of waiting for my projects to pile up, I made my GitHub Pages site the shared policy hub for all of them.</p>

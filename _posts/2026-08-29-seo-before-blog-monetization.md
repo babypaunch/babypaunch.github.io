@@ -365,6 +365,7 @@ Open Graph 이미지를 넣는다고 Google 순위가 바로 오르는 것은 �
 
 블로그로 돈을 벌고 싶다는 생각은 광고 코드를 붙이는 데서 시작할 수 있지만, 실제 준비는 사람들이 찾을 만한 글을 쓰고 그 글이 검색엔진에 정확히 전달되는지 확인하는 데서 시작해야 한다.
 
+<section class="article-ai-prompt" data-no-translation markdown="1">
 ## #AI프롬프트제공
 
 아래 프롬프트를 AI에게 전달하면 자신의 GitHub Pages 사이트에서 기술 SEO의 누락과 잘못된 설정을 실제 결과를 기준으로 점검할 수 있다.
@@ -400,6 +401,7 @@ Open Graph 이미지를 넣는다고 Google 순위가 바로 오르는 것은 �
 사용 환경: GitHub Pages와 Jekyll [버전]
 지원 언어: [예: 한국어, 영어]
 ```
+</section>
 
 <p class="article-summary"><strong>한 줄 요약:</strong> SEO는 검색 순위를 억지로 올리는 기술이 아니라, 공개할 글의 주소·언어·제목·설명과 이력을 검색엔진이 정확히 이해하도록 정리하는 일이다.</p>
 

@@ -162,6 +162,7 @@ SNS에 글을 게시한 직후에는 <strong>보고서 → 실시간</strong>에
 - 한 달에 한 번: Search Console에서 검색어·페이지·CTR 확인
 - 오류 알림이 있을 때: Search Console에서 페이지 색인과 sitemap 확인
 
+<section class="article-ai-prompt" data-no-translation markdown="1">
 ## #AI프롬프트제공
 
 아래 프롬프트를 AI에게 전달하면 GitHub Pages에 동의 기반 GA4, Search Console과 SNS별 UTM 측정을 무료 범위로 구성하고 검증할 수 있다.
@@ -197,5 +198,6 @@ Search Console 속성: [도메인 속성]
 SNS 캠페인 이름: [utm_campaign 값]
 지원 언어: [예: 한국어, 영어]
 ```
+</section>
 
 <p class="article-summary"><strong>한 줄 요약:</strong> 글을 많이 쓰는 것에서 멈추지 않고, 방문자의 선택을 지켜보면서 어떤 글과 유입 경로가 도움이 되는지 확인할 기반을 만들었다.</p>

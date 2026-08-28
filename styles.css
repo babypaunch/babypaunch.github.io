@@ -447,6 +447,8 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .article-body code { padding: .1rem .4rem; border: 1px solid var(--ink); border-radius: .2rem; background: var(--ink); color: var(--paper); font: .9em/1.5 var(--mono); }
 .article-body pre { margin: 0 0 1.5rem; padding: 1.25rem; overflow-x: auto; border: 1px solid var(--ink); border-radius: .2rem; background: var(--ink); color: var(--paper); font: .9rem/1.7 var(--mono); white-space: pre; }
 .article-body pre code { padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; }
+.article-prompt-copy { display: inline-flex; min-height: 44px; align-items: center; margin: 0 0 .75rem; padding: .65rem 1rem; border: 1px solid var(--ink); background: var(--paper); color: var(--ink); font: 700 .85rem/1 var(--sans); cursor: pointer; }
+.article-prompt-copy:hover, .article-prompt-copy:focus-visible { background: var(--ink); color: var(--paper); }
 .article-body .article-tree { margin: 0; padding: 0; list-style: none; }
 .article-tree { font-family: var(--mono); }
 .article-tree > li + li { margin-top: 1.5rem; }
