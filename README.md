@@ -35,6 +35,7 @@ python -m http.server 8000 --directory _site
 - 제목은 `h1` 다음 `h2` 순서로 건너뛰지 않고 작성합니다.
 - 링크 문구만 읽어도 목적지를 알 수 있게 작성하고, 새 창 링크에는 `rel="noopener noreferrer"`를 사용합니다.
 - 새 태그는 `_data/ko.yml`과 `_data/en.yml`에 함께 등록합니다.
+- 기존 글에 추가 업데이트를 붙일 때는 각 추가본 바로 앞에 `<hr>`을 넣고 날짜가 포함된 제목으로 구분합니다.
 - 발행 전 Jekyll 빌드 후 `_tests`의 두 Node 검사를 실행합니다.
 
 접근성 목표와 알려진 제한 사항은 `/policies/babypaunch/accessibility/`와 `/en/policies/babypaunch/accessibility/`에서 공개합니다.
