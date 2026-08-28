@@ -88,6 +88,9 @@ blog:
     saju: Saju
     dating-app: DatingApp
     product-design: ProductDesign
+    web-analytics: WebAnalytics
+    ga4: GA4
+    search-console: SearchConsole
 policies:
   intro: Policy documents for the apps and services provided by BabyPaunch.
 not_found:

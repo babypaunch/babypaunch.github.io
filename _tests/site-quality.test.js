@@ -78,6 +78,8 @@ for (const url of [
   '/en/policies/laftel-mania/privacy/',
   '/contact/',
   '/en/contact/',
+  '/blog/github-pages-analytics/',
+  '/en/blog/github-pages-analytics/',
 ]) {
   assert.ok(sitemap.includes(`https://babypaunch.com${url}`), `sitemap: ${url}`);
 }
