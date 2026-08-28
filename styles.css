@@ -184,6 +184,7 @@ nav a[aria-current="page"] { text-decoration-color: var(--accent); text-decorati
 
 main a::before,
 footer a::before,
+.consent-dialog a::before,
 [data-analytics-settings]::before {
   content: '';
   display: inline-block;
@@ -201,6 +202,8 @@ main a:hover::before,
 main a:focus-visible::before,
 footer a:hover::before,
 footer a:focus-visible::before,
+.consent-dialog a:hover::before,
+.consent-dialog a:focus-visible::before,
 [data-analytics-settings]:hover::before,
 [data-analytics-settings]:focus-visible::before {
   -webkit-mask-image: url('/assets/icons/click-filled.svg');
@@ -526,5 +529,6 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
   .brand-mark g { fill: ButtonFace; stroke: ButtonFace; }
   main a::before,
   footer a::before,
+  .consent-dialog a::before,
   [data-analytics-settings]::before { background: LinkText; }
 }
