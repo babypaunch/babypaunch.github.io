@@ -101,4 +101,40 @@ The connections are new, so there is not enough data yet to claim that one post 
 
 If I add Google AdSense later, the consent flow can grow from this foundation. I will add separate choices for advertising storage and personalised advertising, and update the privacy policies before enabling the ads.
 
+<hr>
+
+## Added August 28, 2026: Where should I check the results later?
+
+There is no need to move between many screens. For routine checks, GA4 and Search Console are enough. Only data from visitors who consent to analytics is included.
+
+### Use GA4 to see where visitors came from and what they read
+
+Open <strong>Reports → Acquisition → Traffic acquisition</strong>, then change the table dimension to <strong>Session source / medium</strong>. This covers Instagram, Threads, Facebook, and X as well as Google Search, other search engines, referring websites, and direct visits.
+
+Only three questions matter here.
+
+- Where did the visit come from?
+- Which post did the visitor reach?
+- Which source produced stronger engaged sessions and average engagement time?
+
+To inspect one post, add <strong>Page path and screen class</strong> as a secondary dimension or filter by its path. Immediately after sharing a post, use <strong>Reports → Realtime</strong> only to confirm that collection works. Use the Traffic acquisition report for longer-term decisions. The [GA4 Traffic acquisition report guide](https://support.google.com/analytics/answer/12923437?co=GENIE.Platform%3DDesktop&hl=en) explains the menu and dimensions.
+
+### Use Search Console to see what people searched for
+
+Open <strong>Performance → Search results</strong>, then use the <strong>Queries</strong> and <strong>Pages</strong> tabs.
+
+- Impressions: how often a page appeared in Google Search
+- Clicks: how often someone visited from a search result
+- CTR: clicks divided by impressions
+- Average position: the page's approximate position in search results
+
+A post with many impressions but a low CTR is a candidate for a clearer title and description. Selecting a query and then opening the Pages tab also shows which post that search led to. The [Search Console performance report guide](https://support.google.com/webmasters/answer/10268906?hl=en) explains the report in detail.
+
+I kept the review schedule simple.
+
+- Immediately after SNS publishing: confirm collection in GA4 Realtime
+- Once a week: review social visits and popular posts in GA4 Traffic acquisition
+- Once a month: review queries, pages, and CTR in Search Console
+- When an error notification appears: check page indexing and the sitemap in Search Console
+
 <p class="article-summary"><strong>In one line:</strong> I went beyond publishing more posts and built a way to see which stories and traffic sources help while observing visitors' choices.</p>
