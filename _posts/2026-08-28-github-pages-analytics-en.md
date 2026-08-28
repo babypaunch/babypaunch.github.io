@@ -29,13 +29,13 @@ So I began with one question.
 
 ## Measuring posts and traffic sources with GA4
 
-I created a `BabyPaunch Website` property in Google Analytics 4 and a web stream for `https://babypaunch.com`. I connected the public measurement ID `G-TFR80P4CNK` to the site.
+I created a `BabyPaunch Website` property in Google Analytics 4 and a web stream for `https://babypaunch.com`. I connected the public measurement ID to the site.
 
 I also enabled enhanced measurement. It now records page views, scrolling that indicates how far someone read, and clicks that lead to another website.
 
 GitHub Pages is a static site without an application server of its own. That is still enough. Adding the analytics integration once to the shared Jekyll layout applies the same rules to the home, blog, music, and policy pages.
 
-After deployment, I opened a real blog post and checked the GA4 realtime report. Active users from South Korea appeared immediately. I had verified not only that the code existed in the HTML, but that the public site was actually delivering data.
+After deployment, I can open a real blog post and check the GA4 realtime report.
 
 ## Not loading analytics before consent
 
@@ -46,8 +46,6 @@ On the first visit, an analytics consent modal appears in Korean or English. The
 The choice is stored in the browser's local storage. It can be changed later through <strong>Analytics settings</strong> at the bottom of every page. A short confirmation appears after accepting or declining and disappears automatically after two seconds.
 
 The modal is centred with a dimmed background. Keyboard focus stays inside it, and an important choice cannot be dismissed by clicking the background or pressing `Esc`.
-
-I did not check the layout by feel. I tested the shared BabyPaunch boundaries at `640px`, `641px`, `1280px`, and `1281px` and confirmed that none of them introduced horizontal overflow.
 
 Because the site now uses an analytics service, I updated both the Korean and English privacy policies at the same time. They explain what is measured, that declining does not affect the site, and where a visitor can change the choice. They also continue to state that Google AdSense advertising is not currently in use.
 
@@ -82,10 +80,10 @@ I added this rule to the design document for the SNS publishing Chrome extension
 
 There is no paid analytics service in this setup. It uses the free tiers of GitHub Pages, GA4, Search Console, and Cloudflare DNS.
 
-Before deployment, I built the site with Jekyll `3.8` and passed quality checks for 25 pages. I tested blocking before consent, loading after consent, declining, reopening settings, and all four responsive boundary widths in a real browser. I committed and pushed the work to `main`, then verified it again on the public site.
+Before deployment, I built the site with Jekyll `3.8` and passed quality checks for 25 pages. I tested blocking before consent, loading after consent, declining, reopening settings, and all four responsive boundary widths in a real browser.
 
 The connections are new, so there is not enough data yet to claim that one post is the best. But I no longer have to rely only on intuition. As search and social traffic accumulate, I can choose future subjects based on what people actually read.
 
 If I add Google AdSense later, the consent flow can grow from this foundation. I will add separate choices for advertising storage and personalised advertising, and update the privacy policies before enabling the ads.
 
-<p class="article-summary"><strong>In one line:</strong> I went beyond publishing more posts and built a consent-first way to see which stories and traffic sources genuinely help.</p>
+<p class="article-summary"><strong>In one line:</strong> I went beyond publishing more posts and built a way to see which stories and traffic sources help while observing visitors' choices.</p>
