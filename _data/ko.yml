@@ -91,6 +91,8 @@ blog:
     web-analytics: 웹분석
     ga4: GA4
     search-console: SearchConsole
+    seo: SEO
+    blog-monetization: 블로그수익화
 translation:
   enable: 문장 번역 켜기
   disable: 문장 번역 끄기

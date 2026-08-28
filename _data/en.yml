@@ -91,6 +91,8 @@ blog:
     web-analytics: WebAnalytics
     ga4: GA4
     search-console: SearchConsole
+    seo: SEO
+    blog-monetization: BlogMonetization
 translation:
   enable: Turn on sentence translation
   disable: Turn off sentence translation
