@@ -103,11 +103,11 @@ utm_content=<게시 실행 ID>
 
 <hr>
 
-## 2026년 8월 28일 추가: 나중에는 어디서 무엇을 확인하면 될까?
+### 2026년 8월 28일 추가 업데이트: 나중에는 어디서 무엇을 확인하면 될까?
 
 매번 여러 화면을 돌아다닐 필요는 없다. 평소에는 GA4와 Search Console, 두 곳만 보면 된다. 분석에 동의한 방문자의 데이터만 집계된다는 점은 그대로다.
 
-### GA4에서는 어디서 와서 무엇을 읽었는지 확인하기
+#### GA4에서는 어디서 와서 무엇을 읽었는지 확인하기
 
 <strong>보고서 → 획득 → 트래픽 획득</strong>으로 이동한 뒤 표의 기준을 <strong>세션 소스/매체</strong>로 바꾼다. 그러면 Instagram, Threads, Facebook, X뿐 아니라 Google 검색, 다른 검색엔진, 다른 웹사이트와 직접 방문도 함께 볼 수 있다.
 
@@ -119,7 +119,7 @@ utm_content=<게시 실행 ID>
 
 특정 글만 보려면 <strong>페이지 경로 및 화면 클래스</strong>를 보조 측정기준으로 추가하거나 글 주소로 필터링한다. SNS에 글을 게시한 직후에는 <strong>보고서 → 실시간</strong>에서 수집 여부만 확인하고, 장기적인 판단은 트래픽 획득 보고서에서 한다. 자세한 메뉴와 항목은 [GA4 트래픽 획득 보고서 안내](https://support.google.com/analytics/answer/12923437?co=GENIE.Platform%3DDesktop&hl=ko)에서 확인할 수 있다.
 
-### Search Console에서는 무엇을 검색해 들어왔는지 확인하기
+#### Search Console에서는 무엇을 검색해 들어왔는지 확인하기
 
 <strong>실적 → 검색 결과</strong>에서 <strong>검색어</strong>와 <strong>페이지</strong> 탭을 본다.
 

@@ -103,11 +103,11 @@ If I add Google AdSense later, the consent flow can grow from this foundation. I
 
 <hr>
 
-## Added August 28, 2026: Where should I check the results later?
+### August 28, 2026 update: Where should I check the results later?
 
 There is no need to move between many screens. For routine checks, GA4 and Search Console are enough. Only data from visitors who consent to analytics is included.
 
-### Use GA4 to see where visitors came from and what they read
+#### Use GA4 to see where visitors came from and what they read
 
 Open <strong>Reports → Acquisition → Traffic acquisition</strong>, then change the table dimension to <strong>Session source / medium</strong>. This covers Instagram, Threads, Facebook, and X as well as Google Search, other search engines, referring websites, and direct visits.
 
@@ -119,7 +119,7 @@ Only three questions matter here.
 
 To inspect one post, add <strong>Page path and screen class</strong> as a secondary dimension or filter by its path. Immediately after sharing a post, use <strong>Reports → Realtime</strong> only to confirm that collection works. Use the Traffic acquisition report for longer-term decisions. The [GA4 Traffic acquisition report guide](https://support.google.com/analytics/answer/12923437?co=GENIE.Platform%3DDesktop&hl=en) explains the menu and dimensions.
 
-### Use Search Console to see what people searched for
+#### Use Search Console to see what people searched for
 
 Open <strong>Performance → Search results</strong>, then use the <strong>Queries</strong> and <strong>Pages</strong> tabs.
 
