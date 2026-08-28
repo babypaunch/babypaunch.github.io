@@ -180,13 +180,13 @@
   toggle.addEventListener('click', () => setActive(!active));
 
   article.addEventListener('pointerover', (event) => {
-    if (!active || pinned) return;
+    if (!active || pinned || event.pointerType !== 'mouse') return;
     const unit = unitFromEvent(event);
     if (unit) showTooltip(unit);
   });
 
   article.addEventListener('pointerout', (event) => {
-    if (!active || pinned) return;
+    if (!active || pinned || event.pointerType !== 'mouse') return;
     const unit = unitFromEvent(event);
     if (unit && !unit.contains(event.relatedTarget)) hideTooltip();
   });
@@ -225,6 +225,10 @@
     if (!active || event.target.closest('[data-translation-toggle], [data-translation-tooltip]')) return;
     const unit = unitFromEvent(event);
     if (unit && !event.target.closest(interactiveSelector)) {
+      if (pinned && currentUnit === unit) {
+        hideTooltip();
+        return;
+      }
       showTooltip(unit, true);
       return;
     }
