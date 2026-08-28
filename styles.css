@@ -386,7 +386,7 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .spotify-player { height: 152px; border-radius: 12px; }
 
 .page-shell { min-height: calc(100vh - 82px); padding-block: clamp(4rem, 9vw, 8rem); }
-.page-shell h1 { max-width: 850px; margin: 0 0 2rem; font: 400 clamp(3.8rem, 9vw, 8rem)/.9 var(--serif); letter-spacing: -.04em; }
+.page-shell h1 { max-width: 850px; margin: 0 0 2rem; font: 400 clamp(3.8rem, 9vw, 8rem)/.9 var(--serif); letter-spacing: -.04em; overflow-wrap: anywhere; }
 .page-intro { max-width: 620px; color: var(--muted); font: 1.1rem/1.8 'Gowun Batang', serif; }
 .privacy-shell,
 .accessibility-shell,

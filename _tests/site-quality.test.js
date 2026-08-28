@@ -59,6 +59,7 @@ for (const file of htmlFiles) {
 }
 
 const css = fs.readFileSync(path.join(siteRoot, 'styles.css'), 'utf8');
+assert.match(css, /\.page-shell h1 \{[^}]*overflow-wrap: anywhere/, 'styles.css: long page titles wrap');
 for (const preference of ['prefers-reduced-motion', 'prefers-contrast', 'forced-colors']) {
   assert.ok(css.includes(preference), `styles.css: ${preference}`);
 }
