@@ -15,6 +15,7 @@ tags:
   - project-policies
   - github-pages
   - custom-domain
+  - ai-prompt
 ---
 
 I plan to keep making new projects.

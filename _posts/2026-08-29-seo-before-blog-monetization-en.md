@@ -16,6 +16,7 @@ tags:
   - github-pages
   - blog-monetization
   - search-console
+  - ai-prompt
 ---
 
 After connecting a custom domain to GitHub Pages and publishing blog posts, I could also use GA4 and Search Console to see where visitors came from.

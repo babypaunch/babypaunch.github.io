@@ -16,6 +16,7 @@ tags:
   - ga4
   - search-console
   - github-pages
+  - ai-prompt
 ---
 
 블로그 글을 하나씩 올리기 시작했지만, 정작 어떤 글을 사람들이 읽는지는 알 수 없었다.

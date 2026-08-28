@@ -15,6 +15,7 @@ tags:
   - project-policies
   - github-pages
   - custom-domain
+  - ai-prompt
 ---
 
 앞으로도 계속 새로운 프로젝트를 만들 생각이다.

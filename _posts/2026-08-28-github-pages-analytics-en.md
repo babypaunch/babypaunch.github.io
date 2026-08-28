@@ -16,6 +16,7 @@ tags:
   - ga4
   - search-console
   - github-pages
+  - ai-prompt
 ---
 
 I had started publishing blog posts, but I still could not tell which ones people actually read.

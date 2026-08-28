@@ -93,6 +93,7 @@ blog:
     search-console: SearchConsole
     seo: SEO
     blog-monetization: BlogMonetization
+    ai-prompt: AI프롬프트제공
 translation:
   enable: Turn on sentence translation
   disable: Turn off sentence translation

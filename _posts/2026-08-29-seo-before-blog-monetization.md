@@ -16,6 +16,7 @@ tags:
   - github-pages
   - blog-monetization
   - search-console
+  - ai-prompt
 ---
 
 GitHub Pages에 개인 도메인을 연결하고 블로그 글을 올리면서, GA4와 Search Console로 방문자가 어디에서 오는지도 확인할 수 있게 됐다.
