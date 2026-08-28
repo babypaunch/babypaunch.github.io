@@ -117,7 +117,13 @@ Only three questions matter here.
 - Which post did the visitor reach?
 - Which source produced stronger engaged sessions and average engagement time?
 
-To inspect one post, add <strong>Page path and screen class</strong> as a secondary dimension or filter by its path. Immediately after sharing a post, use <strong>Reports → Realtime</strong> only to confirm that collection works. Use the Traffic acquisition report for longer-term decisions. The [GA4 Traffic acquisition report guide](https://support.google.com/analytics/answer/12923437?co=GENIE.Platform%3DDesktop&hl=en) explains the menu and dimensions.
+To inspect one post, add <strong>Page path and screen class</strong> as a secondary dimension or filter by its path.
+
+Immediately after sharing a post, use <strong>Reports → Realtime</strong> only to confirm that collection works.
+
+Use the Traffic acquisition report for longer-term decisions.
+
+The [GA4 Traffic acquisition report guide](https://support.google.com/analytics/answer/12923437?co=GENIE.Platform%3DDesktop&hl=en) explains the menu and dimensions.
 
 #### Use Search Console to see what people searched for
 
@@ -128,7 +134,11 @@ Open <strong>Performance → Search results</strong>, then use the <strong>Queri
 - CTR: clicks divided by impressions
 - Average position: the page's approximate position in search results
 
-A post with many impressions but a low CTR is a candidate for a clearer title and description. Selecting a query and then opening the Pages tab also shows which post that search led to. The [Search Console performance report guide](https://support.google.com/webmasters/answer/10268906?hl=en) explains the report in detail.
+A post with many impressions but a low CTR is a candidate for a clearer title and description.
+
+Selecting a query and then opening the Pages tab also shows which post that search led to.
+
+The [Search Console performance report guide](https://support.google.com/webmasters/answer/10268906?hl=en) explains the report in detail.
 
 I kept the review schedule simple.
 

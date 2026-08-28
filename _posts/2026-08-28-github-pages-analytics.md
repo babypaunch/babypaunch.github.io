@@ -117,7 +117,13 @@ utm_content=<게시 실행 ID>
 - 어떤 글에 도착했는가
 - 참여 세션과 평균 참여 시간이 어느 경로에서 높은가
 
-특정 글만 보려면 <strong>페이지 경로 및 화면 클래스</strong>를 보조 측정기준으로 추가하거나 글 주소로 필터링한다. SNS에 글을 게시한 직후에는 <strong>보고서 → 실시간</strong>에서 수집 여부만 확인하고, 장기적인 판단은 트래픽 획득 보고서에서 한다. 자세한 메뉴와 항목은 [GA4 트래픽 획득 보고서 안내](https://support.google.com/analytics/answer/12923437?co=GENIE.Platform%3DDesktop&hl=ko)에서 확인할 수 있다.
+특정 글만 보려면 <strong>페이지 경로 및 화면 클래스</strong>를 보조 측정기준으로 추가하거나 글 주소로 필터링한다.
+
+SNS에 글을 게시한 직후에는 <strong>보고서 → 실시간</strong>에서 수집 여부만 확인한다.
+
+장기적인 판단은 트래픽 획득 보고서에서 한다.
+
+자세한 메뉴와 항목은 [GA4 트래픽 획득 보고서 안내](https://support.google.com/analytics/answer/12923437?co=GENIE.Platform%3DDesktop&hl=ko)에서 확인할 수 있다.
 
 #### Search Console에서는 무엇을 검색해 들어왔는지 확인하기
 
@@ -128,7 +134,11 @@ utm_content=<게시 실행 ID>
 - CTR: 노출 대비 클릭 비율
 - 평균 게재순위: 검색 결과에서의 대략적인 위치
 
-특히 노출수는 많은데 CTR이 낮은 글은 제목과 설명을 개선할 후보가 된다. 검색어를 선택한 뒤 페이지 탭을 보면 어떤 검색어가 어떤 글로 연결됐는지도 확인할 수 있다. 자세한 사용법은 [Search Console 실적 보고서 안내](https://support.google.com/webmasters/answer/10268906?hl=ko)에서 볼 수 있다.
+특히 노출수는 많은데 CTR이 낮은 글은 제목과 설명을 개선할 후보가 된다.
+
+검색어를 선택한 뒤 페이지 탭을 보면 어떤 검색어가 어떤 글로 연결됐는지도 확인할 수 있다.
+
+자세한 사용법은 [Search Console 실적 보고서 안내](https://support.google.com/webmasters/answer/10268906?hl=ko)에서 볼 수 있다.
 
 확인 주기는 단순하게 정했다.
 

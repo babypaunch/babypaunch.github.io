@@ -29,6 +29,40 @@
       .filter((segment) => segment.trim());
   };
 
+  const splitUnitIntoSentences = (unit, segments) => {
+    const textNodes = [];
+    const walker = document.createTreeWalker(unit, NodeFilter.SHOW_TEXT);
+    let textNode;
+    let offset = 0;
+    while ((textNode = walker.nextNode())) {
+      textNodes.push({ node: textNode, start: offset, end: offset + textNode.data.length });
+      offset += textNode.data.length;
+    }
+
+    const pointAt = (position) => {
+      const entry = textNodes.find(({ end }) => position <= end) || textNodes[textNodes.length - 1];
+      return { node: entry.node, offset: Math.max(0, position - entry.start) };
+    };
+
+    const sentences = new Array(segments.length);
+    let end = unit.textContent.length;
+    for (let index = segments.length - 1; index >= 0; index -= 1) {
+      const start = end - segments[index].length;
+      const startPoint = pointAt(start);
+      const endPoint = pointAt(end);
+      const range = document.createRange();
+      range.setStart(startPoint.node, startPoint.offset);
+      range.setEnd(endPoint.node, endPoint.offset);
+      const sentence = document.createElement('span');
+      sentence.className = 'translation-sentence';
+      sentence.append(range.extractContents());
+      range.insertNode(sentence);
+      sentences[index] = sentence;
+      end = start;
+    }
+    return sentences;
+  };
+
   const showStatus = (message) => {
     window.clearTimeout(statusTimer);
     status.textContent = message;
@@ -99,20 +133,14 @@
 
         sourceUnits.forEach((sourceUnit, index) => {
           const translatedUnit = translatedUnits[index];
-          const sourceSegments = sourceUnit.children.length ? [] : segmentText(sourceUnit.textContent, sourceLanguage);
-          const translatedSegments = translatedUnit.children.length ? [] : segmentText(translatedUnit.textContent, translatedLanguage);
+          const sourceSegments = segmentText(sourceUnit.textContent, sourceLanguage);
+          const translatedSegments = segmentText(translatedUnit.textContent, translatedLanguage);
 
           if (sourceSegments.length > 1 && sourceSegments.length === translatedSegments.length) {
-            const fragment = document.createDocumentFragment();
-            sourceSegments.forEach((segment, segmentIndex) => {
-              const sentence = document.createElement('span');
-              sentence.className = 'translation-sentence';
-              sentence.textContent = segment;
-              fragment.append(sentence);
+            splitUnitIntoSentences(sourceUnit, sourceSegments).forEach((sentence, segmentIndex) => {
               interactiveUnits.push(sentence);
               interactiveTranslations.push(translatedSegments[segmentIndex].trim());
             });
-            sourceUnit.replaceChildren(fragment);
           } else {
             interactiveUnits.push(sourceUnit);
             interactiveTranslations.push(normalizeText(translatedUnit));
