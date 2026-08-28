@@ -77,23 +77,23 @@ blog:
   no_matches: 선택한 태그의 글이 없습니다.
   results_count: 글 {count}개 표시
   tags:
-    chrome-extension: Chrome확장
+    custom-domain: 개인도메인
+    dating-app: 데이팅앱
     vibe-coding: 바이브코딩
-    laftel-mania: LaftelMania
-    sweet-like-cookies: SweetLikeCookies
+    blog-monetization: 블로그수익화
+    saju: 사주팔자
+    web-analytics: 웹분석
+    product-design: 제품설계
     first-song: 첫노래
     project-policies: 프로젝트정책
-    github-pages: GitHubPages
-    custom-domain: 개인도메인
-    saju: 사주팔자
-    dating-app: 데이팅앱
-    product-design: 제품설계
-    web-analytics: 웹분석
+    ai-prompt: AI프롬프트제공
+    chrome-extension: Chrome확장
     ga4: GA4
+    github-pages: GitHubPages
+    laftel-mania: LaftelMania
     search-console: SearchConsole
     seo: SEO
-    blog-monetization: 블로그수익화
-    ai-prompt: AI프롬프트제공
+    sweet-like-cookies: SweetLikeCookies
 translation:
   enable: 문장 번역 켜기
   disable: 문장 번역 끄기

@@ -77,23 +77,23 @@ blog:
   no_matches: No posts match this tag.
   results_count: Showing {count} posts
   tags:
+    ai-prompt: AI프롬프트제공
+    blog-monetization: BlogMonetization
     chrome-extension: ChromeExtension
-    vibe-coding: VibeCoding
-    laftel-mania: LaftelMania
-    sweet-like-cookies: SweetLikeCookies
-    first-song: FirstSong
-    project-policies: ProjectPolicies
-    github-pages: GitHubPages
     custom-domain: CustomDomain
-    saju: Saju
     dating-app: DatingApp
-    product-design: ProductDesign
-    web-analytics: WebAnalytics
+    first-song: FirstSong
     ga4: GA4
+    github-pages: GitHubPages
+    laftel-mania: LaftelMania
+    product-design: ProductDesign
+    project-policies: ProjectPolicies
+    saju: Saju
     search-console: SearchConsole
     seo: SEO
-    blog-monetization: BlogMonetization
-    ai-prompt: AI프롬프트제공
+    sweet-like-cookies: SweetLikeCookies
+    vibe-coding: VibeCoding
+    web-analytics: WebAnalytics
 translation:
   enable: Turn on sentence translation
   disable: Turn off sentence translation

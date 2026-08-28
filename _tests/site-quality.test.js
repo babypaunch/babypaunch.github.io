@@ -75,6 +75,16 @@ for (const file of htmlFiles) {
   }
 }
 
+for (const [relative, locale] of [['blog/index.html', 'ko'], ['en/blog/index.html', 'en']]) {
+  const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
+  const filter = html.match(/<nav class="tag-filter"[\s\S]*?<\/nav>/)?.[0] || '';
+  const labels = [...filter.matchAll(/<a\b[^>]*data-tag="[^"]+"[^>]*>#([^<]+)<\/a>/g)].map((match) => match[1]);
+  assert.equal(labels[0], locale === 'ko' ? '전체' : 'All', `${relative}: all tag stays first`);
+  const tags = labels.slice(1);
+  const sorted = [...tags].sort(new Intl.Collator(locale, { numeric: true, sensitivity: 'base' }).compare);
+  assert.deepEqual(tags, sorted, `${relative}: localized tag order`);
+}
+
 const css = fs.readFileSync(path.join(siteRoot, 'styles.css'), 'utf8');
 assert.match(css, /\.page-shell h1 \{[^}]*overflow-wrap: anywhere/, 'styles.css: long page titles wrap');
 assert.match(css, /\.article-shell \{[^}]*68rem/, 'styles.css: article content shares the full container');
