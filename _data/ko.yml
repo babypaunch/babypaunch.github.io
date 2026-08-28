@@ -91,6 +91,9 @@ blog:
     web-analytics: 웹분석
     ga4: GA4
     search-console: SearchConsole
+table_scroll:
+  label: 좌우로 스크롤할 수 있는 표
+  hint: 좌우로 밀어 표 전체 보기
 translation:
   enable: 문장 번역 켜기
   disable: 문장 번역 끄기

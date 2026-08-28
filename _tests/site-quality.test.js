@@ -47,6 +47,10 @@ for (const file of htmlFiles) {
     assert.match(link, /\srel="[^"]*noopener[^"]*"/, `${label}: safe new-window link`);
   }
 
+  const tableCount = (html.match(/<table>/g) || []).length;
+  const wrappedTableCount = (html.match(/class="table-scroll"[^>]*><table>/g) || []).length;
+  assert.equal(wrappedTableCount, tableCount, `${label}: every table has a scroll region`);
+
   for (const match of html.matchAll(/href="(\/[^"?#]*)(?:[?#][^"]*)?"/g)) {
     const url = match[1];
     if (!url) continue;
@@ -60,6 +64,7 @@ for (const file of htmlFiles) {
 
 const css = fs.readFileSync(path.join(siteRoot, 'styles.css'), 'utf8');
 assert.match(css, /\.page-shell h1 \{[^}]*overflow-wrap: anywhere/, 'styles.css: long page titles wrap');
+assert.match(css, /\.table-scroll:has\(tr > :nth-child\(5\)\) table \{ min-width: 52rem; \}/, 'styles.css: wide mobile tables scroll');
 for (const preference of ['prefers-reduced-motion', 'prefers-contrast', 'forced-colors']) {
   assert.ok(css.includes(preference), `styles.css: ${preference}`);
 }
