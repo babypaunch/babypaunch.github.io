@@ -110,7 +110,7 @@ opens_new_window: opens in a new window
 contact_label: Contact
 analytics:
   title: Allow visitor analytics?
-  description: With your consent, Google Analytics measures which posts and traffic sources are useful. You can use every site feature if you decline.
+  description: With your consent, Google Analytics uses first-party cookies and processes visited pages, traffic sources, and usage events on Google servers. You can use every site feature if you decline.
   privacy_link: Read the privacy policy
   accept: Allow analytics
   reject: Decline

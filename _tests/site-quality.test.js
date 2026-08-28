@@ -115,4 +115,12 @@ for (const relative of [
   assert.match(html, /<time datetime="\d{4}-\d{2}-\d{2}">/, `${relative}: machine-readable revision date`);
 }
 
+for (const [relative, required] of [
+  ['policies/babypaunch/privacy/index.html', ['_ga', '이벤트 데이터 2개월', '사용자 데이터', '14개월', 'Google Signals', '국외 처리', 'Search Console', '정보 열람·삭제·처리정지']],
+  ['en/policies/babypaunch/privacy/index.html', ['_ga', 'Event data for two months', '14 months', 'Google Signals', 'International processing', 'Search Console', 'access, delete, or restrict']],
+]) {
+  const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
+  for (const text of required) assert.ok(html.includes(text), `${relative}: ${text}`);
+}
+
 console.log(`Site quality tests passed for ${htmlFiles.length} pages.`);
