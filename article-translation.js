@@ -111,7 +111,7 @@
     if (translations.length) return;
     if (loading) return loading;
 
-    loading = fetch(toggle.dataset.translationUrl, { credentials: 'same-origin' })
+    loading = fetch(toggle.dataset.translationUrl, { credentials: 'same-origin', cache: 'no-cache' })
       .then((response) => {
         if (!response.ok) throw new Error(`Translation page returned ${response.status}`);
         return response.text();
