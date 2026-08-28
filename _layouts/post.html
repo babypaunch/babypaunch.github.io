@@ -13,3 +13,28 @@ layout: default
   </article>
   <a class="text-link article-back" href="{{ t.routes.blog }}">{{ t.blog.back }}</a>
 </main>
+{% if page.language_url %}
+<button
+  class="article-translation-toggle"
+  type="button"
+  data-translation-toggle
+  data-translation-url="{{ page.language_url }}"
+  data-label-enable="{{ t.translation.enable }}"
+  data-label-disable="{{ t.translation.disable }}"
+  data-message-enabled="{{ t.translation.enabled }}"
+  data-message-disabled="{{ t.translation.disabled }}"
+  data-message-loading="{{ t.translation.loading }}"
+  data-message-error="{{ t.translation.error }}"
+  aria-pressed="false"
+  aria-label="{{ t.translation.enable }}"
+  aria-describedby="article-translation-instructions">
+  <span class="article-translation-icon" aria-hidden="true"><span>文</span><span>A</span></span>
+  <span class="visually-hidden" id="article-translation-instructions">{{ t.translation.instructions }}</span>
+</button>
+<aside class="article-translation-tooltip" data-translation-tooltip role="tooltip" id="article-translation-tooltip" hidden>
+  <strong>{{ t.translation.tooltip_label }}</strong>
+  <p data-translation-text></p>
+</aside>
+<div class="translation-status" data-translation-status role="status" aria-live="polite" aria-atomic="true" hidden></div>
+<script src="/article-translation.js?v=20260828" defer></script>
+{% endif %}

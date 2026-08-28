@@ -166,7 +166,9 @@ I wanted compatibility to start those conversations instead of filtering people 
 
 ## Saju is not a scientific personality test or prediction model
 
-The question cannot be avoided: is Saju science?
+The question cannot be avoided.
+
+Is Saju science?
 
 There has been some research comparing Four Pillars theory with personality measures. One exploratory study published in 2015 reported associations for some combined variables, while relationships were weak when major variables were examined independently and significant correlations were concentrated in only a few measures. Those limited findings do not establish that Saju can reliably predict an individual's personality, occupation, relationships, or future events.
 

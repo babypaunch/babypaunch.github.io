@@ -91,6 +91,15 @@ blog:
     web-analytics: WebAnalytics
     ga4: GA4
     search-console: SearchConsole
+translation:
+  enable: Turn on sentence translation
+  disable: Turn off sentence translation
+  enabled: Sentence translation is on.
+  disabled: Sentence translation is off.
+  loading: Loading the translation.
+  error: The translation could not be loaded.
+  instructions: Turn translation on, then hover over or select a sentence. With a keyboard, use the arrow keys and press Enter.
+  tooltip_label: Korean translation
 policies:
   intro: Policy documents for the apps and services provided by BabyPaunch.
 not_found:
