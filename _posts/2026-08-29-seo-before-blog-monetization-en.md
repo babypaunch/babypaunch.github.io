@@ -6,7 +6,7 @@ title: Want to make money from your blog? Get SEO right first
 description: How I audited and improved the missing SEO foundations on my GitHub Pages site before trying to monetize a blog without paid ads or constant promotion.
 category: Making
 date: 2026-08-29 07:35:00 +0900
-last_modified_at: 2026-08-29 07:57:00 +0900
+last_modified_at: 2026-08-29 08:10:00 +0900
 permalink: /en/blog/seo-before-blog-monetization/
 language_url: /blog/seo-before-blog-monetization/
 alternate_ko: /blog/seo-before-blog-monetization/
@@ -368,24 +368,23 @@ Wanting to make money from a blog may begin with adding ad code, but the real pr
 <section class="article-ai-prompt" data-no-translation markdown="1">
 ## #AI프롬프트제공
 
-Give the following prompt to an AI to audit missing or incorrect technical SEO settings on a GitHub Pages site against real output.
+Give the following prompt to an AI to audit missing or incorrect technical SEO settings on a website against real output.
 
 Do not enter passwords, API keys, tokens, or personal information in the prompt.
 
 ```text
-You are a technical SEO auditor who understands GitHub Pages and Jekyll.
+You are a technical SEO auditor for web services.
 
-Inspect both my site's repository files and its public pages, then check the following items.
+Inspect the site information I provide and its public pages, then check the following items.
 
 - HTTPS redirects and one canonical domain
 - The canonical URL of each page
 - Crawling rules in robots.txt
 - Public URLs and exclusions in sitemap.xml
 - A unique title and meta description for each page
-- Canonical, hreflang, and x-default relationships between Korean and English pages
-- WebSite, WebPage, and BlogPosting structured data
-- The distinction between publication and actual modification dates
-- Open Graph and X sharing metadata
+- Structured data appropriate for the site and content type
+- The distinction between content publication and actual modification dates
+- Open Graph and social sharing metadata
 - Heading order, internal links, and image alternative text
 
 Classify every item as `OK`, `Needs improvement`, or `Cannot verify`.
@@ -394,12 +393,13 @@ For each problem, provide the cause, the file or setting to change, the smallest
 
 Do not guarantee search rankings or guess about anything you have not verified.
 
-After making changes, verify the public HTML, HTTP status, canonical links, robots.txt, and sitemap.xml instead of relying only on a local build.
+After making changes, verify the public HTML, HTTP status, canonical links, robots.txt, and sitemap.xml instead of relying only on a preview or settings screen.
+
+Complete only the fields needed for your environment, and leave unknown fields blank.
 
 Site URL: [site URL]
-Repository path or URL: [GitHub repository]
-Environment: GitHub Pages and Jekyll [version]
-Supported languages: [for example, Korean and English]
+Site management method: [for example, a CMS, a framework, or hand-written HTML]
+Available materials: [for example, a repository URL, an admin screen, or deployment settings]
 ```
 </section>
 
