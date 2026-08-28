@@ -10,6 +10,7 @@ const walk = (directory) => fs.readdirSync(directory, { withFileTypes: true }).f
 });
 
 const htmlFiles = walk(siteRoot).filter((file) => file.endsWith('.html'));
+const pageTitles = new Map();
 
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file, 'utf8');
@@ -24,6 +25,11 @@ for (const file of htmlFiles) {
   assert.match(html, /<meta name="robots" content="[^"]+">/, `${label}: robots directive`);
   assert.doesNotMatch(html, /<table\b/, `${label}: use cards instead of tables`);
   assert.match(html, /<link rel="canonical" href="https:\/\/babypaunch\.com\//, `${label}: canonical`);
+  assert.equal((html.match(/<meta name="twitter:card"/g) || []).length, 1, `${label}: one Twitter card type`);
+  assert.match(html, /<meta property="og:image" content="https:\/\//, `${label}: absolute Open Graph image`);
+  assert.match(html, /<meta property="og:image:alt" content="[^"]+">/, `${label}: Open Graph image alt`);
+  assert.match(html, /<meta name="twitter:image" content="https:\/\//, `${label}: absolute Twitter image`);
+  assert.match(html, /<meta name="twitter:image:alt" content="[^"]+">/, `${label}: Twitter image alt`);
   for (const language of ['ko', 'en', 'x-default']) {
     assert.match(html, new RegExp(`<link rel="alternate" hreflang="${language}"`), `${label}: ${language} alternate`);
   }
@@ -32,6 +38,16 @@ for (const file of htmlFiles) {
   assert.ok(structuredData, `${label}: structured data`);
   const schema = JSON.parse(structuredData[1]);
   assert.ok(['WebSite', 'WebPage', 'BlogPosting'].includes(schema['@type']), `${label}: schema type`);
+  if (schema['@type'] === 'BlogPosting') {
+    assert.ok(schema.datePublished, `${label}: published date`);
+    assert.ok(schema.dateModified, `${label}: modified date`);
+    assert.ok(schema.image, `${label}: structured data image`);
+  }
+
+  const title = html.match(/<title>([^<]+)<\/title>/)?.[1];
+  assert.ok(title, `${label}: title`);
+  assert.ok(!pageTitles.has(title), `${label}: title duplicates ${pageTitles.get(title)}`);
+  pageTitles.set(title, label);
 
   for (const image of html.match(/<img\b[^>]*>/g) || []) {
     assert.match(image, /\salt="[^"]*"/, `${label}: image alt`);
@@ -90,6 +106,9 @@ for (const relative of [
 }
 
 const sitemap = fs.readFileSync(path.join(siteRoot, 'sitemap.xml'), 'utf8');
+for (const excluded of ['AGENTS.html', 'SNAPSHOT.html', 'THIRD_PARTY_NOTICES.html', '/assets/css/style.css']) {
+  assert.ok(!sitemap.includes(excluded), `sitemap: excludes ${excluded}`);
+}
 for (const url of [
   '/policies/babypaunch/accessibility/',
   '/en/policies/babypaunch/accessibility/',
@@ -104,6 +123,11 @@ for (const url of [
 ]) {
   assert.ok(sitemap.includes(`https://babypaunch.com${url}`), `sitemap: ${url}`);
 }
+
+const socialImage = fs.readFileSync(path.join(siteRoot, 'assets', 'images', 'social', 'babypaunch-social-card.png'));
+assert.equal(socialImage.toString('ascii', 1, 4), 'PNG', 'social image: PNG format');
+assert.equal(socialImage.readUInt32BE(16), 1200, 'social image: width');
+assert.equal(socialImage.readUInt32BE(20), 630, 'social image: height');
 
 const policyData = fs.readFileSync(path.join(__dirname, '..', '_data', 'policies.yml'), 'utf8');
 for (const project of ['babypaunch', 'laftel-mania']) {

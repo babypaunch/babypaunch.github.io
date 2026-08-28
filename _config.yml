@@ -2,3 +2,13 @@ url: https://babypaunch.com
 title: BabyPaunch
 timezone: Asia/Seoul
 analytics_measurement_id: "G-TFR80P4CNK"
+social_image: /assets/images/social/babypaunch-social-card.png
+
+exclude:
+  - AGENTS.md
+  - SNAPSHOT.md
+  - THIRD_PARTY_NOTICES.md
+  - README.md
+  - _research
+  - .gstack
+  - .impeccable.md

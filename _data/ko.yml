@@ -16,16 +16,16 @@ routes:
   not_found: /
 pages:
   home:
-    title: BabyPaunch — Small, but thoughtfully made.
+    title: BabyPaunch — 작지만 꼼꼼하게 만듭니다
     description: 앱과 음악, 아이디어를 만드는 BabyPaunch의 공식 사이트입니다.
   blog:
-    title: Blog — BabyPaunch
+    title: 블로그 — BabyPaunch
     description: BabyPaunch의 개발과 제품 이야기
   music:
-    title: Music — BabyPaunch
+    title: 음악 — BabyPaunch
     description: Humming Echo의 음악과 영상을 듣고 볼 수 있는 BabyPaunch 음악 페이지입니다.
   policies:
-    title: Policies — BabyPaunch
+    title: 정책 — BabyPaunch
     description: BabyPaunch 서비스의 정책 문서 모음
   privacy:
     title: 개인정보처리방침 — BabyPaunch
@@ -37,7 +37,7 @@ pages:
     title: Laftel Mania 개인정보처리방침 — BabyPaunch
     description: Laftel Mania가 저장하는 설정과 요청하는 사이트 접근 권한을 안내합니다.
   contact:
-    title: Contact — BabyPaunch
+    title: 문의 — BabyPaunch
     description: BabyPaunch의 앱, 음악, 접근성과 정책에 관한 문의 방법을 안내합니다.
   not_found:
     title: 페이지를 찾을 수 없습니다 — BabyPaunch

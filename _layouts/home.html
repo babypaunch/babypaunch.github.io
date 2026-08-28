@@ -5,7 +5,9 @@ layout: default
 <main id="main">
   <section class="hero" aria-labelledby="hero-title">
     <p class="eyebrow" lang="en">Independent Fullstack Developer · Korea</p>
-    <h1 id="hero-title" lang="en">Small,<br><span class="hero-but">but</span> <em>thoughtfully</em> made.</h1>
+{% if page.locale == 'ko' %}    <h1 id="hero-title">작지만,<br><span class="hero-but">꼼꼼하게</span> <em>만듭니다.</em></h1>
+{% else %}    <h1 id="hero-title" lang="en">Small,<br><span class="hero-but">but</span> <em>thoughtfully</em> made.</h1>
+{% endif %}
     <p class="hero-copy">{{ t.home.hero_copy }}</p>
     <a class="text-link" href="#apps">{{ t.home.work_link }}</a>
     <div class="orbit" aria-hidden="true"><span class="orbit-dot"></span><span class="orbit-word">make<br>small<br>things</span></div>

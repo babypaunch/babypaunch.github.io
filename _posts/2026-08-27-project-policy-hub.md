@@ -6,6 +6,7 @@ title: 프로젝트 정책을 한곳에 모으기로 했다
 description: 앞으로 만들 프로젝트를 위해 내 GitHub Pages에 새로 구매한 도메인을 연결하고 정책 페이지를 프로젝트별 구조로 정리했다.
 category: Making
 date: 2026-08-27 00:00:00 +0900
+last_modified_at: 2026-08-28 00:00:00 +0900
 permalink: /blog/project-policy-hub/
 language_url: /en/blog/project-policy-hub/
 alternate_ko: /blog/project-policy-hub/

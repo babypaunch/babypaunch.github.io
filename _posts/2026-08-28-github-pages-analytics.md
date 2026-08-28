@@ -6,6 +6,7 @@ title: 사람들이 어디서 오는지 알고 싶었다
 description: BabyPaunch에 동의 기반 GA4와 Search Console을 연결하고, 유입 경로를 확인할 수 있는 기반을 마련했다.
 category: Making
 date: 2026-08-28 00:00:00 +0900
+last_modified_at: 2026-08-28 00:00:00 +0900
 permalink: /blog/github-pages-analytics/
 language_url: /en/blog/github-pages-analytics/
 alternate_ko: /blog/github-pages-analytics/

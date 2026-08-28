@@ -29,14 +29,16 @@ python -m http.server 8000 --directory _site
 
 - 한영 글에 서로를 가리키는 `alternate_ko`, `alternate_en`, `language_url`을 작성합니다.
 - 모든 글에 고유한 `title`, `description`, `permalink`를 작성합니다.
+- 기존 글에 내용을 추가하거나 고치면 `last_modified_at`을 실제 수정 시각으로 갱신합니다.
 - 대표 이미지가 있으면 `image`와 같은 언어의 `image_alt`를 함께 작성합니다.
+- 대표 이미지가 없는 페이지는 공통 1200×630 소셜 이미지를 자동 사용합니다.
 - 본문 이미지는 의미를 설명하는 `alt`, 실제 `width`와 `height`, `loading="lazy"`를 사용합니다.
 - iframe에는 내용을 구분하는 `title`과 `loading="lazy"`를 사용합니다.
 - 제목은 `h1` 다음 `h2` 순서로 건너뛰지 않고 작성합니다.
 - 링크 문구만 읽어도 목적지를 알 수 있게 작성하고, 새 창 링크에는 `rel="noopener noreferrer"`를 사용합니다.
 - 새 태그는 `_data/ko.yml`과 `_data/en.yml`에 함께 등록합니다.
 - 기존 글에 추가 업데이트를 붙일 때는 각 추가본 바로 앞에 `<hr>`을 넣고 날짜가 포함된 제목으로 구분합니다.
-- 발행 전 Jekyll 빌드 후 `_tests`의 두 Node 검사를 실행합니다.
+- 발행 전 Jekyll 빌드 후 `_tests`의 모든 Node 검사를 실행합니다.
 
 접근성 목표와 알려진 제한 사항은 `/policies/babypaunch/accessibility/`와 `/en/policies/babypaunch/accessibility/`에서 공개합니다.
 

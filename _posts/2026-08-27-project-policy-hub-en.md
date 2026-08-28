@@ -6,6 +6,7 @@ title: I decided to keep every project's policies in one place
 description: I connected a newly purchased domain to my GitHub Pages site and organized policies by project for the things I will build next.
 category: Making
 date: 2026-08-27 00:00:00 +0900
+last_modified_at: 2026-08-28 00:00:00 +0900
 permalink: /en/blog/project-policy-hub/
 language_url: /blog/project-policy-hub/
 alternate_ko: /blog/project-policy-hub/
