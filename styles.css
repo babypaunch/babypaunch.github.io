@@ -386,6 +386,18 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .accessibility-shell,
 .contact-shell { width: min(100% - (var(--page-gutters) * 2), 850px); }
 .empty-note { margin-top: 5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.footer-button { appearance: none; border: 0; padding: 0; background: transparent; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: .25rem; cursor: pointer; }
+.modal-open { overflow: hidden; }
+.consent-layer { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 1rem; background: rgb(20 18 14 / 62%); }
+.consent-layer[hidden] { display: none; }
+.consent-dialog { width: min(100%, 34rem); max-height: calc(100vh - 2rem); overflow: auto; padding: clamp(1.5rem, 4vw, 2.5rem); border: 1px solid var(--ink); background: var(--paper); box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 28%); }
+.consent-dialog h2 { margin-top: .5rem; }
+.consent-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .75rem; margin-top: 2rem; }
+.consent-actions button { min-height: 44px; padding: .7rem 1rem; border: 1px solid var(--ink); font: inherit; cursor: pointer; }
+.button-primary { background: var(--ink); color: var(--paper); }
+.button-secondary { background: transparent; color: var(--ink); }
+.site-toast { position: fixed; top: 1.5rem; left: 50%; z-index: 1100; max-width: min(90vw, 28rem); transform: translateX(-50%); padding: .75rem 1rem; background: var(--ink); color: var(--paper); text-align: center; box-shadow: 0 .75rem 2rem rgb(0 0 0 / 24%); }
+.site-toast[hidden] { display: none; }
 .tag-filter { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin-top: 4rem; }
 .tag-filter a { display: inline-flex; min-height: 44px; align-items: center; text-decoration: none; }
 .tag-filter a::before { content: none; }

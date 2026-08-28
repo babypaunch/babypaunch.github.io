@@ -10,10 +10,13 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
 {% include seo.html %}
   <link rel="stylesheet" href="/styles.css?v=20260827-table">
+{% include analytics.html %}
 </head>
 <body>
   {% include header.html %}
   {{ content }}
   {% include footer.html %}
+{% include analytics-consent.html %}
+  <script src="/analytics-consent.js" defer></script>
 </body>
 </html>

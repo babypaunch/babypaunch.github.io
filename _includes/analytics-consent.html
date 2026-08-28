@@ -1,0 +1,16 @@
+{% if site.analytics_measurement_id != empty %}
+<div class="consent-layer" data-consent-layer hidden>
+  <section class="consent-dialog" role="dialog" aria-modal="true" aria-labelledby="analytics-consent-title" aria-describedby="analytics-consent-description" tabindex="-1">
+    <p class="eyebrow" lang="en">Analytics · BabyPaunch</p>
+    <h2 id="analytics-consent-title">{{ t.analytics.title }}</h2>
+    <p id="analytics-consent-description">{{ t.analytics.description }}</p>
+    <p><a href="{{ t.routes.privacy }}">{{ t.analytics.privacy_link }}</a></p>
+    <div class="consent-actions">
+      <button type="button" class="button-secondary" data-consent-reject>{{ t.analytics.reject }}</button>
+      <button type="button" class="button-primary" data-consent-accept>{{ t.analytics.accept }}</button>
+    </div>
+  </section>
+</div>
+<div class="site-toast" role="status" aria-live="polite" aria-atomic="true" data-consent-toast hidden></div>
+<div data-analytics-config="{{ site.analytics_measurement_id }}" data-analytics-language="{{ page.locale }}" hidden></div>
+{% endif %}

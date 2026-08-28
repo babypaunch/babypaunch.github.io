@@ -96,3 +96,10 @@ not_found:
   home: English home
 opens_new_window: opens in a new window
 contact_label: Contact
+analytics:
+  title: Allow visitor analytics?
+  description: With your consent, Google Analytics measures which posts and traffic sources are useful. You can use every site feature if you decline.
+  privacy_link: Read the privacy policy
+  accept: Allow analytics
+  reject: Decline
+  settings: Analytics settings

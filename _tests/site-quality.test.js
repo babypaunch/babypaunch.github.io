@@ -19,6 +19,7 @@ for (const file of htmlFiles) {
   assert.equal((html.match(/<main\b/g) || []).length, 1, `${label}: one main landmark`);
   assert.equal((html.match(/<h1\b/g) || []).length, 1, `${label}: one h1`);
   assert.match(html, /class="skip-link" href="#main"/, `${label}: skip link`);
+  assert.match(html, /data-analytics-settings/, `${label}: analytics settings control`);
   assert.match(html, /<meta name="description" content="[^"]+">/, `${label}: description`);
   assert.match(html, /<meta name="robots" content="[^"]+">/, `${label}: robots directive`);
   assert.match(html, /<link rel="canonical" href="https:\/\/babypaunch\.com\//, `${label}: canonical`);
@@ -61,6 +62,11 @@ const css = fs.readFileSync(path.join(siteRoot, 'styles.css'), 'utf8');
 for (const preference of ['prefers-reduced-motion', 'prefers-contrast', 'forced-colors']) {
   assert.ok(css.includes(preference), `styles.css: ${preference}`);
 }
+
+const analyticsScript = fs.readFileSync(path.join(siteRoot, 'analytics-consent.js'), 'utf8');
+assert.match(analyticsScript, /localStorage\.setItem\(storageKey, choice\)/, 'analytics: consent choice persists');
+assert.match(analyticsScript, /analytics_storage: 'granted'/, 'analytics: granted only after consent');
+assert.match(analyticsScript, /2000/, 'analytics: toast dismisses after two seconds');
 
 const sitemap = fs.readFileSync(path.join(siteRoot, 'sitemap.xml'), 'utf8');
 for (const url of [
