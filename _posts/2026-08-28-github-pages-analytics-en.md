@@ -29,7 +29,7 @@ So I began with one question.
 
 ## This work at a glance
 
-| Step | Where I worked | What I did | Why I did it | Result |
+| # | Where I worked | What I did | Why I did it | Result |
 | ---: | --- | --- | --- | --- |
 | 1 | Google Analytics | Created a GA4 property and web stream | To measure posts and traffic sources | Visitor analytics foundation established |
 | 2 | My site | Connected the measurement code in the shared layout | To apply the same analytics rules to every page | Measurement available across the site |
