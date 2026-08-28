@@ -21,7 +21,11 @@ Life became difficult in many ways from 2023 onward.
 
 After my wife passed away, I stayed inside for a long time. I experienced panic attacks, and there were days when distancing myself from reality felt like the only way to endure it. Time kept moving, but mine seemed to have stopped.
 
-About a year later, I began writing lyrics from the moments that reminded me of her. I could not fit our entire life into one song, so I returned to the very beginning.
+About a year later, I began writing lyrics from the moments that reminded me of her.
+
+I could not fit our entire life into one song.
+
+So I returned to the very beginning.
 
 The first time I saw her photograph. I wanted to preserve that brief, unmistakable spark in a song.
 
@@ -31,13 +35,19 @@ After seeing her photograph for the first time, I began pursuing her. I had fall
 
 I retold our first meeting as a different scene.
 
-On his way home, a well-dressed man sees a beautiful woman walking toward him. Their eyes meet for a moment. His heart races, and before he even knows her name, he imagines an entire future with her.
+On his way home, a well-dressed man sees a beautiful woman walking toward him.
+
+Their eyes meet for a moment.
+
+His heart races, and before he even knows her name, he imagines an entire future with her.
 
 I turned the spark I felt when I first saw my wife's photograph into a scene of falling for a stranger passing on the street. Rather than explain the memory exactly as it happened, I wanted it to unfold like a short film.
 
 If you listen closely, you can hear the man's steady footsteps. I also expressed the man walking in the lyrics through sound.
 
-I also slipped a joke that a friend on social media once made into the lyrics: when a man meets a woman, he immediately starts dreaming about the future.
+I also slipped a joke that a friend on social media once made into the lyrics.
+
+The joke was that a man immediately starts dreaming about the future when he meets a woman.
 
 ## The story inside three lines
 
@@ -67,13 +77,21 @@ Perhaps that was also how I felt about memory. Our time together had ended, but 
 
 The first inspiration for the music video came from `Singin' in the Rain`. Its image of a man carrying an umbrella as he walks down a street after the rain helped me picture the scenes in the song.
 
-As I wrote the lyrics, I could already see the music video clearly: a man in a suit holding an umbrella, two people passing one another, and an imagined future appearing for a moment before fading away.
+As I wrote the lyrics, I could already see the music video's composition and flow clearly.
+
+A man in a suit holding an umbrella, two people passing one another, and an imagined future appearing for a moment before fading away already formed one continuous film in my mind.
 
 The opening and closing scenes of the music video are deliberately different. It begins with the two people facing each other and ends with them in crossed positions, turned away from one another. The saxophone player in the middle represents the song's instrumental break and becomes the dividing line between those two scenes.
 
 Finishing both the song and the video by myself took time.
 
-I created the images with `Midjourney`. Precise composition and narrative mattered more to me than making every shot move naturally, so I chose a sequence of still images. I shaped each angle, glance, and transition until the result came close to the film I had imagined.
+I created the images with `Midjourney`.
+
+Showing the composition and flow in my mind precisely mattered more than making every shot move naturally.
+
+So I chose a sequence of still images.
+
+I shaped each angle, glance, and transition until the result came close to the film I had imagined.
 
 I first sketched all the lyrics in Korean, then used a translator to build the English version. A direct translation would not sing well, so I kept revising the words to preserve their meaning while making the pronunciation, length, and rhyme flow naturally.
 

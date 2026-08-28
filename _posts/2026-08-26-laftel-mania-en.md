@@ -39,7 +39,11 @@ Laftel Mania is a Chrome extension I built to solve this inconvenience.
 
 ## Change playback speed with shortcuts instead of the mouse
 
-`Shift + ,` slows playback by 0.25, and `Shift + .` makes it 0.25 faster. The speed can be adjusted from `0.25x` to `4.00x`.
+`Shift + ,` slows playback by 0.25.
+
+`Shift + period` makes playback 0.25 faster.
+
+The speed can be adjusted from `0.25x` to `4.00x`.
 
 There is no need to find the player menu. I can change the speed right away with a shortcut.
 

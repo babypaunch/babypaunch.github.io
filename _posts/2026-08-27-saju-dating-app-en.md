@@ -22,11 +22,19 @@ Then an acquaintance casually said something that stayed with me.
 
 “Wouldn't a dating app based on Saju compatibility be fun?”
 
-The idea felt fresh immediately. It also brought a small moment of, `Why didn't I think that far?`
+The idea felt fresh immediately.
+
+It also brought a small moment of regret.
+
+`Why didn't I think that far?`
 
 Still, I felt some resistance. The word `Saju` itself was probably the reason. I was familiar with zodiac animals, unlucky years, and compatibility readings, but I could not properly explain what Saju calculated or how its interpretations were made.
 
-So I studied Saju before building the app. I was not trying to make myself believe it. I wanted to understand how I should handle this old system responsibly.
+So I studied Saju before building the app.
+
+I was not trying to make myself believe it.
+
+I wanted to understand how I should handle this old system responsibly.
 
 <p class="article-question">Could Saju become a reason to start a conversation instead of a scorecard for rejecting people?</p>
 
@@ -85,7 +93,11 @@ There are twelve Earthly Branches.
 
 In Korean, they are read as `ja (子), chuk (丑), in (寅), myo (卯), jin (辰), sa (巳), o (午), mi (未), sin (申), yu (酉), sul (戌), and hae (亥)`.
 
-I had known the branches mostly through zodiac animals. In the traditional calendar, however, they are also associated with months, two-hour time periods, seasons, and directions. The Zi hour (子時), for example, covers `23:00–00:59`, followed by the Chou hour (丑時) at `01:00–02:59`.
+I had known the branches mostly through zodiac animals.
+
+In the traditional calendar, however, they are also associated with months, two-hour time periods, seasons, and directions.
+
+The Zi hour (子時), for example, covers `23:00–00:59`, followed by the Chou hour (丑時) at `01:00–02:59`.
 
 My app uses the same twelve periods to calculate the Hour Branch (時支). If someone does not know their birth time, the app leaves out the entire Hour Pillar. Showing uncertainty honestly seemed better than inventing a precise answer.
 
@@ -93,13 +105,25 @@ My app uses the same twelve periods to calculate the Hour Branch (時支). If so
 
 The ten Heavenly Stems and twelve Earthly Branches are paired in sequence to form the Stem-Branch system (干支). The cycle begins with Jiazi (甲子), followed by Yichou (乙丑).
 
-This does not produce all `10 × 12 = 120` theoretical pairs. Stems and branches of matching Yin or Yang parity meet in sequence, producing sixty distinct pairs. After Guihai (癸亥), the cycle returns to Jiazi (甲子). This is the Sexagenary Cycle (六十甲子).
+This does not produce all `10 × 12 = 120` theoretical pairs.
+
+Stems and branches of matching Yin or Yang parity meet in sequence, producing sixty distinct pairs.
+
+After Guihai (癸亥), the cycle returns to Jiazi (甲子).
+
+This is the Sexagenary Cycle (六十甲子).
 
 Saju places a birth moment within that cycle as a Year, Month, Day, and Hour Pillar.
 
 The conversion is more than replacing calendar numbers with Chinese characters. The Year and Month Pillars use solar-term boundaries (節氣). Even after January 1, a Saju year can remain in the previous year until the Beginning of Spring, Ipchun (立春). Month Pillars also change at boundaries such as Ipchun (立春), Gyeongchip (驚蟄), and Cheongmyeong (淸明), not simply on the first day of each calendar month.
 
-The app uses the actual solar-term time in the selected birthplace time zone. Its current calculation range is `1900–2100`. It does not accept lunar dates (陰曆) or leap lunar months (閏月) because I do not yet have a sufficiently verified conversion dataset. Refusing to pretend is also part of accuracy.
+The app uses the actual solar-term time in the selected birthplace time zone.
+
+Its current calculation range is `1900–2100`.
+
+It does not accept lunar dates (陰曆) or leap lunar months (閏月) because I do not yet have a sufficiently verified conversion dataset.
+
+Refusing to pretend is also part of accuracy.
 
 ## Using the Five Elements (五行) only as symbolic language
 
@@ -149,11 +173,21 @@ The original idea was a Saju compatibility dating app, so it needed to compare t
 
 `Your compatibility score is 92.`
 
-That is simple and easy to notice. But a relationship loses important detail when it becomes one verdict. Initial attraction can differ from long-term stability. Two people may communicate well but disagree about daily habits or money.
+That is simple and easy to notice.
+
+But a relationship loses important detail when it becomes one verdict.
+
+Initial attraction can differ from long-term stability.
+
+Two people may communicate well but disagree about daily habits or money.
 
 The app therefore separates attraction, stability, communication, growth, stress, and the current context. These are not scientifically validated predictors of relationship success. They are reference values created by the app from the Five Elements (五行), Ten Stars (十星), combinations (合), clashes (沖), and the relationship goals selected by the user.
 
-The overall score is not the probability of a successful relationship. A low score does not automatically remove another person. The app also avoids statements such as `the worst match`, `marriage will make you unhappy`, or `you should break up`.
+The overall score is not the probability of a successful relationship.
+
+A low score does not automatically remove another person.
+
+The app also avoids statements such as `the worst match`, `marriage will make you unhappy`, or `you should break up`.
 
 I did not want an app that decided whether someone was worth meeting.
 

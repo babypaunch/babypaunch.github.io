@@ -15,8 +15,11 @@ const frontMatterValue = (source, key) => {
 
 const renderedPath = (permalink) => path.join(site, permalink.replace(/^\//, ''), 'index.html');
 const articleBody = (html) => html.match(/<article class="article-body">([\s\S]*?)<\/article>/)?.[1] || '';
-const semanticSequence = (html) => [...articleBody(html).matchAll(/<(h2|h3|h4|p|li|th|td|figcaption|summary)\b/g)]
-  .map((match) => match[1]);
+const semanticUnits = (html) => [...articleBody(html).matchAll(/<(h2|h3|h4|p|li|th|td|figcaption|summary)\b[^>]*>([\s\S]*?)<\/\1>/g)]
+  .map((match) => ({ tag: match[1], text: match[2].replace(/<[^>]+>/g, ' ').replace(/&[^;]+;/g, ' ').replace(/\s+/g, ' ').trim() }));
+const sentenceCount = (text, locale) => [...new Intl.Segmenter(locale, { granularity: 'sentence' }).segment(text)]
+  .filter(({ segment }) => segment.trim()).length;
+const sentenceMismatches = [];
 
 for (const koreanFile of koreanPosts) {
   const englishFile = koreanFile.replace(/\.md$/, '-en.md');
@@ -33,11 +36,22 @@ for (const koreanFile of koreanPosts) {
   assert.ok(englishHtml.includes(`data-translation-url="${koreanPermalink}"`), `${englishFile}: translation target`);
   assert.match(koreanHtml, /article-translation\.js/, `${koreanFile}: translation script`);
   assert.match(englishHtml, /article-translation\.js/, `${englishFile}: translation script`);
+  const koreanUnits = semanticUnits(koreanHtml);
+  const englishUnits = semanticUnits(englishHtml);
   assert.deepEqual(
-    semanticSequence(koreanHtml),
-    semanticSequence(englishHtml),
+    koreanUnits.map(({ tag }) => tag),
+    englishUnits.map(({ tag }) => tag),
     `${koreanFile}: Korean and English semantic blocks`,
   );
+  koreanUnits.forEach((unit, index) => {
+    const koreanCount = sentenceCount(unit.text, 'ko');
+    const englishCount = sentenceCount(englishUnits[index].text, 'en');
+    if (koreanCount !== englishCount) {
+      sentenceMismatches.push(`${koreanFile}: ${unit.tag} block ${index + 1} (${koreanCount}/${englishCount})`);
+    }
+  });
 }
+
+assert.deepEqual(sentenceMismatches, [], `Korean and English sentence counts:\n${sentenceMismatches.join('\n')}`);
 
 console.log(`Article translation tests passed for ${koreanPosts.length} post pairs.`);

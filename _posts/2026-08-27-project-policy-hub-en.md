@@ -32,7 +32,13 @@ That led me to one question.
 
 ## Using my website as a policy hub
 
-I had just started managing `babypaunch.github.io` as my blog and project website. Adding a policy section there meant I would not need to create another site each time I made something new. (Best of all, it is free. How good is that?!)
+I had just started managing `babypaunch.github.io` as my blog and project website.
+
+Adding a policy section there meant I would not need to create another site each time I made something new.
+
+Best of all, it is free.
+
+How good is that?!
 
 This does not mean applying one policy to every project. The website is a shared entrance, while each project's documents remain separate.
 
@@ -48,9 +54,15 @@ I bought `babypaunch.com` and connected it to GitHub Pages. Cloudflare felt inex
 
 Using the root domain and `www` address correctly with GitHub Pages required four A records and one CNAME in Cloudflare DNS.
 
-The four A records connect `babypaunch.com` to the GitHub Pages servers. The CNAME connects `www.babypaunch.com` to the default GitHub Pages address. I left every record in DNS-only mode without the Cloudflare proxy.
+The four A records connect `babypaunch.com` to the GitHub Pages servers.
 
-HTTP started working first. HTTPS needed time for DNS propagation and certificate issuance, so I had to wait before I could verify it.
+The CNAME connects `www.babypaunch.com` to the default GitHub Pages address.
+
+I left every record in DNS-only mode without the Cloudflare proxy.
+
+HTTP started working first.
+
+HTTPS needed time for DNS propagation and certificate issuance, so I had to wait before I could verify it.
 
 ## Showing projects before document types
 
@@ -91,7 +103,11 @@ For now, the hub contains the BabyPaunch website and Laftel Mania. Whenever I ma
 
 ### <code>August 28, 2026</code> update: HTTPS is now working
 
-Even after more than 24 hours, the HTTPS certificate had not been created automatically. The DNS records already matched GitHub Pages' recommended values. The actual problem was a failed certificate issuance job left in GitHub Pages.
+Even after more than 24 hours, the HTTPS certificate had not been created automatically.
+
+The DNS records already matched GitHub Pages' recommended values.
+
+The actual problem was a failed certificate issuance job left in GitHub Pages.
 
 I removed the custom domain from the GitHub Pages settings, waited briefly, and added `babypaunch.com` again to restart certificate issuance from the beginning. After confirming that the new certificate covered both `babypaunch.com` and `www.babypaunch.com`, I enabled HTTPS enforcement.
 

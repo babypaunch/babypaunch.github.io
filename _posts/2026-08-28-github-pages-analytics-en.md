@@ -21,7 +21,9 @@ I had started publishing blog posts, but I still could not tell which ones peopl
 
 Even if I shared a post on Instagram, Threads, Facebook, and X, I had no way to see which platform brought someone to the site. I also could not see the search terms people used to find it.
 
-If I was going to keep writing, I wanted more than a page-view total. I wanted to understand which subjects and traffic sources genuinely brought people in.
+If I was going to keep writing, I wanted more than a page-view total.
+
+I wanted to understand which subjects and traffic sources genuinely brought people in.
 
 So I began with one question.
 
@@ -48,7 +50,11 @@ I created a `BabyPaunch Website` property in Google Analytics 4 and a web stream
 
 I also enabled enhanced measurement. It now records page views, scrolling that indicates how far someone read, and clicks that lead to another website.
 
-GitHub Pages is a static site without an application server of its own. That is still enough. Adding the analytics integration once to the shared Jekyll layout applies the same rules to the home, blog, music, and policy pages.
+GitHub Pages is a static site without an application server of its own.
+
+That is still enough.
+
+Adding the analytics integration once to the shared Jekyll layout applies the same rules to the home, blog, music, and policy pages.
 
 After deployment, I can open a real blog post and check the GA4 realtime report.
 
@@ -66,11 +72,19 @@ Because the site now uses an analytics service, I updated both the Korean and En
 
 ## Connecting search traffic through Search Console
 
-GA4 shows what happens on the site. Search Console shows how the site is discovered in Google Search.
+GA4 shows what happens on the site.
+
+Search Console shows how the site is discovered in Google Search.
 
 I registered `babypaunch.com` as a domain property so that it covers the whole domain rather than one URL prefix. I did not grant Google access to the Cloudflare account for automatic verification. Instead, I added one Google verification TXT record directly to Cloudflare DNS.
 
-After ownership was verified, I submitted `https://babypaunch.com/sitemap.xml`. It briefly reported that it could not be fetched. I checked that the public URL returned HTTP `200` and that the XML was valid, then checked again. The status changed to <strong>Success</strong>, with 27 discovered pages.
+After ownership was verified, I submitted `https://babypaunch.com/sitemap.xml`.
+
+It briefly reported that it could not be fetched.
+
+I checked that the public URL returned HTTP `200` and that the XML was valid, then checked again.
+
+The status changed to <strong>Success</strong>, with 27 discovered pages.
 
 Finally, I linked the Search Console domain property to the BabyPaunch GA4 web stream. Once enough data accumulates, I will be able to compare search queries, impressions and clicks, the first post a visitor reaches, and what they do on the site.
 

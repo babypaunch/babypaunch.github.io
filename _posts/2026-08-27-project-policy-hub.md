@@ -32,7 +32,13 @@ Chrome 확장 프로그램과 웹 서비스가 요구하는 내용도 서로 다
 
 ## 내 홈페이지를 정책 허브로 사용하기
 
-마침 `babypaunch.github.io`를 블로그와 프로젝트 홈페이지로 관리하기 시작했다. 이곳에 정책 페이지를 함께 두면 새로운 사이트를 계속 만들지 않아도 된다.(무엇보다 무료니까, 얼마나 좋은가?!)
+마침 `babypaunch.github.io`를 블로그와 프로젝트 홈페이지로 관리하기 시작했다.
+
+이곳에 정책 페이지를 함께 두면 새로운 사이트를 계속 만들지 않아도 된다.
+
+무엇보다 무료다.
+
+얼마나 좋은가?!
 
 중요한 것은 모든 프로젝트에 같은 정책을 적용하는 것이 아니다. 홈페이지는 공통 입구로 사용하되, 정책 내용은 프로젝트별로 분리하기로 했다.
 
@@ -48,9 +54,15 @@ GitHub Pages 기본 주소만으로도 정책을 공개할 수 있다. 하지만
 
 GitHub Pages에서 루트 도메인과 `www` 주소를 정상적으로 사용하려면 Cloudflare DNS에 A 레코드 네 개와 CNAME 하나를 등록해야 했다.
 
-네 개의 A 레코드는 `babypaunch.com`을 GitHub Pages 서버에 연결하고, CNAME은 `www.babypaunch.com`을 기본 GitHub Pages 주소에 연결한다. Cloudflare 프록시는 사용하지 않고 모두 DNS 전용으로 설정했다.
+네 개의 A 레코드는 `babypaunch.com`을 GitHub Pages 서버에 연결한다.
 
-HTTP 연결은 먼저 완료됐고 HTTPS는 DNS 전파와 인증서 발급 시간이 필요한 작업이라서 확인하는 데 대기 시간이 필요했다.
+CNAME은 `www.babypaunch.com`을 기본 GitHub Pages 주소에 연결한다.
+
+Cloudflare 프록시는 사용하지 않고 모두 DNS 전용으로 설정했다.
+
+HTTP 연결은 먼저 완료됐다.
+
+HTTPS는 DNS 전파와 인증서 발급 시간이 필요한 작업이라서 확인하는 데 대기 시간이 필요했다.
 
 ## 문서 종류보다 프로젝트를 먼저 보여주기
 
@@ -91,7 +103,11 @@ HTTP 연결은 먼저 완료됐고 HTTPS는 DNS 전파와 인증서 발급 시�
 
 ### <code>2026년 8월 28일</code> 추가 업데이트: HTTPS 연결 완료
 
-24시간 이상 기다렸지만 HTTPS 인증서는 자동으로 만들어지지 않았다. DNS 레코드는 GitHub Pages 권장값으로 정상 연결되어 있었고, 문제는 GitHub Pages의 인증서 발급 작업이 실패한 상태로 남아 있던 것이었다.
+24시간 이상 기다렸지만 HTTPS 인증서는 자동으로 만들어지지 않았다.
+
+DNS 레코드는 GitHub Pages 권장값으로 정상 연결되어 있었다.
+
+문제는 GitHub Pages의 인증서 발급 작업이 실패한 상태로 남아 있던 것이었다.
 
 GitHub Pages 설정에서 사용자 지정 도메인을 제거한 뒤 잠시 기다렸다가 `babypaunch.com`을 다시 등록해 인증서 발급을 처음부터 시작했다. 새 인증서에 `babypaunch.com`과 `www.babypaunch.com`이 모두 포함된 것을 확인한 다음 HTTPS 강제 사용을 켰다.
 
