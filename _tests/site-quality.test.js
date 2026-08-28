@@ -61,6 +61,8 @@ for (const file of htmlFiles) {
 
 const css = fs.readFileSync(path.join(siteRoot, 'styles.css'), 'utf8');
 assert.match(css, /\.page-shell h1 \{[^}]*overflow-wrap: anywhere/, 'styles.css: long page titles wrap');
+assert.match(css, /\.article-shell \{[^}]*68rem/, 'styles.css: article content shares the full container');
+assert.doesNotMatch(css, /\.article-(?:header|body)[^\{]*\{[^}]*max-width/, 'styles.css: article sections do not use narrower inner containers');
 assert.match(css, /\.data-cards, \.data-cards-compact \{[^}]*grid-template-columns: minmax\(0, 1fr\)/, 'styles.css: mobile cards use one column');
 assert.match(css, /\.data-cards, \.data-cards-compact \{ grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/, 'styles.css: tablet cards use two columns');
 assert.match(css, /\.data-cards, \.data-cards-compact \{ grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/, 'styles.css: PC cards use three columns');

@@ -419,11 +419,9 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .tag-empty { margin-top: 1.5rem; padding-block: 2rem; border-block: 1px solid var(--line); color: var(--muted); }
 .article-shell { width: min(calc(100% - 2rem), 68rem); margin: 0 auto; padding-block: 3rem 4rem; }
 .article-header { padding-bottom: clamp(3rem, 7vw, 5rem); border-bottom: 1px solid var(--ink); }
-.article-header > * { max-width: 850px; }
 .article-header h1 { margin: 1rem 0 1.5rem; font: 400 clamp(2.5rem, 11vw, 3.25rem)/.96 var(--serif); letter-spacing: -.04em; }
-.article-header > p:last-child { max-width: 680px; color: var(--muted); font: 1.1rem/1.8 'Gowun Batang', serif; }
+.article-header > p:last-child { color: var(--muted); font: 1.1rem/1.8 'Gowun Batang', serif; }
 .article-body { padding-block: 3rem; font: 1rem/1.85 'Gowun Batang', serif; }
-.article-body > :not(.data-cards, .music-video, .article-figure) { max-width: 850px; }
 .article-body h2 { margin: 3rem 0 1rem; font: 400 clamp(1.75rem, 7vw, 2.25rem)/1.15 var(--serif); }
 .article-body .article-question { font: 400 clamp(1.35rem, 3vw, 1.8rem)/1.4 var(--serif); }
 .article-body .article-summary { margin-top: 3.5rem; padding: 1.5rem; border: 1px solid var(--ink); font-size: clamp(1.2rem, 2.5vw, 1.5rem); line-height: 1.65; }
