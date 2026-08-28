@@ -63,6 +63,9 @@ const css = fs.readFileSync(path.join(siteRoot, 'styles.css'), 'utf8');
 assert.match(css, /\.page-shell h1 \{[^}]*overflow-wrap: anywhere/, 'styles.css: long page titles wrap');
 assert.match(css, /\.article-shell \{[^}]*68rem/, 'styles.css: article content shares the full container');
 assert.doesNotMatch(css, /\.article-(?:header|body)[^\{]*\{[^}]*max-width/, 'styles.css: article sections do not use narrower inner containers');
+assert.match(css, /\.policies-shell,[\s\S]*?\.accessibility-shell \{[^}]*68rem/, 'styles.css: policy pages share the full container');
+assert.match(css, /\.policy-projects \{[^}]*grid-template-columns: minmax\(0, 1fr\)/, 'styles.css: mobile policy projects use one column');
+assert.match(css, /\.policy-projects \{ grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/, 'styles.css: larger policy projects use two columns');
 assert.match(css, /\.data-cards, \.data-cards-compact \{[^}]*grid-template-columns: minmax\(0, 1fr\)/, 'styles.css: mobile cards use one column');
 assert.match(css, /\.data-cards, \.data-cards-compact \{ grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/, 'styles.css: tablet cards use two columns');
 assert.match(css, /\.data-cards, \.data-cards-compact \{ grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/, 'styles.css: PC cards use three columns');
@@ -116,10 +119,16 @@ for (const relative of [
   'en/policies/laftel-mania/privacy/index.html',
 ]) {
   const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
+  assert.match(html, /class="page-shell (?:privacy|accessibility)-shell"/, `${relative}: responsive policy shell`);
   assert.match(html, /(?:최초 시행일|최초 공개일|First effective|First published):/, `${relative}: first publication date`);
   assert.match(html, /(?:최종 개정일|최종 갱신일|Last revised|Last updated):/, `${relative}: latest revision date`);
   assert.match(html, /<h2>(?:개정 이력|변경 이력|Revision history)<\/h2>/, `${relative}: revision history`);
   assert.match(html, /<time datetime="\d{4}-\d{2}-\d{2}">/, `${relative}: machine-readable revision date`);
+}
+
+for (const relative of ['policies/index.html', 'en/policies/index.html']) {
+  const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
+  assert.match(html, /class="page-shell policies-shell"/, `${relative}: responsive policies index shell`);
 }
 
 for (const [relative, required] of [
