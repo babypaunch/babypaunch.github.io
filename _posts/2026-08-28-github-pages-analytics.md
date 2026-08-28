@@ -29,18 +29,18 @@ Instagram, Threads, Facebook, X에 글을 소개하더라도 어느 곳에서 �
 
 ## 이번 작업 한눈에 보기
 
-| # | 작업한 곳 | 진행한 작업 | 진행한 이유 | 결과 |
-| :---: | --- | --- | --- | --- |
-| 1 | Google Analytics | GA4 속성과 웹 스트림 생성 | 글과 유입 경로를 측정하기 위해 | 방문 분석 기반 마련 |
-| 2 | 내 사이트 | 공통 레이아웃에 측정 코드 연결 | 모든 페이지에 같은 분석 기준을 적용하기 위해 | 사이트 전체에서 측정 가능 |
-| 3 | 내 사이트 | 한·영 분석 동의 UI와 설정 변경 기능 구현 | 방문자의 선택에 따라 분석을 실행하기 위해 | 동의 전 GA4 미로드 |
-| 4 | 내 사이트 | 한·영 개인정보처리방침 갱신 | 분석 정보와 거부 방법을 안내하기 위해 | 분석 도구 사용 내용 공개 |
-| 5 | Google Analytics | 향상된 측정 활성화 | 페이지 조회·스크롤·외부 링크 클릭을 확인하기 위해 | 주요 이용 행동 측정 가능 |
-| 6 | Cloudflare | Google 인증 TXT 레코드 추가 | Search Console 도메인 소유권을 확인하기 위해 | `babypaunch.com` 소유권 확인 |
-| 7 | Search Console | sitemap 제출 | Google에 공개 페이지를 전달하기 위해 | 제출 성공 및 27페이지 발견 |
-| 8 | GA4·Search Console | 두 서비스 연결 | 검색 유입과 사이트 이용을 함께 보기 위해 | 통합 분석 기반 마련 |
-| 9 | SNS 게시 설계 | 플랫폼별 UTM 규칙 추가 | 네 SNS의 유입을 구분하기 위해 | 출처별 링크 생성 규칙 마련 |
-| 10 | 내 사이트 | Jekyll 빌드와 품질 검사 | 변경으로 사이트가 깨지지 않았는지 확인하기 위해 | 25페이지 검사 통과 |
+<div class="data-cards">
+  <section class="data-card"><h3>1. Google Analytics</h3><p><strong>진행한 작업:</strong> GA4 속성과 웹 스트림 생성</p><p><strong>진행한 이유:</strong> 글과 유입 경로를 측정하기 위해</p><p><strong>결과:</strong> 방문 분석 기반 마련</p></section>
+  <section class="data-card"><h3>2. 내 사이트</h3><p><strong>진행한 작업:</strong> 공통 레이아웃에 측정 코드 연결</p><p><strong>진행한 이유:</strong> 모든 페이지에 같은 분석 기준을 적용하기 위해</p><p><strong>결과:</strong> 사이트 전체에서 측정 가능</p></section>
+  <section class="data-card"><h3>3. 내 사이트</h3><p><strong>진행한 작업:</strong> 한·영 분석 동의 UI와 설정 변경 기능 구현</p><p><strong>진행한 이유:</strong> 방문자의 선택에 따라 분석을 실행하기 위해</p><p><strong>결과:</strong> 동의 전 GA4 미로드</p></section>
+  <section class="data-card"><h3>4. 내 사이트</h3><p><strong>진행한 작업:</strong> 한·영 개인정보처리방침 갱신</p><p><strong>진행한 이유:</strong> 분석 정보와 거부 방법을 안내하기 위해</p><p><strong>결과:</strong> 분석 도구 사용 내용 공개</p></section>
+  <section class="data-card"><h3>5. Google Analytics</h3><p><strong>진행한 작업:</strong> 향상된 측정 활성화</p><p><strong>진행한 이유:</strong> 페이지 조회·스크롤·외부 링크 클릭을 확인하기 위해</p><p><strong>결과:</strong> 주요 이용 행동 측정 가능</p></section>
+  <section class="data-card"><h3>6. Cloudflare</h3><p><strong>진행한 작업:</strong> Google 인증 TXT 레코드 추가</p><p><strong>진행한 이유:</strong> Search Console 도메인 소유권을 확인하기 위해</p><p><strong>결과:</strong> <code>babypaunch.com</code> 소유권 확인</p></section>
+  <section class="data-card"><h3>7. Search Console</h3><p><strong>진행한 작업:</strong> sitemap 제출</p><p><strong>진행한 이유:</strong> Google에 공개 페이지를 전달하기 위해</p><p><strong>결과:</strong> 제출 성공 및 27페이지 발견</p></section>
+  <section class="data-card"><h3>8. GA4·Search Console</h3><p><strong>진행한 작업:</strong> 두 서비스 연결</p><p><strong>진행한 이유:</strong> 검색 유입과 사이트 이용을 함께 보기 위해</p><p><strong>결과:</strong> 통합 분석 기반 마련</p></section>
+  <section class="data-card"><h3>9. SNS 게시 설계</h3><p><strong>진행한 작업:</strong> 플랫폼별 UTM 규칙 추가</p><p><strong>진행한 이유:</strong> 네 SNS의 유입을 구분하기 위해</p><p><strong>결과:</strong> 출처별 링크 생성 규칙 마련</p></section>
+  <section class="data-card"><h3>10. 내 사이트</h3><p><strong>진행한 작업:</strong> Jekyll 빌드와 품질 검사</p><p><strong>진행한 이유:</strong> 변경으로 사이트가 깨지지 않았는지 확인하기 위해</p><p><strong>결과:</strong> 25페이지 검사 통과</p></section>
+</div>
 
 ## GA4로 글과 유입 경로 측정하기
 

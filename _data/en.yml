@@ -91,9 +91,6 @@ blog:
     web-analytics: WebAnalytics
     ga4: GA4
     search-console: SearchConsole
-table_scroll:
-  label: Horizontally scrollable table
-  hint: Swipe sideways to view the full table
 translation:
   enable: Turn on sentence translation
   disable: Turn off sentence translation

@@ -29,18 +29,18 @@ So I began with one question.
 
 ## This work at a glance
 
-| # | Where I worked | What I did | Why I did it | Result |
-| :---: | --- | --- | --- | --- |
-| 1 | Google Analytics | Created a GA4 property and web stream | To measure posts and traffic sources | Visitor analytics foundation established |
-| 2 | My site | Connected the measurement code in the shared layout | To apply the same analytics rules to every page | Measurement available across the site |
-| 3 | My site | Built Korean and English consent UI and settings controls | To run analytics according to each visitor's choice | GA4 not loaded before consent |
-| 4 | My site | Updated the Korean and English privacy policies | To explain analytics and how to decline | Analytics use disclosed |
-| 5 | Google Analytics | Enabled enhanced measurement | To check page views, scrolling, and outbound clicks | Key interactions measurable |
-| 6 | Cloudflare | Added Google's verification TXT record | To verify the Search Console domain property | Ownership of `babypaunch.com` verified |
-| 7 | Search Console | Submitted the sitemap | To provide public pages to Google | Submission succeeded and 27 pages discovered |
-| 8 | GA4 and Search Console | Linked the two services | To compare search traffic with site activity | Combined analysis foundation established |
-| 9 | SNS publishing design | Added platform-specific UTM rules | To distinguish traffic from four social platforms | Source-specific link rules prepared |
-| 10 | My site | Ran the Jekyll build and quality checks | To make sure the changes did not break the site | Checks for 25 pages passed |
+<div class="data-cards">
+  <section class="data-card"><h3>1. Google Analytics</h3><p><strong>What I did:</strong> Created a GA4 property and web stream</p><p><strong>Why I did it:</strong> To measure posts and traffic sources</p><p><strong>Result:</strong> Visitor analytics foundation established</p></section>
+  <section class="data-card"><h3>2. My site</h3><p><strong>What I did:</strong> Connected the measurement code in the shared layout</p><p><strong>Why I did it:</strong> To apply the same analytics rules to every page</p><p><strong>Result:</strong> Measurement available across the site</p></section>
+  <section class="data-card"><h3>3. My site</h3><p><strong>What I did:</strong> Built Korean and English consent UI and settings controls</p><p><strong>Why I did it:</strong> To run analytics according to each visitor's choice</p><p><strong>Result:</strong> GA4 not loaded before consent</p></section>
+  <section class="data-card"><h3>4. My site</h3><p><strong>What I did:</strong> Updated the Korean and English privacy policies</p><p><strong>Why I did it:</strong> To explain analytics and how to decline</p><p><strong>Result:</strong> Analytics use disclosed</p></section>
+  <section class="data-card"><h3>5. Google Analytics</h3><p><strong>What I did:</strong> Enabled enhanced measurement</p><p><strong>Why I did it:</strong> To check page views, scrolling, and outbound clicks</p><p><strong>Result:</strong> Key interactions measurable</p></section>
+  <section class="data-card"><h3>6. Cloudflare</h3><p><strong>What I did:</strong> Added Google's verification TXT record</p><p><strong>Why I did it:</strong> To verify the Search Console domain property</p><p><strong>Result:</strong> Ownership of <code>babypaunch.com</code> verified</p></section>
+  <section class="data-card"><h3>7. Search Console</h3><p><strong>What I did:</strong> Submitted the sitemap</p><p><strong>Why I did it:</strong> To provide public pages to Google</p><p><strong>Result:</strong> Submission succeeded and 27 pages discovered</p></section>
+  <section class="data-card"><h3>8. GA4 and Search Console</h3><p><strong>What I did:</strong> Linked the two services</p><p><strong>Why I did it:</strong> To compare search traffic with site activity</p><p><strong>Result:</strong> Combined analysis foundation established</p></section>
+  <section class="data-card"><h3>9. SNS publishing design</h3><p><strong>What I did:</strong> Added platform-specific UTM rules</p><p><strong>Why I did it:</strong> To distinguish traffic from four social platforms</p><p><strong>Result:</strong> Source-specific link rules prepared</p></section>
+  <section class="data-card"><h3>10. My site</h3><p><strong>What I did:</strong> Ran the Jekyll build and quality checks</p><p><strong>Why I did it:</strong> To make sure the changes did not break the site</p><p><strong>Result:</strong> Checks for 25 pages passed</p></section>
+</div>
 
 ## Measuring posts and traffic sources with GA4
 

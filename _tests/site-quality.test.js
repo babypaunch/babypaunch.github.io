@@ -22,6 +22,7 @@ for (const file of htmlFiles) {
   assert.match(html, /data-analytics-settings/, `${label}: analytics settings control`);
   assert.match(html, /<meta name="description" content="[^"]+">/, `${label}: description`);
   assert.match(html, /<meta name="robots" content="[^"]+">/, `${label}: robots directive`);
+  assert.doesNotMatch(html, /<table\b/, `${label}: use cards instead of tables`);
   assert.match(html, /<link rel="canonical" href="https:\/\/babypaunch\.com\//, `${label}: canonical`);
   for (const language of ['ko', 'en', 'x-default']) {
     assert.match(html, new RegExp(`<link rel="alternate" hreflang="${language}"`), `${label}: ${language} alternate`);
@@ -47,10 +48,6 @@ for (const file of htmlFiles) {
     assert.match(link, /\srel="[^"]*noopener[^"]*"/, `${label}: safe new-window link`);
   }
 
-  const tableCount = (html.match(/<table>/g) || []).length;
-  const wrappedTableCount = (html.match(/class="table-scroll"[^>]*><table>/g) || []).length;
-  assert.equal(wrappedTableCount, tableCount, `${label}: every table has a scroll region`);
-
   for (const match of html.matchAll(/href="(\/[^"?#]*)(?:[?#][^"]*)?"/g)) {
     const url = match[1];
     if (!url) continue;
@@ -64,7 +61,6 @@ for (const file of htmlFiles) {
 
 const css = fs.readFileSync(path.join(siteRoot, 'styles.css'), 'utf8');
 assert.match(css, /\.page-shell h1 \{[^}]*overflow-wrap: anywhere/, 'styles.css: long page titles wrap');
-assert.match(css, /\.table-scroll:has\(tr > :nth-child\(5\)\) table \{ min-width: 52rem; \}/, 'styles.css: wide mobile tables scroll');
 for (const preference of ['prefers-reduced-motion', 'prefers-contrast', 'forced-colors']) {
   assert.ok(css.includes(preference), `styles.css: ${preference}`);
 }
@@ -127,6 +123,7 @@ for (const [relative, required] of [
 ]) {
   const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
   for (const text of required) assert.ok(html.includes(text), `${relative}: ${text}`);
+  assert.match(html, /class="data-cards/, `${relative}: policy data cards`);
 }
 
 console.log(`Site quality tests passed for ${htmlFiles.length} pages.`);

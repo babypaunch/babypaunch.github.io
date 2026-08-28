@@ -36,19 +36,19 @@ tags:
 
 사주(四柱)는 글자 그대로 네 개의 기둥이다. 사람이 태어난 해, 달, 날과 시간을 각각 하나의 기둥으로 나타낸다.
 
-| 구분 | 한자 | 뜻 |
-|---|---|---|
-| 연주 | 年柱 | 태어난 해의 기둥 |
-| 월주 | 月柱 | 태어난 달의 기둥 |
-| 일주 | 日柱 | 태어난 날의 기둥 |
-| 시주 | 時柱 | 태어난 시간의 기둥 |
+<div class="data-cards">
+  <section class="data-card"><h3>연주</h3><p><strong>한자:</strong> 年柱</p><p><strong>뜻:</strong> 태어난 해의 기둥</p></section>
+  <section class="data-card"><h3>월주</h3><p><strong>한자:</strong> 月柱</p><p><strong>뜻:</strong> 태어난 달의 기둥</p></section>
+  <section class="data-card"><h3>일주</h3><p><strong>한자:</strong> 日柱</p><p><strong>뜻:</strong> 태어난 날의 기둥</p></section>
+  <section class="data-card"><h3>시주</h3><p><strong>한자:</strong> 時柱</p><p><strong>뜻:</strong> 태어난 시간의 기둥</p></section>
+</div>
 
 각 기둥은 위쪽의 천간(天干) 한 글자와 아래쪽의 지지(地支) 한 글자로 이루어진다. 네 기둥에 두 글자씩 있으니 모두 여덟 글자다. 이것이 팔자(八字)이고, 두 말을 합쳐 사주팔자(四柱八字)라고 부른다.
 
-|  | 연주(年柱) | 월주(月柱) | 일주(日柱) | 시주(時柱) |
-|---|---:|---:|---:|---:|
-| 천간(天干) | 甲 | 戊 | 戊 | 丙 |
-| 지지(地支) | 戌 | 辰 | 辰 | 辰 |
+<div class="data-cards">
+  <section class="data-card"><h3>천간(天干)</h3><p><strong>연주:</strong> 甲</p><p><strong>월주:</strong> 戊</p><p><strong>일주:</strong> 戊</p><p><strong>시주:</strong> 丙</p></section>
+  <section class="data-card"><h3>지지(地支)</h3><p><strong>연주:</strong> 戌</p><p><strong>월주:</strong> 辰</p><p><strong>일주:</strong> 辰</p><p><strong>시주:</strong> 辰</p></section>
+</div>
 
 이 표는 앱의 계산 구조를 설명하기 위한 예다. 네 기둥을 구성하는 여덟 글자가 보이지만, 이것만으로 실제 사람의 성격이나 미래가 입증되는 것은 아니다.
 
@@ -62,18 +62,18 @@ tags:
 
 전통 체계에서는 이 열 글자를 음(陰)과 양(陽), 그리고 목(木)·화(火)·토(土)·금(金)·수(水)의 오행(五行)에 연결한다.
 
-| 천간(天干) | 음양(陰陽) | 오행(五行) |
-|---|---|---|
-| 甲 | 양(陽) | 목(木) |
-| 乙 | 음(陰) | 목(木) |
-| 丙 | 양(陽) | 화(火) |
-| 丁 | 음(陰) | 화(火) |
-| 戊 | 양(陽) | 토(土) |
-| 己 | 음(陰) | 토(土) |
-| 庚 | 양(陽) | 금(金) |
-| 辛 | 음(陰) | 금(金) |
-| 壬 | 양(陽) | 수(水) |
-| 癸 | 음(陰) | 수(水) |
+<div class="data-cards data-cards-compact">
+  <section class="data-card"><h3>甲</h3><p><strong>음양:</strong> 양(陽)</p><p><strong>오행:</strong> 목(木)</p></section>
+  <section class="data-card"><h3>乙</h3><p><strong>음양:</strong> 음(陰)</p><p><strong>오행:</strong> 목(木)</p></section>
+  <section class="data-card"><h3>丙</h3><p><strong>음양:</strong> 양(陽)</p><p><strong>오행:</strong> 화(火)</p></section>
+  <section class="data-card"><h3>丁</h3><p><strong>음양:</strong> 음(陰)</p><p><strong>오행:</strong> 화(火)</p></section>
+  <section class="data-card"><h3>戊</h3><p><strong>음양:</strong> 양(陽)</p><p><strong>오행:</strong> 토(土)</p></section>
+  <section class="data-card"><h3>己</h3><p><strong>음양:</strong> 음(陰)</p><p><strong>오행:</strong> 토(土)</p></section>
+  <section class="data-card"><h3>庚</h3><p><strong>음양:</strong> 양(陽)</p><p><strong>오행:</strong> 금(金)</p></section>
+  <section class="data-card"><h3>辛</h3><p><strong>음양:</strong> 음(陰)</p><p><strong>오행:</strong> 금(金)</p></section>
+  <section class="data-card"><h3>壬</h3><p><strong>음양:</strong> 양(陽)</p><p><strong>오행:</strong> 수(水)</p></section>
+  <section class="data-card"><h3>癸</h3><p><strong>음양:</strong> 음(陰)</p><p><strong>오행:</strong> 수(水)</p></section>
+</div>
 
 사주 해석에서는 특히 일주(日柱)의 천간인 일간(日干)을 기준점으로 삼는다. 일간을 `나`로 놓고 다른 글자와 어떤 관계를 이루는지 살펴보는 방식이다.
 
@@ -133,13 +133,13 @@ tags:
 
 십성은 일간(日干)을 기준으로 다른 천간의 오행과 음양 관계를 분류한 이름이다.
 
-| 일간과의 오행 관계 | 음양이 같음 | 음양이 다름 |
-|---|---|---|
-| 같은 오행 | 비견(比肩) | 겁재(劫財) |
-| 내가 생하는 오행 | 식신(食神) | 상관(傷官) |
-| 내가 극하는 오행 | 편재(偏財) | 정재(正財) |
-| 나를 극하는 오행 | 편관(偏官) | 정관(正官) |
-| 나를 생하는 오행 | 편인(偏印) | 정인(正印) |
+<div class="data-cards">
+  <section class="data-card"><h3>같은 오행</h3><p><strong>음양이 같음:</strong> 비견(比肩)</p><p><strong>음양이 다름:</strong> 겁재(劫財)</p></section>
+  <section class="data-card"><h3>내가 생하는 오행</h3><p><strong>음양이 같음:</strong> 식신(食神)</p><p><strong>음양이 다름:</strong> 상관(傷官)</p></section>
+  <section class="data-card"><h3>내가 극하는 오행</h3><p><strong>음양이 같음:</strong> 편재(偏財)</p><p><strong>음양이 다름:</strong> 정재(正財)</p></section>
+  <section class="data-card"><h3>나를 극하는 오행</h3><p><strong>음양이 같음:</strong> 편관(偏官)</p><p><strong>음양이 다름:</strong> 정관(正官)</p></section>
+  <section class="data-card"><h3>나를 생하는 오행</h3><p><strong>음양이 같음:</strong> 편인(偏印)</p><p><strong>음양이 다름:</strong> 정인(正印)</p></section>
+</div>
 
 이 표를 이해하고 나니 복잡한 이름이 적어도 어떻게 만들어졌는지는 보이기 시작했다. 다만 십성 역시 사람의 직업, 재산이나 배우자를 객관적으로 판정하는 검사가 아니다. 앱에서는 전통적인 관계 분류를 설명하되, 그 결과로 중대한 결정을 권하지 않도록 제한했다.
 

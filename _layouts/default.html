@@ -9,14 +9,12 @@
   <title>{% if page.layout == 'post' %}{{ page.title }} — BabyPaunch{% else %}{{ t.pages[page.page_key].title }}{% endif %}</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
 {% include seo.html %}
-  <link rel="stylesheet" href="/styles.css?v=20260828-tables">
+  <link rel="stylesheet" href="/styles.css?v=20260828-cards">
 {% include analytics.html %}
 </head>
 <body>
   {% include header.html %}
-  {% capture table_open %}<div class="table-scroll" role="region" aria-label="{{ t.table_scroll.label }}" tabindex="0" data-scroll-hint="{{ t.table_scroll.hint }}"><table>{% endcapture %}
-  {% assign accessible_content = content | replace: '<table>', table_open | replace: '</table>', '</table></div>' %}
-  {{ accessible_content }}
+  {{ content }}
   {% include footer.html %}
 {% include analytics-consent.html %}
   <script src="/analytics-consent.js?v=20260828-settings" defer></script>
