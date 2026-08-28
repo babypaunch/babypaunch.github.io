@@ -6,7 +6,7 @@ title: 사람들이 어디서 오는지 알고 싶었다
 description: BabyPaunch에 동의 기반 GA4와 Search Console을 연결하고, 유입 경로를 확인할 수 있는 기반을 마련했다.
 category: Making
 date: 2026-08-28 00:00:00 +0900
-last_modified_at: 2026-08-28 00:00:00 +0900
+last_modified_at: 2026-08-29 08:00:00 +0900
 permalink: /blog/github-pages-analytics/
 language_url: /en/blog/github-pages-analytics/
 alternate_ko: /blog/github-pages-analytics/
@@ -161,5 +161,41 @@ SNS에 글을 게시한 직후에는 <strong>보고서 → 실시간</strong>에
 - 일주일에 한 번: GA4 트래픽 획득에서 SNS별 방문과 인기 글 확인
 - 한 달에 한 번: Search Console에서 검색어·페이지·CTR 확인
 - 오류 알림이 있을 때: Search Console에서 페이지 색인과 sitemap 확인
+
+## #AI프롬프트제공
+
+아래 프롬프트를 AI에게 전달하면 GitHub Pages에 동의 기반 GA4, Search Console과 SNS별 UTM 측정을 무료 범위로 구성하고 검증할 수 있다.
+
+비밀번호, API 키, 토큰, 인증 파일과 방문자 개인정보는 프롬프트에 입력하지 않는다.
+
+```text
+당신은 GitHub Pages와 Jekyll의 개인정보 보호 중심 웹 분석 구성을 점검하는 분석 엔지니어입니다.
+
+무료 서비스만 사용해 내 저장소와 공개 사이트에서 다음 항목을 점검하고 필요한 최소 구현안을 제시해 주세요.
+
+- 방문자가 분석에 동의하기 전에는 GA4 스크립트와 쿠키가 로드되지 않는지
+- 동의, 거부와 나중에 설정 변경이 가능한 접근성 높은 UI가 있는지
+- 한국어·영어 안내 문구와 개인정보처리방침이 실제 수집 내용과 일치하는지
+- GA4 페이지 조회, 스크롤과 외부 링크 클릭이 동의 후 수집되는지
+- Search Console 도메인 소유권, sitemap 제출과 페이지 발견 상태
+- GA4 속성과 Search Console 속성의 연결
+- Instagram, Threads, Facebook과 X에 서로 다른 `utm_source`를 적용하는 규칙
+- `utm_medium`, `utm_campaign`과 `utm_content`의 일관된 이름 규칙
+- GA4 실시간 보고서에서 배포 직후 수집 여부를 확인하는 방법
+- 트래픽 획득 보고서에서 유입 경로와 도착 글을 함께 확인하는 방법
+
+각 항목을 `정상`, `개선 필요`, `확인 불가`로 판정해 주세요.
+
+코드를 제안할 때는 공통 Jekyll 레이아웃에 한 번만 적용하고 기본 브라우저 alert와 confirm을 사용하지 마세요.
+
+수정 후에는 동의 전 네트워크 요청, 동의 후 실시간 수집, 모바일 UI, 공개 개인정보처리방침과 sitemap을 실제로 검증해 주세요.
+
+사이트 주소: [사이트 주소]
+GitHub 저장소: [저장소 경로 또는 주소]
+GA4 측정 ID: [측정 ID]
+Search Console 속성: [도메인 속성]
+SNS 캠페인 이름: [utm_campaign 값]
+지원 언어: [예: 한국어, 영어]
+```
 
 <p class="article-summary"><strong>한 줄 요약:</strong> 글을 많이 쓰는 것에서 멈추지 않고, 방문자의 선택을 지켜보면서 어떤 글과 유입 경로가 도움이 되는지 확인할 기반을 만들었다.</p>

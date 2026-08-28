@@ -6,7 +6,7 @@ title: I decided to keep every project's policies in one place
 description: I connected a newly purchased domain to my GitHub Pages site and organized policies by project for the things I will build next.
 category: Making
 date: 2026-08-27 00:00:00 +0900
-last_modified_at: 2026-08-28 00:00:00 +0900
+last_modified_at: 2026-08-29 08:00:00 +0900
 permalink: /en/blog/project-policy-hub/
 language_url: /blog/project-policy-hub/
 alternate_ko: /blog/project-policy-hub/
@@ -113,5 +113,39 @@ The actual problem was a failed certificate issuance job left in GitHub Pages.
 I removed the custom domain from the GitHub Pages settings, waited briefly, and added `babypaunch.com` again to restart certificate issuance from the beginning. After confirming that the new certificate covered both `babypaunch.com` and `www.babypaunch.com`, I enabled HTTPS enforcement.
 
 HTTP now redirects to HTTPS automatically, and both the root domain and the `www` address use an encrypted connection. I also learned that when waiting does not solve the problem, checking the GitHub Pages certificate state should come before repeatedly changing DNS records.
+
+## #AI프롬프트제공
+
+Give the following prompt to an AI to audit the URL structure, policy documents, and HTTPS connection of a policy hub shared by several projects.
+
+Do not enter passwords, API keys, tokens, DNS account information, or personal information in the prompt.
+
+```text
+You are a web operator auditing a multilingual policy hub with a custom domain on GitHub Pages.
+
+Inspect both my repository and public site, then check the following items.
+
+- DNS connections for the apex and www domains
+- A permanent redirect from HTTP to HTTPS
+- A valid HTTPS certificate covering both domains
+- The GitHub Pages custom domain and HTTPS enforcement status
+- A project-based `/policies/[project]/[document]/` URL structure
+- Matching Korean and English policy lists and working document links
+- Missing privacy policies or other required documents for each project
+- The effective date, modification date, and change history of each policy
+- Long titles, addresses, and links staying inside the mobile viewport
+
+Classify every item as `OK`, `Needs improvement`, or `Cannot verify`.
+
+For each problem, provide the cause, the DNS or GitHub Pages setting or repository file to change, the smallest correction, and a public-site verification method.
+
+Do not claim legal compliance, and separate items that require professional review based on jurisdiction and service characteristics.
+
+Site URL: [policy hub URL]
+GitHub repository: [repository path or URL]
+DNS provider: [for example, Cloudflare]
+Projects to register: [project names and required policies]
+Supported languages: [for example, Korean and English]
+```
 
 <p class="article-summary"><strong>In one line:</strong> Instead of waiting for my projects to pile up, I made my GitHub Pages site the shared policy hub for all of them.</p>

@@ -6,7 +6,7 @@ title: 블로그로 돈 벌고 싶다고? SEO부터 제대로 설정해야지
 description: 직접 광고나 홍보 없이 블로그 수익화를 고민하며 내 GitHub Pages의 SEO 설정과 빠진 부분을 점검하고 개선한 과정.
 category: Making
 date: 2026-08-29 07:35:00 +0900
-last_modified_at: 2026-08-29 07:44:00 +0900
+last_modified_at: 2026-08-29 07:57:00 +0900
 permalink: /blog/seo-before-blog-monetization/
 language_url: /en/blog/seo-before-blog-monetization/
 alternate_ko: /blog/seo-before-blog-monetization/
@@ -364,6 +364,42 @@ Open Graph 이미지를 넣는다고 Google 순위가 바로 오르는 것은 �
 검색하는 사람이 궁금해하는 내용을 실제 경험과 확인한 사실로 꾸준히 쓰는 일이 먼저이며, SEO는 그 글이 검색엔진의 오해 없이 독자에게 도착하도록 길을 정리하는 작업이다.
 
 블로그로 돈을 벌고 싶다는 생각은 광고 코드를 붙이는 데서 시작할 수 있지만, 실제 준비는 사람들이 찾을 만한 글을 쓰고 그 글이 검색엔진에 정확히 전달되는지 확인하는 데서 시작해야 한다.
+
+## #AI프롬프트제공
+
+아래 프롬프트를 AI에게 전달하면 자신의 GitHub Pages 사이트에서 기술 SEO의 누락과 잘못된 설정을 실제 결과를 기준으로 점검할 수 있다.
+
+비밀번호, API 키, 토큰과 개인정보는 프롬프트에 입력하지 않는다.
+
+```text
+당신은 GitHub Pages와 Jekyll을 이해하는 기술 SEO 점검자입니다.
+
+내 사이트의 저장소 파일과 공개 페이지를 함께 확인하고 다음 항목을 점검해 주세요.
+
+- HTTPS 리디렉션과 하나의 대표 도메인
+- 페이지별 canonical 주소
+- robots.txt의 크롤링 규칙
+- sitemap.xml의 공개 URL과 제외 대상
+- 페이지별 고유 title과 meta description
+- 한국어·영어 페이지의 canonical, hreflang, x-default 연결
+- WebSite, WebPage, BlogPosting 구조화 데이터
+- 블로그 글의 발행일과 실제 수정일 구분
+- Open Graph와 X 공유 메타데이터
+- heading 순서, 내부 링크, 이미지 대체 텍스트
+
+각 항목을 `정상`, `개선 필요`, `확인 불가`로 판정해 주세요.
+
+문제가 있다면 원인, 수정할 파일 또는 설정, 최소 수정안과 검증 방법을 제시해 주세요.
+
+검색 순위를 보장하거나 확인하지 않은 내용을 추측하지 마세요.
+
+수정 후에는 로컬 빌드만 보지 말고 공개 HTML, HTTP 상태, canonical, robots.txt와 sitemap.xml을 다시 확인해 주세요.
+
+사이트 주소: [사이트 주소]
+저장소 경로 또는 주소: [GitHub 저장소]
+사용 환경: GitHub Pages와 Jekyll [버전]
+지원 언어: [예: 한국어, 영어]
+```
 
 <p class="article-summary"><strong>한 줄 요약:</strong> SEO는 검색 순위를 억지로 올리는 기술이 아니라, 공개할 글의 주소·언어·제목·설명과 이력을 검색엔진이 정확히 이해하도록 정리하는 일이다.</p>
 

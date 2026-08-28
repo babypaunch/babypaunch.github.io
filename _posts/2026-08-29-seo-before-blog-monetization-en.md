@@ -6,7 +6,7 @@ title: Want to make money from your blog? Get SEO right first
 description: How I audited and improved the missing SEO foundations on my GitHub Pages site before trying to monetize a blog without paid ads or constant promotion.
 category: Making
 date: 2026-08-29 07:35:00 +0900
-last_modified_at: 2026-08-29 07:44:00 +0900
+last_modified_at: 2026-08-29 07:57:00 +0900
 permalink: /en/blog/seo-before-blog-monetization/
 language_url: /blog/seo-before-blog-monetization/
 alternate_ko: /blog/seo-before-blog-monetization/
@@ -364,6 +364,42 @@ These settings do not bring visitors automatically.
 Writing verified answers to questions people actually have still comes first, while SEO clears the path so those articles can reach readers without confusing a search engine.
 
 Wanting to make money from a blog may begin with adding ad code, but the real preparation begins with writing something worth finding and making sure a search engine can deliver it accurately.
+
+## #AI프롬프트제공
+
+Give the following prompt to an AI to audit missing or incorrect technical SEO settings on a GitHub Pages site against real output.
+
+Do not enter passwords, API keys, tokens, or personal information in the prompt.
+
+```text
+You are a technical SEO auditor who understands GitHub Pages and Jekyll.
+
+Inspect both my site's repository files and its public pages, then check the following items.
+
+- HTTPS redirects and one canonical domain
+- The canonical URL of each page
+- Crawling rules in robots.txt
+- Public URLs and exclusions in sitemap.xml
+- A unique title and meta description for each page
+- Canonical, hreflang, and x-default relationships between Korean and English pages
+- WebSite, WebPage, and BlogPosting structured data
+- The distinction between publication and actual modification dates
+- Open Graph and X sharing metadata
+- Heading order, internal links, and image alternative text
+
+Classify every item as `OK`, `Needs improvement`, or `Cannot verify`.
+
+For each problem, provide the cause, the file or setting to change, the smallest correction, and a verification method.
+
+Do not guarantee search rankings or guess about anything you have not verified.
+
+After making changes, verify the public HTML, HTTP status, canonical links, robots.txt, and sitemap.xml instead of relying only on a local build.
+
+Site URL: [site URL]
+Repository path or URL: [GitHub repository]
+Environment: GitHub Pages and Jekyll [version]
+Supported languages: [for example, Korean and English]
+```
 
 <p class="article-summary"><strong>In one line:</strong> SEO is not a trick for forcing higher rankings, but the work of helping search engines accurately understand the addresses, languages, titles, descriptions, and history of the articles I choose to publish.</p>
 

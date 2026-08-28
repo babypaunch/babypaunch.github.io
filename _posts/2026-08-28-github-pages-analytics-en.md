@@ -6,7 +6,7 @@ title: I wanted to know where people were coming from
 description: I connected consent-based GA4 and Search Console to BabyPaunch and established a foundation for understanding traffic sources.
 category: Making
 date: 2026-08-28 00:00:00 +0900
-last_modified_at: 2026-08-28 00:00:00 +0900
+last_modified_at: 2026-08-29 08:00:00 +0900
 permalink: /en/blog/github-pages-analytics/
 language_url: /blog/github-pages-analytics/
 alternate_ko: /blog/github-pages-analytics/
@@ -161,5 +161,41 @@ I kept the review schedule simple.
 - Once a week: review social visits and popular posts in GA4 Traffic acquisition
 - Once a month: review queries, pages, and CTR in Search Console
 - When an error notification appears: check page indexing and the sitemap in Search Console
+
+## #AI프롬프트제공
+
+Give the following prompt to an AI to configure and verify consent-based GA4, Search Console, and platform-specific UTM tracking on GitHub Pages using only free services.
+
+Do not enter passwords, API keys, tokens, credential files, or visitors' personal information in the prompt.
+
+```text
+You are an analytics engineer auditing a privacy-first web analytics setup for GitHub Pages and Jekyll.
+
+Using only free services, inspect my repository and public site, then check the following items and provide the smallest necessary implementation.
+
+- Whether GA4 scripts and cookies stay unloaded before analytics consent
+- An accessible UI for consent, refusal, and changing the choice later
+- Korean and English notices and privacy policies matching actual collection
+- GA4 page views, scrolling, and outbound link clicks collected after consent
+- Search Console domain ownership, sitemap submission, and page discovery
+- The connection between the GA4 and Search Console properties
+- Distinct `utm_source` rules for Instagram, Threads, Facebook, and X
+- Consistent naming for `utm_medium`, `utm_campaign`, and `utm_content`
+- How to confirm collection immediately after deployment in GA4 Realtime
+- How to compare traffic sources and landing posts in Traffic acquisition
+
+Classify every item as `OK`, `Needs improvement`, or `Cannot verify`.
+
+When proposing code, apply it once in the shared Jekyll layout and do not use native browser alert or confirm dialogs.
+
+After making changes, verify pre-consent network requests, post-consent realtime collection, the mobile UI, public privacy policies, and the sitemap.
+
+Site URL: [site URL]
+GitHub repository: [repository path or URL]
+GA4 measurement ID: [measurement ID]
+Search Console property: [domain property]
+Social campaign name: [utm_campaign value]
+Supported languages: [for example, Korean and English]
+```
 
 <p class="article-summary"><strong>In one line:</strong> I went beyond publishing more posts and built a way to see which stories and traffic sources help while observing visitors' choices.</p>
