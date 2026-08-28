@@ -3,7 +3,7 @@ layout: post
 locale: ko
 page_key: blog
 title: 사람들이 어디서 오는지 알고 싶었다
-description: BabyPaunch에 동의 기반 GA4와 Search Console을 연결하고, 글과 유입 경로를 확인할 수 있는 기반을 마련했다.
+description: BabyPaunch에 동의 기반 GA4와 Search Console을 연결하고, 유입 경로를 확인할 수 있는 기반을 마련했다.
 category: Making
 date: 2026-08-28 00:00:00 +0900
 permalink: /blog/github-pages-analytics/

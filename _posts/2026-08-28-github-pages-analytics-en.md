@@ -3,7 +3,7 @@ layout: post
 locale: en
 page_key: blog
 title: I wanted to know where people were coming from
-description: I connected consent-based GA4 and Search Console to BabyPaunch and established a foundation for understanding posts and traffic sources.
+description: I connected consent-based GA4 and Search Console to BabyPaunch and established a foundation for understanding traffic sources.
 category: Making
 date: 2026-08-28 00:00:00 +0900
 permalink: /en/blog/github-pages-analytics/
