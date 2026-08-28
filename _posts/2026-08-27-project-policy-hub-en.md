@@ -89,7 +89,7 @@ For now, the hub contains the BabyPaunch website and Laftel Mania. Whenever I ma
 
 <hr>
 
-### August 28, 2026 update: HTTPS is now working
+### <code>August 28, 2026</code> update: HTTPS is now working
 
 Even after more than 24 hours, the HTTPS certificate had not been created automatically. The DNS records already matched GitHub Pages' recommended values. The actual problem was a failed certificate issuance job left in GitHub Pages.
 

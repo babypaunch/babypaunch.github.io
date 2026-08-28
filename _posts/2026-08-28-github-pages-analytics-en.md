@@ -103,7 +103,7 @@ If I add Google AdSense later, the consent flow can grow from this foundation. I
 
 <hr>
 
-### August 28, 2026 update: Where should I check the results later?
+### <code>August 28, 2026</code> update: Where should I check the results later?
 
 There is no need to move between many screens. For routine checks, GA4 and Search Console are enough. Only data from visitors who consent to analytics is included.
 
