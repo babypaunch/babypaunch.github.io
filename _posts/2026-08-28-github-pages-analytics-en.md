@@ -6,7 +6,7 @@ title: I wanted to know where people were coming from
 description: I connected consent-based GA4 and Search Console to BabyPaunch and established a foundation for understanding traffic sources.
 category: Making
 date: 2026-08-28 00:00:00 +0900
-last_modified_at: 2026-08-29 08:00:00 +0900
+last_modified_at: 2026-08-29 08:14:00 +0900
 permalink: /en/blog/github-pages-analytics/
 language_url: /blog/github-pages-analytics/
 alternate_ko: /blog/github-pages-analytics/
@@ -165,38 +165,43 @@ I kept the review schedule simple.
 <section class="article-ai-prompt" data-no-translation markdown="1">
 ## #AI프롬프트제공
 
-Give the following prompt to an AI to configure and verify consent-based GA4, Search Console, and platform-specific UTM tracking on GitHub Pages using only free services.
+Give the following prompt to an AI to configure and verify consent-based GA4, Search Console, and platform-specific UTM tracking on a website using only free services.
 
 Do not enter passwords, API keys, tokens, credential files, or visitors' personal information in the prompt.
 
 ```text
-You are an analytics engineer auditing a privacy-first web analytics setup for GitHub Pages and Jekyll.
+You are an analytics engineer auditing a privacy-first web analytics setup.
 
-Using only free services, inspect my repository and public site, then check the following items and provide the smallest necessary implementation.
+Using only free services, inspect the site information I provide and its public pages, then check the following items and provide the smallest necessary implementation.
 
 - Whether GA4 scripts and cookies stay unloaded before analytics consent
 - An accessible UI for consent, refusal, and changing the choice later
-- Korean and English notices and privacy policies matching actual collection
+- User notices and privacy policies matching actual collection
 - GA4 page views, scrolling, and outbound link clicks collected after consent
 - Search Console domain ownership, sitemap submission, and page discovery
 - The connection between the GA4 and Search Console properties
-- Distinct `utm_source` rules for Instagram, Threads, Facebook, and X
+- A distinct `utm_source` rule for every social platform in use
 - Consistent naming for `utm_medium`, `utm_campaign`, and `utm_content`
 - How to confirm collection immediately after deployment in GA4 Realtime
 - How to compare traffic sources and landing posts in Traffic acquisition
 
 Classify every item as `OK`, `Needs improvement`, or `Cannot verify`.
 
-When proposing code, apply it once in the shared Jekyll layout and do not use native browser alert or confirm dialogs.
+When proposing code, apply it once at a shared layout, template, tag manager, or CMS integration point and do not use native browser alert or confirm dialogs.
 
 After making changes, verify pre-consent network requests, post-consent realtime collection, the mobile UI, public privacy policies, and the sitemap.
 
+Do not claim legal compliance, and identify items that require checking official privacy and consent guidance for the service's target regions.
+
+Complete only the fields needed for your environment, and leave unknown fields blank.
+
 Site URL: [site URL]
-GitHub repository: [repository path or URL]
+Site management method: [for example, a CMS, a framework, or hand-written HTML]
+Available materials: [for example, a repository URL, an admin screen, or tag manager settings]
 GA4 measurement ID: [measurement ID]
-Search Console property: [domain property]
+Search Console property: [domain or URL-prefix property]
 Social campaign name: [utm_campaign value]
-Supported languages: [for example, Korean and English]
+Target regions: [for example, South Korea, the EU/EEA, or worldwide]
 ```
 </section>
 
