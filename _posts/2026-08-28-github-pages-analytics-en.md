@@ -27,6 +27,21 @@ So I began with one question.
 
 <p class="article-question">Can I check which posts work instead of guessing?</p>
 
+## This work at a glance
+
+| Step | Where I worked | What I did | Why I did it | Result |
+| ---: | --- | --- | --- | --- |
+| 1 | Google Analytics | Created a GA4 property and web stream | To measure posts and traffic sources | Visitor analytics foundation established |
+| 2 | My site | Connected the measurement code in the shared layout | To apply the same analytics rules to every page | Measurement available across the site |
+| 3 | My site | Built Korean and English consent UI and settings controls | To run analytics according to each visitor's choice | GA4 not loaded before consent |
+| 4 | My site | Updated the Korean and English privacy policies | To explain analytics and how to decline | Analytics use disclosed |
+| 5 | Google Analytics | Enabled enhanced measurement | To check page views, scrolling, and outbound clicks | Key interactions measurable |
+| 6 | Cloudflare | Added Google's verification TXT record | To verify the Search Console domain property | Ownership of `babypaunch.com` verified |
+| 7 | Search Console | Submitted the sitemap | To provide public pages to Google | Submission succeeded and 27 pages discovered |
+| 8 | GA4 and Search Console | Linked the two services | To compare search traffic with site activity | Combined analysis foundation established |
+| 9 | SNS publishing design | Added platform-specific UTM rules | To distinguish traffic from four social platforms | Source-specific link rules prepared |
+| 10 | My site | Ran the Jekyll build and quality checks | To make sure the changes did not break the site | Checks for 25 pages passed |
+
 ## Measuring posts and traffic sources with GA4
 
 I created a `BabyPaunch Website` property in Google Analytics 4 and a web stream for `https://babypaunch.com`. I connected the public measurement ID to the site.
