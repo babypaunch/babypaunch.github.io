@@ -100,4 +100,19 @@ for (const project of ['babypaunch', 'laftel-mania']) {
   assert.ok(policyData.includes(`slug: ${project}`), `policies.yml: ${project}`);
 }
 
+for (const relative of [
+  'policies/babypaunch/privacy/index.html',
+  'en/policies/babypaunch/privacy/index.html',
+  'policies/babypaunch/accessibility/index.html',
+  'en/policies/babypaunch/accessibility/index.html',
+  'policies/laftel-mania/privacy/index.html',
+  'en/policies/laftel-mania/privacy/index.html',
+]) {
+  const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
+  assert.match(html, /(?:최초 시행일|최초 공개일|First effective|First published):/, `${relative}: first publication date`);
+  assert.match(html, /(?:최종 개정일|최종 갱신일|Last revised|Last updated):/, `${relative}: latest revision date`);
+  assert.match(html, /<h2>(?:개정 이력|변경 이력|Revision history)<\/h2>/, `${relative}: revision history`);
+  assert.match(html, /<time datetime="\d{4}-\d{2}-\d{2}">/, `${relative}: machine-readable revision date`);
+}
+
 console.log(`Site quality tests passed for ${htmlFiles.length} pages.`);
