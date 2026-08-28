@@ -54,7 +54,7 @@ After deployment, I can open a real blog post and check the GA4 realtime report.
 
 ## Not loading analytics before consent
 
-Needing analytics did not mean it should run before a visitor had a choice.
+Analytics must not run before a visitor has made a choice.
 
 On the first visit, an analytics consent modal appears in Korean or English. The Google Analytics script itself is not loaded until the visitor selects <strong>Allow analytics</strong>. Declining does not remove or limit any site feature.
 
