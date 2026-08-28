@@ -183,7 +183,8 @@ nav a[aria-current="page"] { text-decoration-color: var(--accent); text-decorati
 }
 
 main a::before,
-footer a::before {
+footer a::before,
+[data-analytics-settings]::before {
   content: '';
   display: inline-block;
   width: 1.1rem;
@@ -199,7 +200,9 @@ footer a::before {
 main a:hover::before,
 main a:focus-visible::before,
 footer a:hover::before,
-footer a:focus-visible::before {
+footer a:focus-visible::before,
+[data-analytics-settings]:hover::before,
+[data-analytics-settings]:focus-visible::before {
   -webkit-mask-image: url('/assets/icons/click-filled.svg');
   mask-image: url('/assets/icons/click-filled.svg');
 }
@@ -386,7 +389,7 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .accessibility-shell,
 .contact-shell { width: min(100% - (var(--page-gutters) * 2), 850px); }
 .empty-note { margin-top: 5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
-.footer-button { appearance: none; border: 0; padding: 0; background: transparent; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: .25rem; cursor: pointer; }
+.footer-button { display: inline-flex; align-items: center; appearance: none; border: 0; padding: 0; background: transparent; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: .25rem; cursor: pointer; }
 .modal-open { overflow: hidden; }
 .consent-layer { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 1rem; background: rgb(20 18 14 / 62%); }
 .consent-layer[hidden] { display: none; }
@@ -522,5 +525,6 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
   .brand-mark circle { fill: ButtonText; }
   .brand-mark g { fill: ButtonFace; stroke: ButtonFace; }
   main a::before,
-  footer a::before { background: LinkText; }
+  footer a::before,
+  [data-analytics-settings]::before { background: LinkText; }
 }
