@@ -22,7 +22,7 @@ layout: default
         <span>
           <strong>{{ post.title }}</strong>
           <small>{{ post.description }}</small>
-          <span class="post-tags" aria-label="{{ t.blog.tags_label }}">{% for tag in post.tags %}<span>#{{ t.blog.tags[tag] }}</span>{% endfor %}</span>
+          <span class="post-tags" aria-label="{{ t.blog.tags_label }}">{% for tag in t.blog.tags %}{% if post.tags contains tag[0] %}<span>#{{ tag[1] }}</span>{% endif %}{% endfor %}</span>
         </span>
       </a>
     </li>

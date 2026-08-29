@@ -83,6 +83,12 @@ for (const [relative, locale] of [['blog/index.html', 'ko'], ['en/blog/index.htm
   const tags = labels.slice(1);
   const sorted = [...tags].sort(new Intl.Collator(locale, { numeric: true, sensitivity: 'base' }).compare);
   assert.deepEqual(tags, sorted, `${relative}: localized tag order`);
+
+  for (const card of html.match(/<span class="post-tags"[\s\S]*?<\/span>\s*<\/span>/g) || []) {
+    const cardTags = [...card.matchAll(/<span>#([^<]+)<\/span>/g)].map((match) => match[1]);
+    const sortedCardTags = [...cardTags].sort(new Intl.Collator(locale, { numeric: true, sensitivity: 'base' }).compare);
+    assert.deepEqual(cardTags, sortedCardTags, `${relative}: post card tag order`);
+  }
 }
 
 const css = fs.readFileSync(path.join(siteRoot, 'styles.css'), 'utf8');
