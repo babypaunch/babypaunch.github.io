@@ -6,7 +6,7 @@ title: Is it safe if search cannot see it? Auditing a public GitHub Pages site
 description: How an SEO review led me to audit internal files, Git history, third-party requests, Cloudflare HSTS, and GitHub account security for a public GitHub Pages site.
 category: Making
 date: 2026-08-29 14:30:00 +0900
-last_modified_at: 2026-08-29 14:30:00 +0900
+last_modified_at: 2026-08-29 14:50:00 +0900
 permalink: /en/blog/github-pages-public-repository-security/
 language_url: /blog/github-pages-public-repository-security/
 alternate_ko: /blog/github-pages-public-repository-security/
@@ -16,6 +16,7 @@ tags:
   - seo
   - custom-domain
   - project-policies
+  - ai-prompt
 ---
 
 While reviewing SEO and checking which pages appeared in search results, one concern caught my attention.
@@ -447,5 +448,51 @@ Safely managing internal files requires separate checks of Git tracking, the Jek
 External requests made when a page opens, HTTPS response headers, and the account that manages the repository remain separate security checks.
 
 If I enable HSTS `includeSubDomains` or preload later, I must first confirm again that every subdomain supports HTTPS.
+
+<section class="article-ai-prompt" data-no-translation markdown="1">
+
+## #AI프롬프트제공
+
+Use this prompt to audit unintended file exposure and transport security on a public web service.
+
+Fill in only the site address, repository or project path, and deployment details needed for your environment.
+
+Do not enter actual passwords, API keys, tokens, private keys, or personal information.
+
+```text
+You are a technical reviewer auditing the security and information exposure of a public web service.
+
+Using actual files, build output, public responses, and official documentation as evidence, audit the publicly accessible boundary and transport security of the environment below.
+
+Fill in only the fields needed for your environment:
+- Public site URL: [site URL]
+- Repository URL or project path: [URL or path]
+- Build and deployment environment: [static site generator, hosting, proxy, CDN, and so on]
+- Additional paths or subdomains to inspect: [optional]
+
+Audit checklist:
+1. Distinguish the public website from the public repository or deployment source.
+2. Check whether internal documents, work records, configuration, or build artifacts not required for operation and deployment can be accessed externally.
+3. Distinguish currently tracked files from paths remaining in previous history, and determine whether ignore rules alone can solve each case.
+4. Scan for patterns that may indicate passwords, API keys, tokens, private keys, or personal information, but report only the file location and data type without printing the actual value.
+5. Identify third-party requests for fonts, analytics, embeds, and other services when a page loads, and compare the actual behavior with the privacy notice.
+6. Verify the HTTP-to-HTTPS redirect, certificate validity, canonical-domain redirect, and HSTS response header against the public URLs.
+7. Evaluate whether the HSTS max-age, includeSubDomains, and preload settings are safe for the current domain configuration.
+8. Provide verification steps to confirm that key pages, language switching, mobile layouts, and builds still work after changes.
+
+Output format:
+- Start with a summary classified as safe, needs review, or risky.
+- For each finding, provide evidence, impact, recommended action, and a verification method.
+- Separate changes that need immediate attention from optional future hardening.
+- Suggest only commands that can run in the stated environment and explain the purpose of each command.
+
+Safety rules:
+- Never print or copy the original value of a password, API key, token, private key, or personal information into the report.
+- Do not automatically delete files, rewrite Git history, force-push, revoke credentials, or change DNS, proxy, or HSTS settings.
+- Before any destructive action or change that could affect site availability, explain its impact and recovery method and wait for user approval.
+- Do not treat a dashboard setting as proof of completion; verify the final result through public URLs and response headers.
+```
+
+</section>
 
 <p class="article-summary"><strong>In one line:</strong> A public GitHub Pages repository needs separate checks for build output, Git history, external requests, HTTPS, and the managing account instead of relying on `.gitignore` alone.</p>
