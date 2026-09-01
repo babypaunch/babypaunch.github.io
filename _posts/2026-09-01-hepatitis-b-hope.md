@@ -6,7 +6,7 @@ title: B형간염을 이겨낼 날을 기다리며
 description: 딸의 B형간염 검사 결과를 받아 보며 검사 수치와 치료 기준을 공부하고, 기능적 완치 연구 소식에서 희망을 찾은 기록.
 category: Life
 date: 2026-09-01 23:11:00 +0900
-last_modified_at: 2026-09-01 23:22:36 +0900
+last_modified_at: 2026-09-01 23:24:19 +0900
 permalink: /blog/hepatitis-b-hope/
 language_url: /en/blog/hepatitis-b-hope/
 alternate_ko: /blog/hepatitis-b-hope/
@@ -29,7 +29,7 @@ tags:
 
 중요한 내용인 것은 알겠는데, 결과를 기다리는 보호자가 무엇부터 봐야 하는지는 쉽게 정리되지 않았다.
 
-다음 날 결과지를 받아 들고 막연히 걱정하기보다 실제 숫자가 무엇을 뜻하는지 하나씩 이해해 보기로 했다.
+결과지를 뽑아 왔고, 막연히 걱정하기보다 실제 숫자가 무엇을 뜻하는지 하나씩 이해해 보기로 했다.
 
 ## 검사 결과가 나왔다
 
