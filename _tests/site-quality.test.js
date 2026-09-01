@@ -111,6 +111,14 @@ assert.match(analyticsScript, /analytics_storage: 'granted'/, 'analytics: grante
 assert.match(analyticsScript, /2000/, 'analytics: toast dismisses after two seconds');
 assert.match(analyticsScript, /querySelectorAll\('\[data-analytics-settings\]'\)/, 'analytics: every settings control is connected');
 
+const adsTxt = fs.readFileSync(path.join(siteRoot, 'ads.txt'), 'utf8').trim();
+assert.equal(adsTxt, 'google.com, pub-6876185346340759, DIRECT, f08c47fec0942fa0', 'AdSense: authorized seller record');
+const adsenseClient = 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6876185346340759';
+assert.ok(fs.readFileSync(path.join(siteRoot, 'blog', 'github-pages-analytics', 'index.html'), 'utf8').includes(adsenseClient), 'AdSense: enabled blog post loads the client');
+for (const relative of ['blog/hepatitis-b-hope/index.html', 'en/blog/hepatitis-b-hope/index.html']) {
+  assert.ok(!fs.readFileSync(path.join(siteRoot, relative), 'utf8').includes(adsenseClient), `${relative}: health post excludes AdSense`);
+}
+
 for (const relative of [
   'blog/github-pages-analytics/index.html',
   'en/blog/github-pages-analytics/index.html',
@@ -194,8 +202,8 @@ for (const relative of ['policies/index.html', 'en/policies/index.html']) {
 }
 
 for (const [relative, required] of [
-  ['policies/babypaunch/privacy/index.html', ['_ga', '이벤트 데이터 2개월', '사용자 데이터', '14개월', 'Google Signals', '국외 처리', 'Search Console', '정보 열람·삭제·처리정지']],
-  ['en/policies/babypaunch/privacy/index.html', ['_ga', 'Event data for two months', '14 months', 'Google Signals', 'International processing', 'Search Console', 'access, delete, or restrict']],
+  ['policies/babypaunch/privacy/index.html', ['_ga', '이벤트 데이터 2개월', '사용자 데이터', '14개월', 'Google Signals', '국외 처리', 'Search Console', '정보 열람·삭제·처리정지', 'Google AdSense', 'Google 인증 동의 관리 플랫폼']],
+  ['en/policies/babypaunch/privacy/index.html', ['_ga', 'Event data for two months', '14 months', 'Google Signals', 'International processing', 'Search Console', 'access, delete, or restrict', 'Google AdSense', 'Google-certified consent management platform']],
 ]) {
   const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
   for (const text of required) assert.ok(html.includes(text), `${relative}: ${text}`);

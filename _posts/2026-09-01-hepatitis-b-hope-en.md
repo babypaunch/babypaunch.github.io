@@ -13,6 +13,7 @@ alternate_ko: /blog/hepatitis-b-hope/
 alternate_en: /en/blog/hepatitis-b-hope/
 tags:
   - hepatitis-b
+ads: false
 ---
 
 > This article is one family's record of trying to understand hepatitis B, not medical diagnosis or treatment advice.

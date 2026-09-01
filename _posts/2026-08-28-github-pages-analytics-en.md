@@ -6,7 +6,7 @@ title: I wanted to know where people were coming from
 description: I connected consent-based GA4 and Search Console to BabyPaunch and established a foundation for understanding traffic sources.
 category: Making
 date: 2026-08-28 00:00:00 +0900
-last_modified_at: 2026-08-29 08:14:00 +0900
+last_modified_at: 2026-09-02 00:00:00 +0900
 permalink: /en/blog/github-pages-analytics/
 language_url: /blog/github-pages-analytics/
 alternate_ko: /blog/github-pages-analytics/
@@ -70,7 +70,7 @@ The choice is stored in the browser's local storage. It can be changed later thr
 
 The modal is centred with a dimmed background. Keyboard focus stays inside it, and an important choice cannot be dismissed by clicking the background or pressing `Esc`.
 
-Because the site now uses an analytics service, I updated both the Korean and English privacy policies at the same time. They explain what is measured, that declining does not affect the site, and where a visitor can change the choice. They also continue to state that Google AdSense advertising is not currently in use.
+Because the site now uses an analytics service, I updated both the Korean and English privacy policies at the same time. They explain what is measured, that declining does not affect the site, and where a visitor can change the choice. Google AdSense advertising was not in use when I first wrote this post.
 
 ## Connecting search traffic through Search Console
 
@@ -115,7 +115,7 @@ Before deployment, I built the site with Jekyll `3.8` and passed quality checks 
 
 The connections are new, so there is not enough data yet to claim that one post is the best. But I no longer have to rely only on intuition. As search and social traffic accumulate, I can choose future subjects based on what people actually read.
 
-If I add Google AdSense later, the consent flow can grow from this foundation. I will add separate choices for advertising storage and personalised advertising, and update the privacy policies before enabling the ads.
+On September 2, 2026, I added the Google AdSense connection code, assigned advertising consent to a separate Google-certified CMP, and updated both privacy policies. The hepatitis B post does not load advertising code.
 
 <hr>
 

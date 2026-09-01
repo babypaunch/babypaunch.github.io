@@ -10,6 +10,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
 {% include seo.html %}
   <link rel="stylesheet" href="/styles.css?v=20260829-prompt-copy-icon">
+{% if page.layout == 'post' and page.ads != false %}{% include adsense.html %}{% endif %}
 {% include analytics.html %}
 </head>
 <body>

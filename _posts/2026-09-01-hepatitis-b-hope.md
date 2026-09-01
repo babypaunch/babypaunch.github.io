@@ -13,6 +13,7 @@ alternate_ko: /blog/hepatitis-b-hope/
 alternate_en: /en/blog/hepatitis-b-hope/
 tags:
   - hepatitis-b
+ads: false
 ---
 
 > 이 글은 한 가족이 B형간염을 이해하기 위해 정리한 기록이지 진단이나 치료 지시가 아닙니다.
