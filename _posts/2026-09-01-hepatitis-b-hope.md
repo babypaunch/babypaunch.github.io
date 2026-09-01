@@ -3,9 +3,10 @@ layout: post
 locale: ko
 page_key: blog
 title: B형간염을 이겨낼 날을 기다리며
-description: 딸의 B형간염 검사 결과를 기다리며 알게 된 검사 수치와 치료 기준, 기능적 완치 연구에 관한 기록.
+description: 딸의 B형간염 검사 결과를 받아 보며 검사 수치와 치료 기준을 공부하고, 기능적 완치 연구 소식에서 희망을 찾은 기록.
 category: Life
 date: 2026-09-01 23:11:00 +0900
+last_modified_at: 2026-09-01 23:19:39 +0900
 permalink: /blog/hepatitis-b-hope/
 language_url: /en/blog/hepatitis-b-hope/
 alternate_ko: /blog/hepatitis-b-hope/

@@ -3,9 +3,10 @@ layout: post
 locale: en
 page_key: blog
 title: Waiting for the day we overcome hepatitis B
-description: A record of what I learned about test results, treatment criteria, and functional cure research while waiting for my daughter's hepatitis B results.
+description: A record of studying my daughter's hepatitis B results and treatment criteria, then finding hope in news about functional cure research.
 category: Life
 date: 2026-09-01 23:11:00 +0900
+last_modified_at: 2026-09-01 23:19:39 +0900
 permalink: /en/blog/hepatitis-b-hope/
 language_url: /blog/hepatitis-b-hope/
 alternate_ko: /blog/hepatitis-b-hope/
