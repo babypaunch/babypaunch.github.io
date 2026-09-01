@@ -6,7 +6,7 @@ title: Waiting for the day we overcome hepatitis B
 description: A record of studying my daughter's hepatitis B results and treatment criteria, then finding hope in news about functional cure research.
 category: Life
 date: 2026-09-01 23:11:00 +0900
-last_modified_at: 2026-09-01 23:24:19 +0900
+last_modified_at: 2026-09-01 23:31:38 +0900
 permalink: /en/blog/hepatitis-b-hope/
 language_url: /blog/hepatitis-b-hope/
 alternate_ko: /blog/hepatitis-b-hope/
@@ -141,9 +141,9 @@ It was an interim analysis of an ongoing study whose participants were all adult
 
 It still matters because it suggested that earlier treatment may benefit some adults with detectable virus even when liver enzymes are not high.
 
-### Current treatment can protect the liver
+### Treatment can protect the liver even now
 
-Current oral antiviral medicines such as entecavir and tenofovir strongly suppress viral replication.
+Oral antiviral medicines such as entecavir and tenofovir strongly suppress viral replication.
 
 When taken appropriately, they can lower HBV DNA to undetectable levels and help reduce the risks of liver injury, cirrhosis, and liver cancer.
 
@@ -185,7 +185,7 @@ For now, regular testing is still necessary while specialists decide when treatm
 
 But risks can be detected earlier, the virus can be suppressed, and treatments aiming for a functional cure are getting closer.
 
-Instead of remaining vaguely afraid, I will wait for the day my daughter overcomes hepatitis B.
+Instead of remaining vaguely afraid, I will help my daughter enjoy her life and wait with her for the day she overcomes hepatitis B.
 
 <p class="article-summary"><strong>In one line:</strong> Hepatitis B treatment criteria are advancing, and therapies aiming for a functional cure are getting closer.</p>
 
