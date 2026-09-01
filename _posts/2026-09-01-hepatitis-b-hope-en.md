@@ -6,13 +6,14 @@ title: Waiting for the day we overcome hepatitis B
 description: A record of studying my daughter's hepatitis B results and treatment criteria, then finding hope in news about functional cure research.
 category: Life
 date: 2026-09-01 23:11:00 +0900
-last_modified_at: 2026-09-01 23:31:38 +0900
+last_modified_at: 2026-09-02 01:33:55 +0900
 permalink: /en/blog/hepatitis-b-hope/
 language_url: /blog/hepatitis-b-hope/
 alternate_ko: /blog/hepatitis-b-hope/
 alternate_en: /en/blog/hepatitis-b-hope/
 tags:
   - hepatitis-b
+  - viral-load
 ads: false
 ---
 
