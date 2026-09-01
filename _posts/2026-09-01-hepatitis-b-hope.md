@@ -6,7 +6,7 @@ title: B형간염을 이겨낼 날을 기다리며
 description: 딸의 B형간염 검사 결과를 받아 보며 검사 수치와 치료 기준을 공부하고, 기능적 완치 연구 소식에서 희망을 찾은 기록.
 category: Life
 date: 2026-09-01 23:11:00 +0900
-last_modified_at: 2026-09-01 23:19:39 +0900
+last_modified_at: 2026-09-01 23:22:36 +0900
 permalink: /blog/hepatitis-b-hope/
 language_url: /en/blog/hepatitis-b-hope/
 alternate_ko: /blog/hepatitis-b-hope/
@@ -21,9 +21,7 @@ tags:
 
 ## 검사 결과를 기다리며
 
-딸의 B형간염 피검사 결과를 확인하러 가기 전날이었다.
-
-실제로 B형간염이 있는 가족에게는 관련 설명 하나도 그냥 지나치기 어렵다.
+최근 딸래미 B형간염 피검사를 했다.
 
 검사 결과가 어떻게 나올지 걱정하면서 닥터프렌즈의 [B형 간염이면 무조건 보세요: 간암 줄이는 치료법](https://www.youtube.com/watch?v=i_QPv0iG3QQ)을 보게 됐다.
 
