@@ -132,6 +132,10 @@ for (const url of [
   '/en/policies/babypaunch/privacy/',
   '/policies/laftel-mania/privacy/',
   '/en/policies/laftel-mania/privacy/',
+  '/policies/chord-sketch/privacy/',
+  '/en/policies/chord-sketch/privacy/',
+  '/support/chord-sketch/',
+  '/en/support/chord-sketch/',
   '/contact/',
   '/en/contact/',
   '/blog/github-pages-analytics/',
@@ -146,7 +150,7 @@ assert.equal(socialImage.readUInt32BE(16), 1200, 'social image: width');
 assert.equal(socialImage.readUInt32BE(20), 630, 'social image: height');
 
 const policyData = fs.readFileSync(path.join(__dirname, '..', '_data', 'policies.yml'), 'utf8');
-for (const project of ['babypaunch', 'laftel-mania']) {
+for (const project of ['babypaunch', 'laftel-mania', 'chord-sketch']) {
   assert.ok(policyData.includes(`slug: ${project}`), `policies.yml: ${project}`);
 }
 
@@ -157,6 +161,8 @@ for (const relative of [
   'en/policies/babypaunch/accessibility/index.html',
   'policies/laftel-mania/privacy/index.html',
   'en/policies/laftel-mania/privacy/index.html',
+  'policies/chord-sketch/privacy/index.html',
+  'en/policies/chord-sketch/privacy/index.html',
 ]) {
   const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
   assert.match(html, /class="page-shell (?:privacy|accessibility)-shell"/, `${relative}: responsive policy shell`);
@@ -164,6 +170,22 @@ for (const relative of [
   assert.match(html, /(?:최종 개정일|최종 갱신일|Last revised|Last updated):/, `${relative}: latest revision date`);
   assert.match(html, /<h2>(?:개정 이력|변경 이력|Revision history)<\/h2>/, `${relative}: revision history`);
   assert.match(html, /<time datetime="\d{4}-\d{2}-\d{2}">/, `${relative}: machine-readable revision date`);
+}
+
+for (const relative of ['support/chord-sketch/index.html', 'en/support/chord-sketch/index.html']) {
+  const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
+  assert.match(html, /class="page-shell contact-shell"/, `${relative}: responsive support shell`);
+  assert.match(html, /id="data-deletion"/, `${relative}: data deletion anchor`);
+  assert.match(html, /mailto:babypaunch@gmail\.com/, `${relative}: public support email`);
+  assert.match(html, /class="data-cards data-cards-compact"/, `${relative}: deletion steps use cards`);
+}
+
+for (const [relative, required] of [
+  ['policies/chord-sketch/privacy/index.html', ['개발자가 운영하는 서버', '광고 식별자', '데이터 삭제 안내', 'babypaunch@gmail.com']],
+  ['en/policies/chord-sketch/privacy/index.html', ['developer-operated server', 'advertising identifiers', 'data deletion instructions', 'babypaunch@gmail.com']],
+]) {
+  const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
+  for (const text of required) assert.ok(html.includes(text), `${relative}: ${text}`);
 }
 
 for (const relative of ['policies/index.html', 'en/policies/index.html']) {

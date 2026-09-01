@@ -36,6 +36,12 @@ pages:
   laftel_mania_privacy:
     title: Laftel Mania Privacy Policy — BabyPaunch
     description: What Laftel Mania stores and why it requests access to websites.
+  chord_sketch_privacy:
+    title: Chord Sketch Privacy Policy — BabyPaunch
+    description: How Chord Sketch handles settings and sketch files on your device.
+  chord_sketch_support:
+    title: Chord Sketch Support — BabyPaunch
+    description: Help, contact details, and local data deletion instructions for Chord Sketch.
   contact:
     title: Contact — BabyPaunch
     description: How to contact BabyPaunch about apps, music, accessibility, and policies.

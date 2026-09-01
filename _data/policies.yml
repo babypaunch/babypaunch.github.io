@@ -39,3 +39,27 @@
       url:
         ko: /policies/laftel-mania/privacy/
         en: /en/policies/laftel-mania/privacy/
+
+- slug: chord-sketch
+  name:
+    ko: Chord Sketch
+    en: Chord Sketch
+  type:
+    ko: Android 앱
+    en: Android app
+  description:
+    ko: 코드를 듣고 코드 진행을 만드는 음악 스케치 앱입니다.
+    en: A music sketch app for hearing chords and building chord progressions.
+  documents:
+    - label:
+        ko: 개인정보처리방침
+        en: Privacy Policy
+      url:
+        ko: /policies/chord-sketch/privacy/
+        en: /en/policies/chord-sketch/privacy/
+    - label:
+        ko: 지원 및 데이터 삭제 안내
+        en: Support and data deletion
+      url:
+        ko: /support/chord-sketch/
+        en: /en/support/chord-sketch/
