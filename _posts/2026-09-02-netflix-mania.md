@@ -8,7 +8,7 @@ image: /assets/images/blog/netflix-mania-popup.webp
 image_alt: 넷플릭스 화면 위에 열린 Netflix Mania 팝업과 배속 단축키 안내
 category: Making
 date: 2026-09-02 00:00:00 +0900
-last_modified_at: 2026-09-02 22:22:46 +0900
+last_modified_at: 2026-09-02 22:25:51 +0900
 permalink: /blog/netflix-mania/
 language_url: /en/blog/netflix-mania/
 alternate_ko: /blog/netflix-mania/
@@ -67,9 +67,9 @@ Netflix Mania는 이 질문에서 시작한 Chrome 확장 프로그램이다.
 
 ## 필요한 기능만 남긴 팝업
 
-팝업은 Laftel Mania의 작은 구조를 재사용하되 넷플릭스에 맞는 빨강과 검정, 새 NM 아이콘으로 정리했다.
+팝업은 Laftel Mania의 작은 구조를 재사용하되 넷플릭스에 맞는 빨간색과 검은색, 새 NM 아이콘으로 정리했다.
 
-실제로 제공하는 기능이 배속 조절뿐이므로 팝업에도 두 단축키와 사용 범위만 적었다.
+실제로 제공하는 기능이 배속 조절뿐이므로 팝업에도 두 단축키와 사용법만 적었다.
 
 ## 저장하거나 전송하는 데이터는 없다
 
@@ -81,4 +81,4 @@ Netflix Mania는 Netflix가 제작·승인·보증하거나 Netflix와 제휴한
 
 현재 Chrome Web Store 등록 절차를 진행하고 있어서 아직 공개 설치 링크는 없다.
 
-<p class="article-summary"><strong>한 줄 요약:</strong> 아무리 쉬운 기능이라도, 때로는 완전히 새로운 방향으로 만들어야할 수도 있다.</p>
+<p class="article-summary"><strong>한 줄 요약:</strong> 아무리 쉬운 기능이라도, 때로는 완전히 새로운 방향으로 만들어야 할 수도 있다.</p>
