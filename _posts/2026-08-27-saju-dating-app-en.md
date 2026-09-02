@@ -6,7 +6,7 @@ title: I studied Saju to turn an idea into an app
 description: I studied the Heavenly Stems and Earthly Branches before building a Saju dating app that treats compatibility as a conversation starter, not a verdict.
 category: Making
 date: 2026-08-27 14:30:00 +0900
-last_modified_at: 2026-09-02 11:04:39 +0900
+last_modified_at: 2026-09-02 11:06:06 +0900
 permalink: /en/blog/saju-dating-app/
 language_url: /blog/saju-dating-app/
 alternate_ko: /blog/saju-dating-app/
@@ -166,7 +166,7 @@ They classify another stem according to its elemental and Yin-Yang relationship 
   <section class="data-card"><h3>Generating the self</h3><p><strong>Same polarity:</strong> Pyeon-in (偏印)</p><p><strong>Different polarity:</strong> Jeong-in (正印)</p></section>
 </div>
 
-Once I understood the table, I could at least see how the difficult names were produced. The Ten Stars still do not objectively determine a person's occupation, wealth, or partner. The app explains the traditional categories but does not use them to recommend major life decisions.
+Once I understood this, I could at least see how the difficult names were produced. The Ten Stars still do not objectively determine a person's occupation, wealth, or partner. The app explains the traditional categories but does not use them to recommend major life decisions.
 
 ## I did not want compatibility (宮合) to end with one score
 
