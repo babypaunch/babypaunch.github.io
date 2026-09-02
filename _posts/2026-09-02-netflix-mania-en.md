@@ -8,7 +8,7 @@ image: /assets/images/blog/netflix-mania-popup.webp
 image_alt: The Netflix Mania popup and its playback-speed shortcuts over a Netflix screen
 category: Making
 date: 2026-09-02 00:00:00 +0900
-last_modified_at: 2026-09-02 22:19:55 +0900
+last_modified_at: 2026-09-02 22:22:46 +0900
 permalink: /en/blog/netflix-mania/
 language_url: /blog/netflix-mania/
 alternate_ko: /blog/netflix-mania/
@@ -71,8 +71,6 @@ I reused Laftel Mania's compact popup structure, then adapted it with Netflix-in
 
 Playback speed is the extension's only feature, so the popup shows only the two shortcuts and where they work.
 
-Netflix Mania works only on the Netflix website and cannot be used in the Netflix app from the Microsoft Store.
-
 ## No data is stored or transmitted
 
 Netflix Mania does not collect account details, viewing history, browsing history, or page content, and it does not send data to a separate server.
@@ -83,6 +81,4 @@ Netflix Mania is an unofficial extension and is not created, approved, endorsed,
 
 Chrome Web Store registration is currently in progress, so there is no public installation link yet.
 
-At first I thought changing a video's speed directly would be enough, but making the extension comfortable to use meant respecting the flow Netflix already handles well.
-
-<p class="article-summary"><strong>In one line:</strong> If you change Netflix playback speed often, press <code>Shift + &lt;</code> or <code>Shift + &gt;</code> instead of reaching for the player menu.</p>
+<p class="article-summary"><strong>In one line:</strong> No matter how simple a feature seems, it may sometimes need to be built in a completely new direction.</p>
