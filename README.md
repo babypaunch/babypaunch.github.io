@@ -19,6 +19,7 @@ python -m http.server 8000 --directory _site
 
 - `/robots.txt`: 검색 로봇 접근 규칙과 sitemap 위치
 - `/sitemap.xml`: 공개 페이지와 블로그 글의 검색 색인 목록
+- `/app-ads.txt`: Google AdMob·AdSense 게시자 인증
 - `/policies/`, `/en/policies/`: 프로젝트별 정책 허브
 - `/policies/<project>/<document>/`: 프로젝트별 한국어 정책 문서
 - `/en/policies/<project>/<document>/`: 프로젝트별 영문 정책 문서
