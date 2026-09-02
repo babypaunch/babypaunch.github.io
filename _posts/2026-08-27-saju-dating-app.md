@@ -6,6 +6,7 @@ title: 아이디어를 구현하기 위해 사주를 공부했다
 description: 사주팔자 데이팅 앱을 만들기 위해 천간과 지지부터 공부하고, 궁합을 판정이 아닌 대화의 출발점으로 다시 설계했다.
 category: Making
 date: 2026-08-27 14:30:00 +0900
+last_modified_at: 2026-09-02 11:04:39 +0900
 permalink: /blog/saju-dating-app/
 language_url: /en/blog/saju-dating-app/
 alternate_ko: /blog/saju-dating-app/
@@ -58,7 +59,7 @@ tags:
   <section class="data-card"><h3>지지(地支)</h3><p><strong>연주:</strong> 戌</p><p><strong>월주:</strong> 辰</p><p><strong>일주:</strong> 辰</p><p><strong>시주:</strong> 辰</p></section>
 </div>
 
-이 표는 앱의 계산 구조를 설명하기 위한 예다. 네 기둥을 구성하는 여덟 글자가 보이지만, 이것만으로 실제 사람의 성격이나 미래가 입증되는 것은 아니다.
+이 내용은 앱의 계산 구조를 설명하기 위한 예다. 네 기둥을 구성하는 여덟 글자가 보이지만, 이것만으로 실제 사람의 성격이나 미래가 입증되는 것은 아니다.
 
 ## 천간(天干)은 하늘의 열 글자다
 

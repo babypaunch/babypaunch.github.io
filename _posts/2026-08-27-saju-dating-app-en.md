@@ -6,6 +6,7 @@ title: I studied Saju to turn an idea into an app
 description: I studied the Heavenly Stems and Earthly Branches before building a Saju dating app that treats compatibility as a conversation starter, not a verdict.
 category: Making
 date: 2026-08-27 14:30:00 +0900
+last_modified_at: 2026-09-02 11:04:39 +0900
 permalink: /en/blog/saju-dating-app/
 language_url: /blog/saju-dating-app/
 alternate_ko: /blog/saju-dating-app/
@@ -58,7 +59,7 @@ Each pillar contains one Heavenly Stem (天干) above and one Earthly Branch (�
   <section class="data-card"><h3>Earthly Branch (地支)</h3><p><strong>Year:</strong> 戌</p><p><strong>Month:</strong> 辰</p><p><strong>Day:</strong> 辰</p><p><strong>Hour:</strong> 辰</p></section>
 </div>
 
-This table is an example of the app's calculation structure. It shows the eight characters, but the characters themselves do not prove anything about a real person's personality or future.
+This is an example of the app's calculation structure. It shows the eight characters, but the characters themselves do not prove anything about a real person's personality or future.
 
 ## The ten Heavenly Stems (天干)
 
