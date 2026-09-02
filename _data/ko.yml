@@ -36,6 +36,9 @@ pages:
   laftel_mania_privacy:
     title: Laftel Mania 개인정보처리방침 — BabyPaunch
     description: Laftel Mania가 저장하는 설정과 요청하는 사이트 접근 권한을 안내합니다.
+  netflix_mania_privacy:
+    title: Netflix Mania 개인정보처리방침 — BabyPaunch
+    description: Netflix Mania의 데이터 처리와 Netflix 사이트 접근 범위를 안내합니다.
   chord_sketch_privacy:
     title: Chord Sketch 개인정보처리방침 — BabyPaunch
     description: Chord Sketch가 기기에서 처리하는 설정과 스케치 파일을 안내합니다.

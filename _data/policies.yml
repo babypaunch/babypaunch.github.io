@@ -40,6 +40,24 @@
         ko: /policies/laftel-mania/privacy/
         en: /en/policies/laftel-mania/privacy/
 
+- slug: netflix-mania
+  name:
+    ko: Netflix Mania
+    en: Netflix Mania
+  type:
+    ko: Chrome 확장 프로그램
+    en: Chrome extension
+  description:
+    ko: Netflix 웹 플레이어의 재생속도를 키보드로 조절하는 Chrome 확장 프로그램입니다.
+    en: A Chrome extension for controlling Netflix web-player speed with the keyboard.
+  documents:
+    - label:
+        ko: 개인정보처리방침
+        en: Privacy Policy
+      url:
+        ko: /policies/netflix-mania/privacy/
+        en: /en/policies/netflix-mania/privacy/
+
 - slug: chord-sketch
   name:
     ko: Chord Sketch
