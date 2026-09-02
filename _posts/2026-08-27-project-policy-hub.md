@@ -6,7 +6,7 @@ title: 프로젝트 정책을 한곳에 모으기로 했다
 description: 앞으로 만들 프로젝트를 위해 내 GitHub Pages에 새로 구매한 도메인을 연결하고 정책 페이지를 프로젝트별 구조로 정리했다.
 category: Making
 date: 2026-08-27 00:00:00 +0900
-last_modified_at: 2026-08-29 08:20:00 +0900
+last_modified_at: 2026-09-02 11:03:22 +0900
 permalink: /blog/project-policy-hub/
 language_url: /en/blog/project-policy-hub/
 alternate_ko: /blog/project-policy-hub/
@@ -99,7 +99,7 @@ HTTPS는 DNS 전파와 인증서 발급 시간이 필요한 작업이라서 확�
 
 단점도 있다. 모든 정책이 한 도메인에 모여 있기 때문에 도메인 갱신이나 사이트 배포에 문제가 생기면 여러 프로젝트가 함께 영향을 받는다. 그래서 통합 관리가 편한 만큼 이 홈페이지를 오래 유지할 책임도 커졌다.(공짜니까 죽기 전까지 사용해 줄 테다.)
 
-지금은 BabyPaunch 웹사이트와 Laftel Mania만 등록되어 있다. 앞으로 새 프로젝트를 만들 때마다 같은 자리에 필요한 정책을 추가할 예정이다.
+앞으로 새 프로젝트를 만들 때마다 같은 자리에 필요한 정책을 추가할 예정이다.
 
 <hr>
 

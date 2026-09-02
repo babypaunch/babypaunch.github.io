@@ -6,7 +6,7 @@ title: I decided to keep every project's policies in one place
 description: I connected a newly purchased domain to my GitHub Pages site and organized policies by project for the things I will build next.
 category: Making
 date: 2026-08-27 00:00:00 +0900
-last_modified_at: 2026-08-29 08:20:00 +0900
+last_modified_at: 2026-09-02 11:03:22 +0900
 permalink: /en/blog/project-policy-hub/
 language_url: /blog/project-policy-hub/
 alternate_ko: /blog/project-policy-hub/
@@ -99,7 +99,7 @@ The main advantage is that the system can grow without turning into one long mix
 
 There is a tradeoff. Because every policy lives under one domain, a missed renewal or deployment problem could affect several projects at once. Central management is convenient, but it also makes maintaining this website more important. (It is free, so I plan to use it for the rest of my life.)
 
-For now, the hub contains the BabyPaunch website and Laftel Mania. Whenever I make a new project, I will add the policies it needs in the same place.
+Whenever I make a new project, I will add the policies it needs in the same place.
 
 <hr>
 
