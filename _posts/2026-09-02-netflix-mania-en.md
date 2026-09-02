@@ -8,7 +8,7 @@ image: /assets/images/blog/netflix-mania-popup.webp
 image_alt: The Netflix Mania popup and its playback-speed shortcuts over a Netflix screen
 category: Making
 date: 2026-09-02 00:00:00 +0900
-last_modified_at: 2026-09-02 22:25:51 +0900
+last_modified_at: 2026-09-02 22:27:00 +0900
 permalink: /en/blog/netflix-mania/
 language_url: /blog/netflix-mania/
 alternate_ko: /blog/netflix-mania/
@@ -69,7 +69,7 @@ This keeps `Shift + <` and `Shift + >` working as the same playback-speed shortc
 
 I reused Laftel Mania's compact popup structure, then adapted it with Netflix-inspired red and black colours and the new NM icon.
 
-Playback speed is the extension's only feature, so the popup explains only the two shortcuts and how to use them.
+Playback speed is the extension's only feature, so the popup explains only how to use the two shortcuts.
 
 ## No data is stored or transmitted
 
