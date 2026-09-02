@@ -8,7 +8,7 @@ image: /assets/images/blog/netflix-mania-popup.webp
 image_alt: 넷플릭스 화면 위에 열린 Netflix Mania 팝업과 배속 단축키 안내
 category: Making
 date: 2026-09-02 00:00:00 +0900
-last_modified_at: 2026-09-02 22:18:48 +0900
+last_modified_at: 2026-09-02 22:19:55 +0900
 permalink: /blog/netflix-mania/
 language_url: /en/blog/netflix-mania/
 alternate_ko: /blog/netflix-mania/
@@ -41,7 +41,7 @@ Netflix Mania는 이 질문에서 시작한 Chrome 확장 프로그램이다.
 
 겉으로 숫자만 제대로 바뀌는 것으로는 충분하지 않았다.
 
-## 넷플릭스의 기본 배속 메뉴를 사용했다
+## 결국 넷플릭스의 기본 배속 메뉴를 사용했다
 
 직접 속도를 바꾸는 코드를 버리고 넷플릭스 플레이어가 제공하는 기본 배속 메뉴를 단축키로 조작하도록 바꿨다.
 

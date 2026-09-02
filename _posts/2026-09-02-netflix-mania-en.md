@@ -8,7 +8,7 @@ image: /assets/images/blog/netflix-mania-popup.webp
 image_alt: The Netflix Mania popup and its playback-speed shortcuts over a Netflix screen
 category: Making
 date: 2026-09-02 00:00:00 +0900
-last_modified_at: 2026-09-02 22:18:48 +0900
+last_modified_at: 2026-09-02 22:19:55 +0900
 permalink: /en/blog/netflix-mania/
 language_url: /blog/netflix-mania/
 alternate_ko: /blog/netflix-mania/
@@ -41,7 +41,7 @@ The shortcuts and on-screen notice worked, but actual playback revealed an obvio
 
 Changing the number correctly on screen was not enough.
 
-## I switched to Netflix's built-in speed menu
+## In the end, I used Netflix's built-in speed menu
 
 I removed the direct speed control and made the shortcuts operate the playback-speed menu already provided by the Netflix player.
 
