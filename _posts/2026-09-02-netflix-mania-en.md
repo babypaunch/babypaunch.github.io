@@ -8,7 +8,7 @@ image: /assets/images/blog/netflix-mania-popup.webp
 image_alt: The Netflix Mania popup and its playback-speed shortcuts over a Netflix screen
 category: Making
 date: 2026-09-02 00:00:00 +0900
-last_modified_at: 2026-09-02 22:27:00 +0900
+last_modified_at: 2026-09-02 22:36:33 +0900
 permalink: /en/blog/netflix-mania/
 language_url: /blog/netflix-mania/
 alternate_ko: /blog/netflix-mania/
@@ -22,11 +22,7 @@ When I watch Netflix on my Windows laptop, I often change the playback speed.
 
 Netflix has a speed menu, but changing the speed means reaching for the mouse, opening the menu, and choosing a value again.
 
-I had already solved a similar annoyance with Laftel Mania, so I thought two shortcuts would be enough this time as well.
-
-<p class="article-question">Could I keep Netflix's built-in speed control and add only the keyboard shortcuts?</p>
-
-That question became Netflix Mania, a Chrome extension.
+I had already solved a similar annoyance with Laftel Mania, so I thought two shortcuts would be enough this time as well. (Netflix opens the player in a large window by default.)
 
 <figure class="article-figure">
   <img src="/assets/images/blog/netflix-mania-popup.webp" alt="The Netflix Mania popup showing playback-speed shortcuts over a Netflix screen" width="1280" height="800" loading="lazy">
@@ -38,8 +34,6 @@ That question became Netflix Mania, a Chrome extension.
 The first version found the video element, changed its `playbackRate` directly, and saved the last speed for the next video.
 
 The shortcuts and on-screen notice worked, but actual playback revealed an obvious loss of sync between the picture and sound.
-
-Changing the number correctly on screen was not enough.
 
 ## In the end, I used Netflix's built-in speed menu
 

@@ -8,7 +8,7 @@ image: /assets/images/blog/netflix-mania-popup.webp
 image_alt: 넷플릭스 화면 위에 열린 Netflix Mania 팝업과 배속 단축키 안내
 category: Making
 date: 2026-09-02 00:00:00 +0900
-last_modified_at: 2026-09-02 22:27:00 +0900
+last_modified_at: 2026-09-02 22:36:33 +0900
 permalink: /blog/netflix-mania/
 language_url: /en/blog/netflix-mania/
 alternate_ko: /blog/netflix-mania/
@@ -22,11 +22,7 @@ tags:
 
 넷플릭스 플레이어에는 배속 메뉴가 있지만, 속도를 바꿀 때마다 마우스로 메뉴를 열고 원하는 값을 다시 선택해야 한다.
 
-이미 Laftel Mania를 만들며 비슷한 불편을 해결해 본 적이 있어서 이번에도 단축키 두 개면 충분하다고 생각했다.
-
-<p class="article-question">넷플릭스의 기본 배속 기능을 그대로 쓰면서 키보드 단축키만 붙일 수 없을까?</p>
-
-Netflix Mania는 이 질문에서 시작한 Chrome 확장 프로그램이다.
+이미 Laftel Mania를 만들며 비슷한 불편을 해결해 본 적이 있어서 이번에도 단축키 두 개면 충분하다고 생각했다. (넷플릭스는 기본적으로 창을 크게 띄워주니까.)
 
 <figure class="article-figure">
   <img src="/assets/images/blog/netflix-mania-popup.webp" alt="넷플릭스 화면 위에 열린 Netflix Mania 팝업에서 배속 단축키를 안내하는 모습" width="1280" height="800" loading="lazy">
@@ -38,8 +34,6 @@ Netflix Mania는 이 질문에서 시작한 Chrome 확장 프로그램이다.
 첫 버전은 페이지 안의 영상 요소를 찾아 `playbackRate` 값을 직접 바꾸고, 마지막 속도를 저장해 다음 영상에도 적용하는 방식이었다.
 
 단축키와 화면 알림은 잘 동작했지만 실제로 영상을 재생해 보니 소리와 화면의 싱크가 분명하게 어긋났다.
-
-겉으로 숫자만 제대로 바뀌는 것으로는 충분하지 않았다.
 
 ## 결국 넷플릭스의 기본 배속 메뉴를 사용했다
 
