@@ -2,12 +2,13 @@
 layout: post
 locale: ko
 page_key: blog
-title: 넷플릭스 배속을 키보드로 바꾸고 싶어서 만든 Netflix Mania
+title: 넷플릭스도 편하게 사용하고 싶었다.
 description: 넷플릭스 기본 배속 메뉴에 단축키를 연결하면서 영상과 음성의 싱크 문제를 피한 과정을 정리했다.
 image: /assets/images/blog/netflix-mania-popup.webp
 image_alt: 넷플릭스 화면 위에 열린 Netflix Mania 팝업과 배속 단축키 안내
 category: Making
 date: 2026-09-02 00:00:00 +0900
+last_modified_at: 2026-09-02 22:18:48 +0900
 permalink: /blog/netflix-mania/
 language_url: /en/blog/netflix-mania/
 alternate_ko: /blog/netflix-mania/

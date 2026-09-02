@@ -2,12 +2,13 @@
 layout: post
 locale: en
 page_key: blog
-title: I built Netflix Mania to control Netflix playback speed from the keyboard
+title: I wanted Netflix to be easier to use too.
 description: I connected keyboard shortcuts to Netflix's built-in speed menu and avoided the audio-sync problem caused by changing playback speed directly.
 image: /assets/images/blog/netflix-mania-popup.webp
 image_alt: The Netflix Mania popup and its playback-speed shortcuts over a Netflix screen
 category: Making
 date: 2026-09-02 00:00:00 +0900
+last_modified_at: 2026-09-02 22:18:48 +0900
 permalink: /en/blog/netflix-mania/
 language_url: /blog/netflix-mania/
 alternate_ko: /blog/netflix-mania/
