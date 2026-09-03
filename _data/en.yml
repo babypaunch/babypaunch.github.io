@@ -89,7 +89,9 @@ blog:
   no_matches: No posts match this tag.
   results_count: Showing {count} posts
   tags:
+    admob: AdMob
     ai-prompt: AI프롬프트제공
+    android: Android
     blog-monetization: BlogMonetization
     chrome-extension: ChromeExtension
     custom-domain: CustomDomain
@@ -97,6 +99,7 @@ blog:
     first-song: FirstSong
     ga4: GA4
     github-pages: GitHubPages
+    google-play: GooglePlay
     hepatitis-b: HepatitisB
     laftel-mania: LaftelMania
     netflix-mania: NetflixMania
