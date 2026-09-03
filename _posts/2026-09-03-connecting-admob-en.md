@@ -6,7 +6,7 @@ title: Shall we connect AdMob?
 description: I connected AdMob to an Android app and separated the roles of ad requests, UMP consent, app review, public store linking, and app-ads.txt.
 category: Making
 date: 2026-09-03 00:00:00 +0900
-last_modified_at: 2026-09-03 14:42:19 +0900
+last_modified_at: 2026-09-03 14:45:42 +0900
 permalink: /en/blog/connecting-admob/
 language_url: /blog/connecting-admob/
 alternate_ko: /blog/connecting-admob/
@@ -58,6 +58,8 @@ Having production IDs does not mean that ad serving has been approved.
 
 The IDs only decide which app and ad unit receive the request.
 
+*In simple terms: An SDK is a toolkit that adds ad features, the app ID identifies the app, and the ad unit ID identifies the place where an ad appears.*
+
 ## Privacy consent comes before the ad request
 
 An app should not request an ad immediately at startup when users may need to provide consent.
@@ -69,6 +71,8 @@ Users who do not need a consent form still pass through this flow before the ad-
 An SDK initialization log was therefore not enough to prove that an ad request had been sent.
 
 I needed separate checks for the UMP update, the `canRequestAds()` result, the request itself, and the success or failure callback.
+
+*In simple terms: UMP asks the user for advertising consent, while `canRequestAds()` reports whether the app may request an ad now.*
 
 ## Why there was no empty ad area
 
@@ -91,6 +95,8 @@ The app process ran normally without a crash or ANR.
 The Google Mobile Ads SDK initialized and connected to the ad network.
 
 The install source was `com.android.vending`, confirming that this was the Google Play build rather than a locally installed APK.
+
+*In simple terms: ADB is a tool for reading a phone's runtime logs, while an ANR means that an app has frozen and stopped responding to input.*
 
 SDK initialization still did not mean that an ad had arrived from the server.
 
@@ -124,6 +130,8 @@ I therefore submitted the production release for review first and will retry the
 
 The production release is currently under review and is not public yet.
 
+*In simple terms: Only invited people can install an internal test, while a production release must go public before anyone can find the app in the store.*
+
 ## `app-ads.txt` is a separate step from approval
 
 AdMob uses `app-ads.txt` at the root of the developer website to verify who is authorized to sell the app's ad inventory.
@@ -142,6 +150,8 @@ A valid `app-ads.txt` file does not make ads appear immediately.
 
 These five items are separate stages.
 
+*In simple terms: `app-ads.txt` is a public verification file that tells advertising companies who is authorized to sell ads for the app.*
+
 ## The advertising ID declaration on Android 13
 
 An app using the Google Mobile Ads SDK may receive the `com.google.android.gms.permission.AD_ID` permission through manifest merging.
@@ -156,7 +166,9 @@ I selected analytics, advertising or marketing, and fraud prevention, security, 
 
 These answers must also agree with the Data safety form.
 
-## The order I would check next time
+*In simple terms: An advertising ID is not the device's permanent serial number but a resettable identifier used for ad delivery and measurement.*
+
+## Process summary
 
 1. Confirm that an official Google test ad appears in the development build.
 2. Confirm that the release build contains the production AdMob app ID and ad unit ID.
