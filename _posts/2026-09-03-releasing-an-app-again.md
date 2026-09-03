@@ -6,7 +6,7 @@ title: 오랜만에 앱 좀 출시해볼까?
 description: 오랜만에 Android 앱 출시를 준비하며 검증되지 않은 결제를 빼고 무료 기능, 스토어 자료와 정책 응답을 하나의 출시 후보로 맞춘 과정을 정리했다.
 category: Making
 date: 2026-09-03 14:55:20 +0900
-last_modified_at: 2026-09-03 14:55:20 +0900
+last_modified_at: 2026-09-03 15:01:46 +0900
 permalink: /blog/releasing-an-app-again/
 language_url: /en/blog/releasing-an-app-again/
 alternate_ko: /blog/releasing-an-app-again/
@@ -31,7 +31,7 @@ tags:
 
 ## 검증하지 못한 결제부터 뺐다
 
-원래는 1개월 선불 Pro 이용권을 제공할 생각이었다.
+원래는 출시할 음악 앱에 1개월 선불 Pro 이용권을 제공할 생각이었다.
 
 Pro 사용자는 광고 없이 모든 코드 진행 프리셋을 사용하는 방식이었다.
 

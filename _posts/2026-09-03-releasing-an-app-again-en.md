@@ -6,7 +6,7 @@ title: Shall I release an app again?
 description: I returned to Android app publishing, removed an unverified payment flow, and aligned the free features, store materials, and policy answers in one release candidate.
 category: Making
 date: 2026-09-03 14:55:20 +0900
-last_modified_at: 2026-09-03 14:55:20 +0900
+last_modified_at: 2026-09-03 15:01:46 +0900
 permalink: /en/blog/releasing-an-app-again/
 language_url: /blog/releasing-an-app-again/
 alternate_ko: /blog/releasing-an-app-again/
@@ -31,7 +31,7 @@ I reconsidered whether the first release of a working app should wait for that p
 
 ## I removed the unverified payment flow first
 
-The original plan included a one-month prepaid Pro pass.
+I originally planned to offer a one-month prepaid Pro pass in the music app I was releasing.
 
 Pro users would use every chord-progression preset without ads.
 
