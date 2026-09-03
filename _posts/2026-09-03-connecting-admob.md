@@ -6,7 +6,7 @@ title: AdMob을 연결해볼까?
 description: Android 앱에 AdMob을 붙이며 광고 요청, UMP 동의, 앱 심사, 공개 스토어 연결과 app-ads.txt의 역할을 구분한 과정을 정리했다.
 category: Making
 date: 2026-09-03 00:00:00 +0900
-last_modified_at: 2026-09-03 14:45:42 +0900
+last_modified_at: 2026-09-03 14:49:19 +0900
 permalink: /blog/connecting-admob/
 language_url: /en/blog/connecting-admob/
 alternate_ko: /blog/connecting-admob/
@@ -84,7 +84,7 @@ UMP 정보 갱신, `canRequestAds()` 결과, 광고 요청 시작과 로드 성�
 
 따라서 화면 아래에 아무것도 없다는 사실은 레이아웃 코드가 실행되지 않았다는 증거가 아니었다.
 
-오히려 실패 상태를 의도대로 정리한 결과일 수 있었다.
+오히려 실패 상태를 의도대로 처리한 것이었다.
 
 ## Android 로그에서 확인한 것
 

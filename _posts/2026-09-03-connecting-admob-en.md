@@ -6,7 +6,7 @@ title: Shall we connect AdMob?
 description: I connected AdMob to an Android app and separated the roles of ad requests, UMP consent, app review, public store linking, and app-ads.txt.
 category: Making
 date: 2026-09-03 00:00:00 +0900
-last_modified_at: 2026-09-03 14:45:42 +0900
+last_modified_at: 2026-09-03 14:49:19 +0900
 permalink: /en/blog/connecting-admob/
 language_url: /blog/connecting-admob/
 alternate_ko: /blog/connecting-admob/
@@ -84,7 +84,7 @@ This prevented an empty grey strip from replacing the ad.
 
 The absence of anything at the bottom did not prove that the layout code had never run.
 
-It could mean that the app had cleaned up a failed state exactly as intended.
+The app had handled the failed state exactly as intended.
 
 ## What the Android logs showed
 
