@@ -6,7 +6,7 @@ title: Shall we connect AdMob?
 description: I connected AdMob to an Android app and separated the roles of ad requests, UMP consent, app review, public store linking, and app-ads.txt.
 category: Making
 date: 2026-09-03 00:00:00 +0900
-last_modified_at: 2026-09-03 14:38:49 +0900
+last_modified_at: 2026-09-03 14:42:19 +0900
 permalink: /en/blog/connecting-admob/
 language_url: /blog/connecting-admob/
 alternate_ko: /blog/connecting-admob/

@@ -6,7 +6,7 @@ title: AdMob을 연결해볼까?
 description: Android 앱에 AdMob을 붙이며 광고 요청, UMP 동의, 앱 심사, 공개 스토어 연결과 app-ads.txt의 역할을 구분한 과정을 정리했다.
 category: Making
 date: 2026-09-03 00:00:00 +0900
-last_modified_at: 2026-09-03 14:38:49 +0900
+last_modified_at: 2026-09-03 14:42:19 +0900
 permalink: /blog/connecting-admob/
 language_url: /en/blog/connecting-admob/
 alternate_ko: /blog/connecting-admob/
@@ -50,9 +50,9 @@ Google Mobile Ads SDK 초기화도 실행됐고 광고가 들어갈 자리도 �
 
 테스트 광고는 실제 수익 광고와 분리되어 있고 개발자가 자신의 운영 광고를 반복해서 누르는 문제도 피할 수 있다.
 
-릴리스 빌드에는 운영용 AdMob 앱 ID와 배너 광고 단위 ID가 필요하다.
+릴리즈 빌드에는 운영용 AdMob 앱 ID와 배너 광고 단위 ID가 필요하다.
 
-개발 빌드에는 테스트 ID를 사용하고 릴리스 빌드에는 운영 ID가 없으면 빌드가 실패하도록 구성했다.
+개발 빌드에는 테스트 ID를 사용하고 릴리즈 빌드에는 운영 ID가 없으면 빌드가 실패하도록 구성했다.
 
 하지만 운영 ID가 들어 있다는 사실은 광고 게재 승인이 끝났다는 뜻이 아니다.
 
@@ -159,7 +159,7 @@ Android 13 이상을 대상으로 하는 앱은 Play Console에서도 광고 ID 
 ## 다시 확인한다면 이 순서로 본다
 
 1. 개발 빌드에서 Google 공식 테스트 광고가 표시되는지 확인한다.
-2. 릴리스 빌드에 운영 AdMob 앱 ID와 광고 단위 ID가 들어갔는지 확인한다.
+2. 릴리즈 빌드에 운영 AdMob 앱 ID와 광고 단위 ID가 들어갔는지 확인한다.
 3. UMP 동의 처리 후 `canRequestAds()`가 허용되는지 확인한다.
 4. 광고 요청과 성공·실패 콜백을 Android 로그에서 확인한다.
 5. 광고 실패 시 컨테이너를 숨기는 코드가 있는지 확인한다.
