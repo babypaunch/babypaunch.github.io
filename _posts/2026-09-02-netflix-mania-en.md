@@ -8,7 +8,7 @@ image: /assets/images/blog/netflix-mania-popup.webp
 image_alt: The Netflix Mania popup and its playback-speed shortcuts over a Netflix screen
 category: Making
 date: 2026-09-02 00:00:00 +0900
-last_modified_at: 2026-09-03 15:06:40 +0900
+last_modified_at: 2026-09-03 15:15:27 +0900
 permalink: /en/blog/netflix-mania/
 language_url: /blog/netflix-mania/
 alternate_ko: /blog/netflix-mania/
@@ -73,6 +73,6 @@ It does not even store the last playback speed, and the [privacy policy](/en/pol
 
 Netflix Mania is an unofficial extension and is not created, approved, endorsed, or affiliated with Netflix.
 
-Chrome Web Store registration is currently in progress, so there is no public installation link yet.
+The current version is `1.2.2` and is [available to install from the Chrome Web Store](https://chromewebstore.google.com/detail/netflix-mania/cfnoamfpeaafkbikfeegkabakncokako).
 
 <p class="article-summary"><strong>In one line:</strong> If changing video speed directly breaks audio sync, controlling the site's native playback-speed menu with shortcuts is more reliable.</p>
