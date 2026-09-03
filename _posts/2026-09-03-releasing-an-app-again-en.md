@@ -6,7 +6,7 @@ title: Shall I release an app again?
 description: I returned to Android app publishing, removed an unverified payment flow, and aligned the free features, store materials, and policy answers in one release candidate.
 category: Making
 date: 2026-09-03 14:55:20 +0900
-last_modified_at: 2026-09-03 15:01:46 +0900
+last_modified_at: 2026-09-03 15:06:40 +0900
 permalink: /en/blog/releasing-an-app-again/
 language_url: /blog/releasing-an-app-again/
 alternate_ko: /blog/releasing-an-app-again/
@@ -51,11 +51,11 @@ I raised the app version to `1.0.1 (2)` for the free-preset release.
 
 I produced an AAB with upload signing, R8 code shrinking, resource shrinking, and a ReTrace mapping file.
 
-*In simple terms: An AAB is the Android app package submitted to Google Play, R8 removes unnecessary code, and a ReTrace file makes errors from the shortened code readable again.*
+**In simple terms: An AAB is the Android app package submitted to Google Play, R8 removes unnecessary code, and a ReTrace file makes errors from the shortened code readable again.**
 
 Google Play reported a minimum Android API of 24, a target SDK of 36, and a new-install size of about 6.5 MB.
 
-*In simple terms: The minimum API is the oldest Android version that can run the app, while the target SDK is the recent Android standard the app was built to follow.*
+**In simple terms: The minimum API is the oldest Android version that can run the app, while the target SDK is the recent Android standard the app was built to follow.**
 
 I reused the same AAB from the internal-test library in the production candidate.
 
@@ -89,11 +89,11 @@ The resulting rating in South Korea was suitable for everyone.
 
 The Data safety form included approximate location, diagnostics, app interactions, and device or other IDs that the Google Mobile Ads SDK may process.
 
-*In simple terms: An SDK is a toolkit that adds a feature, so information handled by an advertising SDK belongs in the Data safety answers even when the app does not store it directly.*
+**In simple terms: An SDK is a toolkit that adds a feature, so information handled by an advertising SDK belongs in the Data safety answers even when the app does not store it directly.**
 
 I also completed the Android 13 advertising ID declaration from the real manifest and advertising SDK usage.
 
-*In simple terms: A manifest is the document listing an app's permissions and basic settings, while an advertising ID is a resettable identifier used for ad delivery and measurement.*
+**In simple terms: A manifest is the document listing an app's permissions and basic settings, while an advertising ID is a resettable identifier used for ad delivery and measurement.**
 
 I linked public pages for the privacy policy, support, and data deletion guidance.
 
@@ -115,7 +115,7 @@ The submission button remained disabled because one issue still required the And
 
 I checked the advertising SDK and manifest permission, then saved the usage and purposes, which removed the blocker.
 
-*In simple terms: Play Console checks whether the app file and policy answers agree before submission and blocks the button when a required answer is missing.*
+**In simple terms: Play Console checks whether the app file and policy answers agree before submission and blocks the button when a required answer is missing.**
 
 The Korean and English release notes mentioned first-release stability, usability improvements, and free access to every preset.
 
@@ -131,7 +131,7 @@ Google review and the actual store publication are still pending.
 
 Managed publishing is off, so approval will publish the changes automatically without another release button.
 
-*In simple terms: Managed publishing pauses approved changes until the developer chooses the exact moment to make them public.*
+**In simple terms: Managed publishing pauses approved changes until the developer chooses the exact moment to make them public.**
 
 After the app becomes public, I still need to link its store listing in AdMob and verify the app review and production ad display.
 
@@ -141,4 +141,4 @@ Returning to app publishing was less about adding many features and more about m
 
 Removing one unverified feature made the boundary of the first version clearer.
 
-<p class="article-summary"><strong>In one line:</strong> When I returned to app publishing, I removed the unverified payment flow, aligned the free features, store materials, and policy answers in one simple candidate, and submitted it to Google Play for review.</p>
+<p class="article-summary"><strong>In one line:</strong> For a first release, it is safer to exclude unverified features and submit only after the app's actual behaviour, store description, screenshots, and policy answers all describe the same feature scope.</p>

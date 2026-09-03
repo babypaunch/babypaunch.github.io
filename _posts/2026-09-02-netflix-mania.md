@@ -8,7 +8,7 @@ image: /assets/images/blog/netflix-mania-popup.webp
 image_alt: 넷플릭스 화면 위에 열린 Netflix Mania 팝업과 배속 단축키 안내
 category: Making
 date: 2026-09-02 00:00:00 +0900
-last_modified_at: 2026-09-02 22:36:33 +0900
+last_modified_at: 2026-09-03 15:06:40 +0900
 permalink: /blog/netflix-mania/
 language_url: /en/blog/netflix-mania/
 alternate_ko: /blog/netflix-mania/
@@ -75,4 +75,4 @@ Netflix Mania는 Netflix가 제작·승인·보증하거나 Netflix와 제휴한
 
 현재 Chrome Web Store 등록 절차를 진행하고 있어서 아직 공개 설치 링크는 없다.
 
-<p class="article-summary"><strong>한 줄 요약:</strong> 아무리 쉬운 기능이라도, 때로는 완전히 새로운 방향으로 만들어야 할 수도 있다.</p>
+<p class="article-summary"><strong>한 줄 요약:</strong> 영상 속도를 직접 바꿔 음성 싱크가 어긋난다면, 사이트가 제공하는 기본 배속 메뉴를 단축키로 조작하는 편이 더 안정적이다.</p>

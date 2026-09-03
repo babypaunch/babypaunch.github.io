@@ -6,7 +6,7 @@ title: Waiting for the day we overcome hepatitis B
 description: A record of studying my daughter's hepatitis B results and treatment criteria, then finding hope in news about functional cure research.
 category: Life
 date: 2026-09-01 23:11:00 +0900
-last_modified_at: 2026-09-02 01:35:40 +0900
+last_modified_at: 2026-09-03 15:06:40 +0900
 permalink: /en/blog/hepatitis-b-hope/
 language_url: /blog/hepatitis-b-hope/
 alternate_ko: /blog/hepatitis-b-hope/
@@ -47,7 +47,7 @@ The CAP value was below the report's reference cutoff of `250 dB/m` for the firs
 
 Albumin `3.9 g/dL`, total bilirubin `0.6 mg/dL`, gamma-GT `12 IU/L`, alkaline phosphatase `56 IU/L`, and total protein `7.5 g/dL` were also within the report's reference ranges.
 
-*In simple terms: Liver stiffness estimates how firm the liver has become, while CAP estimates how much fat has accumulated.*
+**In simple terms: Liver stiffness estimates how firm the liver has become, while CAP estimates how much fat has accumulated.**
 
 It was reassuring that the ultrasound showed no structural abnormality and that the report did not suggest clear fatty liver or impaired liver function.
 
@@ -61,9 +61,9 @@ Some numbers still needed careful follow-up.
 - `HBV DNA` was `8.5×10⁷ IU/mL`, or 85 million IU/mL.
 - `HBeAg` was positive and `anti-HBe` was negative.
 
-*In simple terms: AST and ALT can show liver cell injury, while HBV DNA shows how actively the virus is multiplying.*
+**In simple terms: AST and ALT can show liver cell injury, while HBV DNA shows how actively the virus is multiplying.**
 
-*In simple terms: HBeAg was detected while its corresponding antibody, anti-HBe, was not, and doctors use this result with HBV DNA and other tests to assess viral replication.*
+**In simple terms: HBeAg was detected while its corresponding antibody, anti-HBe, was not, and doctors use this result with HBV DNA and other tests to assess viral replication.**
 
 Taken together, these results showed very active viral replication and an elevated ALT signal of liver cell injury.
 
@@ -111,7 +111,7 @@ The 2026 Korean Association for the Study of the Liver guideline recommends anti
 
 This change gives viral load a more active role in treatment decisions than before.
 
-*In simple terms: Adults once often waited for liver enzyme levels to rise, but treatment may now begin when the virus is detected within this range even if those levels are normal.*
+**In simple terms: Adults once often waited for liver enzyme levels to rise, but treatment may now begin when the virus is detected within this range even if those levels are normal.**
 
 My daughter's `8.5×10⁷ IU/mL` falls within that numerical range, but adult criteria should not be applied directly to an adolescent.
 
@@ -135,7 +135,7 @@ The `ATTENTION` study introduced in the video was one piece of evidence behind t
 
 In an interim analysis of 734 adults aged 40 to 80 with chronic hepatitis B and no cirrhosis, the tenofovir alafenamide (`TAF`) group had about 79% fewer combined events of liver cancer, liver decompensation, transplantation, and death than the observation group.
 
-*In simple terms: Serious liver-related problems occurred less often in the adults who started medication early, but this does not mean a child would have the same result.*
+**In simple terms: Serious liver-related problems occurred less often in the adults who started medication early, but this does not mean a child would have the same result.**
 
 The outcome combined more than liver cancer alone, and the total event count was small at two in the treatment group and nine in the observation group.
 
@@ -159,7 +159,7 @@ A sustained disappearance of hepatitis B surface antigen from the blood is calle
 
 It is uncommon with current standard therapy, but treatments targeting it directly have now reached late-stage clinical trials.
 
-*In simple terms: This does not mean every trace of the virus has been removed from the body, but that surface antigen remains absent after treatment ends.*
+**In simple terms: This does not mean every trace of the virus has been removed from the body, but that surface antigen remains absent after treatment ends.**
 
 Bepirovirsen is a once-weekly injection that remains under research and regulatory review.
 

@@ -6,7 +6,7 @@ title: Shall we connect AdMob?
 description: I connected AdMob to an Android app and separated the roles of ad requests, UMP consent, app review, public store linking, and app-ads.txt.
 category: Making
 date: 2026-09-03 00:00:00 +0900
-last_modified_at: 2026-09-03 14:49:19 +0900
+last_modified_at: 2026-09-03 15:06:40 +0900
 permalink: /en/blog/connecting-admob/
 language_url: /blog/connecting-admob/
 alternate_ko: /blog/connecting-admob/
@@ -58,7 +58,7 @@ Having production IDs does not mean that ad serving has been approved.
 
 The IDs only decide which app and ad unit receive the request.
 
-*In simple terms: An SDK is a toolkit that adds ad features, the app ID identifies the app, and the ad unit ID identifies the place where an ad appears.*
+**In simple terms: An SDK is a toolkit that adds ad features, the app ID identifies the app, and the ad unit ID identifies the place where an ad appears.**
 
 ## Privacy consent comes before the ad request
 
@@ -72,7 +72,7 @@ An SDK initialization log was therefore not enough to prove that an ad request h
 
 I needed separate checks for the UMP update, the `canRequestAds()` result, the request itself, and the success or failure callback.
 
-*In simple terms: UMP asks the user for advertising consent, while `canRequestAds()` reports whether the app may request an ad now.*
+**In simple terms: UMP asks the user for advertising consent, while `canRequestAds()` reports whether the app may request an ad now.**
 
 ## Why there was no empty ad area
 
@@ -96,7 +96,7 @@ The Google Mobile Ads SDK initialized and connected to the ad network.
 
 The install source was `com.android.vending`, confirming that this was the Google Play build rather than a locally installed APK.
 
-*In simple terms: ADB is a tool for reading a phone's runtime logs, while an ANR means that an app has frozen and stopped responding to input.*
+**In simple terms: ADB is a tool for reading a phone's runtime logs, while an ANR means that an app has frozen and stopped responding to input.**
 
 SDK initialization still did not mean that an ad had arrived from the server.
 
@@ -130,7 +130,7 @@ I therefore submitted the production release for review first and will retry the
 
 The production release is currently under review and is not public yet.
 
-*In simple terms: Only invited people can install an internal test, while a production release must go public before anyone can find the app in the store.*
+**In simple terms: Only invited people can install an internal test, while a production release must go public before anyone can find the app in the store.**
 
 ## `app-ads.txt` is a separate step from approval
 
@@ -150,7 +150,7 @@ A valid `app-ads.txt` file does not make ads appear immediately.
 
 These five items are separate stages.
 
-*In simple terms: `app-ads.txt` is a public verification file that tells advertising companies who is authorized to sell ads for the app.*
+**In simple terms: `app-ads.txt` is a public verification file that tells advertising companies who is authorized to sell ads for the app.**
 
 ## The advertising ID declaration on Android 13
 
@@ -166,7 +166,7 @@ I selected analytics, advertising or marketing, and fraud prevention, security, 
 
 These answers must also agree with the Data safety form.
 
-*In simple terms: An advertising ID is not the device's permanent serial number but a resettable identifier used for ad delivery and measurement.*
+**In simple terms: An advertising ID is not the device's permanent serial number but a resettable identifier used for ad delivery and measurement.**
 
 ## Process summary
 
