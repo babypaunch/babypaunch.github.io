@@ -6,7 +6,7 @@ title: AdMob을 연결해볼까?
 description: Android 앱에 AdMob을 붙이며 광고 요청, UMP 동의, 앱 심사, 공개 스토어 연결과 app-ads.txt의 역할을 구분한 과정을 정리했다.
 category: Making
 date: 2026-09-03 00:00:00 +0900
-last_modified_at: 2026-09-03 15:06:40 +0900
+last_modified_at: 2026-09-06 23:35:15 +0900
 permalink: /blog/connecting-admob/
 language_url: /en/blog/connecting-admob/
 alternate_ko: /blog/connecting-admob/
@@ -15,6 +15,7 @@ tags:
   - admob
   - android
   - google-play
+  - ai-prompt
 ---
 
 Android 앱 화면 아래에 배너 광고를 붙였다.
@@ -190,5 +191,37 @@ Android 13 이상을 대상으로 하는 앱은 Play Console에서도 광고 ID 
 반면 운영 광고 노출은 프로덕션 공개, AdMob 스토어 연결과 앱 검토가 끝난 뒤 다시 검증해야 한다.
 
 광고 연동은 코드 한 줄이 아니라 앱, 동의, 스토어, 계정 심사와 게시자 파일이 이어지는 하나의 흐름이었다.
+
+<section class="article-ai-prompt" data-no-translation markdown="1">
+## #AI프롬프트제공
+
+아래 프롬프트로 내 Android 앱에서 광고가 보이지 않는 단계를 구분하고, 확인된 근거에 따라 다음 점검 순서를 정할 수 있다.
+
+비밀번호, API 키, 토큰, 인증 파일과 개인정보가 포함된 로그는 프롬프트에 입력하지 않는다.
+
+```text
+당신은 Android 앱의 AdMob 광고 미표시 원인을 진단하는 개발자입니다.
+
+프로젝트: [프로젝트 경로 또는 저장소]
+설치한 빌드: [개발/릴리즈, 앱 버전, 직접 설치/Google Play 테스트]
+증상과 자료: [발생 화면, 재현 순서, 민감정보를 제거한 오류 로그]
+공개 주소: [스토어 등록정보와 개발자 웹사이트, 없으면 미공개]
+
+먼저 코드와 실행 근거를 읽고 다음 단계를 구분해 주세요.
+- Google Mobile Ads SDK 초기화, 앱 ID·광고 단위 ID의 빌드별 설정과 공식 테스트 광고 표시 여부
+- UMP 동의 정보 갱신, 필요한 동의 화면 처리와 canRequestAds() 이후 광고 요청 여부
+- 요청 시작, 로드 성공·실패 콜백의 오류 코드·메시지와 광고 컨테이너 표시 상태
+- AdMob 계정·앱 검토·게재 제한 상태와 실제 공개 스토어 연결 여부
+- 개발자 사이트의 app-ads.txt 응답 및 AdMob이 제공한 레코드와의 일치 여부
+
+설치된 SDK 버전에 맞는 Google 공식 문서를 확인하고, 승인 대기·광고 미충족·요청 누락·화면 표시 문제를 증거 없이 같은 원인으로 단정하지 마세요.
+콘솔 접근이나 실기기 자료가 없으면 확인 불가로 표시하고 필요한 화면·로그만 요청하세요.
+운영 광고를 시험 클릭하거나 동의를 우회하지 말고 공식 테스트 광고를 사용하세요.
+
+결과는 확인 항목, 근거, 판정(정상/문제 확인/확인 불가), 다음 조치로 정리해 주세요.
+수정이 필요하면 최소 변경안을 제시하고 수정 후 재현 절차를 포함하세요.
+앱 코드 검증과 계정 승인·스토어 공개·실제 광고 노출 확인을 분리하고, 콘솔 설정 변경이나 배포는 별도 승인 후 진행하세요.
+```
+</section>
 
 <p class="article-summary"><strong>한 줄 요약:</strong> AdMob 광고가 보이지 않을 때는 배너 UI부터 고치지 말고 테스트 광고, 동의 후 요청 여부, Android 로그, AdMob 승인·앱 검토, 공개 스토어 연결과 <code>app-ads.txt</code>를 순서대로 확인해야 한다.</p>

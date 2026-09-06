@@ -6,7 +6,7 @@ title: Shall we connect AdMob?
 description: I connected AdMob to an Android app and separated the roles of ad requests, UMP consent, app review, public store linking, and app-ads.txt.
 category: Making
 date: 2026-09-03 00:00:00 +0900
-last_modified_at: 2026-09-03 15:06:40 +0900
+last_modified_at: 2026-09-06 23:35:15 +0900
 permalink: /en/blog/connecting-admob/
 language_url: /blog/connecting-admob/
 alternate_ko: /blog/connecting-admob/
@@ -15,6 +15,7 @@ tags:
   - admob
   - android
   - google-play
+  - ai-prompt
 ---
 
 I added a banner ad to the bottom of an Android app.
@@ -190,5 +191,37 @@ I verified the banner position, failed-load cleanup, UMP consent order, and SDK 
 Production ad display still needs another check after the release becomes public and the AdMob store link and app review are complete.
 
 Ad integration was not one line of code but one flow connecting the app, consent, store, account review, and publisher file.
+
+<section class="article-ai-prompt" data-no-translation markdown="1">
+## #AI프롬프트제공
+
+Use this prompt to identify which stage prevents ads from appearing in your Android app and choose the next checks from verified evidence.
+
+Do not include passwords, API keys, tokens, credential files, or logs containing personal information in the prompt.
+
+```text
+You are a developer diagnosing why AdMob ads do not appear in an Android app.
+
+Project: [project path or repository]
+Installed build: [development/release, app version, direct installation/Google Play testing]
+Symptoms and evidence: [affected screen, reproduction steps, redacted error logs]
+Public URLs: [store listing and developer website, or not yet public]
+
+Read the code and runtime evidence first, then distinguish these stages.
+- Google Mobile Ads SDK initialization, build-specific app ID and ad unit ID settings, and whether official test ads appear
+- UMP consent information updates, any required consent forms, and ad requests after canRequestAds() permits them
+- Request initiation, load success/failure callback codes and messages, and ad container visibility
+- AdMob account/app review, serving limits, and linkage to an actually public store listing
+- The developer website's app-ads.txt response and its match with the record supplied by AdMob
+
+Check Google's official documentation for the installed SDK version, and do not equate pending approval, no fill, missing requests, and display problems without evidence.
+If console access or device evidence is unavailable, mark it as unverified and request only the necessary screens or logs.
+Use official test ads; do not test-click production ads or bypass consent.
+
+Report each check, evidence, verdict (working/issue confirmed/unverified), and next action.
+If changes are needed, propose a minimal fix and a reproduction procedure for verification.
+Separate code verification from account approval, store publication, and actual ad display, and obtain separate approval before changing console settings or deploying.
+```
+</section>
 
 <p class="article-summary"><strong>In one line:</strong> When an AdMob ad stays invisible, check test ads, post-consent requests, Android logs, AdMob approval and app review, the public store link, and <code>app-ads.txt</code> before changing the banner UI.</p>

@@ -6,7 +6,7 @@ title: Shall I release an app again?
 description: I returned to Android app publishing, removed an unverified payment flow, and aligned the free features, store materials, and policy answers in one release candidate.
 category: Making
 date: 2026-09-03 14:55:20 +0900
-last_modified_at: 2026-09-03 15:06:40 +0900
+last_modified_at: 2026-09-06 23:35:15 +0900
 permalink: /en/blog/releasing-an-app-again/
 language_url: /blog/releasing-an-app-again/
 alternate_ko: /blog/releasing-an-app-again/
@@ -14,6 +14,7 @@ alternate_en: /en/blog/releasing-an-app-again/
 tags:
   - android
   - google-play
+  - ai-prompt
   - product-design
 ---
 
@@ -140,5 +141,38 @@ The Pro payment flow can return in a later version after the price and real purc
 Returning to app publishing was less about adding many features and more about making the code, description, screenshots, and policy answers describe the same app.
 
 Removing one unverified feature made the boundary of the first version clearer.
+
+<section class="article-ai-prompt" data-no-translation markdown="1">
+## #AI프롬프트제공
+
+Use this prompt to compare an Android release candidate with its store materials and identify what must be resolved before submission.
+
+Do not include passwords, signing keys, API keys, tokens, or personal information in the prompt.
+
+```text
+You are a developer checking an Android app's readiness for a Google Play release.
+
+Project: [project path or repository]
+Release candidate: [app version and AAB path, or not yet built]
+Feature scope: [features included in and excluded from this version]
+Evidence: [store descriptions, screenshots, policy pages, available console screens]
+Audience: [release track, countries/regions, and age groups]
+
+Read the README, build settings, manifest, dependencies, and actual implementation first.
+- Match applicationId, versionCode/versionName, minimum/target SDK, release signing settings, and the actual AAB
+- Compare permissions and advertising, analytics, and billing SDKs with the privacy policy, Data safety answers, and advertising ID declaration
+- Check that store descriptions and screenshots match the features in this release
+- If billing exists, examine evidence for purchases, restoration, expiry, and refunds, and whether unverified features remain exposed
+- If login or restricted features exist, check reviewer access instructions and the validity of support and data-deletion information
+
+Verify submission requirements such as target SDK against current official Google documentation, and do not copy another app's age or Data safety answers.
+Do not print signing keys or secrets, automatically remove unverified features, or finalize policy answers on the owner's behalf.
+
+Group results into release blockers, recommended improvements, and unverified items.
+Include evidence such as files or execution results and the next action for each item, separating code checks, Play Console checks, and device tests.
+Do not describe a successful build as an upload, review approval, or completed publication.
+Report findings and minimal proposed fixes first, then perform code changes, uploads, review submissions, and publication only within their respective requested scope and approval requirements.
+```
+</section>
 
 <p class="article-summary"><strong>In one line:</strong> For a first release, it is safer to exclude unverified features and submit only after the app's actual behaviour, store description, screenshots, and policy answers all describe the same feature scope.</p>
