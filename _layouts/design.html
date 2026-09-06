@@ -1,0 +1,16 @@
+---
+layout: default
+---
+{% assign t = site.data[page.locale] %}
+<main id="main" class="article-shell">
+  <header class="article-header" id="article-start" tabindex="-1">
+    <h1>{{ t.pages.design.title }}</h1>
+  </header>
+  <section class="article-body" aria-labelledby="navigation-preview-label">
+    <h2 id="navigation-preview-label">{{ t.blog.navigation }}</h2>
+    <div class="design-preview">
+      {% include article-navigation.html %}
+    </div>
+  </section>
+  <div id="article-end" tabindex="-1" aria-label="{{ t.blog.end }}"></div>
+</main>

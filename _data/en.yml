@@ -15,6 +15,9 @@ routes:
   contact: /en/contact/
   not_found: /en/
 pages:
+  design:
+    title: UI previews — BabyPaunch
+    description: Preview BabyPaunch shared UI components.
   home:
     title: BabyPaunch — Small, but thoughtfully made.
     description: The official home of BabyPaunch, an independent maker of apps, music, and ideas.
@@ -84,7 +87,11 @@ music:
 blog:
   intro: A place to record lessons and ideas.
   empty: The first story is on its way.
-  back: Back to the blog
+  navigation: Article navigation
+  start: Go to the start of the article
+  end: Go to the end of the article
+  start_short: Start
+  end_short: End
   tags_label: Post tags
   all_tag: All
   no_matches: No posts match this tag.

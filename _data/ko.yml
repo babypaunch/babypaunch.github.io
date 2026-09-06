@@ -15,6 +15,9 @@ routes:
   contact: /contact/
   not_found: /
 pages:
+  design:
+    title: UI 미리보기 — BabyPaunch
+    description: BabyPaunch의 공용 UI를 확인합니다.
   home:
     title: BabyPaunch — 작지만 꼼꼼하게 만듭니다
     description: 앱과 음악, 아이디어를 만드는 BabyPaunch의 공식 사이트입니다.
@@ -84,7 +87,11 @@ music:
 blog:
   intro: 배움과 아이디어를 기록할 공간입니다.
   empty: 첫 번째 글을 준비하고 있습니다.
-  back: 블로그로 돌아가기
+  navigation: 글 이동
+  start: 글 처음으로 이동
+  end: 글 끝으로 이동
+  start_short: 처음
+  end_short: 끝
   tags_label: 글 태그
   all_tag: 전체
   no_matches: 선택한 태그의 글이 없습니다.

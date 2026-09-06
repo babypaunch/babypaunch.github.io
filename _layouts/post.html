@@ -3,7 +3,7 @@ layout: default
 ---
 {% assign t = site.data[page.locale] %}
 <main id="main" class="article-shell">
-  <header class="article-header">
+  <header class="article-header" id="article-start" tabindex="-1">
     <p class="eyebrow"><span lang="en">{{ page.category }}</span> · <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time></p>
     <h1>{{ page.title }}</h1>
     <p>{{ page.description }}</p>
@@ -11,8 +11,9 @@ layout: default
   <article class="article-body">
     {{ content }}
   </article>
-  <a class="text-link article-back" href="{{ t.routes.blog }}">{{ t.blog.back }}</a>
+  <div id="article-end" tabindex="-1" aria-label="{{ t.blog.end }}"></div>
 </main>
+{% include article-navigation.html %}
 {% if page.language_url %}
 <button
   class="article-translation-toggle"

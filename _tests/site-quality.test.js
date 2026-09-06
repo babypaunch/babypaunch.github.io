@@ -44,6 +44,15 @@ for (const file of htmlFiles) {
     assert.ok(schema.image, `${label}: structured data image`);
   }
 
+  if (schema['@type'] === 'BlogPosting' || /^(en\/)?design\/index.html$/.test(label.replaceAll('\\', '/'))) {
+    assert.doesNotMatch(html, /article-back/, `${label}: no redundant blog return link`);
+    assert.match(html, /<nav class="article-navigation" aria-label="[^"]+">/, `${label}: labeled article navigation`);
+    for (const target of ['article-start', 'article-end']) {
+      assert.match(html, new RegExp(`id="${target}" tabindex="-1"`), `${label}: focusable navigation target`);
+      assert.match(html, new RegExp(`href="#${target}" aria-label="[^"]+"`), `${label}: labeled navigation link`);
+    }
+  }
+
   const title = html.match(/<title>([^<]+)<\/title>/)?.[1];
   assert.ok(title, `${label}: title`);
   assert.ok(!pageTitles.has(title), `${label}: title duplicates ${pageTitles.get(title)}`);
