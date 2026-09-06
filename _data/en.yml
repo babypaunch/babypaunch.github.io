@@ -90,8 +90,9 @@ blog:
   navigation: Article navigation
   start: Go to the start of the article
   end: Go to the end of the article
-  start_short: Start
-  end_short: End
+  start_state: Start of the article
+  middle_state: Middle of the article
+  end_state: End of the article
   tags_label: Post tags
   all_tag: All
   no_matches: No posts match this tag.

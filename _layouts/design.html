@@ -8,9 +8,17 @@ layout: default
   </header>
   <section class="article-body" aria-labelledby="navigation-preview-label">
     <h2 id="navigation-preview-label">{{ t.blog.navigation }}</h2>
-    <div class="design-preview">
-      {% include article-navigation.html %}
-    </div>
+    {% assign states = 'start,middle,end' | split: ',' %}
+    {% for state in states %}
+      {% assign state_key = state | append: '_state' %}
+      <h3>{{ t.blog[state_key] }}</h3>
+      <div class="design-preview">
+        {% include article-navigation.html state=state %}
+        <button class="article-translation-toggle" type="button" aria-label="{{ t.translation.enable }}" aria-pressed="false" disabled>
+          <span class="article-translation-icon" aria-hidden="true"><span>文</span><span>A</span></span>
+        </button>
+      </div>
+    {% endfor %}
   </section>
   <div id="article-end" tabindex="-1" aria-label="{{ t.blog.end }}"></div>
 </main>

@@ -90,8 +90,9 @@ blog:
   navigation: 글 이동
   start: 글 처음으로 이동
   end: 글 끝으로 이동
-  start_short: 처음
-  end_short: 끝
+  start_state: 글 첫 부분
+  middle_state: 글 중간
+  end_state: 글 끝 부분
   tags_label: 글 태그
   all_tag: 전체
   no_matches: 선택한 태그의 글이 없습니다.

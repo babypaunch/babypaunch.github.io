@@ -462,11 +462,15 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .article-body details { margin-top: 2rem; padding-block: 1rem; border-block: 1px solid var(--line); }
 .article-body summary { cursor: pointer; font-weight: 700; }
 #article-start, #article-end { scroll-margin-top: 10rem; }
-.article-navigation { position: fixed; right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); z-index: 850; display: flex; width: auto; flex-wrap: nowrap; gap: .25rem; padding: .25rem; border: 1px solid var(--ink); border-radius: .5rem; background: var(--paper); color: var(--ink); box-shadow: 0 .6rem 1.5rem rgb(0 0 0 / 18%); font: 700 .85rem/1.4 var(--sans); }
-.article-navigation-link { min-height: 44px; min-width: 44px; gap: .4rem; padding: .5rem .75rem; border-radius: .25rem; }
+.article-navigation { position: fixed; top: 50%; right: max(1.5rem, env(safe-area-inset-right)); z-index: 850; display: grid; width: 48px; grid-template-rows: repeat(3, 48px); gap: 8px; translate: 0 -50%; pointer-events: none; }
+.article-navigation-link { display: grid; width: 48px; height: 48px; place-items: center; padding: 0; border: 1px solid var(--ink); border-radius: 50%; background: var(--paper); color: var(--ink); box-shadow: 0 .6rem 1.5rem rgb(0 0 0 / 18%); pointer-events: auto; }
+.article-navigation-link:first-child { grid-row: 1; }
+.article-navigation-link:last-child { grid-row: 3; }
+.article-navigation-link[hidden] { display: none; }
+.article-navigation-link svg { width: 24px; height: 24px; }
 .article-navigation-link:hover, .article-navigation-link:focus-visible { background: var(--ink); color: var(--paper); text-decoration: none; }
 .article-navigation-link::before { content: none; }
-.design-preview { contain: layout; min-height: 9rem; padding: 1rem; border: 1px solid var(--line); }
+.design-preview { contain: layout; min-height: 12rem; padding: 1rem; border: 1px solid var(--line); }
 .article-translation-toggle {
   position: fixed;
   top: 50%;
@@ -477,7 +481,7 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
   height: 48px;
   place-items: center;
   padding: 0;
-  transform: translateY(-50%);
+  translate: 0 -50%;
   border: 1px solid var(--ink);
   border-radius: 50%;
   background: var(--paper);
@@ -488,7 +492,7 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
   touch-action: manipulation;
 }
 .article-translation-toggle:hover,
-.article-translation-toggle:focus-visible { transform: translateY(-50%) scale(1.06); }
+.article-translation-toggle:focus-visible { transform: scale(1.06); }
 .article-translation-toggle[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
 .article-translation-icon { display: grid; grid-template-columns: repeat(2, auto); align-items: end; font: 700 .78rem/1 var(--sans); letter-spacing: -.08em; }
 .article-translation-icon span:first-child { font-size: 1rem; }
@@ -569,6 +573,8 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
   .article-header { padding-bottom: 2.5rem; }
   .article-body .article-summary { padding: 1.25rem; }
   .article-translation-toggle { right: max(.5rem, env(safe-area-inset-right)); width: 44px; height: 44px; }
+  .article-navigation { right: max(.5rem, env(safe-area-inset-right)); width: 44px; grid-template-rows: repeat(3, 44px); gap: 8px; }
+  .article-navigation-link { width: 44px; height: 44px; }
   .article-translation-tooltip { right: 1rem; bottom: max(1rem, env(safe-area-inset-bottom)); left: 1rem; width: auto; max-height: min(42vh, 20rem); }
   footer { grid-template-columns: 1fr; }
   footer div { flex-wrap: wrap; }
@@ -581,6 +587,7 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
   nav { gap: clamp(1rem, 2.5vw, 2rem); }
   nav a { display: inline-flex; min-height: 44px; align-items: center; }
   .article-translation-toggle { right: max(1rem, env(safe-area-inset-right)); }
+  .article-navigation { right: max(1rem, env(safe-area-inset-right)); gap: 8px; }
   .article-shell { padding-block: clamp(4rem, 7vw, 6rem); }
   .article-header h1 { font-size: clamp(3.25rem, 7vw, 5.5rem); }
   .article-body { padding-block: 4rem; font-size: 1.05rem; line-height: 1.9; }
