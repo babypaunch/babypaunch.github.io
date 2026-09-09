@@ -3,10 +3,10 @@ layout: post
 locale: en
 page_key: blog
 title: Shall I release an app again?
-description: I returned to Android app publishing, removed an unverified payment flow, and aligned the free features, store materials, and policy answers in one release candidate.
+description: From preparing an Android release to choosing free access, checking security and a real phone, and refining the app name and description after launch.
 category: Making
 date: 2026-09-03 14:55:20 +0900
-last_modified_at: 2026-09-06 23:35:15 +0900
+last_modified_at: 2026-09-09 22:22:00 +0900
 permalink: /en/blog/releasing-an-app-again/
 language_url: /blog/releasing-an-app-again/
 alternate_ko: /blog/releasing-an-app-again/
@@ -126,17 +126,17 @@ After the quick automated checks finished, the status changed to `Changes in rev
 
 ## Submission and release are not the same
 
-The current state is production release review submitted.
+At the first submission, the production release had been sent for review.
 
-Google review and the actual store publication are still pending.
+Google review and the actual store publication were the next steps still ahead.
 
 Managed publishing is off, so approval will publish the changes automatically without another release button.
 
 **In simple terms: Managed publishing pauses approved changes until the developer chooses the exact moment to make them public.**
 
-After the app becomes public, I still need to link its store listing in AdMob and verify the app review and production ad display.
+After publication, I planned to link the store listing in AdMob and check the app review and production ad display.
 
-The Pro payment flow can return in a later version after the price and real purchase states are verified.
+At that point, I still left open the option of restoring Pro after payment testing.
 
 Returning to app publishing was less about adding many features and more about making the code, description, screenshots, and policy answers describe the same app.
 
@@ -175,4 +175,64 @@ Report findings and minimal proposed fixes first, then perform code changes, upl
 ```
 </section>
 
-<p class="article-summary"><strong>In one line:</strong> For a first release, it is safer to exclude unverified features and submit only after the app's actual behaviour, store description, screenshots, and policy answers all describe the same feature scope.</p>
+<hr>
+
+### <code>September 9, 2026</code> update: There was still work after launch
+
+The first version went live on Google Play, and this time I checked a new version on my own phone before submitting an update.
+
+I had expected the release button to be the finish, but using and searching for the app revealed more things to improve.
+
+#### I chose to keep it free
+
+I initially postponed paid features because payment testing was unfinished, but I have now chosen to offer every feature and preset for free with a banner ad at the bottom.
+
+I wanted anyone to start listening to and combining chords immediately instead of waiting for a paid version.
+
+I aligned the Korean and English store descriptions, privacy policies, and support information with that decision as well as the app itself.
+
+#### I checked it again on my own phone
+
+I connected my phone by USB, removed the old app, installed the new version, and tried it myself.
+
+I confirmed that the app worked and an ad appeared at the bottom of the screen.
+
+However, seeing an ad on my phone was separate from AdMob completing its review.
+
+**In simple terms: AdMob supplies ads to apps, and seeing one ad does not mean every review step in its dashboard has finished.**
+
+What I checked was a directly installed copy of the new version, while delivery of the update through Google Play remained something to verify after review.
+
+#### I looked beyond the visible screen
+
+Before submitting the update, I checked file importing, the web content inside the app, ad handling, and the libraries it used.
+
+I fixed an issue that could let imported file content execute as code and added checks for file size and format.
+
+I restricted what the app's embedded web content could access and replaced library versions with known vulnerabilities.
+
+**In simple terms: A file should be read only as saved work, and its contents must not turn into instructions that the app executes.**
+
+Passing these checks does not mean there will never be a security issue or another update, so I recorded the problems fixed and the scope actually checked.
+
+#### People still needed to find the app
+
+I searched for my app on Google Play, but it was harder to find than I expected.
+
+I realised that the name `코드 스케치` alone might not immediately tell a new visitor that this was a music app.
+
+I therefore submitted `코드 스케치 - 작곡 공부` as the Korean name and `Chord Sketch: Learn to Compose` as the English name.
+
+The descriptions went beyond listing features to explain how to practise by listening to chords, checking their notes on the piano, and building a progression.
+
+I added the same guidance and a [direct Google Play link](https://play.google.com/store/apps/details?id=com.babypaunch.chordsketch) to the [support page](/en/support/chord-sketch/).
+
+Changing a name does not guarantee an immediate improvement in search ranking, but it can make the app's purpose clearer.
+
+When I finished submitting the changes on September 9, `1.0.2 (3)` and the new Korean and English listings were in review together.
+
+Adding the name and description changes restarted the ongoing review, and Google warned that the wait could become longer.
+
+The next checks are whether the update and new name have gone live and what result AdMob returns from its separate review.
+
+<p class="article-summary"><strong>In one line:</strong> Align the app's behaviour, description, and policies before release, then check the real phone experience and how clearly search results explain its purpose while recording submission and publication as separate milestones.</p>
