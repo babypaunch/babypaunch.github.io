@@ -60,6 +60,9 @@ home:
   about_title: 필요한 만큼만,<br>제대로 만듭니다.
   about_copy: BabyPaunch는 음악, 콘텐츠, 일상의 도구를 만드는 독립 개발 스튜디오입니다. 복잡함은 덜어내고 쓰는 사람에게 필요한 경험에 집중합니다.
   apps_title: 내가 만든 것들
+  app_close: 닫기
+  app_download: 다운로드
+  app_preview: 앱 목록 · 제목 선택과 설명 펼치기
   apps:
     - name: 코드 스케치 - 작곡 공부
       description: 코드를 듣고 조합하며 작곡을 연습하는 Android 앱. Google Play에서 다운로드할 수 있습니다.

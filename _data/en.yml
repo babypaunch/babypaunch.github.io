@@ -60,6 +60,9 @@ home:
   about_title: Only what matters,<br>made properly.
   about_copy: BabyPaunch is an independent studio making tools for music, content, and everyday life. We remove complexity and focus on the experience people actually need.
   apps_title: What I've made
+  app_close: Close
+  app_download: Download
+  app_preview: App list · Select a title to reveal details
   apps:
     - name: "Chord Sketch: Learn to Compose"
       description: An Android app for practising songwriting by listening to and combining chords. Download it on Google Play.

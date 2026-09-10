@@ -18,15 +18,7 @@ layout: default
   </section>
   <section class="apps" id="apps" aria-labelledby="apps-title">
     <div class="section-heading"><p class="section-number">02 / Apps</p><h2 id="apps-title">{{ t.home.apps_title }}</h2></div>
-    <div class="app-list">
-      {% for app in t.home.apps %}
-      <article class="app-item">
-        <p class="app-index">A—0{{ forloop.index }}</p>
-        <div><h3>{% if app.url %}<a href="{{ app.url }}" target="_blank" rel="noopener noreferrer">{{ app.name }}</a>{% else %}{{ app.name }}{% endif %}</h3><p>{{ app.description }}</p></div>
-        <span class="status">{{ app.status }}</span>
-      </article>
-      {% endfor %}
-    </div>
+    {% include app-groups.html %}
   </section>
   <section class="home-music" id="music-feature" aria-labelledby="music-feature-title">
     <span class="music-note" aria-hidden="true">♪</span>

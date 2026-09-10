@@ -1,0 +1,18 @@
+<div class="app-list">
+  {% for app in t.home.apps %}
+  {% assign group_position = forloop.index0 | modulo: 9 %}
+  {% if group_position == 0 %}<div class="app-group" data-app-group>{% endif %}
+    <details class="app-entry">
+      <summary class="app-title">
+        <span>{{ app.name | escape }}</span>
+        <svg class="app-expand-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5v14"/></svg>
+      </summary>
+      <div class="app-description">
+        <button class="app-close" type="button">{{ t.home.app_close }} <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+        <p>{{ app.description | escape }}</p>
+        {% if app.url %}<a class="text-link" href="{{ app.url | escape }}" target="_blank" rel="noopener noreferrer">{{ t.home.app_download }}<span class="visually-hidden"> — {{ app.name | escape }} ({{ t.opens_new_window }})</span></a>{% endif %}
+      </div>
+    </details>
+  {% if group_position == 8 or forloop.last %}</div>{% endif %}
+  {% endfor %}
+</div>

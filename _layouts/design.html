@@ -20,5 +20,9 @@ layout: default
       </div>
     {% endfor %}
   </section>
+  <section aria-labelledby="apps-preview-label">
+    <h2 id="apps-preview-label">{{ t.home.app_preview }}</h2>
+    {% include app-groups.html %}
+  </section>
   <div id="article-end" tabindex="-1" aria-label="{{ t.blog.end }}"></div>
 </main>
