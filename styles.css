@@ -309,7 +309,7 @@ h2 {
 .app-title { display: flex; align-items: center; justify-content: center; min-height: 72px; padding-block: 1.25rem; cursor: pointer; list-style: none; text-align: center; font: 700 clamp(1.25rem, 2vw, 1.65rem)/1.4 var(--serif); }
 .app-entry:not([open]) .app-title { height: 100%; }
 .app-title::-webkit-details-marker { display: none; }
-.app-title > span { display: block; overflow-wrap: anywhere; text-wrap: pretty; }
+.app-title > span { display: inline-flex; align-items: center; min-width: 0; overflow-wrap: anywhere; text-wrap: pretty; }
 .app-title:hover > span, .app-title:focus-visible > span { text-decoration: underline; text-underline-offset: .2em; }
 .app-close svg { width: 20px; height: 20px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.5; }
 .app-description { padding-bottom: 1.5rem; }
