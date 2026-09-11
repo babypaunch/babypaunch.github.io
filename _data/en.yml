@@ -16,6 +16,8 @@ routes:
   not_found: /en/
 pages:
   design:
+    typography_label: Typography · Noto Serif KR
+    typography_sample: English and 한글 share one typeface. 0123456789
     title: UI previews — BabyPaunch
     description: Preview BabyPaunch shared UI components.
   home:

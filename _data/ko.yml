@@ -16,6 +16,8 @@ routes:
   not_found: /
 pages:
   design:
+    typography_label: 서체 · Noto Serif KR
+    typography_sample: 한글과 English를 같은 서체로 표시합니다. 0123456789
     title: UI 미리보기 — BabyPaunch
     description: BabyPaunch의 공용 UI를 확인합니다.
   home:

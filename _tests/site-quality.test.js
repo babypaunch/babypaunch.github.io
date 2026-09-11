@@ -101,6 +101,13 @@ for (const [relative, locale] of [['blog/index.html', 'ko'], ['en/blog/index.htm
 }
 
 const css = fs.readFileSync(path.join(siteRoot, 'styles.css'), 'utf8');
+assert.match(css, /--font-family: 'Noto Serif KR', serif/, 'typography: one Korean and English font');
+assert.doesNotMatch(css, /DM Serif Display|Gowun Batang|Manrope|Nanum Gothic Coding|var\(--(?:serif|sans|mono)\)/, 'typography: no previous font overrides');
+for (const relative of ['design/index.html', 'en/design/index.html']) {
+  const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
+  assert.match(html, /id="typography-preview-label"/);
+  assert.match(html, /Noto Serif KR/);
+}
 assert.match(css, /\.page-shell h1 \{[^}]*overflow-wrap: anywhere/, 'styles.css: long page titles wrap');
 assert.match(css, /\.article-shell \{[^}]*68rem/, 'styles.css: article content shares the full container');
 assert.doesNotMatch(css, /\.article-(?:header|body)[^\{]*\{[^}]*max-width/, 'styles.css: article sections do not use narrower inner containers');

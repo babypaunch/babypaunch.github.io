@@ -6,6 +6,12 @@ layout: default
   <header class="article-header" id="article-start" tabindex="-1">
     <h1>{{ t.pages.design.title }}</h1>
   </header>
+  <section class="article-body" aria-labelledby="typography-preview-label">
+    <h2 id="typography-preview-label">{{ t.pages.design.typography_label }}</h2>
+    <p>{{ t.pages.design.typography_sample }}</p>
+    <p><strong>{{ t.pages.design.typography_sample }}</strong></p>
+    <p><code>{{ t.pages.design.typography_sample }}</code></p>
+  </section>
   <section class="article-body" aria-labelledby="navigation-preview-label">
     <h2 id="navigation-preview-label">{{ t.blog.navigation }}</h2>
     {% assign states = 'start,middle,end' | split: ',' %}
