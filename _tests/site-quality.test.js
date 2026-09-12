@@ -160,6 +160,8 @@ for (const url of [
   '/en/policies/netflix-mania/privacy/',
   '/policies/chord-sketch/privacy/',
   '/en/policies/chord-sketch/privacy/',
+  '/policies/echo-note/privacy/',
+  '/en/policies/echo-note/privacy/',
   '/support/chord-sketch/',
   '/en/support/chord-sketch/',
   '/contact/',
@@ -176,7 +178,7 @@ assert.equal(socialImage.readUInt32BE(16), 1200, 'social image: width');
 assert.equal(socialImage.readUInt32BE(20), 630, 'social image: height');
 
 const policyData = fs.readFileSync(path.join(__dirname, '..', '_data', 'policies.yml'), 'utf8');
-for (const project of ['babypaunch', 'laftel-mania', 'netflix-mania', 'chord-sketch']) {
+for (const project of ['babypaunch', 'laftel-mania', 'netflix-mania', 'chord-sketch', 'echo-note']) {
   assert.ok(policyData.includes(`slug: ${project}`), `policies.yml: ${project}`);
 }
 
@@ -191,6 +193,8 @@ for (const relative of [
   'en/policies/netflix-mania/privacy/index.html',
   'policies/chord-sketch/privacy/index.html',
   'en/policies/chord-sketch/privacy/index.html',
+  'policies/echo-note/privacy/index.html',
+  'en/policies/echo-note/privacy/index.html',
 ]) {
   const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
   assert.match(html, /class="page-shell (?:privacy|accessibility)-shell"/, `${relative}: responsive policy shell`);
@@ -213,6 +217,8 @@ for (const [relative, required] of [
   ['en/policies/netflix-mania/privacy/index.html', ['does not collect or store', 'https://www.netflix.com/*', 'developer-operated server', 'not created, approved']],
   ['policies/chord-sketch/privacy/index.html', ['개발자가 운영하는 서버', '광고 식별자', '데이터 삭제 안내', 'babypaunch@gmail.com']],
   ['en/policies/chord-sketch/privacy/index.html', ['developer-operated server', 'advertising identifiers', 'data deletion instructions', 'babypaunch@gmail.com']],
+  ['policies/echo-note/privacy/index.html', ['하이브리드 영단어 학습 앱', '광고 식별자', 'User Messaging Platform', '오프라인 영어 Text-to-Speech', 'babypaunch@gmail.com']],
+  ['en/policies/echo-note/privacy/index.html', ['hybrid English vocabulary learning app', 'advertising ID', 'User Messaging Platform', 'offline English Text-to-Speech', 'babypaunch@gmail.com']],
 ]) {
   const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
   for (const text of required) assert.ok(html.includes(text), `${relative}: ${text}`);

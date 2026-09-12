@@ -47,6 +47,9 @@ pages:
   chord_sketch_privacy:
     title: Chord Sketch Privacy Policy — BabyPaunch
     description: How Chord Sketch handles settings and sketch files on your device.
+  echo_note_privacy:
+    title: Echo Note Privacy Policy — BabyPaunch
+    description: How Echo Note handles on-device study settings, speech playback, and AdMob advertising data.
   chord_sketch_support:
     title: "Chord Sketch: Learn to Compose — Support — BabyPaunch"
     description: Practise songwriting with chords and 180 presets. Find help with sketch files and local data deletion.
