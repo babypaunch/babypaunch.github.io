@@ -49,7 +49,7 @@ pages:
     description: Chord Sketch가 기기에서 처리하는 설정과 스케치 파일을 안내합니다.
   echo_note_privacy:
     title: Echo Note 개인정보처리방침 — BabyPaunch
-    description: Echo Note의 기기 내 학습 설정, 음성 재생과 AdMob 광고 데이터 처리를 안내합니다.
+    description: Echo Note의 기기 내 학습 설정, Play Integrity 콘텐츠 보호, 음성 재생과 AdMob 광고 데이터 처리를 안내합니다.
   chord_sketch_support:
     title: 코드 스케치 - 작곡 공부 지원 — BabyPaunch
     description: 코드를 듣고 조합하며 배우는 작곡 연습 앱. 180개 프리셋 사용법, 파일 보관과 데이터 삭제 안내.

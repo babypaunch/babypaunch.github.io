@@ -217,8 +217,8 @@ for (const [relative, required] of [
   ['en/policies/netflix-mania/privacy/index.html', ['does not collect or store', 'https://www.netflix.com/*', 'developer-operated server', 'not created, approved']],
   ['policies/chord-sketch/privacy/index.html', ['개발자가 운영하는 서버', '광고 식별자', '데이터 삭제 안내', 'babypaunch@gmail.com']],
   ['en/policies/chord-sketch/privacy/index.html', ['developer-operated server', 'advertising identifiers', 'data deletion instructions', 'babypaunch@gmail.com']],
-  ['policies/echo-note/privacy/index.html', ['하이브리드 영단어 학습 앱', '광고 식별자', 'User Messaging Platform', '오프라인 영어 Text-to-Speech', 'babypaunch@gmail.com']],
-  ['en/policies/echo-note/privacy/index.html', ['hybrid English vocabulary learning app', 'advertising ID', 'User Messaging Platform', 'offline English Text-to-Speech', 'babypaunch@gmail.com']],
+  ['policies/echo-note/privacy/index.html', ['하이브리드 영단어 학습 앱', 'Google Play Integrity 토큰', 'study365.space', '광고 식별자', 'User Messaging Platform', '오프라인 영어 Text-to-Speech', 'babypaunch@gmail.com']],
+  ['en/policies/echo-note/privacy/index.html', ['hybrid English vocabulary learning app', 'Google Play Integrity token', 'study365.space', 'advertising ID', 'User Messaging Platform', 'offline English Text-to-Speech', 'babypaunch@gmail.com']],
 ]) {
   const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
   for (const text of required) assert.ok(html.includes(text), `${relative}: ${text}`);
