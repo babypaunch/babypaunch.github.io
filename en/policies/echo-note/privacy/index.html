@@ -12,14 +12,14 @@ alternate_en: /en/policies/echo-note/privacy/
   <h1>Echo Note Privacy Policy</h1>
   <p class="page-intro">This policy explains how Echo Note handles study settings, content-protection checks, device speech, and advertising data.</p>
   <article class="article-body">
-    <p><strong>First effective: September 13, 2026</strong><br><strong>Last revised: September 13, 2026</strong></p>
+    <p><strong>First effective: September 13, 2026</strong><br><strong>Last revised: September 14, 2026</strong></p>
     <p>Echo Note, provided by BabyPaunch, is a hybrid English vocabulary learning app that runs in an Android WebView. It does not require registration or sign-in. To open encrypted study content, the app uses a BabyPaunch server and the Google Play Integrity API to verify the official app and device. The app is supported by a Google AdMob bottom banner.</p>
 
     <h2>Study settings stored on the device</h2>
     <p>Your interface language, translation languages, bookmarks, hidden words, repeats per card, and speech speed are kept in Android WebView local storage so they remain available between sessions. Word and translation data are bundled with the app in encrypted form. Answers entered in Self Test are checked on the current screen and are neither sent to the developer nor stored separately.</p>
 
     <h2>Content-protection checks</h2>
-    <p>To open encrypted study content, the app sends the content version, key identifier, a one-time request hash, and a Google Play Integrity token to the BabyPaunch-operated <code>study365.site</code> server. The server sends the token to the <a href="https://developer.android.com/google/play/integrity/overview">Google Play Integrity API</a> and checks the request details, app package and signature, Google Play installation and licensing status, app version, and device-integrity verdict. After a successful check, the server returns the content decryption key, which the app protects with Android Keystore.</p>
+    <p>To open encrypted study content, the app sends the content version, key identifier, a one-time request hash, and a Google Play Integrity token to the BabyPaunch-operated <code>backend.study365.site</code> server. The server sends the token to the <a href="https://developer.android.com/google/play/integrity/overview">Google Play Integrity API</a> and checks the request details, app package and signature, Google Play installation and licensing status, app version, and device-integrity verdict. After a successful check, the server returns the content decryption key, which the app protects with Android Keystore.</p>
     <p>Bookmarks, hidden words, Self Test answers, and study progress are not sent in this process. The server stores a hash instead of the original one-time challenge, along with the content version, key identifier, expiry time, and use time. A challenge expires after five minutes, and records more than one day past expiry are removed. For security and request throttling, the IP address and request details such as path and time may be used in server logs and temporary rate-limit processing.</p>
 
     <h2>Device speech</h2>
@@ -46,6 +46,7 @@ alternate_en: /en/policies/echo-note/privacy/
 
     <h2>Revision history</h2>
     <div class="data-cards data-cards-compact">
+      <section class="data-card"><h3><time datetime="2026-09-14">September 14, 2026</time></h3><p>Updated the content-protection server to its actual host name</p></section>
       <section class="data-card"><h3><time datetime="2026-09-13">September 13, 2026</time></h3><p>Echo Note Privacy Policy first took effect with content-protection and advertising processing details</p></section>
     </div>
 
