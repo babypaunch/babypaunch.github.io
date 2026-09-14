@@ -6,6 +6,7 @@ title: The more I used AI, the more I had to manage
 description: How one web-capture tool led me to manage duplicated AI tools, usage evidence, and update state.
 category: Making
 date: 2026-09-14 12:35:00 +0900
+last_modified_at: 2026-09-14 12:47:00 +0900
 permalink: /en/blog/managing-ai-tools/
 language_url: /blog/managing-ai-tools/
 alternate_ko: /blog/managing-ai-tools/
@@ -68,9 +69,9 @@ A tool that worked today was not guaranteed to stay identical after its next upd
 
 I began recording its installed version and a value that could reveal whether its files had changed.
 
-**In simple terms: I wrote down the model of each tool and a seal number that could show whether its contents had changed.**
+**In simple terms: I wrote down the model of each tool and a digital fingerprint that could show whether its contents had changed.**
 
-I kept the change history in a private Git repository and stored the files needed for recovery in a separate backup.
+I kept the change history in a private Git repository and stored the compressed archive needed for recovery in a separate backup.
 
 Git was useful for finding what changed and when, while the backup was better for restoring real files on another PC.
 
@@ -82,15 +83,9 @@ Even in a private repository, a secret committed once can be difficult to erase 
 
 When I ran the automated checks, some tools were reported as missing.
 
-Separate checks of the files and registrations showed that the checker had misread spaces in Windows paths.
+Separate checks of the files and registrations showed that spaces in Windows paths had been misread.
 
 Reinstalling them based only on that result could have changed a working setup.
-
-**In simple terms: if an address checker misreads a space, I should find the actual house before deciding that it has disappeared.**
-
-I therefore recorded inventory checks, file checks, and real execution as separate forms of evidence.
-
-Even when AI performs the inspection, I still need to distinguish what it verified from what it inferred.
 
 ## Using AI for longer required management rules
 
