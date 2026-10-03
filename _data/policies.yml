@@ -99,3 +99,21 @@
       url:
         ko: /policies/echo-note/privacy/
         en: /en/policies/echo-note/privacy/
+
+- slug: rehearsal-player
+  name:
+    ko: Rehearsal Player
+    en: Rehearsal Player
+  type:
+    ko: Android 하이브리드 앱
+    en: Android hybrid app
+  description:
+    ko: 내 MP3의 원하는 구간을 듣고 반복 연습하는 플레이어입니다.
+    en: A player for listening to and repeating selected sections of your own MP3 files.
+  documents:
+    - label:
+        ko: 개인정보처리방침
+        en: Privacy Policy
+      url:
+        ko: /policies/rehearsal-player/privacy/
+        en: /en/policies/rehearsal-player/privacy/

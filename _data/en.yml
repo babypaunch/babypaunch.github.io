@@ -50,6 +50,9 @@ pages:
   echo_note_privacy:
     title: Echo Note Privacy Policy — BabyPaunch
     description: How Echo Note handles on-device study settings, Play Integrity content protection, speech playback, and AdMob advertising data.
+  rehearsal_player_privacy:
+    title: Rehearsal Player Privacy Policy — BabyPaunch
+    description: How Rehearsal Player handles MP3 files, edit settings, and Android advertising data.
   chord_sketch_support:
     title: "Chord Sketch: Learn to Compose — Support — BabyPaunch"
     description: Practise songwriting with chords and 180 presets. Find help with sketch files and local data deletion.
