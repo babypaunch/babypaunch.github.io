@@ -162,8 +162,8 @@ for (const url of [
   '/en/policies/chord-sketch/privacy/',
   '/policies/echo-note/privacy/',
   '/en/policies/echo-note/privacy/',
-  '/policies/rehearsal-player/privacy/',
-  '/en/policies/rehearsal-player/privacy/',
+  '/policies/rehearsal-mp3-player/privacy/',
+  '/en/policies/rehearsal-mp3-player/privacy/',
   '/support/chord-sketch/',
   '/en/support/chord-sketch/',
   '/contact/',
@@ -180,7 +180,7 @@ assert.equal(socialImage.readUInt32BE(16), 1200, 'social image: width');
 assert.equal(socialImage.readUInt32BE(20), 630, 'social image: height');
 
 const policyData = fs.readFileSync(path.join(__dirname, '..', '_data', 'policies.yml'), 'utf8');
-for (const project of ['babypaunch', 'laftel-mania', 'netflix-mania', 'chord-sketch', 'echo-note', 'rehearsal-player']) {
+for (const project of ['babypaunch', 'laftel-mania', 'netflix-mania', 'chord-sketch', 'echo-note', 'rehearsal-mp3-player']) {
   assert.ok(policyData.includes(`slug: ${project}`), `policies.yml: ${project}`);
 }
 
@@ -197,8 +197,8 @@ for (const relative of [
   'en/policies/chord-sketch/privacy/index.html',
   'policies/echo-note/privacy/index.html',
   'en/policies/echo-note/privacy/index.html',
-  'policies/rehearsal-player/privacy/index.html',
-  'en/policies/rehearsal-player/privacy/index.html',
+  'policies/rehearsal-mp3-player/privacy/index.html',
+  'en/policies/rehearsal-mp3-player/privacy/index.html',
 ]) {
   const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
   assert.match(html, /class="page-shell (?:privacy|accessibility)-shell"/, `${relative}: responsive policy shell`);
@@ -223,11 +223,16 @@ for (const [relative, required] of [
   ['en/policies/chord-sketch/privacy/index.html', ['developer-operated server', 'advertising identifiers', 'data deletion instructions', 'babypaunch@gmail.com']],
   ['policies/echo-note/privacy/index.html', ['하이브리드 영단어 학습 앱', 'Google Play Integrity 토큰', 'backend.study365.site', '광고 식별자', 'User Messaging Platform', '오프라인 영어 Text-to-Speech', 'babypaunch@gmail.com']],
   ['en/policies/echo-note/privacy/index.html', ['hybrid English vocabulary learning app', 'Google Play Integrity token', 'backend.study365.site', 'advertising ID', 'User Messaging Platform', 'offline English Text-to-Speech', 'babypaunch@gmail.com']],
-  ['policies/rehearsal-player/privacy/index.html', ['MP3', 'Google Mobile Ads SDK', 'User Messaging Platform', '보유 및 삭제', 'babypaunch@gmail.com']],
-  ['en/policies/rehearsal-player/privacy/index.html', ['MP3', 'Google Mobile Ads SDK', 'User Messaging Platform', 'Retention and deletion', 'babypaunch@gmail.com']],
+  ['policies/rehearsal-mp3-player/privacy/index.html', ['MP3', 'Google Mobile Ads SDK', 'User Messaging Platform', '보유 및 삭제', 'babypaunch@gmail.com']],
+  ['en/policies/rehearsal-mp3-player/privacy/index.html', ['MP3', 'Google Mobile Ads SDK', 'User Messaging Platform', 'Retention and deletion', 'babypaunch@gmail.com']],
 ]) {
   const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
   for (const text of required) assert.ok(html.includes(text), `${relative}: ${text}`);
+}
+
+for (const locale of ['', 'en/']) {
+  const oldPage = fs.readFileSync(path.join(siteRoot, locale, 'policies/rehearsal-player/privacy/index.html'), 'utf8');
+  assert.ok(oldPage.includes(`location.replace('/${locale}policies/rehearsal-mp3-player/privacy/')`));
 }
 
 for (const relative of ['policies/index.html', 'en/policies/index.html']) {
