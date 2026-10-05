@@ -1,30 +1,29 @@
 # 프로젝트 스냅샷
 
-- 최종 갱신일: 2026-10-04
+- 최종 갱신일: 2026-10-06
 - 상태: 검증됨
 - 기준 브랜치: `main`
-- 기준 commit: `2c5ef8e` (이번 변경 전 기준)
-- 현재 판단: Rehearsal MP3 Player의 한·영 개인정보처리방침을 새 이름과 URL로 갱신하고 기존 URL의 이동 페이지를 준비했다. 로컬 Jekyll 빌드와 정책 검사를 통과했다.
+- 기준 commit: `main` (이번 변경 전 기준)
+- 현재 판단: Rehearsal MP3 Player 버전 1.1.1의 연령 확인과 광고 차단 방식을 한국어·영어 공개 개인정보처리방침에 반영했다. 앱의 새 버전은 아직 Play에 제출되지 않았다.
 
 ## 마지막 완료 작업
 
-- 정책 본문과 메타데이터, 정책 모음 링크를 Rehearsal MP3 Player에 맞췄다.
-- 기존 정책 주소의 한·영 이동 페이지를 추가했다.
+- 앱 버전 1.1.1부터 생년월일 원문을 보관하지 않고 성인 여부만 기기에 저장하며 미성년·미응답자에게 광고를 요청하지 않는다는 설명을 한·영 정책에 추가했다.
+- 최종 개정일과 개정 이력을 2026년 10월 6일로 갱신했다.
 
 ## 변경 파일
 
-- `policies/rehearsal-mp3-player/privacy/index.html`, `en/policies/rehearsal-mp3-player/privacy/index.html` 및 옛 주소 이동 페이지.
-- `_data/policies.yml`, `_data/ko.yml`, `_data/en.yml`, `_tests/site-quality.test.js`, `SNAPSHOT.md`.
+- `policies/rehearsal-mp3-player/privacy/index.html`, `en/policies/rehearsal-mp3-player/privacy/index.html`, `SNAPSHOT.md`.
 
 ## 검증 결과
 
 - Docker Jekyll 3.8 빌드 성공.
-- `node _tests/site-quality.test.js`: 55개 생성 페이지 검사 통과. 기존 주소의 이동 경로도 확인했다.
+- `node _tests/site-quality.test.js`: 55개 생성 페이지 검사 통과. 한·영 렌더 결과에 2026-10-06 개정일과 새 연령 설명이 포함됐다.
 - 브라우저 화면 검사는 수행하지 않았다.
 
 ## 차단 요소
 
-- GitHub Pages 반영 상태는 push 후 확인해야 한다.
+- GitHub Pages 반영 상태는 push 후 확인해야 한다. 앱 버전 1.1.1은 아직 Play에 제출되지 않았다.
 
 ## 다음 작업 하나
 
@@ -36,4 +35,4 @@
 
 ## 경고
 
-- 실제 AdMob 운영 ID, 기기 테스트, Play Console 입력은 Rehearsal MP3 Player 저장소의 별도 출시 작업이다.
+- 앱의 실기기 검증과 Play Console 제출은 Rehearsal MP3 Player 저장소의 별도 출시 작업이다.
