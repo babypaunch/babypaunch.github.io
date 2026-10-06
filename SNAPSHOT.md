@@ -4,7 +4,7 @@
 - 상태: 블로그 신규 글 공개 반영 확인
 - 기준 브랜치: `main`
 - 기준 commit: `main` (이번 변경 전 기준)
-- 현재 판단: Rehearsal MP3 Player 제작기를 한국어·영어 블로그에 게시했다. 사용자가 지정한 한 줄 요약과 영어 대응 문구를 반영했다. Google Play 프로덕션 출시는 대한민국 대상 심사 중이며, 글도 앱 공개 완료로 표현하지 않았다. 로컬 Jekyll 빌드와 번역·사이트 검사를 통과했고 공개 URL의 새 문구는 push 후 확인한다.
+- 현재 판단: Rehearsal MP3 Player 제작기를 한국어·영어 블로그에 게시했다. 사용자가 지정한 한 줄 요약과 영어 대응 문구가 공개 URL에 반영됐다. Google Play 프로덕션 출시는 대한민국 대상 심사 중이며, 글도 앱 공개 완료로 표현하지 않았다. 로컬 Jekyll 빌드와 번역·사이트 검사를 통과했다.
 
 ## 마지막 완료 작업
 
@@ -24,6 +24,7 @@
 - `node _tests/site-quality.test.js`: 57개 생성 페이지 검사 통과.
 - `node _tests/blog-tags.test.js` 통과.
 - GitHub Pages가 게시물 commit `7ed72a5`를 `built`로 표시했고 한국어·영어 공개 URL이 HTTP 200으로 응답했다.
+- 요약 수정 commit `4639d14`에 대한 GitHub Pages 빌드가 완료됐고 한국어·영어 공개 URL에서 새 문구를 확인했다.
 - 브라우저 화면 검사는 수행하지 않았다.
 
 ## 차단 요소
