@@ -6,6 +6,7 @@ title: 노래 연습하려고 MP3 플레이어를 만들었다
 description: 반복해서 듣는 연습이 좋아서 원하는 구간으로 쉽게 돌아갈 수 있는 MP3 플레이어를 만든 이야기.
 category: Making
 date: 2026-10-06 23:39:00 +0900
+last_modified_at: 2026-10-06 23:51:00 +0900
 permalink: /blog/rehearsal-mp3-player/
 language_url: /en/blog/rehearsal-mp3-player/
 alternate_ko: /blog/rehearsal-mp3-player/
@@ -104,4 +105,4 @@ Android 앱에는 배너 광고가 표시될 수 있다.
 
 즐겁게 듣다 보면 다시 따라 부르게 되고, 반복하다 보면 조금씩 내 소리가 된다.
 
-<p class="article-summary"><strong>한 줄 요약:</strong> 노래 연습은 반복해서 부르는 일만큼 반복해서 듣는 일도 중요해서, 원하는 구간으로 쉽게 돌아갈 수 있는 MP3 플레이어를 만들었다.</p>
+<p class="article-summary"><strong>한 줄 요약:</strong> 노래 연습은 반복해서 부르는 것만큼, 듣는 것도 중요하다. 그래서 원하는 구간을 쉽게 선택해서 반복해서 들을 수 있는 MP3 플레이어를 만들었다. 무엇보다 공짜다.</p>

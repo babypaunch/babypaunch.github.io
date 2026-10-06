@@ -6,6 +6,7 @@ title: I made an MP3 player to practice singing
 description: Why listening again and again led me to build an MP3 player that makes it easy to return to a chosen section.
 category: Making
 date: 2026-10-06 23:39:00 +0900
+last_modified_at: 2026-10-06 23:51:00 +0900
 permalink: /en/blog/rehearsal-mp3-player/
 language_url: /blog/rehearsal-mp3-player/
 alternate_ko: /blog/rehearsal-mp3-player/
@@ -104,4 +105,4 @@ Whether I am getting used to the sounds of a foreign-language song or practicing
 
 Enjoying the listen makes me sing along again, and repetition slowly makes the sound my own.
 
-<p class="article-summary"><strong>In one line:</strong> Listening again matters as much as singing again, so I made an MP3 player that makes it easy to return to the section I want to practice.</p>
+<p class="article-summary"><strong>In one line:</strong> When practicing a song, listening matters as much as singing. So I made an MP3 player that lets you easily choose a section and listen to it again and again. Best of all, it's free.</p>
