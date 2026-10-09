@@ -150,6 +150,8 @@ for (const excluded of ['AGENTS.html', 'SNAPSHOT.html', 'THIRD_PARTY_NOTICES.htm
   assert.ok(!sitemap.includes(excluded), `sitemap: excludes ${excluded}`);
 }
 for (const url of [
+  '/policies/anydocs/privacy/',
+  '/en/policies/anydocs/privacy/',
   '/policies/babypaunch/accessibility/',
   '/en/policies/babypaunch/accessibility/',
   '/policies/babypaunch/privacy/',
@@ -180,7 +182,7 @@ assert.equal(socialImage.readUInt32BE(16), 1200, 'social image: width');
 assert.equal(socialImage.readUInt32BE(20), 630, 'social image: height');
 
 const policyData = fs.readFileSync(path.join(__dirname, '..', '_data', 'policies.yml'), 'utf8');
-for (const project of ['babypaunch', 'laftel-mania', 'netflix-mania', 'chord-sketch', 'echo-note', 'rehearsal-mp3-player']) {
+for (const project of ['babypaunch', 'laftel-mania', 'netflix-mania', 'chord-sketch', 'echo-note', 'rehearsal-mp3-player', 'anydocs']) {
   assert.ok(policyData.includes(`slug: ${project}`), `policies.yml: ${project}`);
 }
 
@@ -188,6 +190,8 @@ for (const relative of [
   'policies/babypaunch/privacy/index.html',
   'en/policies/babypaunch/privacy/index.html',
   'policies/babypaunch/accessibility/index.html',
+  'policies/anydocs/privacy/index.html',
+  'en/policies/anydocs/privacy/index.html',
   'en/policies/babypaunch/accessibility/index.html',
   'policies/laftel-mania/privacy/index.html',
   'en/policies/laftel-mania/privacy/index.html',
@@ -217,6 +221,8 @@ for (const relative of ['support/chord-sketch/index.html', 'en/support/chord-ske
 }
 
 for (const [relative, required] of [
+  ['policies/anydocs/privacy/index.html', ['문서 내용', '광고', 'User Messaging Platform', 'data-deletion', 'babypaunch@gmail.com']],
+  ['en/policies/anydocs/privacy/index.html', ['document', 'advertising', 'User Messaging Platform', 'data-deletion', 'babypaunch@gmail.com']],
   ['policies/netflix-mania/privacy/index.html', ['수집하거나 저장하지 않습니다', 'https://www.netflix.com/*', '개발자 서버와 통신하지 않습니다', '공식 제품이 아닙니다']],
   ['en/policies/netflix-mania/privacy/index.html', ['does not collect or store', 'https://www.netflix.com/*', 'developer-operated server', 'not created, approved']],
   ['policies/chord-sketch/privacy/index.html', ['개발자가 운영하는 서버', '광고 식별자', '데이터 삭제 안내', 'babypaunch@gmail.com']],

@@ -15,6 +15,9 @@ routes:
   contact: /contact/
   not_found: /
 pages:
+  anydocs_privacy:
+    title: anydocs 개인정보처리방침 — BabyPaunch
+    description: anydocs의 문서 읽기, 기기 저장과 광고 정보 처리를 안내합니다.
   design:
     typography_label: 서체 · Noto Serif KR
     typography_sample: 한글과 English를 같은 서체로 표시합니다. 0123456789

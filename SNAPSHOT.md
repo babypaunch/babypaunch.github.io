@@ -1,44 +1,35 @@
 # 프로젝트 스냅샷
 
-- 최종 갱신일: 2026-10-06
-- 상태: 블로그 신규 글 공개 반영 확인
-- 기준 브랜치: `main`
-- 기준 commit: `main` (이번 변경 전 기준)
-- 현재 판단: Rehearsal MP3 Player 제작기를 한국어·영어 블로그에 게시했다. 사용자가 지정한 한 줄 요약과 영어 대응 문구가 공개 URL에 반영됐다. Google Play 프로덕션 출시는 대한민국 대상 심사 중이며, 글도 앱 공개 완료로 표현하지 않았다. 로컬 Jekyll 빌드와 번역·사이트 검사를 통과했다.
+- 최종 갱신일: 2026-10-09
+- 상태: 검증됨
+- 기준 브랜치: main
+- 기준 commit: 기존 main에서 시작한 anydocs 정책 공개 commit. 실제 hash는 `git log -1`로 확인한다.
+- 현재 판단: 사용자가 승인한 anydocs 한·영 개인정보처리방침을 공개 소스에 추가했다. 문서 로컬 처리, 하단 AdMob 배너, UMP 동의 및 삭제 안내를 명시한다. 앱의 Play 공개 완료를 의미하지 않는다.
 
 ## 마지막 완료 작업
 
-- 한국어 글의 마지막 요약을 사용자가 지정한 문구로 바꾸고 영어 글도 같은 세 문장으로 맞췄다. 두 글의 수정 시각을 갱신했다.
-- 사용자의 듣기·반복 연습 경험, 외국어 학습에 노래를 권하는 이유, 노래 애드립으로 이어지는 연습 과정을 중심으로 한·영 블로그 글을 작성했다. Start/End와 Fade-In/Fade-Out, Google Play 등록 과정과 현재 심사 상태를 간결하게 담았다.
-- 앱 버전 1.1.1부터 생년월일 원문을 보관하지 않고 성인 여부만 기기에 저장하며 미성년·미응답자에게 광고를 요청하지 않는다는 설명을 한·영 정책에 추가했다.
-- 최종 개정일과 개정 이력을 2026년 10월 6일로 갱신했다.
+anydocs 정책 두 페이지, 언어별 SEO 메타데이터와 정책 허브 등록을 추가하고 사이트 품질 검사에 연결했다.
 
 ## 변경 파일
 
-- `_posts/2026-10-06-rehearsal-mp3-player.md`, `_posts/2026-10-06-rehearsal-mp3-player-en.md`, `SNAPSHOT.md`.
+`policies/anydocs/privacy/index.html`, `en/policies/anydocs/privacy/index.html`, `_data/ko.yml`, `_data/en.yml`, `_data/policies.yml`, `_tests/site-quality.test.js`, `SNAPSHOT.md`.
 
 ## 검증 결과
 
-- Docker Jekyll 3.8 빌드 성공.
-- `node _tests/article-translation.test.js`: 13개 한·영 게시물 쌍 통과.
-- `node _tests/site-quality.test.js`: 57개 생성 페이지 검사 통과.
-- `node _tests/blog-tags.test.js` 통과.
-- GitHub Pages가 게시물 commit `7ed72a5`를 `built`로 표시했고 한국어·영어 공개 URL이 HTTP 200으로 응답했다.
-- 요약 수정 commit `4639d14`에 대한 GitHub Pages 빌드가 완료됐고 한국어·영어 공개 URL에서 새 문구를 확인했다.
-- 브라우저 화면 검사는 수행하지 않았다.
+Docker Jekyll 3.8 빌드 성공. 사이트 품질 검사 59개 페이지 통과. 기존 공용 정책 레이아웃을 사용했으며 브라우저 화면 검사와 캡처는 하지 않았다.
 
 ## 차단 요소
 
-- Google Play 프로덕션 심사가 끝나지 않아 글에 앱 공개 링크를 넣지 않았다.
+로컬 검증에 차단 요소 없음. 공개 반영은 push 후 GitHub Pages 및 공개 HTTP 응답으로 확인한다.
 
 ## 다음 작업 하나
 
-- Google Play 앱 공개가 확인되면 글의 심사 상태 문장과 스토어 링크를 갱신한다.
+한·영 공개 URL의 배포 완료를 확인한다.
 
 ## 사용자에게 필요한 작업
 
-- 새 글을 읽고 주관적인 문장과 개인 경험 표현을 검토한다.
+없음. 정책 공개는 현재 요청에서 승인받았다.
 
 ## 경고
 
-- Google Play 심사 제출은 앱 공개 완료를 뜻하지 않는다. 실제 공개가 확인되면 글의 상태 문장과 스토어 링크를 갱신해야 한다.
+앱 등록·광고 설정·심사 제출·공개 상태는 anydocs 저장소에서 따로 기록한다.

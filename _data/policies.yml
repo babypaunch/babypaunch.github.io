@@ -117,3 +117,21 @@
       url:
         ko: /policies/rehearsal-mp3-player/privacy/
         en: /en/policies/rehearsal-mp3-player/privacy/
+
+- slug: anydocs
+  name:
+    ko: anydocs
+    en: anydocs
+  type:
+    ko: Android 앱
+    en: Android App
+  description:
+    ko: 텍스트·Markdown 읽기 전용 뷰어입니다.
+    en: A read-only text and Markdown viewer.
+  documents:
+    - label:
+        ko: 개인정보처리방침
+        en: Privacy Policy
+      url:
+        ko: /policies/anydocs/privacy/
+        en: /en/policies/anydocs/privacy/
