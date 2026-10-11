@@ -150,6 +150,8 @@ for (const excluded of ['AGENTS.html', 'SNAPSHOT.html', 'THIRD_PARTY_NOTICES.htm
   assert.ok(!sitemap.includes(excluded), `sitemap: excludes ${excluded}`);
 }
 for (const url of [
+  '/policies/babypaunch-account/privacy/',
+  '/en/policies/babypaunch-account/privacy/',
   '/policies/anydocs/privacy/',
   '/en/policies/anydocs/privacy/',
   '/policies/babypaunch/accessibility/',
@@ -182,11 +184,13 @@ assert.equal(socialImage.readUInt32BE(16), 1200, 'social image: width');
 assert.equal(socialImage.readUInt32BE(20), 630, 'social image: height');
 
 const policyData = fs.readFileSync(path.join(__dirname, '..', '_data', 'policies.yml'), 'utf8');
-for (const project of ['babypaunch', 'laftel-mania', 'netflix-mania', 'chord-sketch', 'echo-note', 'rehearsal-mp3-player', 'anydocs']) {
+for (const project of ['babypaunch', 'babypaunch-account', 'laftel-mania', 'netflix-mania', 'chord-sketch', 'echo-note', 'rehearsal-mp3-player', 'anydocs']) {
   assert.ok(policyData.includes(`slug: ${project}`), `policies.yml: ${project}`);
 }
 
 for (const relative of [
+  'policies/babypaunch-account/privacy/index.html',
+  'en/policies/babypaunch-account/privacy/index.html',
   'policies/babypaunch/privacy/index.html',
   'en/policies/babypaunch/privacy/index.html',
   'policies/babypaunch/accessibility/index.html',

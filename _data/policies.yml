@@ -22,6 +22,24 @@
         ko: /policies/babypaunch/accessibility/
         en: /en/policies/babypaunch/accessibility/
 
+- slug: babypaunch-account
+  name:
+    ko: BabyPaunch Account
+    en: BabyPaunch Account
+  type:
+    ko: 공용 계정 서비스
+    en: Shared account service
+  description:
+    ko: BabyPaunch 앱의 Google 로그인과 공용 계정을 제공합니다.
+    en: Provides Google sign-in and shared accounts for BabyPaunch apps.
+  documents:
+    - label:
+        ko: 개인정보처리방침
+        en: Privacy Policy
+      url:
+        ko: /policies/babypaunch-account/privacy/
+        en: /en/policies/babypaunch-account/privacy/
+
 - slug: laftel-mania
   name:
     ko: Laftel Mania

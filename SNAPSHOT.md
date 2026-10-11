@@ -1,35 +1,35 @@
 # 프로젝트 스냅샷
 
-- 최종 갱신일: 2026-10-09
-- 상태: 검증됨
+- 최종 갱신일: 2026-10-11
+- 상태: 로컬 검증 완료, 공개 응답 확인 대기
 - 기준 브랜치: main
-- 기준 commit: 기존 main에서 시작한 anydocs 정책 공개 commit. 실제 hash는 `git log -1`로 확인한다.
-- 현재 판단: 사용자가 승인한 anydocs 한·영 개인정보처리방침을 공개 소스에 추가했다. 문서 로컬 처리, 하단 AdMob 배너, UMP 동의 및 삭제 안내를 명시한다. 앱의 Play 공개 완료를 의미하지 않는다.
+- 기준 commit: 이번 BabyPaunch Account 정책 commit
+- 현재 판단: Google OAuth 브랜딩에 연결할 BabyPaunch Account 한·영 개인정보처리방침을 준비했다. Art Of Jigsaw 온라인 로그인·퍼즐 요청에서 실제 처리하는 정보와 로컬 이미지·기록의 범위를 설명한다.
 
 ## 마지막 완료 작업
 
-anydocs 정책 두 페이지, 언어별 SEO 메타데이터와 정책 허브 등록을 추가하고 사이트 품질 검사에 연결했다.
+BabyPaunch Account 정책 두 페이지, 언어별 메타데이터, 정책 허브 등록과 사이트 품질 검사를 추가했다.
 
 ## 변경 파일
 
-`policies/anydocs/privacy/index.html`, `en/policies/anydocs/privacy/index.html`, `_data/ko.yml`, `_data/en.yml`, `_data/policies.yml`, `_tests/site-quality.test.js`, `SNAPSHOT.md`.
+`policies/babypaunch-account/privacy/index.html`, `en/policies/babypaunch-account/privacy/index.html`, `_data/ko.yml`, `_data/en.yml`, `_data/policies.yml`, `_tests/site-quality.test.js`, `SNAPSHOT.md`.
 
 ## 검증 결과
 
-Docker Jekyll 3.8 빌드 성공. 사이트 품질 검사 59개 페이지 통과. 기존 공용 정책 레이아웃을 사용했으며 브라우저 화면 검사와 캡처는 하지 않았다.
+Docker Jekyll 3.8 빌드 성공. 사이트 품질 검사 61개 페이지 통과. 브라우저 화면 검사와 캡처는 하지 않았다.
 
 ## 차단 요소
 
-로컬 검증에 차단 요소 없음. 공개 반영은 push 후 GitHub Pages 및 공개 HTTP 응답으로 확인한다.
+Google OAuth 테스트 사용자 추가는 사용자 확인을 기다리고 있다. 사이트의 공개 HTTP 응답은 push 후 확인해야 한다.
 
 ## 다음 작업 하나
 
-한·영 공개 URL의 배포 완료를 확인한다.
+정책 공개 URL을 확인하고 Google OAuth 브랜딩에 연결한다.
 
 ## 사용자에게 필요한 작업
 
-없음. 정책 공개는 현재 요청에서 승인받았다.
+Google Cloud `shared-pocketbase-2026` OAuth 테스트 사용자에 `babypaunch@gmail.com`을 추가하는 작업의 승인이 필요하다.
 
 ## 경고
 
-앱 등록·광고 설정·심사 제출·공개 상태는 anydocs 저장소에서 따로 기록한다.
+정책 공개와 OAuth 브랜딩 준비는 실제 Google 로그인·퍼즐 생성 검증 완료를 의미하지 않는다.
