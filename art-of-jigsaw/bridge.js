@@ -124,7 +124,7 @@ signIn.addEventListener('click', async () => {
   signIn.disabled = true;
   status.textContent = 'Opening Google sign-in…';
   try {
-    await auth.collection('users').authWithOAuth2({ provider: 'google' });
+    await auth.collection('users').authWithOAuth2({ provider: localPreview ? 'google' : 'google_web' });
     write('web-token.txt', auth.authStore.token);
     result('gate', 'login', true);
     hideSignIn();
