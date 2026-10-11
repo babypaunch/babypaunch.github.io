@@ -63,6 +63,7 @@ for (const route of ['index.html', 'en/index.html', 'design/index.html', 'en/des
   assert.equal((html.match(/data-app-group/g) || []).length, Math.ceil(appCount / 9));
   assert.match(html, /app-groups\.js/);
   assert.match(html, /https:\/\/play.google.com\/store\/apps\/details\?id=com.babypaunch.chordsketch/);
+  assert.match(html, /href="\/art-of-jigsaw\/"[^>]*>(?:게임하기|Play)<span/);
   assert.doesNotMatch(html, /\{\{|\{%/);
 }
 console.log('App groups: selection, isolation, close, Escape, focus, reduced motion and four routes passed.');

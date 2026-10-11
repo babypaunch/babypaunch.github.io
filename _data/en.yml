@@ -81,6 +81,11 @@ home:
   app_download: Download
   app_preview: App list · Select a title to reveal details
   apps:
+    - name: Art Of Jigsaw
+      description: Play an online jigsaw puzzle with famous art or your own photo. Sign in with Google to start.
+      status: Available
+      action: Play
+      url: /art-of-jigsaw/
     - name: "Chord Sketch: Learn to Compose"
       description: An Android app for practising songwriting by listening to and combining chords. Download it on Google Play.
       status: Available

@@ -15,6 +15,10 @@ python -m http.server 8000 --directory _site
 
 `http://localhost:8000`에서 확인할 수 있습니다. GitHub Pages는 `main` 브랜치의 Jekyll 소스를 자동으로 빌드하고 배포합니다.
 
+## Art Of Jigsaw
+
+`/art-of-jigsaw/`는 옆의 `art-of-jigsaw` 저장소에서 생성한 웹 빌드(`dist/web/`)를 그대로 담습니다. 새 게임 버전을 반영할 때 해당 저장소의 `web/`에서 `npm run build`를 실행하고 결과 파일을 이 저장소의 `art-of-jigsaw/`에 복사한 뒤 위 Jekyll 빌드와 `_tests/app-groups.test.js`, `_tests/site-quality.test.js`를 실행합니다. 퍼즐 모양 생성기는 웹 빌드에 포함되지 않으며, 브라우저는 운영 Access Gate가 전달하는 완성된 경로를 사용합니다.
+
 ## 검색 및 정책
 
 - `/robots.txt`: 검색 로봇 접근 규칙과 sitemap 위치

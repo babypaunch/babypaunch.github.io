@@ -81,6 +81,11 @@ home:
   app_download: 다운로드
   app_preview: 앱 목록 · 제목 선택과 설명 펼치기
   apps:
+    - name: Art Of Jigsaw
+      description: 명화나 내 사진으로 즐기는 온라인 직소 퍼즐. Google 계정으로 로그인해 바로 플레이할 수 있습니다.
+      status: 사용 가능
+      action: 게임하기
+      url: /art-of-jigsaw/
     - name: 코드 스케치 - 작곡 공부
       description: 코드를 듣고 조합하며 작곡을 연습하는 Android 앱. Google Play에서 다운로드할 수 있습니다.
       status: 사용 가능

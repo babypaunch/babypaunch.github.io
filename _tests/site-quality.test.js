@@ -16,6 +16,13 @@ for (const file of htmlFiles) {
   const html = fs.readFileSync(file, 'utf8');
   const label = path.relative(siteRoot, file);
 
+  if (label.replaceAll('\\', '/') === 'art-of-jigsaw/index.html') {
+    assert.match(html, /<canvas id="canvas"[^>]+aria-label="Art Of Jigsaw game"/);
+    assert.match(html, /arguments: \['\.\/game\.love'\]/);
+    assert.match(html, /src="bridge\.js"/);
+    continue;
+  }
+
   assert.match(html, /<html lang="(?:ko|en)">/, `${label}: page language`);
   assert.equal((html.match(/<main\b/g) || []).length, 1, `${label}: one main landmark`);
   assert.equal((html.match(/<h1\b/g) || []).length, 1, `${label}: one h1`);

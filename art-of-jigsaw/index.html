@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Art Of Jigsaw</title>
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #09182b; color: white; font: 16px system-ui, sans-serif; }
+    main { display: grid; width: 100vw; height: 100vh; height: 100dvh; }
+    canvas { display: block; grid-area: 1 / 1; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+    #loadingCanvas[hidden] { display: none; }
+    #canvas { visibility: hidden; }
+    #signin, #photo-picker { position: fixed; padding: 0; border: 0; background: transparent; color: transparent; cursor: pointer; z-index: 2; }
+    #signin[hidden], #photo-picker[hidden] { display: none; }
+    #signin:focus-visible, #photo-picker:focus-visible { outline: 3px solid #ffd064; outline-offset: 3px; }
+    #status { position: fixed; top: .5rem; left: .5rem; margin: 0; font-size: .85rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <canvas id="loadingCanvas" width="800" height="600" aria-hidden="true"></canvas>
+    <canvas id="canvas" width="1280" height="850" tabindex="0" aria-label="Art Of Jigsaw game"></canvas>
+  </main>
+  <button id="signin" type="button" hidden>Sign in with Google</button>
+  <button id="photo-picker" type="button" hidden>Import My Photo</button>
+  <input id="photo-file" type="file" accept="image/png,image/jpeg" hidden>
+  <p id="status" role="status" aria-live="polite">Loading game…</p>
+  <script>
+    var Module = {
+      arguments: ['./game.love'],
+      INITIAL_MEMORY: 536870912,
+      canvas: document.getElementById('canvas'),
+      printErr: console.error.bind(console),
+      setStatus(message) {
+        document.getElementById('status').textContent = message || '';
+        if (!message) {
+          document.getElementById('loadingCanvas').hidden = true;
+          document.getElementById('canvas').style.visibility = 'visible';
+        }
+      },
+    };
+    Module.canvas.addEventListener('webglcontextlost', (event) => {
+      event.preventDefault();
+      Module.setStatus('Graphics connection lost. Reload this page.');
+    });
+    window.addEventListener('keydown', (event) => {
+      if ([32, 37, 38, 39, 40].includes(event.keyCode) && event.target === Module.canvas) event.preventDefault();
+    });
+  </script>
+  <script src="game.js"></script>
+  <script async src="love.js" onload="Love(Module)"></script>
+  <script type="module" src="bridge.js"></script>
+</body>
+</html>
