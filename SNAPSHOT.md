@@ -1,35 +1,35 @@
 # 프로젝트 스냅샷
 
 - 최종 갱신일: 2026-10-12
-- 상태: Art Of Jigsaw 사이트 게시 및 운영 웹 API 연결 확인
+- 상태: Art Of Jigsaw Met 이미지 CORS 수정 빌드 검증 완료, 게시 전
 - 기준 브랜치: main
 - 기준 commit: 이 문서를 포함한 main 커밋
-- 현재 판단: 사이트의 `/art-of-jigsaw/` 정적 게임과 한·영 홈 진입 링크를 준비했다. Google 웹 OAuth 클라이언트를 발급하고 외부 사용자에게 게시했으며, 운영 PocketBase와 Access Gate에 웹 출처를 설정했다. 실제 브라우저 로그인과 퍼즐 조작은 아직 확인하지 않았다.
+- 현재 판단: 기존 공개 게임의 Art import는 Met 이미지 직접 요청이 CORS에 막힌다. Access Gate의 Met 이미지 전용 경로를 사용하도록 웹 브리지를 교체했으며 해당 서버 경로와 사이트 수정본은 아직 운영에 반영하지 않았다.
 
 ## 마지막 완료 작업
 
-게임 웹 빌드와 한·영 진입 링크를 GitHub Pages에 게시했다. 운영 인증 API에서 `google`과 `google_web` 공급자 및 사이트 CORS 응답, 퍼즐 API의 허용 출처 OPTIONS 204를 확인했다.
+`art-of-jigsaw/bridge.js`를 새 웹 빌드의 파일로 교체했다.
 
 ## 변경 파일
 
-`art-of-jigsaw/`, `_data/ko.yml`, `_data/en.yml`, `_includes/app-groups.html`, `_tests/app-groups.test.js`, `_tests/site-quality.test.js`, `README.md`, `SNAPSHOT.md`.
+`art-of-jigsaw/bridge.js`, `SNAPSHOT.md`.
 
 ## 검증 결과
 
-Docker Jekyll 3.8 빌드 성공. 앱 목록, 사이트 품질 검사 62개 페이지, 블로그 태그 검사가 통과했다. Jekyll 산출물의 게임 파일 해시가 복사한 원본과 일치했다. GitHub Pages 빌드 성공과 공개 게임 경로·JS·WASM·DATA 등 정적 파일의 HTTP 200을 확인했다. 공개 주소의 로그인·게임 플레이 및 브라우저 화면은 검증하지 않았다.
+Docker Jekyll 3.8 빌드, 앱 목록과 사이트 품질 검사 62개 페이지가 통과했다. 사이트 브리지와 웹 빌드 파일의 해시가 일치한다. 운영 Art import는 미검증이다.
 
 ## 차단 요소
 
-사이트 게시 후 실제 Google 로그인부터 퍼즐 생성까지의 사용자 흐름 검증이 필요하다.
+Access Gate 이미지 경로 배포가 먼저 필요하다.
 
 ## 다음 작업 하나
 
-공개 사이트에서 Google 로그인부터 퍼즐 생성까지 검증한다.
+서버 이미지 경로 배포 후 사이트를 게시하고 HTTP로 Met JPEG를 확인한다.
 
 ## 사용자에게 필요한 작업
 
-브라우저 로그인·게임 동작 검증을 별도로 요청하면 사용자 화면 흐름까지 확인할 수 있다.
+운영 배포 절차의 최종 승인이 필요하다.
 
 ## 경고
 
-공개 API의 CORS·인증 공급자 검증은 실제 Google 로그인·퍼즐 생성 검증과 다르다.
+서버 이미지 경로와 사이트 브리지를 함께 배포해야 Art import가 복구된다.

@@ -18,7 +18,8 @@ const metSearchUrl = localPreview
   ? `${metUrl}/search`
   : 'https://collectionapi.metmuseum.org/public/collection/v1.1/search';
 const metImageUrl = (url) => localPreview
-  ? `${metUrl}/image?url=${encodeURIComponent(url)}` : url;
+  ? `${metUrl}/image?url=${encodeURIComponent(url)}`
+  : `https://gate.babypaunch.com/v1/programs/art-of-jigsaw/met/image?url=${encodeURIComponent(url)}`;
 const signIn = document.getElementById('signin');
 const photoPicker = document.getElementById('photo-picker');
 const photoFile = document.getElementById('photo-file');
