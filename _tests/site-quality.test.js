@@ -11,6 +11,14 @@ const walk = (directory) => fs.readdirSync(directory, { withFileTypes: true }).f
 
 const htmlFiles = walk(siteRoot).filter((file) => file.endsWith('.html'));
 const pageTitles = new Map();
+const gameRoot = path.join(siteRoot, 'art-of-jigsaw');
+const gameLoader = fs.readFileSync(path.join(gameRoot, 'game.js'), 'utf8');
+const gameMetadata = gameLoader.match(/"package_uuid":"([^"]+)","remote_package_size":(\d+)/);
+assert.ok(gameMetadata, 'Art Of Jigsaw: game loader metadata');
+assert.equal(Number(gameMetadata[2]), fs.statSync(path.join(gameRoot, 'game.data')).size,
+  'Art Of Jigsaw: game loader and data must match');
+assert.ok(gameLoader.includes(`game.data?v=${gameMetadata[1]}`),
+  'Art Of Jigsaw: versioned game data URL');
 
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file, 'utf8');
@@ -20,6 +28,8 @@ for (const file of htmlFiles) {
     assert.match(html, /<canvas id="canvas"[^>]+aria-label="Art Of Jigsaw game"/);
     assert.match(html, /arguments: \['\.\/game\.love'\]/);
     assert.match(html, /src="bridge\.js"/);
+    assert.ok(html.includes(`src="game.js?v=${gameMetadata[1]}"`),
+      'Art Of Jigsaw: versioned game loader URL');
     continue;
   }
 
