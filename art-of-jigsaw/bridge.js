@@ -29,6 +29,19 @@ const encoder = new TextEncoder();
 const directory = '/home/web_user/love/art-of-jigsaw';
 let busy = false;
 let signInReady = false;
+let language = 'en';
+const message = (english, korean) => language === 'ko' ? korean : english;
+
+function syncLanguage() {
+  const selected = read('language.txt')?.trim() === 'ko' ? 'ko' : 'en';
+  if (selected === language) return;
+  language = selected;
+  document.documentElement.lang = language;
+  signIn.textContent = message('Sign in with Google', 'Google로 로그인');
+  photoPicker.textContent = message('Import My Photo', '내 사진 가져오기');
+  document.getElementById('canvas').setAttribute('aria-label',
+    message('Art Of Jigsaw game', 'Art Of Jigsaw 게임'));
+}
 
 fetch(`${auth.baseUrl}/api/collections/users/auth-methods`)
   .then((response) => { signInReady = response.ok; })
@@ -107,6 +120,7 @@ function syncViewport() {
 }
 window.addEventListener('resize', () => { placeSignIn(); placePhotoPicker(); syncViewport(); });
 setInterval(() => {
+  syncLanguage();
   syncViewport();
   placePhotoPicker();
   if (read('web-home-request.txt')) {
@@ -119,11 +133,11 @@ placeSignIn();
 signIn.addEventListener('click', async () => {
   if (!signInReady) {
     result('gate', 'login', false, 'Sign-in is unavailable from this address. Check the account connection.');
-    status.textContent = 'Sign-in connection unavailable.';
+    status.textContent = message('Sign-in connection unavailable.', '로그인 연결을 사용할 수 없습니다.');
     return;
   }
   signIn.disabled = true;
-  status.textContent = 'Opening Google sign-in…';
+  status.textContent = message('Opening Google sign-in…', 'Google 로그인을 여는 중…');
   try {
     await auth.collection('users').authWithOAuth2({ provider: localPreview ? 'google' : 'google_web' });
     write('web-token.txt', auth.authStore.token);
@@ -132,7 +146,7 @@ signIn.addEventListener('click', async () => {
     status.textContent = '';
   } catch (error) {
     result('gate', 'login', false, error.message);
-    status.textContent = 'Sign-in failed. Try again.';
+    status.textContent = message('Sign-in failed. Try again.', '로그인에 실패했습니다. 다시 시도하세요.');
   } finally { signIn.disabled = false; }
 });
 
