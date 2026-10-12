@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.babypaunch.artofjigsaw",
+      "sha256_cert_fingerprints": [
+        "D2:88:E4:D1:56:DA:9D:DF:29:31:C3:1A:A7:92:4A:4B:A7:F9:6B:3B:B0:B1:48:55:04:0F:12:9B:C8:0A:54:16"
+      ]
+    }
+  }
+]

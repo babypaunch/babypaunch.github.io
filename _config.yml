@@ -4,6 +4,9 @@ timezone: Asia/Seoul
 analytics_measurement_id: "G-TFR80P4CNK"
 social_image: /assets/images/social/babypaunch-social-card.png
 
+include:
+  - .well-known
+
 exclude:
   - AGENTS.md
   - SNAPSHOT.md

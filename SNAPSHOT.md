@@ -1,22 +1,22 @@
 # 프로젝트 스냅샷
 
-- 최종 갱신일: 2026-10-12
-- 상태: Art Of Jigsaw 첫 실행 언어 파일 누락 오류 수정·게시 완료
+- 최종 갱신일: 2026-10-13
+- 상태: Art Of Jigsaw Android 전체 화면 연결 선언 추가
 - 기준 브랜치: main
 - 기준 commit: 이 문서를 포함한 main 커밋
-- 현재 판단: 새 로더가 정상적으로 최신 게임을 읽자 첫 실행에서 없는 `language.txt`를 읽는 love.js 경로가 예외를 냈다. 파일 존재 여부를 확인하도록 수정한 게임을 게시했고 공개 웹판이 오류 대화상자 없이 캔버스를 표시한다.
+- 현재 판단: AOJ Android 디버그 APK의 서명 지문을 Digital Asset Links에 선언해 Chrome이 게임 사이트를 Trusted Web Activity로 검증할 수 있게 했다.
 
 ## 마지막 완료 작업
 
-웹 첫 실행 오류 수정본을 게시하고 공개 페이지에서 다시 실행했다.
+AOJ Android 앱과 사이트의 연결을 위한 `/.well-known/assetlinks.json`을 추가했다.
 
 ## 변경 파일
 
-`SNAPSHOT.md`.
+`_config.yml`, `.well-known/assetlinks.json`, `SNAPSHOT.md`.
 
 ## 검증 결과
 
-- 로컬 웹판에서 초기화 오류를 재현했고 수정 후 오류 대화상자 없이 시작했다. Docker Jekyll 빌드와 사이트 검사, GitHub Pages 빌드가 통과했다. 공개 웹판에서 로딩 문구가 사라지고 캔버스가 표시되며 로더 버전과 게임 데이터 SHA-256이 로컬 빌드와 일치한다.
+- Docker Jekyll 빌드에서 `_site/.well-known/assetlinks.json` 생성 확인. 사이트 품질 검사 62페이지 통과. 공개 URL 응답과 기기에서의 전체 화면 검증은 게시 후 확인한다.
 
 ## 차단 요소
 
@@ -24,7 +24,7 @@
 
 ## 다음 작업 하나
 
-실제 게임에서 로그인·Art 가져오기와 퍼즐 시작 흐름을 확인한다.
+AOJ Android 기기에서 사이트 검증과 전체 화면 전환을 확인한다.
 
 ## 사용자에게 필요한 작업
 
@@ -32,4 +32,4 @@
 
 ## 경고
 
-새 UI와 Art 가져오기의 화면 조작 검증은 수행하지 않았다.
+Digital Asset Links에는 현재 개인 테스트용 디버그 인증서만 등록했다. Play 배포 때는 해당 서명 지문을 추가해야 한다.
