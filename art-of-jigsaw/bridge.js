@@ -23,6 +23,8 @@ const metImageUrl = (url) => localPreview
 const signIn = document.getElementById('signin');
 const photoPicker = document.getElementById('photo-picker');
 const photoFile = document.getElementById('photo-file');
+const gameCanvas = document.getElementById('canvas');
+const gameViewport = document.querySelector('main');
 const status = document.getElementById('status');
 const decoder = new TextDecoder();
 const encoder = new TextEncoder();
@@ -30,6 +32,21 @@ const directory = '/home/web_user/love/art-of-jigsaw';
 let busy = false;
 let signInReady = false;
 let language = 'en';
+let pagePanY = null;
+gameCanvas.addEventListener('touchstart', (event) => {
+  if (event.touches.length > 1) pagePanY =
+    (event.touches[0].clientY + event.touches[1].clientY) / 2;
+}, { passive: false });
+gameCanvas.addEventListener('touchmove', (event) => {
+  event.preventDefault();
+  if (event.touches.length < 2) return;
+  const y = (event.touches[0].clientY + event.touches[1].clientY) / 2;
+  if (pagePanY !== null) gameViewport.scrollTop += pagePanY - y;
+  pagePanY = y;
+}, { passive: false });
+gameCanvas.addEventListener('touchend', (event) => {
+  if (event.touches.length < 2) pagePanY = null;
+}, { passive: false });
 const message = (english, korean) => language === 'ko' ? korean : english;
 
 function syncLanguage() {
@@ -74,6 +91,7 @@ function placeSignIn() {
   signIn.style.height = `${62 * scale * bounds.height / canvas.height}px`;
 }
 new ResizeObserver(placeSignIn).observe(document.getElementById('canvas'));
+gameViewport.addEventListener('scroll', placeSignIn);
 function placePhotoPicker() {
   const bounds = document.getElementById('canvas').getBoundingClientRect();
   const canvas = document.getElementById('canvas');

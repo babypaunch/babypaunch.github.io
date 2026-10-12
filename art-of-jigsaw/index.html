@@ -6,7 +6,7 @@
   <title>Art Of Jigsaw</title>
   <style>
     html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #09182b; color: white; font: 16px system-ui, sans-serif; }
-    main { display: grid; width: 100vw; height: 100vh; height: 100dvh; }
+    main { display: grid; width: 100vw; height: 100vh; height: 100dvh; overflow: auto; }
     canvas { display: block; grid-area: 1 / 1; width: 100%; height: 100%; min-width: 0; min-height: 0; }
     #loadingCanvas[hidden] { display: none; }
     #canvas { visibility: hidden; }
@@ -14,6 +14,10 @@
     #signin[hidden], #photo-picker[hidden] { display: none; }
     #signin:focus-visible, #photo-picker:focus-visible { outline: 3px solid #ffd064; outline-offset: 3px; }
     #status { position: fixed; top: .5rem; left: .5rem; margin: 0; font-size: .85rem; }
+    @media (pointer: coarse) and (orientation: landscape) {
+      main { align-content: start; }
+      canvas { height: max(100dvh, 66.40625vw); touch-action: none; }
+    }
   </style>
 </head>
 <body>
@@ -47,7 +51,7 @@
       if ([32, 37, 38, 39, 40].includes(event.keyCode) && event.target === Module.canvas) event.preventDefault();
     });
   </script>
-  <script src="game.js?v=ecfff715-3a14-4cee-b8b6-1037c2d23b13"></script>
+  <script src="game.js?v=132a7aa2-648f-4ba1-9dfa-730fb207ca02"></script>
   <script async src="love.js" onload="Love(Module)"></script>
   <script type="module" src="bridge.js"></script>
 </body>
