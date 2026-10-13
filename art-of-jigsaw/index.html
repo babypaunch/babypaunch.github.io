@@ -14,10 +14,7 @@
     #signin[hidden], #photo-picker[hidden] { display: none; }
     #signin:focus-visible, #photo-picker:focus-visible { outline: 3px solid #ffd064; outline-offset: 3px; }
     #status { position: fixed; top: .5rem; left: .5rem; margin: 0; font-size: .85rem; }
-    @media (pointer: coarse) and (orientation: landscape) {
-      main { align-content: start; }
-      canvas { height: max(100dvh, 66.40625vw); touch-action: none; }
-    }
+    @media (pointer: coarse) { canvas { touch-action: none; } }
   </style>
 </head>
 <body>
