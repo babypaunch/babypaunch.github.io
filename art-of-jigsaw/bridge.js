@@ -38,6 +38,7 @@ let renderZoom = 1;
 let panX = 0;
 let panY = 0;
 let lastPinch = null;
+let pinchOrigin = null;
 let pinching = false;
 let moveMode = false;
 let mousePan = null;
@@ -54,7 +55,7 @@ function syncMoveButton() {
 moveButton.addEventListener('click', () => {
   moveMode = !moveMode;
   pinching = false;
-  lastPinch = mousePan = null;
+  lastPinch = pinchOrigin = mousePan = null;
   navigationState(true);
   syncMoveButton();
 });
@@ -62,22 +63,10 @@ function block(event) {
   event.preventDefault();
   event.stopImmediatePropagation();
 }
-function moveScreen(dx, dy, point) {
-  const oldX = panX, oldY = panY;
+function moveScreen(dx, dy) {
   panX += dx;
   panY += dy;
   applyZoom();
-  // At the screen edge, continue moving the board instead of trapping large puzzles.
-  const rect = gameCanvas.getBoundingClientRect();
-  const factor = gameCanvas.width / rect.width;
-  const restX = (dx - (panX - oldX)) * factor;
-  const restY = (dy - (panY - oldY)) * factor;
-  if ((restX || restY) && fs()?.analyzePath(directory).exists) {
-    const pending = (read('web-pan.tsv') || '').split('\t').map(Number);
-    write('web-pan.tsv', [(point.x - rect.left) * factor,
-      (point.y - rect.top) * gameCanvas.height / rect.height,
-      restX + (pending[2] || 0), restY + (pending[3] || 0)].map((value) => value.toFixed(3)).join('\t'));
-  }
 }
 function pinchPoint(touches) {
   const [a, b] = touches;
@@ -87,6 +76,11 @@ function pinchPoint(touches) {
 function movedPoint(touches) {
   if (touches.length > 1) return pinchPoint(touches);
   return { x: touches[0].clientX, y: touches[0].clientY, distance: 0 };
+}
+function beginPinch(touches) {
+  lastPinch = movedPoint(touches);
+  pinchOrigin = touches.length >= 2
+    ? { ...lastPinch, zoom, panX, panY, started: false } : null;
 }
 function pixelRatioFor(width, height, scale, deviceRatio) {
   return Math.max(1, Math.min(8, deviceRatio * scale,
@@ -105,14 +99,14 @@ window.addEventListener('touchstart', (event) => {
   if (event.target === moveButton) return;
   if (event.touches.length < 2 && !moveMode) return;
   pinching = true;
-  lastPinch = movedPoint(event.touches);
+  beginPinch(event.touches);
   navigationState(true);
   block(event);
 }, { passive: false, capture: true });
 window.addEventListener('touchmove', (event) => {
   if (!pinching && event.touches.length >= 2) {
     pinching = true;
-    lastPinch = pinchPoint(event.touches);
+    beginPinch(event.touches);
     navigationState(true);
   }
   if (!pinching) return;
@@ -121,15 +115,17 @@ window.addEventListener('touchmove', (event) => {
   if (event.touches.length === 0) return;
   const point = movedPoint(event.touches);
   if (lastPinch) {
-    const oldPanX = panX;
-    const oldPanY = panY;
-    const oldZoom = zoom;
-    if (moveMode) moveScreen(point.x - lastPinch.x, point.y - lastPinch.y, point);
-    if (point.distance && lastPinch.distance) {
-      zoom = Math.max(1, Math.min(3, zoom * point.distance / lastPinch.distance));
-      const factor = zoom / oldZoom;
-      panX += (1 - factor) * (lastPinch.x - gameViewport.clientWidth / 2 - oldPanX);
-      panY += (1 - factor) * (lastPinch.y - gameViewport.clientHeight / 2 - oldPanY);
+    if (moveMode) moveScreen(point.x - lastPinch.x, point.y - lastPinch.y);
+    else if (point.distance && pinchOrigin?.distance) {
+      const origin = pinchOrigin;
+      if (Math.abs(point.distance - origin.distance) >= 4) origin.started = true;
+      if (origin.started) {
+        zoom = Math.max(1, Math.min(3, origin.zoom * point.distance / origin.distance));
+        const factor = zoom / origin.zoom;
+        // Anchor to the initial midpoint; centroid drift must not become a second pan gesture.
+        panX = origin.panX + (1 - factor) * (origin.x - gameViewport.clientWidth / 2 - origin.panX);
+        panY = origin.panY + (1 - factor) * (origin.y - gameViewport.clientHeight / 2 - origin.panY);
+      }
     }
     applyZoom();
   }
@@ -141,7 +137,7 @@ function endPinch(event) {
   event.stopImmediatePropagation();
   if (event.touches.length === 0) {
     pinching = false;
-    lastPinch = null;
+    lastPinch = pinchOrigin = null;
     renderZoom = zoom;
     syncViewport();
     navigationState(true);
@@ -174,7 +170,7 @@ for (const type of ['click', 'wheel', 'keydown', 'contextmenu']) {
 }
 window.addEventListener('blur', () => {
   pinching = false;
-  lastPinch = mousePan = null;
+  lastPinch = pinchOrigin = mousePan = null;
   navigationState(true);
 });
 const message = (english, korean) => language === 'ko' ? korean : english;

@@ -4,21 +4,21 @@
 - 상태: 검증됨
 - 기준 브랜치: main
 - 기준 commit: 이 문서를 포함한 main 커밋
-- 현재 판단: AOJ의 확대·화면 이동·탭 배치를 분리한 웹 빌드를 반영했다. 이동 모드만 드래그 이동을 허용하며 후보 반환은 이동 횟수를 늘리지 않는다.
+- 현재 판단: AOJ의 화면 전체 이동과 영역 스크롤을 분리하고 확대 기준점 흔들림 누적을 제거한 웹 빌드를 반영했다.
 
 ## 마지막 완료 작업
 
-- AOJ 빌드의 game.data·game.js·index.html·bridge.js·view-controls.css를 동기화했다. 고정 이동 버튼은 확대 화면 밖으로 사라지지 않는다.
-- 기존 한·영 /design 카탈로그에 운영 버튼의 동일 CSS를 사용하는 이동 모드 켜짐·꺼짐 미리보기를 추가했다.
+- 동일 빌드의 game.data·game.js·index.html·bridge.js를 동기화했다. 화면 이동은 CSS 위치만 변경하고 일반 모드에서는 한 손가락으로 시작한 영역만 스크롤한다.
+- 두 손가락 확대는 최초 중심점에 고정하며 미세한 손가락 간격 변화만으로 확대를 시작하지 않는다.
 
 ## 변경 파일
 
-- `art-of-jigsaw/game.data`, `art-of-jigsaw/game.js`, `art-of-jigsaw/index.html`, `art-of-jigsaw/bridge.js`, `art-of-jigsaw/view-controls.css`, `_layouts/design.html`, `_tests/site-quality.test.js`, `SNAPSHOT.md`.
+- `art-of-jigsaw/game.data`, `art-of-jigsaw/game.js`, `art-of-jigsaw/index.html`, `art-of-jigsaw/bridge.js`, `SNAPSHOT.md`.
 
 ## 검증 결과
 
-- Docker Jekyll 빌드 후 사이트 품질 검사 62페이지, 한·영 버튼 카탈로그와 CSS 파일 검사, 앱 그룹 검사가 통과했다.
-- AOJ 원본 저장소에서 퍼즐 횟수·터치·Windows 이동 모드·웹 제스처·뷰포트·기록 검사와 웹·Android 빌드가 통과했다.
+- Docker Jekyll 빌드 후 사이트 품질 검사 62페이지와 앱 그룹 검사가 통과했다.
+- AOJ 원본에서 확대 흔들림·화면 이동 격리·영역 스크롤·탭 배치·카운팅·DPI 검사와 웹·Android 빌드가 통과했다. 폰에 0.3.6 설치 및 버전 확인 완료.
 - 브라우저 화면 검사와 시각 검증은 수행하지 않았다. Pages는 main push 후 자동 게시한다.
 
 ## 차단 요소
@@ -27,11 +27,11 @@
 
 ## 다음 작업 하나
 
-- 사용자의 폰에서 새 이동 모드와 탭 배치 조작감 확인 결과를 받는다.
+- 사용자의 폰에서 독립된 화면 이동과 영역 스크롤의 조작감 확인 결과를 받는다.
 
 ## 사용자에게 필요한 작업
 
-- 0.3.5 앱을 다시 열어 조작을 확인한다.
+- 0.3.6 앱을 다시 열어 조작을 확인한다.
 
 ## 경고
 
