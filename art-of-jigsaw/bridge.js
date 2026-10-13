@@ -33,6 +33,7 @@ let busy = false;
 let signInReady = false;
 let language = 'en';
 let zoom = 1;
+let renderZoom = 1;
 let panX = 0;
 let panY = 0;
 let lastPinch = null;
@@ -45,6 +46,10 @@ function pinchPoint(touches) {
 function movedPoint(touches) {
   if (touches.length > 1) return pinchPoint(touches);
   return { x: touches[0].clientX, y: touches[0].clientY, distance: 0 };
+}
+function pixelRatioFor(width, height, scale, deviceRatio) {
+  return Math.max(1, Math.min(8, deviceRatio * scale,
+    6144 / width, 6144 / height, Math.sqrt(12000000 / (width * height))));
 }
 function applyZoom() {
   const limitX = (zoom - 1) * gameViewport.clientWidth / 2;
@@ -95,6 +100,8 @@ function endPinch(event) {
   if (event.touches.length === 0) {
     pinching = false;
     lastPinch = null;
+    renderZoom = zoom;
+    syncViewport();
   } else lastPinch = movedPoint(event.touches);
 }
 window.addEventListener('touchend', endPinch, { passive: false, capture: true });
@@ -181,7 +188,7 @@ function syncViewport() {
   }
   const width = Math.max(1, Math.min(8192, gameViewport.clientWidth));
   const height = Math.max(1, Math.min(8192, gameViewport.clientHeight));
-  const ratio = Math.max(1, Math.min(3, window.devicePixelRatio || 1, 4096 / width, 4096 / height));
+  const ratio = pixelRatioFor(width, height, renderZoom, window.devicePixelRatio || 1);
   const viewport = `${width}\t${height}\t${ratio.toFixed(3)}`;
   if (viewport === lastViewport || !fs()?.analyzePath(directory).exists) return;
   write('web-viewport.tsv', viewport);
