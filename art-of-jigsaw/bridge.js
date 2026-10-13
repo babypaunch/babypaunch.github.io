@@ -33,6 +33,9 @@ let busy = false;
 let signInReady = false;
 let language = 'en';
 let zoom = 1;
+let renderZoom = 1;
+let displayMode = 'login';
+let automaticZoom = true;
 let panX = 0;
 let panY = 0;
 let lastPinch = null;
@@ -55,8 +58,29 @@ function applyZoom() {
   placeSignIn();
   placePhotoPicker();
 }
+function fitPlayAtOneToOne() {
+  if (displayMode !== 'play' || !matchMedia('(pointer: coarse) and (orientation: landscape)').matches) return;
+  const fittedScale = Math.min(gameViewport.clientWidth / 1280, gameViewport.clientHeight / 850);
+  zoom = Math.max(1, Math.min(3, 1 / fittedScale));
+  panX = (zoom - 1) * gameViewport.clientWidth / 2;
+  panY = (zoom - 1) * gameViewport.clientHeight / 2;
+  renderZoom = zoom;
+  applyZoom();
+}
+function syncDisplayMode() {
+  const next = read('web-display-mode.txt')?.trim();
+  if (!next || next === displayMode) return;
+  displayMode = next;
+  zoom = renderZoom = 1;
+  panX = panY = 0;
+  automaticZoom = true;
+  fitPlayAtOneToOne();
+  applyZoom();
+  syncViewport();
+}
 window.addEventListener('touchstart', (event) => {
   if (event.touches.length < 2) return;
+  automaticZoom = false;
   pinching = true;
   lastPinch = pinchPoint(event.touches);
   event.preventDefault();
@@ -64,6 +88,7 @@ window.addEventListener('touchstart', (event) => {
 }, { passive: false, capture: true });
 window.addEventListener('touchmove', (event) => {
   if (!pinching && event.touches.length >= 2) {
+    automaticZoom = false;
     pinching = true;
     lastPinch = pinchPoint(event.touches);
   }
@@ -95,6 +120,8 @@ function endPinch(event) {
   if (event.touches.length === 0) {
     pinching = false;
     lastPinch = null;
+    renderZoom = zoom;
+    syncViewport();
   } else lastPinch = movedPoint(event.touches);
 }
 window.addEventListener('touchend', endPinch, { passive: false, capture: true });
@@ -181,15 +208,21 @@ function syncViewport() {
   }
   const width = Math.max(1, Math.min(8192, gameViewport.clientWidth));
   const height = Math.max(1, Math.min(8192, gameViewport.clientHeight));
-  const ratio = Math.max(1, Math.min(3, window.devicePixelRatio || 1, 4096 / width, 4096 / height));
+  const ratio = Math.max(1, Math.min(8, (window.devicePixelRatio || 1) * renderZoom,
+    6144 / width, 6144 / height, Math.sqrt(10000000 / (width * height))));
   const viewport = `${width}\t${height}\t${ratio.toFixed(3)}`;
   if (viewport === lastViewport || !fs()?.analyzePath(directory).exists) return;
   write('web-viewport.tsv', viewport);
   lastViewport = viewport;
 }
-window.addEventListener('resize', () => { applyZoom(); syncViewport(); });
+window.addEventListener('resize', () => {
+  if (automaticZoom) fitPlayAtOneToOne();
+  applyZoom();
+  syncViewport();
+});
 setInterval(() => {
   syncLanguage();
+  syncDisplayMode();
   syncViewport();
   placePhotoPicker();
   if (read('web-home-request.txt')) {
