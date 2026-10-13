@@ -1,18 +1,18 @@
 # 프로젝트 스냅샷
 
 - 최종 갱신일: 2026-10-13
-- 상태: Art Of Jigsaw 모바일 가로 화면 맞춤과 확대·축소 보완
+- 상태: Art Of Jigsaw 두 손가락 화면 이동과 고해상도 렌더링 보완
 - 기준 브랜치: main
 - 기준 commit: 이 문서를 포함한 main 커밋
-- 현재 판단: AOJ 캔버스를 화면 영역에 고정하고 두 손가락 확대·축소를 제공한다.
+- 현재 판단: 두 손가락 이동은 이전 중심 좌표를 기준으로 계산하고, 캔버스와 조각 텍스처는 확대를 고려한 해상도로 그린다.
 
 ## 마지막 완료 작업
 
-AOJ 모바일 캔버스의 실제 화면 맞춤과 두 손가락 확대·축소를 구현했다.
+AOJ의 두 손가락 화면 이동 계산을 수정하고 캔버스와 퍼즐 조각의 고해상도 렌더링을 반영했다.
 
 ## 변경 파일
 
-`art-of-jigsaw/index.html`, `art-of-jigsaw/bridge.js`, `SNAPSHOT.md`.
+`art-of-jigsaw/bridge.js`, `art-of-jigsaw/game.data`, `art-of-jigsaw/game.js`, `art-of-jigsaw/index.html`, `SNAPSHOT.md`.
 
 ## 검증 결과
 

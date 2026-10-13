@@ -69,8 +69,8 @@ gameCanvas.addEventListener('touchmove', (event) => {
     zoom = Math.max(1, Math.min(3, zoom * point.distance / lastPinch.distance));
     const centerX = gameViewport.clientWidth / 2;
     const centerY = gameViewport.clientHeight / 2;
-    panX = point.x - centerX - (point.x - centerX - panX) * zoom / previousZoom;
-    panY = point.y - centerY - (point.y - centerY - panY) * zoom / previousZoom;
+    panX = point.x - centerX - (lastPinch.x - centerX - panX) * zoom / previousZoom;
+    panY = point.y - centerY - (lastPinch.y - centerY - panY) * zoom / previousZoom;
     applyZoom();
   }
   lastPinch = point;
@@ -168,7 +168,8 @@ function syncViewport() {
   }
   const width = Math.max(1, Math.min(8192, gameViewport.clientWidth));
   const height = Math.max(1, Math.min(8192, gameViewport.clientHeight));
-  const viewport = `${width}\t${height}`;
+  const ratio = Math.max(1, Math.min(3, window.devicePixelRatio || 1, 4096 / width, 4096 / height));
+  const viewport = `${width}\t${height}\t${ratio.toFixed(3)}`;
   if (viewport === lastViewport || !fs()?.analyzePath(directory).exists) return;
   write('web-viewport.tsv', viewport);
   lastViewport = viewport;
