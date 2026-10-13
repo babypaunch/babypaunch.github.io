@@ -1,0 +1,19 @@
+.view-control {
+  position: fixed;
+  bottom: max(8px, env(safe-area-inset-bottom));
+  left: max(8px, env(safe-area-inset-left));
+  z-index: 4;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 2px solid #8ca3c4;
+  border-radius: 10px;
+  background: #fff;
+  color: #1f2e47;
+  font: 600 16px system-ui, sans-serif;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.view-control[aria-pressed="true"] { background: #215ec9; border-color: #194aa6; color: #fff; }
+.view-control:focus-visible { outline: 3px solid #ffd064; outline-offset: 3px; }
+.view-control[hidden] { display: none; }
+.view-control--preview { position: static; }

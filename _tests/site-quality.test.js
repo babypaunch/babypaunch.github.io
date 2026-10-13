@@ -276,4 +276,12 @@ for (const [relative, required] of [
   assert.match(html, /class="data-cards/, `${relative}: policy data cards`);
 }
 
+for (const [locale, labels] of [['', ['화면 이동', '이동 완료']], ['en/', ['Move View', 'Finish Moving']]]) {
+  const html = fs.readFileSync(path.join(siteRoot, locale, 'design/index.html'), 'utf8');
+  assert.ok(html.includes('/art-of-jigsaw/view-controls.css?v=1'));
+  for (const label of labels) assert.ok(html.includes(label), `AOJ control translation: ${label}`);
+  assert.equal((html.match(/class="view-control view-control--preview"/g) || []).length, 2);
+}
+assert.ok(fs.existsSync(path.join(siteRoot, 'art-of-jigsaw/view-controls.css')));
+
 console.log(`Site quality tests passed for ${htmlFiles.length} pages.`);

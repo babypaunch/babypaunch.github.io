@@ -25,6 +25,7 @@ const photoPicker = document.getElementById('photo-picker');
 const photoFile = document.getElementById('photo-file');
 const gameCanvas = document.getElementById('canvas');
 const gameViewport = document.querySelector('main');
+const moveButton = document.getElementById('move-view');
 const status = document.getElementById('status');
 const decoder = new TextDecoder();
 const encoder = new TextEncoder();
@@ -38,6 +39,46 @@ let panX = 0;
 let panY = 0;
 let lastPinch = null;
 let pinching = false;
+let moveMode = false;
+let mousePan = null;
+function navigationState(cancel = false) {
+  if (!fs()?.analyzePath(directory).exists) return;
+  write('web-input-mode.txt', moveMode ? 'move' : pinching ? 'pinch' : 'idle');
+  if (cancel) write('web-cancel-touch.txt', '1');
+}
+function syncMoveButton() {
+  moveButton.textContent = message(moveMode ? 'Finish Moving' : 'Move View',
+    moveMode ? '이동 완료' : '화면 이동');
+  moveButton.setAttribute('aria-pressed', String(moveMode));
+}
+moveButton.addEventListener('click', () => {
+  moveMode = !moveMode;
+  pinching = false;
+  lastPinch = mousePan = null;
+  navigationState(true);
+  syncMoveButton();
+});
+function block(event) {
+  event.preventDefault();
+  event.stopImmediatePropagation();
+}
+function moveScreen(dx, dy, point) {
+  const oldX = panX, oldY = panY;
+  panX += dx;
+  panY += dy;
+  applyZoom();
+  // At the screen edge, continue moving the board instead of trapping large puzzles.
+  const rect = gameCanvas.getBoundingClientRect();
+  const factor = gameCanvas.width / rect.width;
+  const restX = (dx - (panX - oldX)) * factor;
+  const restY = (dy - (panY - oldY)) * factor;
+  if ((restX || restY) && fs()?.analyzePath(directory).exists) {
+    const pending = (read('web-pan.tsv') || '').split('\t').map(Number);
+    write('web-pan.tsv', [(point.x - rect.left) * factor,
+      (point.y - rect.top) * gameCanvas.height / rect.height,
+      restX + (pending[2] || 0), restY + (pending[3] || 0)].map((value) => value.toFixed(3)).join('\t'));
+  }
+}
 function pinchPoint(touches) {
   const [a, b] = touches;
   return { x: (a.clientX + b.clientX) / 2, y: (a.clientY + b.clientY) / 2,
@@ -61,16 +102,18 @@ function applyZoom() {
   placePhotoPicker();
 }
 window.addEventListener('touchstart', (event) => {
-  if (event.touches.length < 2) return;
+  if (event.target === moveButton) return;
+  if (event.touches.length < 2 && !moveMode) return;
   pinching = true;
-  lastPinch = pinchPoint(event.touches);
-  event.preventDefault();
-  event.stopImmediatePropagation();
+  lastPinch = movedPoint(event.touches);
+  navigationState(true);
+  block(event);
 }, { passive: false, capture: true });
 window.addEventListener('touchmove', (event) => {
   if (!pinching && event.touches.length >= 2) {
     pinching = true;
     lastPinch = pinchPoint(event.touches);
+    navigationState(true);
   }
   if (!pinching) return;
   event.preventDefault();
@@ -81,8 +124,7 @@ window.addEventListener('touchmove', (event) => {
     const oldPanX = panX;
     const oldPanY = panY;
     const oldZoom = zoom;
-    panX += point.x - lastPinch.x;
-    panY += point.y - lastPinch.y;
+    if (moveMode) moveScreen(point.x - lastPinch.x, point.y - lastPinch.y, point);
     if (point.distance && lastPinch.distance) {
       zoom = Math.max(1, Math.min(3, zoom * point.distance / lastPinch.distance));
       const factor = zoom / oldZoom;
@@ -102,16 +144,46 @@ function endPinch(event) {
     lastPinch = null;
     renderZoom = zoom;
     syncViewport();
+    navigationState(true);
   } else lastPinch = movedPoint(event.touches);
 }
 window.addEventListener('touchend', endPinch, { passive: false, capture: true });
 window.addEventListener('touchcancel', endPinch, { passive: false, capture: true });
+window.addEventListener('mousedown', (event) => {
+  if (!moveMode || event.target === moveButton) return;
+  mousePan = { x: event.clientX, y: event.clientY };
+  navigationState(true);
+  block(event);
+}, { capture: true });
+window.addEventListener('mousemove', (event) => {
+  if (!moveMode || !mousePan) return;
+  const point = { x: event.clientX, y: event.clientY };
+  moveScreen(point.x - mousePan.x, point.y - mousePan.y, point);
+  mousePan = point;
+  block(event);
+}, { capture: true });
+window.addEventListener('mouseup', (event) => {
+  if (!moveMode || event.target === moveButton) return;
+  mousePan = null;
+  block(event);
+}, { capture: true });
+for (const type of ['click', 'wheel', 'keydown', 'contextmenu']) {
+  window.addEventListener(type, (event) => {
+    if (moveMode && event.target !== moveButton) block(event);
+  }, { passive: false, capture: true });
+}
+window.addEventListener('blur', () => {
+  pinching = false;
+  lastPinch = mousePan = null;
+  navigationState(true);
+});
 const message = (english, korean) => language === 'ko' ? korean : english;
 
 function syncLanguage() {
   const selected = read('language.txt')?.trim() === 'ko' ? 'ko' : 'en';
   if (selected === language) return;
   language = selected;
+  syncMoveButton();
   document.documentElement.lang = language;
   signIn.textContent = message('Sign in with Google', 'Google로 로그인');
   photoPicker.textContent = message('Import My Photo', '내 사진 가져오기');
@@ -196,6 +268,10 @@ function syncViewport() {
 }
 window.addEventListener('resize', () => { applyZoom(); syncViewport(); });
 setInterval(() => {
+  if (fs()?.analyzePath(directory).exists) {
+    moveButton.hidden = false;
+    navigationState();
+  }
   syncLanguage();
   syncViewport();
   placePhotoPicker();

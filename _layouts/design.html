@@ -3,6 +3,7 @@ layout: default
 ---
 {% assign t = site.data[page.locale] %}
 <main id="main" class="article-shell">
+  <link rel="stylesheet" href="{{ '/art-of-jigsaw/view-controls.css?v=1' | relative_url }}">
   <header class="article-header" id="article-start" tabindex="-1">
     <h1>{{ t.pages.design.title }}</h1>
   </header>
@@ -29,6 +30,13 @@ layout: default
   <section aria-labelledby="apps-preview-label">
     <h2 id="apps-preview-label">{{ t.home.app_preview }}</h2>
     {% include app-groups.html %}
+  </section>
+  <section class="article-body" aria-labelledby="aoj-view-label">
+    <h2 id="aoj-view-label">{% if page.locale == 'ko' %}Art Of Jigsaw 화면 이동 버튼{% else %}Art Of Jigsaw movement control{% endif %}</h2>
+    <div class="design-preview">
+      <button class="view-control view-control--preview" type="button" aria-pressed="false" disabled>{% if page.locale == 'ko' %}화면 이동{% else %}Move View{% endif %}</button>
+      <button class="view-control view-control--preview" type="button" aria-pressed="true" disabled>{% if page.locale == 'ko' %}이동 완료{% else %}Finish Moving{% endif %}</button>
+    </div>
   </section>
   <div id="article-end" tabindex="-1" aria-label="{{ t.blog.end }}"></div>
 </main>
