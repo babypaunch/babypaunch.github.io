@@ -1,22 +1,22 @@
 # 프로젝트 스냅샷
 
 - 최종 갱신일: 2026-10-13
-- 상태: Art Of Jigsaw 두 손가락 화면 이동과 고해상도 렌더링 보완
+- 상태: Art Of Jigsaw 두 손가락 화면 이동 재수정
 - 기준 브랜치: main
 - 기준 commit: 이 문서를 포함한 main 커밋
-- 현재 판단: 두 손가락 이동은 이전 중심 좌표를 기준으로 계산하고, 캔버스와 조각 텍스처는 확대를 고려한 해상도로 그린다.
+- 현재 판단: 확대된 화면의 제스처를 전체 창에서 수신하고 이동량을 배율 변화와 분리해 반영한다.
 
 ## 마지막 완료 작업
 
-AOJ의 두 손가락 화면 이동 계산을 수정하고 캔버스와 퍼즐 조각의 고해상도 렌더링을 반영했다.
+AOJ의 두 손가락 화면 이동 제스처 수신 위치와 이동 계산을 수정했다.
 
 ## 변경 파일
 
-`art-of-jigsaw/bridge.js`, `art-of-jigsaw/game.data`, `art-of-jigsaw/game.js`, `art-of-jigsaw/index.html`, `SNAPSHOT.md`.
+`art-of-jigsaw/bridge.js`, `art-of-jigsaw/index.html`, `_tests/site-quality.test.js`, `SNAPSHOT.md`.
 
 ## 검증 결과
 
-- Docker Jekyll 빌드, 앱 그룹 검사, 사이트 품질 검사 62페이지가 통과했다. 실제 폰 화면의 시각적 확인은 사용자 확인 대상이다.
+- Docker Jekyll 빌드, 앱 그룹 검사, 사이트 품질 검사 62페이지와 JavaScript 구문 검사가 통과했다. 실제 폰 화면의 시각적 확인은 사용자 확인 대상이다.
 
 ## 차단 요소
 

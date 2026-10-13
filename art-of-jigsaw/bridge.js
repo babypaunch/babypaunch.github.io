@@ -42,6 +42,10 @@ function pinchPoint(touches) {
   return { x: (a.clientX + b.clientX) / 2, y: (a.clientY + b.clientY) / 2,
     distance: Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY) };
 }
+function movedPoint(touches) {
+  if (touches.length > 1) return pinchPoint(touches);
+  return { x: touches[0].clientX, y: touches[0].clientY, distance: 0 };
+}
 function applyZoom() {
   const limitX = (zoom - 1) * gameViewport.clientWidth / 2;
   const limitY = (zoom - 1) * gameViewport.clientHeight / 2;
@@ -51,26 +55,35 @@ function applyZoom() {
   placeSignIn();
   placePhotoPicker();
 }
-gameCanvas.addEventListener('touchstart', (event) => {
+window.addEventListener('touchstart', (event) => {
   if (event.touches.length < 2) return;
   pinching = true;
   lastPinch = pinchPoint(event.touches);
   event.preventDefault();
   event.stopImmediatePropagation();
 }, { passive: false, capture: true });
-gameCanvas.addEventListener('touchmove', (event) => {
-  event.preventDefault();
+window.addEventListener('touchmove', (event) => {
+  if (!pinching && event.touches.length >= 2) {
+    pinching = true;
+    lastPinch = pinchPoint(event.touches);
+  }
   if (!pinching) return;
+  event.preventDefault();
   event.stopImmediatePropagation();
-  if (event.touches.length < 2) return;
-  const point = pinchPoint(event.touches);
-  if (lastPinch && lastPinch.distance > 0) {
-    const previousZoom = zoom;
-    zoom = Math.max(1, Math.min(3, zoom * point.distance / lastPinch.distance));
-    const centerX = gameViewport.clientWidth / 2;
-    const centerY = gameViewport.clientHeight / 2;
-    panX = point.x - centerX - (lastPinch.x - centerX - panX) * zoom / previousZoom;
-    panY = point.y - centerY - (lastPinch.y - centerY - panY) * zoom / previousZoom;
+  if (event.touches.length === 0) return;
+  const point = movedPoint(event.touches);
+  if (lastPinch) {
+    const oldPanX = panX;
+    const oldPanY = panY;
+    const oldZoom = zoom;
+    panX += point.x - lastPinch.x;
+    panY += point.y - lastPinch.y;
+    if (point.distance && lastPinch.distance) {
+      zoom = Math.max(1, Math.min(3, zoom * point.distance / lastPinch.distance));
+      const factor = zoom / oldZoom;
+      panX += (1 - factor) * (lastPinch.x - gameViewport.clientWidth / 2 - oldPanX);
+      panY += (1 - factor) * (lastPinch.y - gameViewport.clientHeight / 2 - oldPanY);
+    }
     applyZoom();
   }
   lastPinch = point;
@@ -82,10 +95,10 @@ function endPinch(event) {
   if (event.touches.length === 0) {
     pinching = false;
     lastPinch = null;
-  } else if (event.touches.length > 1) lastPinch = pinchPoint(event.touches);
+  } else lastPinch = movedPoint(event.touches);
 }
-gameCanvas.addEventListener('touchend', endPinch, { passive: false, capture: true });
-gameCanvas.addEventListener('touchcancel', endPinch, { passive: false, capture: true });
+window.addEventListener('touchend', endPinch, { passive: false, capture: true });
+window.addEventListener('touchcancel', endPinch, { passive: false, capture: true });
 const message = (english, korean) => language === 'ko' ? korean : english;
 
 function syncLanguage() {

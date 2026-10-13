@@ -27,7 +27,7 @@ for (const file of htmlFiles) {
   if (label.replaceAll('\\', '/') === 'art-of-jigsaw/index.html') {
     assert.match(html, /<canvas id="canvas"[^>]+aria-label="Art Of Jigsaw game"/);
     assert.match(html, /arguments: \['\.\/game\.love'\]/);
-    assert.match(html, /src="bridge\.js"/);
+    assert.match(html, /src="bridge\.js(?:\?v=[^"]+)?"/);
     assert.ok(html.includes(`src="game.js?v=${gameMetadata[1]}"`),
       'Art Of Jigsaw: versioned game loader URL');
     continue;
