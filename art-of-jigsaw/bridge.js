@@ -32,21 +32,60 @@ const directory = '/home/web_user/love/art-of-jigsaw';
 let busy = false;
 let signInReady = false;
 let language = 'en';
-let pagePanY = null;
+let zoom = 1;
+let panX = 0;
+let panY = 0;
+let lastPinch = null;
+let pinching = false;
+function pinchPoint(touches) {
+  const [a, b] = touches;
+  return { x: (a.clientX + b.clientX) / 2, y: (a.clientY + b.clientY) / 2,
+    distance: Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY) };
+}
+function applyZoom() {
+  const limitX = (zoom - 1) * gameViewport.clientWidth / 2;
+  const limitY = (zoom - 1) * gameViewport.clientHeight / 2;
+  panX = Math.max(-limitX, Math.min(limitX, panX));
+  panY = Math.max(-limitY, Math.min(limitY, panY));
+  gameCanvas.style.transform = `translate(${panX}px, ${panY}px) scale(${zoom})`;
+  placeSignIn();
+  placePhotoPicker();
+}
 gameCanvas.addEventListener('touchstart', (event) => {
-  if (event.touches.length > 1) pagePanY =
-    (event.touches[0].clientY + event.touches[1].clientY) / 2;
-}, { passive: false });
+  if (event.touches.length < 2) return;
+  pinching = true;
+  lastPinch = pinchPoint(event.touches);
+  event.preventDefault();
+  event.stopImmediatePropagation();
+}, { passive: false, capture: true });
 gameCanvas.addEventListener('touchmove', (event) => {
   event.preventDefault();
+  if (!pinching) return;
+  event.stopImmediatePropagation();
   if (event.touches.length < 2) return;
-  const y = (event.touches[0].clientY + event.touches[1].clientY) / 2;
-  if (pagePanY !== null) gameViewport.scrollTop += pagePanY - y;
-  pagePanY = y;
-}, { passive: false });
-gameCanvas.addEventListener('touchend', (event) => {
-  if (event.touches.length < 2) pagePanY = null;
-}, { passive: false });
+  const point = pinchPoint(event.touches);
+  if (lastPinch && lastPinch.distance > 0) {
+    const previousZoom = zoom;
+    zoom = Math.max(1, Math.min(3, zoom * point.distance / lastPinch.distance));
+    const centerX = gameViewport.clientWidth / 2;
+    const centerY = gameViewport.clientHeight / 2;
+    panX = point.x - centerX - (point.x - centerX - panX) * zoom / previousZoom;
+    panY = point.y - centerY - (point.y - centerY - panY) * zoom / previousZoom;
+    applyZoom();
+  }
+  lastPinch = point;
+}, { passive: false, capture: true });
+function endPinch(event) {
+  if (!pinching) return;
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  if (event.touches.length === 0) {
+    pinching = false;
+    lastPinch = null;
+  } else if (event.touches.length > 1) lastPinch = pinchPoint(event.touches);
+}
+gameCanvas.addEventListener('touchend', endPinch, { passive: false, capture: true });
+gameCanvas.addEventListener('touchcancel', endPinch, { passive: false, capture: true });
 const message = (english, korean) => language === 'ko' ? korean : english;
 
 function syncLanguage() {
@@ -91,7 +130,6 @@ function placeSignIn() {
   signIn.style.height = `${62 * scale * bounds.height / canvas.height}px`;
 }
 new ResizeObserver(placeSignIn).observe(document.getElementById('canvas'));
-gameViewport.addEventListener('scroll', placeSignIn);
 function placePhotoPicker() {
   const bounds = document.getElementById('canvas').getBoundingClientRect();
   const canvas = document.getElementById('canvas');
@@ -128,15 +166,14 @@ function syncViewport() {
     lastCanvasSize = canvasSize;
     placeSignIn();
   }
-  const bounds = canvas.getBoundingClientRect();
-  const width = Math.max(1, Math.min(8192, Math.round(bounds.width)));
-  const height = Math.max(1, Math.min(8192, Math.round(bounds.height)));
+  const width = Math.max(1, Math.min(8192, gameViewport.clientWidth));
+  const height = Math.max(1, Math.min(8192, gameViewport.clientHeight));
   const viewport = `${width}\t${height}`;
   if (viewport === lastViewport || !fs()?.analyzePath(directory).exists) return;
   write('web-viewport.tsv', viewport);
   lastViewport = viewport;
 }
-window.addEventListener('resize', () => { placeSignIn(); placePhotoPicker(); syncViewport(); });
+window.addEventListener('resize', () => { applyZoom(); syncViewport(); });
 setInterval(() => {
   syncLanguage();
   syncViewport();
