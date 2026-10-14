@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Art Of Jigsaw</title>
-  <link rel="stylesheet" href="view-controls.css?v=1">
+  <link rel="stylesheet" href="view-controls.css?v=2">
   <style>
     html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #09182b; color: white; font: 16px system-ui, sans-serif; }
     main { position: fixed; inset: 0; width: 100vw; height: 100dvh; overflow: hidden; }
-    canvas { position: absolute; inset: 0; display: block; width: 100% !important; height: 100% !important; }
+    main > canvas { position: absolute; inset: 0; display: block; width: 100% !important; height: 100% !important; }
     #loadingCanvas[hidden] { display: none; }
     #canvas { visibility: hidden; }
     #signin, #photo-picker { position: fixed; padding: 0; border: 0; background: transparent; color: transparent; cursor: pointer; z-index: 2; }
@@ -25,7 +25,14 @@
   </main>
   <button id="signin" type="button" hidden>Sign in with Google</button>
   <button id="photo-picker" type="button" hidden>Import My Photo</button>
-  <button id="move-view" class="view-control" type="button" aria-pressed="false" hidden>Move View</button>
+  <aside id="minimap" class="minimap" aria-labelledby="minimap-label" hidden>
+    <span id="minimap-label" class="minimap-label">Overview</span>
+    <div class="minimap-surface">
+      <canvas id="minimap-preview" class="minimap-preview" width="240" height="160" tabindex="0" aria-label="Move the view: drag or use arrow keys"></canvas>
+      <div id="minimap-view" class="minimap-view" aria-hidden="true"></div>
+    </div>
+    <button id="minimap-reset" class="view-control" type="button">Fit screen</button>
+  </aside>
   <input id="photo-file" type="file" accept="image/png,image/jpeg" hidden>
   <p id="status" role="status" aria-live="polite">Loading game…</p>
   <script>
@@ -50,8 +57,8 @@
       if ([32, 37, 38, 39, 40].includes(event.keyCode) && event.target === Module.canvas) event.preventDefault();
     });
   </script>
-  <script src="game.js?v=8071c64e-9b7e-4abc-ac75-977ce5437f25"></script>
+  <script src="game.js?v=504624d5-4400-4c23-914b-e250a6a83506"></script>
   <script async src="love.js" onload="Love(Module)"></script>
-  <script type="module" src="bridge.js?v=8"></script>
+  <script type="module" src="bridge.js?v=9"></script>
 </body>
 </html>

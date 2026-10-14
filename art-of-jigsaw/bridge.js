@@ -1,4 +1,5 @@
 import PocketBase from './pocketbase.es.mjs';
+import { installNavigation, pixelRatioFor } from './navigation.mjs?v=1';
 
 const localPreview = location.origin === 'http://127.0.0.1:8000';
 const auth = new PocketBase(localPreview ? `${location.origin}/__aoj/auth` : 'https://auth.babypaunch.com');
@@ -25,7 +26,7 @@ const photoPicker = document.getElementById('photo-picker');
 const photoFile = document.getElementById('photo-file');
 const gameCanvas = document.getElementById('canvas');
 const gameViewport = document.querySelector('main');
-const moveButton = document.getElementById('move-view');
+const miniMap = document.getElementById('minimap');
 const status = document.getElementById('status');
 const decoder = new TextDecoder();
 const encoder = new TextEncoder();
@@ -33,153 +34,33 @@ const directory = '/home/web_user/love/art-of-jigsaw';
 let busy = false;
 let signInReady = false;
 let language = 'en';
-let zoom = 1;
 let renderZoom = 1;
-let panX = 0;
-let panY = 0;
-let lastPinch = null;
-let pinchOrigin = null;
-let pinching = false;
-let moveMode = false;
-let mousePan = null;
-function navigationState(cancel = false) {
-  if (!fs()?.analyzePath(directory).exists) return;
-  write('web-input-mode.txt', moveMode ? 'move' : pinching ? 'pinch' : 'idle');
-  if (cancel) write('web-cancel-touch.txt', '1');
-}
-function syncMoveButton() {
-  moveButton.textContent = message(moveMode ? 'Finish Moving' : 'Move View',
-    moveMode ? '이동 완료' : '화면 이동');
-  moveButton.setAttribute('aria-pressed', String(moveMode));
-}
-moveButton.addEventListener('click', () => {
-  moveMode = !moveMode;
-  pinching = false;
-  lastPinch = pinchOrigin = mousePan = null;
-  navigationState(true);
-  syncMoveButton();
+const navigation = installNavigation({
+  canvas: gameCanvas, viewport: gameViewport, map: miniMap,
+  preview: document.getElementById('minimap-preview'),
+  marker: document.getElementById('minimap-view'), reset: document.getElementById('minimap-reset'),
+  read, write, ready: () => Boolean(fs()?.analyzePath(directory).exists),
+  onChange(view) {
+    if (fs()?.analyzePath(directory).exists) write('web-display-zoom.txt', String(view.zoom));
+    placeSignIn(); placePhotoPicker();
+  },
+  onFinish(view) { renderZoom = view.zoom; syncViewport(); },
 });
-function block(event) {
-  event.preventDefault();
-  event.stopImmediatePropagation();
-}
-function moveScreen(dx, dy) {
-  panX += dx;
-  panY += dy;
-  applyZoom();
-}
-function pinchPoint(touches) {
-  const [a, b] = touches;
-  return { x: (a.clientX + b.clientX) / 2, y: (a.clientY + b.clientY) / 2,
-    distance: Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY) };
-}
-function movedPoint(touches) {
-  if (touches.length > 1) return pinchPoint(touches);
-  return { x: touches[0].clientX, y: touches[0].clientY, distance: 0 };
-}
-function beginPinch(touches) {
-  lastPinch = movedPoint(touches);
-  pinchOrigin = touches.length >= 2
-    ? { ...lastPinch, zoom, panX, panY, started: false } : null;
-}
-function pixelRatioFor(width, height, scale, deviceRatio) {
-  return Math.max(1, Math.min(8, deviceRatio * scale,
-    6144 / width, 6144 / height, Math.sqrt(12000000 / (width * height))));
-}
-function applyZoom() {
-  const limitX = (zoom - 1) * gameViewport.clientWidth / 2;
-  const limitY = (zoom - 1) * gameViewport.clientHeight / 2;
-  panX = Math.max(-limitX, Math.min(limitX, panX));
-  panY = Math.max(-limitY, Math.min(limitY, panY));
-  gameCanvas.style.transform = `translate(${panX}px, ${panY}px) scale(${zoom})`;
-  placeSignIn();
-  placePhotoPicker();
-}
-window.addEventListener('touchstart', (event) => {
-  if (event.target === moveButton) return;
-  if (event.touches.length < 2 && !moveMode) return;
-  pinching = true;
-  beginPinch(event.touches);
-  navigationState(true);
-  block(event);
-}, { passive: false, capture: true });
-window.addEventListener('touchmove', (event) => {
-  if (!pinching && event.touches.length >= 2) {
-    pinching = true;
-    beginPinch(event.touches);
-    navigationState(true);
-  }
-  if (!pinching) return;
-  event.preventDefault();
-  event.stopImmediatePropagation();
-  if (event.touches.length === 0) return;
-  const point = movedPoint(event.touches);
-  if (lastPinch) {
-    if (moveMode) moveScreen(point.x - lastPinch.x, point.y - lastPinch.y);
-    else if (point.distance && pinchOrigin?.distance) {
-      const origin = pinchOrigin;
-      if (Math.abs(point.distance - origin.distance) >= 4) origin.started = true;
-      if (origin.started) {
-        zoom = Math.max(1, Math.min(3, origin.zoom * point.distance / origin.distance));
-        const factor = zoom / origin.zoom;
-        // Anchor to the initial midpoint; centroid drift must not become a second pan gesture.
-        panX = origin.panX + (1 - factor) * (origin.x - gameViewport.clientWidth / 2 - origin.panX);
-        panY = origin.panY + (1 - factor) * (origin.y - gameViewport.clientHeight / 2 - origin.panY);
-      }
-    }
-    applyZoom();
-  }
-  lastPinch = point;
-}, { passive: false, capture: true });
-function endPinch(event) {
-  if (!pinching) return;
-  event.preventDefault();
-  event.stopImmediatePropagation();
-  if (event.touches.length === 0) {
-    pinching = false;
-    lastPinch = pinchOrigin = null;
-    renderZoom = zoom;
-    syncViewport();
-    navigationState(true);
-  } else lastPinch = movedPoint(event.touches);
-}
-window.addEventListener('touchend', endPinch, { passive: false, capture: true });
-window.addEventListener('touchcancel', endPinch, { passive: false, capture: true });
-window.addEventListener('mousedown', (event) => {
-  if (!moveMode || event.target === moveButton) return;
-  mousePan = { x: event.clientX, y: event.clientY };
-  navigationState(true);
-  block(event);
-}, { capture: true });
-window.addEventListener('mousemove', (event) => {
-  if (!moveMode || !mousePan) return;
-  const point = { x: event.clientX, y: event.clientY };
-  moveScreen(point.x - mousePan.x, point.y - mousePan.y, point);
-  mousePan = point;
-  block(event);
-}, { capture: true });
-window.addEventListener('mouseup', (event) => {
-  if (!moveMode || event.target === moveButton) return;
-  mousePan = null;
-  block(event);
-}, { capture: true });
-for (const type of ['click', 'wheel', 'keydown', 'contextmenu']) {
-  window.addEventListener(type, (event) => {
-    if (moveMode && event.target !== moveButton) block(event);
-  }, { passive: false, capture: true });
-}
-window.addEventListener('blur', () => {
-  pinching = false;
-  lastPinch = pinchOrigin = mousePan = null;
-  navigationState(true);
-});
+let lastPreviewTime = 0;
+window.Module.postMainLoop = () => {
+  const now = performance.now();
+  if (now - lastPreviewTime >= 100) { navigation.preview(); lastPreviewTime = now; }
+};
 const message = (english, korean) => language === 'ko' ? korean : english;
 
 function syncLanguage() {
   const selected = read('language.txt')?.trim() === 'ko' ? 'ko' : 'en';
   if (selected === language) return;
   language = selected;
-  syncMoveButton();
+  document.getElementById('minimap-label').textContent = message('Overview', '전체 화면');
+  document.getElementById('minimap-reset').textContent = message('Fit screen', '전체 보기');
+  document.getElementById('minimap-preview').setAttribute('aria-label',
+    message('Move the view: drag or use arrow keys', '화면 위치 이동: 드래그 또는 방향키'));
   document.documentElement.lang = language;
   signIn.textContent = message('Sign in with Google', 'Google로 로그인');
   photoPicker.textContent = message('Import My Photo', '내 사진 가져오기');
@@ -262,12 +143,8 @@ function syncViewport() {
   write('web-viewport.tsv', viewport);
   lastViewport = viewport;
 }
-window.addEventListener('resize', () => { applyZoom(); syncViewport(); });
+window.addEventListener('resize', () => { navigation.resize(); syncViewport(); });
 setInterval(() => {
-  if (fs()?.analyzePath(directory).exists) {
-    moveButton.hidden = false;
-    navigationState();
-  }
   syncLanguage();
   syncViewport();
   placePhotoPicker();

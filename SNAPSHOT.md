@@ -1,37 +1,37 @@
 # 프로젝트 스냅샷
 
-- 최종 갱신일: 2026-10-14 KST
+- 최종 갱신일: 2026-10-15 KST
 - 상태: 검증됨
 - 기준 브랜치: main
 - 기준 commit: 이 문서를 포함한 main 커밋
-- 현재 판단: AOJ의 화면 전체 이동과 영역 스크롤을 분리하고 확대 기준점 흔들림 누적을 제거한 웹 빌드를 반영했다.
+- 현재 판단: AOJ의 탭·드래그, 두 손가락 영역 스크롤·핀치, 미니맵 탐색을 포함한 동일 빌드 산출물을 동기화했다.
 
 ## 마지막 완료 작업
 
-- 동일 빌드의 game.data·game.js·index.html·bridge.js를 동기화했다. 화면 이동은 CSS 위치만 변경하고 일반 모드에서는 한 손가락으로 시작한 영역만 스크롤한다.
-- 두 손가락 확대는 최초 중심점에 고정하며 미세한 손가락 간격 변화만으로 확대를 시작하지 않는다.
+- AOJ 원본에서 생성한 game.data·game.js와 HTML·브리지·탐색 모듈·CSS를 반영했다.
+- 한국어·영어 디자인 카탈로그에 미니맵 미리보기를 반영했다.
 
 ## 변경 파일
 
-- `art-of-jigsaw/game.data`, `art-of-jigsaw/game.js`, `art-of-jigsaw/index.html`, `art-of-jigsaw/bridge.js`, `SNAPSHOT.md`.
+- `art-of-jigsaw/{game.data,game.js,index.html,bridge.js,navigation.mjs,view-controls.css}`, `_layouts/design.html`, `_tests/site-quality.test.js`, `SNAPSHOT.md`.
 
 ## 검증 결과
 
-- Docker Jekyll 빌드 후 사이트 품질 검사 62페이지와 앱 그룹 검사가 통과했다.
-- AOJ 원본에서 확대 흔들림·화면 이동 격리·영역 스크롤·탭 배치·카운팅·DPI 검사와 웹·Android 빌드가 통과했다. 폰에 0.3.6 설치 및 버전 확인 완료.
-- 브라우저 화면 검사와 시각 검증은 수행하지 않았다. Pages는 main push 후 자동 게시한다.
+- Docker Jekyll 빌드 후 사이트 품질 검사 62페이지 통과. 앱 그룹 검사 통과.
+- AOJ 원본에서 입력·좌표·카운팅 자동 검사와 웹·Android 0.4.0 빌드 통과.
+- 브라우저 화면 검사와 실기기 조작감 검증은 수행하지 않았다. Pages는 main push 후 자동 게시한다.
 
 ## 차단 요소
 
-- 없음.
+- 사용자 폰이 USB 목록에 없어 0.4.0 설치는 대기 중이다.
 
 ## 다음 작업 하나
 
-- 사용자의 폰에서 독립된 화면 이동과 영역 스크롤의 조작감 확인 결과를 받는다.
+- 사용자 폰에서 새 조작 방식의 실제 사용 결과를 받는다.
 
 ## 사용자에게 필요한 작업
 
-- 0.3.6 앱을 다시 열어 조작을 확인한다.
+- 웹을 새로고침하거나 0.4.0 APK를 설치한 뒤 조작감을 확인한다.
 
 ## 경고
 

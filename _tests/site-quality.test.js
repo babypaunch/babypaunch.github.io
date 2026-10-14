@@ -276,11 +276,11 @@ for (const [relative, required] of [
   assert.match(html, /class="data-cards/, `${relative}: policy data cards`);
 }
 
-for (const [locale, labels] of [['', ['화면 이동', '이동 완료']], ['en/', ['Move View', 'Finish Moving']]]) {
+for (const [locale, labels] of [['', ['전체 화면', '전체 보기']], ['en/', ['Overview', 'Fit screen']]]) {
   const html = fs.readFileSync(path.join(siteRoot, locale, 'design/index.html'), 'utf8');
-  assert.ok(html.includes('/art-of-jigsaw/view-controls.css?v=1'));
+  assert.ok(html.includes('/art-of-jigsaw/view-controls.css?v=2'));
   for (const label of labels) assert.ok(html.includes(label), `AOJ control translation: ${label}`);
-  assert.equal((html.match(/class="view-control view-control--preview"/g) || []).length, 2);
+  assert.equal((html.match(/class="minimap minimap--preview"/g) || []).length, 1);
 }
 assert.ok(fs.existsSync(path.join(siteRoot, 'art-of-jigsaw/view-controls.css')));
 
