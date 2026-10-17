@@ -26,7 +26,7 @@ for (const file of htmlFiles) {
 
   if (label.replaceAll('\\', '/') === 'font-preview/index.html') {
     assert.match(html, /<meta name="robots" content="noindex, nofollow">/);
-    assert.match(html, /url\("\.\/font\.woff2"\) format\("woff2"\)/);
+    assert.match(html, /url\("\.\/font\.woff2\?v=1"\) format\("woff2"\)/);
     assert.match(html, /가나다라마바사 아자차카타파하/);
     assert.doesNotMatch(html, /<(?:script|form|input|button|a)\b/i);
     assert.ok(fs.existsSync(path.join(siteRoot, 'font-preview', 'font.woff2')));
