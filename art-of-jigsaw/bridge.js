@@ -128,6 +128,7 @@ photoFile.addEventListener('change', async () => {
 });
 let lastViewport = '';
 let lastCanvasSize = '';
+let testModeReady = false;
 function syncViewport() {
   const canvas = document.getElementById('canvas');
   const canvasSize = `${canvas.width}x${canvas.height}`;
@@ -148,6 +149,11 @@ setInterval(() => {
   syncLanguage();
   syncViewport();
   placePhotoPicker();
+  if (!testModeReady && fs()?.analyzePath(directory).exists) {
+    if (new URLSearchParams(location.search).get('test') === 'complete') write('web-test-complete.txt', '1');
+    else remove('web-test-complete.txt');
+    testModeReady = true;
+  }
   if (read('web-home-request.txt')) {
     remove('web-home-request.txt');
     location.assign('/');
