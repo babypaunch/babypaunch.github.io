@@ -90,6 +90,18 @@ home:
       description: An Android app for practising songwriting by listening to and combining chords. Download it on Google Play.
       status: Available
       url: https://play.google.com/store/apps/details?id=com.babypaunch.chordsketch
+    - name: Rehearsal MP3 Player
+      description: An Android app for practising with repeated sections of your MP3 files. Download it on Google Play.
+      status: Available
+      url: https://play.google.com/store/apps/details?id=com.babypaunch.rehearsalmp3player
+    - name: anydocs
+      description: An Android app for reading and editing text and Markdown documents. Download it on Google Play.
+      status: Available
+      url: https://play.google.com/store/apps/details?id=com.babypaunch.anydocs
+    - name: Echo Note
+      description: An Android app for listening to and learning English vocabulary. Download it on Google Play.
+      status: Available
+      url: https://play.google.com/store/apps/details?id=com.babypaunch.echonote
     - name: Laftel Mania
       description: A Chrome extension that helps you enjoy anime more comfortably while vibe coding.
       status: Available

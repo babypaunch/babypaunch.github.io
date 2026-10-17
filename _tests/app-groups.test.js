@@ -63,6 +63,9 @@ for (const route of ['index.html', 'en/index.html', 'design/index.html', 'en/des
   assert.equal((html.match(/data-app-group/g) || []).length, Math.ceil(appCount / 9));
   assert.match(html, /app-groups\.js/);
   assert.match(html, /https:\/\/play.google.com\/store\/apps\/details\?id=com.babypaunch.chordsketch/);
+  for (const packageName of ['rehearsalmp3player', 'anydocs', 'echonote']) {
+    assert.ok(html.includes(`https://play.google.com/store/apps/details?id=com.babypaunch.${packageName}`));
+  }
   assert.match(html, /href="\/art-of-jigsaw\/"[^>]*>(?:게임하기|Play)<span/);
   assert.doesNotMatch(html, /\{\{|\{%/);
 }
