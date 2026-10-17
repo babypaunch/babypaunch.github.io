@@ -24,6 +24,15 @@ for (const file of htmlFiles) {
   const html = fs.readFileSync(file, 'utf8');
   const label = path.relative(siteRoot, file);
 
+  if (label.replaceAll('\\', '/') === 'font-preview/index.html') {
+    assert.match(html, /<meta name="robots" content="noindex, nofollow">/);
+    assert.match(html, /url\("\.\/font\.woff2"\) format\("woff2"\)/);
+    assert.match(html, /가나다라마바사 아자차카타파하/);
+    assert.doesNotMatch(html, /<(?:script|form|input|button|a)\b/i);
+    assert.ok(fs.existsSync(path.join(siteRoot, 'font-preview', 'font.woff2')));
+    continue;
+  }
+
   if (label.replaceAll('\\', '/') === 'art-of-jigsaw/index.html') {
     assert.match(html, /<canvas id="canvas"[^>]+aria-label="Art Of Jigsaw game"/);
     assert.match(html, /arguments: \['\.\/game\.love'\]/);

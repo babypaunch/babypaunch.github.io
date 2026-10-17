@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>글꼴 확인</title>
+  <style>
+    @font-face {
+      font-family: "Preview Font";
+      src: url("./font.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+    body {
+      margin: 0;
+      padding: clamp(24px, 6vw, 72px);
+      background: #fff;
+      color: #111;
+    }
+    main {
+      font-family: "Preview Font", sans-serif;
+      font-size: clamp(28px, 6vw, 56px);
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+<body>
+  <main id="main">
+    <p>가나다라마바사 아자차카타파하</p>
+    <p>안녕하세요. 오늘도 좋은 하루 보내세요.</p>
+    <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+    <p>abcdefghijklmnopqrstuvwxyz 0123456789</p>
+  </main>
+</body>
+</html>
