@@ -311,6 +311,7 @@ function syncSavedData() {
   if (syncing || Date.now() < nextSync || !fs()?.syncfs) return;
   syncing = true;
   const progress = read('web-progress-sync.txt');
+  const settings = read('web-settings-sync.txt');
   fs().syncfs(false, (error) => {
     syncing = false;
     if (error) {
@@ -320,8 +321,9 @@ function syncSavedData() {
     } else {
       remove('web-progress-error.txt');
       if (progress && read('web-progress-sync.txt') === progress) remove('web-progress-sync.txt');
+      if (settings && read('web-settings-sync.txt') === settings) remove('web-settings-sync.txt');
     }
   });
 }
-setInterval(() => { if (read('web-progress-sync.txt')) syncSavedData(); }, 100);
+setInterval(() => { if (read('web-progress-sync.txt') || read('web-settings-sync.txt')) syncSavedData(); }, 100);
 setInterval(syncSavedData, 10000);
