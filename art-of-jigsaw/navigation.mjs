@@ -34,7 +34,8 @@ export class Navigation {
     this.gesture = { a: a.id, b: b.id, x: (a.x + b.x) / 2, y: (a.y + b.y) / 2,
       distance: Math.hypot(a.x - b.x, a.y - b.y), zoom: this.zoom,
       panX: this.panX, panY: this.panY, kind: 'pending',
-      region: regionA && regionA === regionB ? regionA : null, dx: 0, dy: 0 };
+      region: regionA === regionB ? regionA :
+        (regionA === 'board' || regionB === 'board' ? 'board' : regionA || regionB), dx: 0, dy: 0 };
   }
 
   move(points) {
@@ -46,10 +47,8 @@ export class Navigation {
     const distance = Math.hypot(a.x - b.x, a.y - b.y);
     const movement = Math.hypot(x - g.x, y - g.y);
     const spread = Math.abs(distance - g.distance);
-    if (g.kind === 'pending') {
-      if (spread >= 8 && spread > movement) g.kind = 'zoom';
-      else if (movement >= 8) g.kind = g.region ? 'scroll' : 'blocked';
-    }
+    if (g.kind !== 'zoom' && spread >= 8 && spread > movement) g.kind = 'zoom';
+    else if (g.kind === 'pending' && movement >= 8) g.kind = g.region ? 'scroll' : 'blocked';
     if (g.kind === 'zoom' && g.distance > 0) {
       this.zoom = clamp(g.zoom * distance / g.distance, 1, 3);
       const factor = this.zoom / g.zoom;
@@ -96,7 +95,7 @@ export function installNavigation({ canvas, viewport, map, preview, marker, rese
       const [x, y, width, height] = numbers.map(Number);
       if (point.x >= x && point.x < x + width && point.y >= y && point.y < y + height) return name;
     }
-    return null;
+    return (read('web-regions.tsv') || '').includes('board\t') ? 'board' : null;
   }, (region, dx, dy) => {
     if (!ready()) return;
     const line = `${region}\t${dx.toFixed(8)}\t${dy.toFixed(8)}\n`;

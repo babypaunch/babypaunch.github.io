@@ -1,5 +1,5 @@
 import PocketBase from './pocketbase.es.mjs';
-import { installNavigation, pixelRatioFor } from './navigation.mjs?v=1';
+import { installNavigation, pixelRatioFor } from './navigation.mjs?v=2';
 
 const localPreview = location.origin === 'http://127.0.0.1:8000';
 const auth = new PocketBase(localPreview ? `${location.origin}/__aoj/auth` : 'https://auth.babypaunch.com');
