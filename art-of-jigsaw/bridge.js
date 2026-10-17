@@ -1,5 +1,5 @@
 import PocketBase from './pocketbase.es.mjs';
-import { installNavigation, pixelRatioFor } from './navigation.mjs?v=3';
+import { installNavigation, pixelRatioFor } from './navigation.mjs?v=4';
 
 const localPreview = location.origin === 'http://127.0.0.1:8000';
 const auth = new PocketBase(localPreview ? `${location.origin}/__aoj/auth` : 'https://auth.babypaunch.com');
@@ -38,7 +38,7 @@ let renderZoom = 1;
 const navigation = installNavigation({
   canvas: gameCanvas, viewport: gameViewport, map: miniMap,
   preview: document.getElementById('minimap-preview'),
-  marker: document.getElementById('minimap-view'), reset: document.getElementById('minimap-reset'),
+  marker: document.getElementById('minimap-view'),
   read, write, ready: () => Boolean(fs()?.analyzePath(directory).exists),
   onChange(view) {
     if (fs()?.analyzePath(directory).exists) write('web-display-zoom.txt', String(view.zoom));
@@ -58,7 +58,6 @@ function syncLanguage() {
   if (selected === language) return;
   language = selected;
   document.getElementById('minimap-label').textContent = message('Overview', '전체 화면');
-  document.getElementById('minimap-reset').textContent = message('Fit screen', '전체 보기');
   document.getElementById('minimap-preview').setAttribute('aria-label',
     message('Move the view: drag or use arrow keys', '화면 위치 이동: 드래그 또는 방향키'));
   document.documentElement.lang = language;

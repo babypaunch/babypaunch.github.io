@@ -89,7 +89,7 @@ export class Navigation {
   reset() { this.zoom = 1; this.panX = this.panY = 0; }
 }
 
-export function installNavigation({ canvas, viewport, map, preview, marker, reset,
+export function installNavigation({ canvas, viewport, map, preview, marker,
   read, write, ready, onChange, onFinish, eventWindow = window }) {
   const block = (event) => { event.preventDefault(); event.stopImmediatePropagation(); };
   function mode(value) {
@@ -199,14 +199,6 @@ export function installNavigation({ canvas, viewport, map, preview, marker, rese
     const view = navigation.viewRect();
     navigation.locate(view.x + view.width / 2 + direction[0], view.y + view.height / 2 + direction[1]);
     paint();
-  });
-  reset.addEventListener('click', () => {
-    navigation.end([]); mapDrag = null;
-    mode('idle'); navigation.reset(); paint(); onFinish(navigation);
-  });
-  // Touch handlers above stop touch-generated clicks, so activate this control on pointerup too.
-  reset.addEventListener('pointerup', (event) => {
-    if (event.pointerType === 'touch') { block(event); reset.click(); }
   });
   eventWindow.addEventListener('blur', () => {
     if (!navigation.gesture && ready()) write('web-abort-touch.txt', '1');
