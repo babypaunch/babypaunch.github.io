@@ -78,6 +78,14 @@ export class Navigation {
     this.constrain();
   }
 
+  zoomAt(factor, x, y) {
+    const point = this.normalized(x, y);
+    this.zoom = clamp(this.zoom * factor, 1, 3);
+    this.panX = x - this.width / 2 - (point.x - .5) * this.width * this.zoom;
+    this.panY = y - this.height / 2 - (point.y - .5) * this.height * this.zoom;
+    this.constrain();
+  }
+
   reset() { this.zoom = 1; this.panX = this.panY = 0; }
 }
 
@@ -102,6 +110,7 @@ export function installNavigation({ canvas, viewport, map, preview, marker, rese
     write('web-scroll.tsv', (read('web-scroll.tsv') || '') + line);
   });
   const points = (event) => Array.from(event.touches, (t) => ({ id: t.identifier, x: t.clientX, y: t.clientY }));
+  let wheelFinish;
   function paint() {
     navigation.constrain();
     canvas.style.transform = `translate(${navigation.panX}px, ${navigation.panY}px) scale(${navigation.zoom})`;
@@ -117,6 +126,15 @@ export function installNavigation({ canvas, viewport, map, preview, marker, rese
     navigation.begin(points(event));
     mode('gesture');
     block(event);
+  }, { passive: false, capture: true });
+  eventWindow.addEventListener('wheel', (event) => {
+    if (!event.ctrlKey || event.target !== canvas || !ready()) return;
+    block(event);
+    if (!Number.isFinite(event.deltaY) || event.deltaY === 0) return;
+    navigation.zoomAt(Math.exp(-event.deltaY / 100), event.clientX, event.clientY);
+    paint();
+    clearTimeout(wheelFinish);
+    wheelFinish = setTimeout(() => { wheelFinish = null; onFinish(navigation); }, 180);
   }, { passive: false, capture: true });
   eventWindow.addEventListener('touchmove', (event) => {
     if (map.contains(event.target)) { block(event); return; }
