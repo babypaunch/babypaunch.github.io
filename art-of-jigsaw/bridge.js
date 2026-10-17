@@ -172,6 +172,7 @@ signIn.addEventListener('click', async () => {
   try {
     await auth.collection('users').authWithOAuth2({ provider: localPreview ? 'google' : 'google_web' });
     write('web-token.txt', auth.authStore.token);
+    write('web-user-id.txt', auth.authStore.record.id);
     result('gate', 'login', true);
     hideSignIn();
     status.textContent = '';
@@ -195,6 +196,7 @@ async function gate(request) {
     try {
       const session = await auth.collection('users').authRefresh();
       write('web-token.txt', session.token);
+      write('web-user-id.txt', session.record.id);
       hideSignIn();
       result('gate', action, true);
     } catch {
@@ -303,8 +305,23 @@ async function poll() {
 }
 
 setInterval(poll, 100);
-setInterval(() => {
-  if (fs()?.syncfs) fs().syncfs(false, (error) => {
-    if (error) console.error('Could not save browser game data.', error);
+let syncing = false;
+let nextSync = 0;
+function syncSavedData() {
+  if (syncing || Date.now() < nextSync || !fs()?.syncfs) return;
+  syncing = true;
+  const progress = read('web-progress-sync.txt');
+  fs().syncfs(false, (error) => {
+    syncing = false;
+    if (error) {
+      nextSync = Date.now() + 10000;
+      if (progress) write('web-progress-error.txt', '1');
+      console.error('Could not save browser game data.', error);
+    } else {
+      remove('web-progress-error.txt');
+      if (progress && read('web-progress-sync.txt') === progress) remove('web-progress-sync.txt');
+    }
   });
-}, 10000);
+}
+setInterval(() => { if (read('web-progress-sync.txt')) syncSavedData(); }, 100);
+setInterval(syncSavedData, 10000);
