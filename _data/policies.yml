@@ -40,6 +40,24 @@
         ko: /policies/babypaunch-account/privacy/
         en: /en/policies/babypaunch-account/privacy/
 
+- slug: battle-gate
+  name:
+    ko: Battle Gate
+    en: Battle Gate
+  type:
+    ko: 웹·Android 게임 접속 서비스
+    en: Web and Android game access service
+  description:
+    ko: Google 로그인과 Art Of Jigsaw 협동 플레이를 제공합니다.
+    en: Provides Google sign-in and Art Of Jigsaw co-op play.
+  documents:
+    - label:
+        ko: 개인정보처리방침·계정 삭제
+        en: Privacy policy and account deletion
+      url:
+        ko: /policies/battle-gate/privacy/
+        en: /en/policies/battle-gate/privacy/
+
 - slug: laftel-mania
   name:
     ko: Laftel Mania

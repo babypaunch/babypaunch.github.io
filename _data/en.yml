@@ -18,6 +18,9 @@ pages:
   babypaunch_account_privacy:
     title: BabyPaunch Account Privacy Policy — BabyPaunch
     description: How Google sign-in, shared accounts, and Art Of Jigsaw puzzle requests handle information.
+  battle_gate_privacy:
+    title: Battle Gate Privacy Policy — BabyPaunch
+    description: How Battle Gate handles sign-in, co-op puzzles, shared photos, and account deletion.
   anydocs_privacy:
     title: anydocs Privacy Policy — BabyPaunch
     description: How anydocs handles documents, local storage and advertising data.

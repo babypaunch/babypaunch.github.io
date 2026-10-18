@@ -178,6 +178,8 @@ for (const excluded of ['AGENTS.html', 'SNAPSHOT.html', 'THIRD_PARTY_NOTICES.htm
 for (const url of [
   '/policies/babypaunch-account/privacy/',
   '/en/policies/babypaunch-account/privacy/',
+  '/policies/battle-gate/privacy/',
+  '/en/policies/battle-gate/privacy/',
   '/policies/anydocs/privacy/',
   '/en/policies/anydocs/privacy/',
   '/policies/babypaunch/accessibility/',
@@ -210,13 +212,15 @@ assert.equal(socialImage.readUInt32BE(16), 1200, 'social image: width');
 assert.equal(socialImage.readUInt32BE(20), 630, 'social image: height');
 
 const policyData = fs.readFileSync(path.join(__dirname, '..', '_data', 'policies.yml'), 'utf8');
-for (const project of ['babypaunch', 'babypaunch-account', 'laftel-mania', 'netflix-mania', 'chord-sketch', 'echo-note', 'rehearsal-mp3-player', 'anydocs']) {
+for (const project of ['babypaunch', 'babypaunch-account', 'battle-gate', 'laftel-mania', 'netflix-mania', 'chord-sketch', 'echo-note', 'rehearsal-mp3-player', 'anydocs']) {
   assert.ok(policyData.includes(`slug: ${project}`), `policies.yml: ${project}`);
 }
 
 for (const relative of [
   'policies/babypaunch-account/privacy/index.html',
   'en/policies/babypaunch-account/privacy/index.html',
+  'policies/battle-gate/privacy/index.html',
+  'en/policies/battle-gate/privacy/index.html',
   'policies/babypaunch/privacy/index.html',
   'en/policies/babypaunch/privacy/index.html',
   'policies/babypaunch/accessibility/index.html',
@@ -251,6 +255,8 @@ for (const relative of ['support/chord-sketch/index.html', 'en/support/chord-ske
 }
 
 for (const [relative, required] of [
+  ['policies/battle-gate/privacy/index.html', ['Google 로그인', '공유 사진', 'Logic Hub', 'id="data-deletion"', 'mailto:babypaunch@gmail.com']],
+  ['en/policies/battle-gate/privacy/index.html', ['Google sign-in', 'shared photo', 'Logic Hub', 'id="data-deletion"', 'mailto:babypaunch@gmail.com']],
   ['policies/anydocs/privacy/index.html', ['문서 내용', '광고', 'User Messaging Platform', 'data-deletion', 'babypaunch@gmail.com']],
   ['en/policies/anydocs/privacy/index.html', ['document', 'advertising', 'User Messaging Platform', 'data-deletion', 'babypaunch@gmail.com']],
   ['policies/netflix-mania/privacy/index.html', ['수집하거나 저장하지 않습니다', 'https://www.netflix.com/*', '개발자 서버와 통신하지 않습니다', '공식 제품이 아닙니다']],

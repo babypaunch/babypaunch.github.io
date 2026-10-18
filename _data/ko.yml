@@ -18,6 +18,9 @@ pages:
   babypaunch_account_privacy:
     title: BabyPaunch Account 개인정보처리방침 — BabyPaunch
     description: Google 로그인과 공용 계정, Art Of Jigsaw 퍼즐 요청의 개인정보 처리를 안내합니다.
+  battle_gate_privacy:
+    title: Battle Gate 개인정보처리방침 — BabyPaunch
+    description: Battle Gate 로그인, 협동 퍼즐, 공유 사진과 계정 삭제의 정보 처리를 안내합니다.
   anydocs_privacy:
     title: anydocs 개인정보처리방침 — BabyPaunch
     description: anydocs의 문서 읽기, 기기 저장과 광고 정보 처리를 안내합니다.
