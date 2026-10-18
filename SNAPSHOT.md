@@ -1,7 +1,7 @@
 # 프로젝트 스냅샷
 
 - 최종 갱신일: 2026-10-19 KST
-- 상태: 소스·빌드 검증됨, 공개 응답 미검증
+- 상태: 소스·빌드 검증됨, Pages 빌드 완료
 - 기준 브랜치: main
 - 기준 commit: 이 문서를 포함한 main 커밋
 - 현재 판단: 공통 Jekyll 페이지에 정적 CSP 메타 정책을 추가해 객체 삽입과 base URL 변조를 제한했다. Google AdSense 때문에 스크립트 정책은 인라인과 HTTPS 외부 스크립트를 허용한다.
@@ -18,6 +18,7 @@
 ## 검증 결과
 
 - Docker Jekyll 3.8 빌드와 `node _tests/site-quality.test.js` 65페이지 통과.
+- GitHub Pages가 이 변경의 commit을 `built`로 보고했다. 브라우저 렌더링과 실제 공개 응답 헤더는 확인하지 않았다.
 - CSP는 공통 Jekyll 레이아웃에 적용되며 독립 Art Of Jigsaw 게임 HTML에는 적용되지 않는다.
 - 공개 응답 헤더, 실제 광고·분석 동작, 브라우저 렌더링은 이번 작업에서 확인하지 않았다.
 
