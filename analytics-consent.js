@@ -1,4 +1,5 @@
 (() => {
+  if (document.documentElement.classList.contains('policy-embed')) return;
   const config = document.querySelector('[data-analytics-config]');
   if (!config) return;
 

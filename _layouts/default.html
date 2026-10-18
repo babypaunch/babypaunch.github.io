@@ -6,11 +6,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https:; object-src 'none'; base-uri 'none'; form-action 'self'">
+{% if page.page_key == 'battle_gate_privacy' %}
+  <script>if (window.self !== window.top && new URLSearchParams(location.search).get('embed') === '1') document.documentElement.classList.add('policy-embed');</script>
+{% endif %}
   <meta name="theme-color" content="#f3eddf">
   <title>{% if page.layout == 'post' %}{{ page.title }} — BabyPaunch{% else %}{{ t.pages[page.page_key].title }}{% endif %}</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
 {% include seo.html %}
-  <link rel="stylesheet" href="/styles.css?v=20260911-unified-font">
+  <link rel="stylesheet" href="/styles.css?v=20261019-policy-embed">
 {% if page.layout == 'post' and page.ads != false %}{% include adsense.html %}{% endif %}
 {% include analytics.html %}
 </head>
@@ -19,7 +22,7 @@
   {{ content }}
   {% include footer.html %}
 {% include analytics-consent.html %}
-  <script src="/analytics-consent.js?v=20260828-settings" defer></script>
+  <script src="/analytics-consent.js?v=20261019-policy-embed" defer></script>
 {% if page.layout == 'home' or page.layout == 'design' %}
   <script src="/app-groups.js?v=20260911" defer></script>
 {% endif %}

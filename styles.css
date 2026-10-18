@@ -402,6 +402,18 @@ footer a { display: inline-flex; min-width: 44px; min-height: 44px; align-items:
 .accessibility-shell .page-intro { max-width: none; }
 .privacy-shell a,
 .accessibility-shell a { overflow-wrap: anywhere; }
+.policy-embed body { background: var(--paper); background-image: none; }
+.policy-embed .skip-link,
+.policy-embed .site-header,
+.policy-embed footer,
+.policy-embed .consent-layer,
+.policy-embed .site-toast { display: none !important; }
+.policy-embed .privacy-shell { width: min(calc(100% - 2rem), 42rem); min-height: 0; margin-inline: auto; padding-block: 1.5rem 2.5rem; }
+.policy-embed .privacy-shell .eyebrow { display: none; }
+.policy-embed .privacy-shell h1 { margin-bottom: 1rem; font-size: clamp(1.65rem, 4vw, 2.15rem); line-height: 1.2; }
+.policy-embed .privacy-shell .page-intro { font-size: .95rem; line-height: 1.6; }
+.policy-embed .privacy-shell .article-body { padding-block: 1.5rem; font-size: .95rem; line-height: 1.75; }
+.policy-embed .privacy-shell .article-body h2 { margin: 2rem 0 .75rem; font-size: 1.35rem; }
 .empty-note { margin-top: 5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
 .footer-button { display: inline-flex; align-items: center; appearance: none; border: 0; padding: 0; background: transparent; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: .25rem; cursor: pointer; }
 .modal-open { overflow: hidden; }

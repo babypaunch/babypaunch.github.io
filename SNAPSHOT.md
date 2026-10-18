@@ -4,23 +4,21 @@
 - 상태: 소스·빌드 검증됨, Pages 빌드 완료
 - 기준 브랜치: main
 - 기준 commit: 이 문서를 포함한 main 커밋
-- 현재 판단: 공통 Jekyll 페이지에 정적 CSP 메타 정책을 추가해 객체 삽입과 base URL 변조를 제한했다. Google AdSense 때문에 스크립트 정책은 인라인과 HTTPS 외부 스크립트를 허용한다.
+- 현재 판단: Battle Gate 개인정보 안내 팝업용 임베드 표시를 중앙 정책 페이지에 추가했다. 일반 정책 URL의 본문과 메타데이터는 유지하고, 임베드에서만 사이트 헤더·푸터·분석 동의창을 숨긴다. 공개 반영과 실제 화면 확인은 아직 미검증이다.
 
 ## 마지막 완료 작업
 
-- 공통 레이아웃에 CSP 메타 정책을 추가했다.
-- 생성된 일반 페이지에 정책이 포함되는지 사이트 품질 검사에 추가했다.
+- Battle Gate 한국어·영어 정책 페이지를 iframe에서 열 때만 본문 중심의 임베드 표시를 활성화했다.
+- 임베드 표시에서 분석 동의창이 내부 스크롤을 막지 않도록 초기화를 건너뛰고, 정책 본문 폭·여백·글자 크기를 조정했다.
 
 ## 변경 파일
 
-- `_layouts/default.html`, `_tests/site-quality.test.js`, `SNAPSHOT.md`.
+- `_layouts/default.html`, `styles.css`, `analytics-consent.js`, `_tests/site-quality.test.js`, `SNAPSHOT.md`.
 
 ## 검증 결과
 
 - Docker Jekyll 3.8 빌드와 `node _tests/site-quality.test.js` 65페이지 통과.
-- GitHub Pages가 이 변경의 commit을 `built`로 보고했다. 브라우저 렌더링과 실제 공개 응답 헤더는 확인하지 않았다.
-- CSP는 공통 Jekyll 레이아웃에 적용되며 독립 Art Of Jigsaw 게임 HTML에는 적용되지 않는다.
-- 공개 응답 헤더, 실제 광고·분석 동작, 브라우저 렌더링은 이번 작업에서 확인하지 않았다.
+- 렌더된 한·영 정책에 임베드 감지 코드가 포함되고 공통 CSS 및 분석 초기화 분기가 있는지 확인했다. 브라우저 렌더링은 이번 요청 범위에서 확인하지 않았다.
 
 ## 차단 요소
 

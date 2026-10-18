@@ -172,6 +172,13 @@ for (const relative of [
   assert.ok((html.match(/data-analytics-settings/g) || []).length >= 2, `${relative}: inline and footer analytics settings controls`);
 }
 
+for (const relative of ['policies/battle-gate/privacy/index.html', 'en/policies/battle-gate/privacy/index.html']) {
+  const html = fs.readFileSync(path.join(siteRoot, relative), 'utf8');
+  assert.match(html, /new URLSearchParams\(location\.search\)\.get\('embed'\) === '1'/, `${relative}: policy embed mode`);
+}
+assert.match(fs.readFileSync(path.join(siteRoot, 'styles.css'), 'utf8'), /\.policy-embed \.site-header,[\s\S]*?\.policy-embed footer,[\s\S]*?display: none !important/, 'policy embed hides site chrome');
+assert.match(fs.readFileSync(path.join(siteRoot, 'analytics-consent.js'), 'utf8'), /classList\.contains\('policy-embed'\)\) return/, 'policy embed skips nested analytics consent');
+
 const sitemap = fs.readFileSync(path.join(siteRoot, 'sitemap.xml'), 'utf8');
 for (const excluded of ['AGENTS.html', 'SNAPSHOT.html', 'THIRD_PARTY_NOTICES.html', '/assets/css/style.css']) {
   assert.ok(!sitemap.includes(excluded), `sitemap: excludes ${excluded}`);
