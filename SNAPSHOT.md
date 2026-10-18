@@ -1,31 +1,33 @@
 # 프로젝트 스냅샷
 
-- 최종 갱신일: 2026-10-18 KST
-- 상태: 검증됨
+- 최종 갱신일: 2026-10-19 KST
+- 상태: 소스·빌드 검증됨, 공개 응답 미검증
 - 기준 브랜치: main
 - 기준 commit: 이 문서를 포함한 main 커밋
-- 현재 판단: Battle Gate 웹·Android 출시를 위한 한·영 개인정보처리방침과 계정 삭제 안내를 추가했다. 운영 Battle Gate 서비스 자체는 아직 공개되지 않았다.
+- 현재 판단: 공통 Jekyll 페이지에 정적 CSP 메타 정책을 추가해 객체 삽입과 base URL 변조를 제한했다. Google AdSense 때문에 스크립트 정책은 인라인과 HTTPS 외부 스크립트를 허용한다.
 
 ## 마지막 완료 작업
 
-- Battle Gate 코드의 로그인·협동 방·사진 공유·외부 미술품 요청·계정 삭제를 확인하고 정책 내용을 한·영으로 작성했다.
-- 정책 목록, 언어별 메타데이터, 사이트 품질 검사에 Battle Gate 정책을 연결했다.
+- 공통 레이아웃에 CSP 메타 정책을 추가했다.
+- 생성된 일반 페이지에 정책이 포함되는지 사이트 품질 검사에 추가했다.
 
 ## 변경 파일
 
-- `policies/battle-gate/privacy/index.html`, `en/policies/battle-gate/privacy/index.html`, `_data/policies.yml`, `_data/ko.yml`, `_data/en.yml`, `_tests/site-quality.test.js`, `SNAPSHOT.md`.
+- `_layouts/default.html`, `_tests/site-quality.test.js`, `SNAPSHOT.md`.
 
 ## 검증 결과
 
-- Docker Jekyll 3.8 빌드와 사이트 품질 검사(65페이지) 통과. Pages 빌드가 `6a261f3`을 완료했고 한·영 정책 URL이 각각 HTTP 200을 반환했다. 공개 페이지의 시각 검사는 하지 않았다.
+- Docker Jekyll 3.8 빌드와 `node _tests/site-quality.test.js` 65페이지 통과.
+- CSP는 공통 Jekyll 레이아웃에 적용되며 독립 Art Of Jigsaw 게임 HTML에는 적용되지 않는다.
+- 공개 응답 헤더, 실제 광고·분석 동작, 브라우저 렌더링은 이번 작업에서 확인하지 않았다.
 
 ## 차단 요소
 
-- 없음.
+- GitHub Pages 정적 배포에서는 요청마다 다른 nonce를 생성할 수 없다. Google의 AdSense 엄격 CSP 안내는 동적 nonce와 응답 헤더를 전제로 한다.
 
 ## 다음 작업 하나
 
-- Battle Gate 운영 연결 후 정책의 데이터 처리 설명과 Play Console Data safety 선언을 대조한다.
+- 호스팅·프록시에서 요청별 nonce를 제공할 수 있게 되면 AdSense와 함께 엄격 CSP를 시험 적용한다.
 
 ## 사용자에게 필요한 작업
 
@@ -33,6 +35,4 @@
 
 ## 경고
 
-- 브라우저 화면·실기기 조작 검증과 캡처는 수행하지 않았다.
-- 공개 사이트에는 싱글 게임과 정책 문서만 배포한다. 협동 모드의 운영 배포는 Battle Gate에서 별도 진행해야 한다.
-- Battle Gate 운영 주소와 로그·백업 보존 정책이 확정되지 않아 공개 서비스의 실제 동작과 정책을 아직 대조할 수 없다.
+- 현재 메타 정책은 `frame-ancestors`를 지원하지 않으며 인라인 스크립트 실행을 허용한다. 완전한 XSS 차단 정책이라고 간주하지 않는다.

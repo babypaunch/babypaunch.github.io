@@ -5,6 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https:; object-src 'none'; base-uri 'none'; form-action 'self'">
   <meta name="theme-color" content="#f3eddf">
   <title>{% if page.layout == 'post' %}{{ page.title }} — BabyPaunch{% else %}{{ t.pages[page.page_key].title }}{% endif %}</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">

@@ -43,6 +43,7 @@ for (const file of htmlFiles) {
   }
 
   assert.match(html, /<html lang="(?:ko|en)">/, `${label}: page language`);
+  assert.match(html, /<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https:; object-src 'none'; base-uri 'none'; form-action 'self'">/, `${label}: baseline CSP`);
   assert.equal((html.match(/<main\b/g) || []).length, 1, `${label}: one main landmark`);
   assert.equal((html.match(/<h1\b/g) || []).length, 1, `${label}: one h1`);
   assert.match(html, /class="skip-link" href="#main"/, `${label}: skip link`);
