@@ -109,7 +109,11 @@ export function installNavigation({ canvas, viewport, map, preview, marker,
     const line = `${region}\t${dx.toFixed(8)}\t${dy.toFixed(8)}\n`;
     write('web-scroll.tsv', (read('web-scroll.tsv') || '') + line);
   });
-  const points = (event) => Array.from(event.touches, (t) => ({ id: t.identifier, x: t.clientX, y: t.clientY }));
+  const points = (event) => {
+    const bounds = viewport.getBoundingClientRect();
+    return Array.from(event.touches, (t) => ({ id: t.identifier,
+      x: t.clientX - bounds.left, y: t.clientY - bounds.top }));
+  };
   let wheelFinish;
   function paint() {
     navigation.constrain();
@@ -131,7 +135,8 @@ export function installNavigation({ canvas, viewport, map, preview, marker,
     if (!event.ctrlKey || event.target !== canvas || !ready()) return;
     block(event);
     if (!Number.isFinite(event.deltaY) || event.deltaY === 0) return;
-    navigation.zoomAt(Math.exp(-event.deltaY / 100), event.clientX, event.clientY);
+    const bounds = viewport.getBoundingClientRect();
+    navigation.zoomAt(Math.exp(-event.deltaY / 100), event.clientX - bounds.left, event.clientY - bounds.top);
     paint();
     clearTimeout(wheelFinish);
     wheelFinish = setTimeout(() => { wheelFinish = null; onFinish(navigation); }, 180);
