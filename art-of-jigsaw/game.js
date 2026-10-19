@@ -21,7 +21,7 @@ Module.expectedDataFileDownloads++;
       throw 'using preloaded data can only be done on a web page or in a web worker';
     }
     var PACKAGE_NAME = 'game.data';
-    var REMOTE_PACKAGE_BASE = 'game.data?v=c4127c0b-64b4-4857-8671-b015efee2254';
+    var REMOTE_PACKAGE_BASE = 'game.data?v=b547cb50-dcdf-4edf-baae-37e0e6ce8d72';
     if (typeof Module['locateFilePackage'] === 'function' && !Module['locateFile']) {
       Module['locateFile'] = Module['locateFilePackage'];
       Module.printErr('warning: you defined Module.locateFilePackage, that has been renamed to Module.locateFile (using your locateFilePackage for now)');
@@ -284,6 +284,6 @@ Module.expectedDataFileDownloads++;
     }
 
   }
-  loadPackage({"package_uuid":"c4127c0b-64b4-4857-8671-b015efee2254","remote_package_size":14010559,"files":[{"filename":"/game.love","crunched":0,"start":0,"end":14010559,"audio":false}]});
+  loadPackage({"package_uuid":"b547cb50-dcdf-4edf-baae-37e0e6ce8d72","remote_package_size":14012953,"files":[{"filename":"/game.love","crunched":0,"start":0,"end":14012953,"audio":false}]});
 
 })();
