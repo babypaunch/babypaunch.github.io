@@ -40,6 +40,7 @@
         }
       },
     };
+    Module.canvas.addEventListener('contextmenu', (event) => event.preventDefault());
     Module.canvas.addEventListener('webglcontextlost', (event) => {
       event.preventDefault();
       Module.setStatus('Graphics connection lost. Reload this page.');
@@ -48,7 +49,7 @@
       if ([32, 37, 38, 39, 40].includes(event.keyCode) && event.target === Module.canvas) event.preventDefault();
     });
   </script>
-  <script src="game.js?v=f28471b8-21a4-4ef9-89b1-b07653b1d3b1"></script>
+  <script src="game.js?v=c4127c0b-64b4-4857-8671-b015efee2254"></script>
   <script async src="love.js" onload="Love(Module)"></script>
   <script type="module" src="bridge.js?v=16"></script>
 </body>
