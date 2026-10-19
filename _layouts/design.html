@@ -3,7 +3,6 @@ layout: default
 ---
 {% assign t = site.data[page.locale] %}
 <main id="main" class="article-shell">
-  <link rel="stylesheet" href="{{ '/art-of-jigsaw/view-controls.css?v=2' | relative_url }}">
   <header class="article-header" id="article-start" tabindex="-1">
     <h1>{{ t.pages.design.title }}</h1>
   </header>
@@ -30,19 +29,6 @@ layout: default
   <section aria-labelledby="apps-preview-label">
     <h2 id="apps-preview-label">{{ t.home.app_preview }}</h2>
     {% include app-groups.html %}
-  </section>
-  <section class="article-body" aria-labelledby="aoj-view-label">
-    <h2 id="aoj-view-label">{% if page.locale == 'ko' %}Art Of Jigsaw 미니맵{% else %}Art Of Jigsaw minimap{% endif %}</h2>
-    <div class="design-preview">
-      <div class="minimap minimap--preview">
-        <span class="minimap-label">{% if page.locale == 'ko' %}전체 화면{% else %}Overview{% endif %}</span>
-        <div class="minimap-surface">
-          <canvas class="minimap-preview" width="240" height="135" aria-hidden="true"></canvas>
-          <div class="minimap-view" style="left:25%;top:25%;width:50%;height:50%" aria-hidden="true"></div>
-        </div>
-        <button class="view-control" type="button" disabled>{% if page.locale == 'ko' %}전체 보기{% else %}Fit screen{% endif %}</button>
-      </div>
-    </div>
   </section>
   <div id="article-end" tabindex="-1" aria-label="{{ t.blog.end }}"></div>
 </main>

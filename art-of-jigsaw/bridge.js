@@ -1,5 +1,5 @@
 import PocketBase from './pocketbase.es.mjs';
-import { installNavigation, pixelRatioFor } from './navigation.mjs?v=4';
+import { installNavigation, pixelRatioFor } from './navigation.mjs?v=5';
 
 const localPreview = location.origin === 'http://127.0.0.1:8000';
 const auth = new PocketBase(localPreview ? `${location.origin}/__aoj/auth` : 'https://auth.babypaunch.com');
@@ -26,7 +26,6 @@ const photoPicker = document.getElementById('photo-picker');
 const photoFile = document.getElementById('photo-file');
 const gameCanvas = document.getElementById('canvas');
 const gameViewport = document.querySelector('main');
-const miniMap = document.getElementById('minimap');
 const status = document.getElementById('status');
 const decoder = new TextDecoder();
 const encoder = new TextEncoder();
@@ -34,32 +33,16 @@ const directory = '/home/web_user/love/art-of-jigsaw';
 let busy = false;
 let signInReady = false;
 let language = 'en';
-let renderZoom = 1;
 const navigation = installNavigation({
-  canvas: gameCanvas, viewport: gameViewport, map: miniMap,
-  preview: document.getElementById('minimap-preview'),
-  marker: document.getElementById('minimap-view'),
+  canvas: gameCanvas, viewport: gameViewport,
   read, write, ready: () => Boolean(fs()?.analyzePath(directory).exists),
-  onChange(view) {
-    if (fs()?.analyzePath(directory).exists) write('web-display-zoom.txt', String(view.zoom));
-    placeSignIn(); placePhotoPicker();
-  },
-  onFinish(view) { renderZoom = view.zoom; syncViewport(); },
 });
-let lastPreviewTime = 0;
-window.Module.postMainLoop = () => {
-  const now = performance.now();
-  if (now - lastPreviewTime >= 100) { navigation.preview(); lastPreviewTime = now; }
-};
 const message = (english, korean) => language === 'ko' ? korean : english;
 
 function syncLanguage() {
   const selected = read('language.txt')?.trim() === 'ko' ? 'ko' : 'en';
   if (selected === language) return;
   language = selected;
-  document.getElementById('minimap-label').textContent = message('Overview', '전체 화면');
-  document.getElementById('minimap-preview').setAttribute('aria-label',
-    message('Move the view: drag or use arrow keys', '화면 위치 이동: 드래그 또는 방향키'));
   document.documentElement.lang = language;
   signIn.textContent = message('Sign in with Google', 'Google로 로그인');
   photoPicker.textContent = message('Import My Photo', '내 사진 가져오기');
@@ -137,7 +120,7 @@ function syncViewport() {
   }
   const width = Math.max(1, Math.min(8192, gameViewport.clientWidth));
   const height = Math.max(1, Math.min(8192, gameViewport.clientHeight));
-  const ratio = pixelRatioFor(width, height, renderZoom, window.devicePixelRatio || 1);
+  const ratio = pixelRatioFor(width, height, window.devicePixelRatio || 1);
   const viewport = `${width}\t${height}\t${ratio.toFixed(3)}`;
   if (viewport === lastViewport || !fs()?.analyzePath(directory).exists) return;
   write('web-viewport.tsv', viewport);
