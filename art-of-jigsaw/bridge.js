@@ -72,13 +72,13 @@ function hideSignIn() { signIn.hidden = true; }
 function placeSignIn() {
   const canvas = document.getElementById('canvas');
   const bounds = canvas.getBoundingClientRect();
-  const scale = Math.min(canvas.width / 1280, canvas.height / 850);
-  const x = (canvas.width - 1280 * scale) / 2 + 105 * scale;
-  const y = (canvas.height - 850 * scale) / 2 + 475 * scale;
-  signIn.style.left = `${bounds.left + x * bounds.width / canvas.width}px`;
-  signIn.style.top = `${bounds.top + y * bounds.height / canvas.height}px`;
-  signIn.style.width = `${420 * scale * bounds.width / canvas.width}px`;
-  signIn.style.height = `${62 * scale * bounds.height / canvas.height}px`;
+  const position=read('web-signin-button.tsv')?.split('\t').map(Number);
+  if (position?.length!==4 || position.some(value=>!Number.isFinite(value))) return;
+  const [x,y,width,height]=position;
+  signIn.style.left = `${bounds.left+x*bounds.width/canvas.width}px`;
+  signIn.style.top = `${bounds.top+y*bounds.height/canvas.height}px`;
+  signIn.style.width = `${width*bounds.width/canvas.width}px`;
+  signIn.style.height = `${height*bounds.height/canvas.height}px`;
 }
 new ResizeObserver(placeSignIn).observe(document.getElementById('canvas'));
 function placePhotoPicker() {
@@ -130,6 +130,7 @@ window.addEventListener('resize', () => { navigation.resize(); syncViewport(); }
 setInterval(() => {
   syncLanguage();
   syncViewport();
+  placeSignIn();
   placePhotoPicker();
   if (!testModeReady && fs()?.analyzePath(directory).exists) {
     if (new URLSearchParams(location.search).get('test') === 'complete') write('web-test-complete.txt', '1');
