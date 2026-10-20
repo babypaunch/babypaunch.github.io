@@ -67,6 +67,7 @@ for (const route of ['index.html', 'en/index.html', 'design/index.html', 'en/des
     assert.ok(html.includes(`https://play.google.com/store/apps/details?id=com.babypaunch.${packageName}`));
   }
   assert.match(html, /href="\/art-of-jigsaw\/"[^>]*>(?:게임하기|Play)<span/);
+  assert.match(html, /href="https:\/\/battle-gate\.babypaunch\.com\/"[^>]*>(?:게임 포털 열기|Open game portal)<span/);
   assert.doesNotMatch(html, /\{\{|\{%/);
 }
 console.log('App groups: selection, isolation, close, Escape, focus, reduced motion and four routes passed.');

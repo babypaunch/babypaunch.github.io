@@ -89,6 +89,11 @@ home:
       status: Available
       action: Play
       url: /art-of-jigsaw/
+    - name: Battle Gate
+      description: A game portal where you can sign in with Google, create a room, or join with an invite code to play Art Of Jigsaw together.
+      status: Available
+      action: Open game portal
+      url: https://battle-gate.babypaunch.com/
     - name: "Chord Sketch: Learn to Compose"
       description: An Android app for practising songwriting by listening to and combining chords. Download it on Google Play.
       status: Available
