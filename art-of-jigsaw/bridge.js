@@ -32,6 +32,8 @@ const encoder = new TextEncoder();
 const directory = '/home/web_user/love/art-of-jigsaw';
 let busy = false;
 let signInReady = false;
+let authPending = false;
+let lastLoading = false;
 let language = 'en';
 const navigation = installNavigation({
   canvas: gameCanvas, viewport: gameViewport,
@@ -82,6 +84,7 @@ function placeSignIn() {
 }
 new ResizeObserver(placeSignIn).observe(document.getElementById('canvas'));
 function placePhotoPicker() {
+  if (read('web-ui-loading.txt') || read('web-photo-pending.txt') || authPending) { photoPicker.hidden = true; return; }
   const bounds = document.getElementById('canvas').getBoundingClientRect();
   const canvas = document.getElementById('canvas');
   const position = read('web-photo-button.tsv')?.split('\t').map(Number);
@@ -96,18 +99,31 @@ function placePhotoPicker() {
   photoPicker.style.height = `${height * bounds.height / canvas.height}px`;
   photoPicker.hidden = false;
 }
-photoPicker.addEventListener('click', () => { photoFile.click(); });
+photoPicker.addEventListener('click', () => { if (!photoPicker.disabled) photoFile.click(); });
 photoFile.addEventListener('change', async () => {
   const file = photoFile.files?.[0];
   photoFile.value = '';
   if (!file) return;
+  write('web-photo-pending.txt', '1');
+  syncLoading();
   try {
     write('photo-import.bin', new Uint8Array(await file.arrayBuffer()));
     write('photo-import-name.txt', file.name);
   } catch {
     write('photo-import-error.txt', 'Could not read the selected image.');
-  }
+  } finally { remove('web-photo-pending.txt'); syncLoading(); }
 });
+function syncLoading() {
+  const text = read('web-ui-loading.txt') || (authPending ? message('Signing in...', '로그인하는 중...') : '')
+    || (read('web-photo-pending.txt') ? message('Reading image...', '사진을 읽는 중...') : '');
+  const loading = Boolean(text);
+  signIn.disabled = loading;
+  photoPicker.disabled = loading;
+  gameCanvas.setAttribute('aria-busy', String(loading));
+  if (loading) status.textContent = text;
+  else if (lastLoading) { status.textContent = ''; gameCanvas.focus({ preventScroll: true }); }
+  lastLoading = loading;
+}
 let lastViewport = '';
 let lastCanvasSize = '';
 let testModeReady = false;
@@ -129,6 +145,7 @@ function syncViewport() {
 window.addEventListener('resize', () => { navigation.resize(); syncViewport(); });
 setInterval(() => {
   syncLanguage();
+  syncLoading();
   syncViewport();
   placeSignIn();
   placePhotoPicker();
@@ -145,12 +162,15 @@ setInterval(() => {
 placeSignIn();
 
 signIn.addEventListener('click', async () => {
+  if (authPending || read('web-ui-loading.txt')) return;
   if (!signInReady) {
     result('gate', 'login', false, 'Sign-in is unavailable from this address. Check the account connection.');
     status.textContent = message('Sign-in connection unavailable.', '로그인 연결을 사용할 수 없습니다.');
     return;
   }
-  signIn.disabled = true;
+  authPending = true;
+  write('web-auth-pending.txt', '1');
+  syncLoading();
   status.textContent = message('Opening Google sign-in…', 'Google 로그인을 여는 중…');
   try {
     await auth.collection('users').authWithOAuth2({ provider: localPreview ? 'google' : 'google_web' });
@@ -162,7 +182,7 @@ signIn.addEventListener('click', async () => {
   } catch (error) {
     result('gate', 'login', false, error.message);
     status.textContent = message('Sign-in failed. Try again.', '로그인에 실패했습니다. 다시 시도하세요.');
-  } finally { signIn.disabled = false; }
+  } finally { authPending = false; remove('web-auth-pending.txt'); syncLoading(); }
 });
 
 async function gate(request) {
