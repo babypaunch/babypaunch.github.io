@@ -6,7 +6,7 @@ title: I made anydocs just to open a text file
 description: An Android app that started with files that would not open and grew to include Markdown previews, search and editing that preserves the original.
 category: Making
 date: 2026-10-21 18:39:00 +0900
-last_modified_at: 2026-10-21 18:39:00 +0900
+last_modified_at: 2026-10-21 18:48:00 +0900
 permalink: /en/blog/anydocs/
 language_url: /blog/anydocs/
 alternate_ko: /blog/anydocs/
@@ -145,11 +145,11 @@ The new file uses `UTF-8` and opens in the app after saving.
 
 Editing is limited to roughly one million characters, while larger documents can use the existing reading features.
 
-Editing is included in the `1.5.0` update that I developed and tested.
+Editing is available starting with `1.5.0`, which is publicly available on Google Play.
 
-The project's latest release record documents submission of that update for review, and I have not verified its approval or public availability for this article.
+You can also edit a Markdown file's source and save it as a new file.
 
-The editing menu may therefore be absent from the version you have installed.
+If the editing menu is missing, update the app through Google Play.
 
 ## Boundaries a document reader should keep
 
@@ -182,5 +182,15 @@ I did not set out to support a large collection of document formats.
 I started because I wanted to open a text file easily on my own phone.
 
 I hope anydocs can be a small help to anyone who has run into the same problem.
+
+<hr>
+
+### <code>October 21, 2026</code> update: Markdown editing is publicly available too
+
+I checked Google Play Console and confirmed that `1.5.0`, version code `15`, was published to production on October 13, 2026, and is currently available in 178 countries and regions with a `100%` rollout.
+
+Open a `.md` document, use the text-editing button to change the source of its headings, lists or body, then save it as another file.
+
+Edited copies use `UTF-8`, with the same separation from the original and an editing limit of roughly one million characters.
 
 <p class="article-summary"><strong>In one line:</strong> A text file that would not open because of its extension led me to build a small Android app that makes reading easier and saves edits separately from the original.</p>
