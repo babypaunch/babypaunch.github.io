@@ -102,3 +102,5 @@
 - Battle Gate 공통 플랫폼·AOJ 협동·계정 삭제·향후 게임 추가 절을 구분했다. 최초 시행일은 유지하고 개정일·이력을 갱신했다.
 - 싱글 웹·Windows LÖVE 로컬판의 계정·네트워크·사진·저장·삭제 정책을 한·영 `/policies/art-of-jigsaw/privacy/`에 추가했다. 정책 허브와 메타데이터·사이트맵 검사를 함께 갱신했다.
 - Jekyll 3.8 빌드 및 사이트 검사 67페이지 통과. 공개 상태는 Pages 빌드 후 HTTP로 확인한다. Android 앱 등록·심사·공개 상태와 정책 게시 상태는 별도다.
+
+- 정책 게시 검증: Pages commit `b5832292f5359e6a1735adb5bf95c582adcdac64` built, Battle Gate·Art Of Jigsaw 한·영 네 URL HTTP 200, data-deletion 및 협동 섹션 anchor 확인.
