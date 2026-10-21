@@ -58,6 +58,13 @@
         ko: /policies/battle-gate/privacy/
         en: /en/policies/battle-gate/privacy/
 
+    - label:
+        ko: 이용정책·신고·차단
+        en: Community policy, reports and blocking
+      url:
+        ko: /policies/battle-gate/community/
+        en: /en/policies/battle-gate/community/
+
 - slug: art-of-jigsaw
   name:
     ko: Art Of Jigsaw 싱글

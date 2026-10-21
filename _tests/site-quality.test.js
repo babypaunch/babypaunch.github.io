@@ -188,6 +188,8 @@ for (const url of [
   '/en/policies/babypaunch-account/privacy/',
   '/policies/art-of-jigsaw/privacy/',
   '/en/policies/art-of-jigsaw/privacy/',
+  '/policies/battle-gate/community/',
+  '/en/policies/battle-gate/community/',
   '/policies/battle-gate/privacy/',
   '/en/policies/battle-gate/privacy/',
   '/policies/anydocs/privacy/',
@@ -231,6 +233,8 @@ for (const relative of [
   'en/policies/babypaunch-account/privacy/index.html',
   'policies/art-of-jigsaw/privacy/index.html',
   'en/policies/art-of-jigsaw/privacy/index.html',
+  'policies/battle-gate/community/index.html',
+  'en/policies/battle-gate/community/index.html',
   'policies/battle-gate/privacy/index.html',
   'en/policies/battle-gate/privacy/index.html',
   'policies/babypaunch/privacy/index.html',
@@ -322,4 +326,13 @@ for (const prefix of ['', 'en/']) {
   for (const value of ['Windows', 'LÖVE', 'auth.babypaunch.com', 'gate.babypaunch.com', 'id="data-deletion"', '#game-art-of-jigsaw']) {
     assert.ok(solo.includes(value), `AOJ single policy: ${value}`);
   }
+}
+
+for (const prefix of ['', 'en/']) {
+  const community = fs.readFileSync(path.join(siteRoot, prefix, 'policies/battle-gate/community/index.html'), 'utf8');
+  for (const id of ['scope', 'allowed', 'prohibited', 'reporting', 'blocking', 'moderation', 'retention']) {
+    assert.ok(community.includes(`id="${id}"`), `Community policy section: ${id}`);
+  }
+  const privacy = fs.readFileSync(path.join(siteRoot, prefix, 'policies/battle-gate/privacy/index.html'), 'utf8');
+  assert.ok(privacy.includes(`href="/${prefix}policies/battle-gate/community/"`));
 }

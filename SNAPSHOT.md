@@ -104,3 +104,13 @@
 - Jekyll 3.8 빌드 및 사이트 검사 67페이지 통과. 공개 상태는 Pages 빌드 후 HTTP로 확인한다. Android 앱 등록·심사·공개 상태와 정책 게시 상태는 별도다.
 
 - 정책 게시 검증: Pages commit `b5832292f5359e6a1735adb5bf95c582adcdac64` built, Battle Gate·Art Of Jigsaw 한·영 네 URL HTTP 200, data-deletion 및 협동 섹션 anchor 확인.
+
+## 2026-10-21 Battle Gate 콘텐츠 정책 추가
+
+- 한·영 `/policies/battle-gate/community/`에 콘텐츠 기준, 동의·신고·차단·운영 조치 및 보관·삭제를 추가했다. 플랫폼 공통·AOJ 협동·향후 게임 절 분리는 유지했다.
+- 개인정보처리방침에 신고·차단·제한 해시와 보관 경계를 추가하고 정책 목록·메타데이터·한영 구조 검사를 갱신했다.
+- Jekyll 빌드와 사이트 품질 검사(69페이지)가 통과했다. 실제 브라우저와 캡처는 실행하지 않았다. 공개 Pages 게시 상태는 push 후 확인한다.
+
+## 다음 작업 하나
+
+- main을 게시하고 한·영 공개 이용정책 및 개인정보처리방침 응답을 확인한다.
