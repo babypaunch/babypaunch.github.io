@@ -184,6 +184,8 @@ for (const excluded of ['AGENTS.html', 'SNAPSHOT.html', 'THIRD_PARTY_NOTICES.htm
   assert.ok(!sitemap.includes(excluded), `sitemap: excludes ${excluded}`);
 }
 for (const url of [
+  '/policies/ai-karaoke/privacy/',
+  '/en/policies/ai-karaoke/privacy/',
   '/policies/babypaunch-account/privacy/',
   '/en/policies/babypaunch-account/privacy/',
   '/policies/art-of-jigsaw/privacy/',
@@ -271,6 +273,8 @@ for (const relative of ['support/chord-sketch/index.html', 'en/support/chord-ske
 }
 
 for (const [relative, required] of [
+  ['policies/ai-karaoke/privacy/index.html', ['IndexedDB', 'chrome.storage.local', '클립보드', 'id="support"', 'id="data-deletion"', 'babypaunch@gmail.com', 'Limited Use', '2026-10-21']],
+  ['en/policies/ai-karaoke/privacy/index.html', ['IndexedDB', 'chrome.storage.local', 'clipboard', 'id="support"', 'id="data-deletion"', 'babypaunch@gmail.com', 'Limited Use', '2026-10-21']],
   ['policies/battle-gate/privacy/index.html', ['Google 로그인', '공유 사진', 'Logic Hub', 'id="data-deletion"', 'mailto:babypaunch@gmail.com']],
   ['en/policies/battle-gate/privacy/index.html', ['Google sign-in', 'shared photo', 'Logic Hub', 'id="data-deletion"', 'mailto:babypaunch@gmail.com']],
   ['policies/anydocs/privacy/index.html', ['문서 내용', '광고', 'User Messaging Platform', 'data-deletion', 'babypaunch@gmail.com']],

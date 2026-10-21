@@ -1,0 +1,60 @@
+---
+layout: default
+locale: en
+page_key: ai_karaoke_privacy
+permalink: /en/policies/ai-karaoke/privacy/
+language_url: /policies/ai-karaoke/privacy/
+alternate_ko: /policies/ai-karaoke/privacy/
+alternate_en: /en/policies/ai-karaoke/privacy/
+---
+<main id="main" class="page-shell privacy-shell">
+  <h1>AI-Karaoke Privacy Policy</h1>
+  <p class="page-intro">How tab audio, your Karaoke Book and local data deletion work.</p>
+  <article class="article-body">
+    <p><strong>First effective: October 21, 2026</strong><br><strong>Last revised: October 21, 2026</strong></p>
+    <p>Operator: BabyPaunch · Contact: <a href="mailto:babypaunch@gmail.com">babypaunch@gmail.com</a></p>
+    <p>AI-Karaoke is a Chrome extension providing Transpose, Vocal Remove and lyrics with timings that you prepare yourself. Current features are free without sign-in, daily song limits or payment.</p>
+
+    <h2>Information and purposes</h2>
+    <div class="data-cards">
+      <section class="data-card"><h3>Tab audio</h3><p><strong>Purpose:</strong> Transpose and vocal reduction requested by the user</p><p><strong>Processing:</strong> Audio is processed temporarily in browser memory, not saved as audio files or sent to a developer-operated server. The AI model and WASM are bundled with the extension; AI requires WebGPU and hardware acceleration.</p></section>
+      <section class="data-card"><h3>Lyrics and timings</h3><p><strong>Purpose:</strong> Display lyrics from TXT/LRC or song JSON files you choose, and reuse Index start times</p><p><strong>Storage:</strong> Extension-specific IndexedDB until you delete the data.</p></section>
+      <section class="data-card"><h3>Video information</h3><p><strong>Purpose:</strong> Identify, search and link songs using YouTube or YouTube Music URLs, video IDs, titles and channel names</p><p><strong>Storage:</strong> Extension-specific IndexedDB until you delete the data; this information is not sent to a developer-operated server.</p></section>
+      <section class="data-card"><h3>Settings and usage times</h3><p><strong>Purpose:</strong> Keep your Korean or English selection and sort recently used songs</p><p><strong>Storage:</strong> UI language in chrome.storage.local and song usage times in IndexedDB until settings are replaced, songs are deleted or the extension is removed.</p></section>
+    </div>
+
+    <h2>When processing starts and Chrome permissions</h2>
+    <p>Tab audio processing starts when you select Transpose or Vocal Remove in the popup. Lyrics files are read when you choose a file. The Karaoke UI runs on <code>https://www.youtube.com/*</code> and <code>https://music.youtube.com/*</code>.</p>
+    <ul>
+      <li><code>activeTab</code>: Identify the current tab the user interacts with</li>
+      <li><code>tabCapture</code>: Process tab audio requested by the user</li>
+      <li><code>offscreen</code>: Continue started audio processing after the popup closes</li>
+      <li><code>scripting</code>: Attach the bundled lyrics UI and styles to supported pages</li>
+      <li><code>storage</code>: Manage UI settings and stored data from earlier versions</li>
+    </ul>
+
+    <h2>External transfers and optional links</h2>
+    <p>The current extension does not connect to developer account, usage or payment servers, external advertising SDKs or analytics services. It does not retrieve sign-in or payment information, or send or sell audio, lyrics, timings or video information to developer APIs or advertising providers.</p>
+    <p>The Support link to <a href="https://www.youtube.com/watch?v=t6aQ-sHDGBA" target="_blank" rel="noopener noreferrer">Humming Echo-Sweet Like Cookies</a> opens YouTube in a new tab only when you select it. The extension adds no autoplay, preloading or click tracking and applies noreferrer. YouTube's policies govern data handling after navigation. Using Support is not required for free features.</p>
+    <p>The Web Store share button writes only the official listing link to the clipboard when that URL is configured. It does not read existing clipboard contents or share other data. Analytics and cookies on this policy webpage are covered by the <a href="/en/policies/babypaunch/privacy/">BabyPaunch website Privacy Policy</a>.</p>
+
+    <h2 id="data-deletion">Retention and data deletion</h2>
+    <p>Remove lyrics for the current video to delete that song's lyrics and Index timings. Full restore replaces the current Karaoke Book with the backup after confirmation. Export a full backup first if you need one.</p>
+    <p>Removing the extension makes Chrome remove its extension-specific settings and IndexedDB. Exported song JSON, backup files and downloaded TXT examples are outside the extension and must be deleted by you. There is no current server account, and the operator cannot open or delete your local storage on your behalf.</p>
+    <p>Local usage data left by earlier test versions does not restrict current free features and is not transmitted externally. It is removed together with the extension.</p>
+
+    <h2>Lyrics and content rights</h2>
+    <p>You prepare song lyrics yourself. The Help TXT example contains format instructions, not actual song lyrics. You must have the rights needed to use or share videos, lyrics and song JSON files. This extension is not an official or affiliated product of YouTube, Google or Chrome.</p>
+
+    <h2>Chrome Web Store Limited Use</h2>
+    <p>Information received from Google APIs is used only for the disclosed karaoke-practice features, not advertising, data sales or undisclosed purposes.</p>
+    <p lang="en">The use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+
+    <h2 id="support">Support and privacy inquiries</h2>
+    <p>Contact the BabyPaunch operator at <a href="mailto:babypaunch@gmail.com?subject=AI-Karaoke%20support">babypaunch@gmail.com</a>. Include your extension and Chrome versions, OS, reproduction steps and error text so we can investigate where possible. Do not send passwords, authentication tokens, lyrics you lack rights to share or unnecessary personal information.</p>
+
+    <h2>Revision history</h2>
+    <p>We update this policy and record changes when data practices or external services change.</p>
+    <div class="data-cards data-cards-compact"><section class="data-card"><h3><time datetime="2026-10-21">October 21, 2026</time></h3><p>Initial publication covering local processing, optional links and sharing, support and data deletion for the free extension</p></section></div>
+  </article>
+</main>

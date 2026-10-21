@@ -4,9 +4,11 @@
 - 상태: 검증 중
 - 기준 브랜치: main
 - 기준 commit: 이 문서를 포함한 main 커밋
-- 현재 판단: 내가 만든 것들에 Battle Gate를 한국어·영어로 추가하고 게임 포털 링크를 연결했다. 홈·디자인 카탈로그 네 경로와 사이트 품질 검사를 통과했다. AOJ 최신 싱글 배포는 유지하며 Battle Gate 협동 UI 이식은 별도 진행 중이다.
+- 현재 판단: AI-Karaoke 한·영 개인정보처리방침·지원 안내와 정책 허브를 추가했다. Jekyll 3.8 빌드와 기존 Node 검사 5종을 통과했다. 공개 URL 검증은 push 후 수행한다. 기존 Battle Gate 카드·AOJ 배포 상태는 이번 작업에서 변경하거나 재검증하지 않았다.
 
 ## 마지막 완료 작업
+
+- AI-Karaoke의 로컬 오디오·가사·영상 정보 처리, Chrome 권한, 선택적 Support·공유, 로컬 데이터 삭제와 공개 지원 이메일을 한·영으로 작성했다. 기존 privacy shell·정책 카드·SEO/언어 전환을 재사용한다. 정책 URL은 `/policies/ai-karaoke/privacy/`와 `/en/policies/ai-karaoke/privacy/`다. Support anchor는 `#support`다.
 
 - Art Of Jigsaw 다음에 Battle Gate 카드와 게임 포털 열기 링크를 한·영 데이터에 추가했다. 기존 공용 카드·자동 디자인 미리보기를 재사용한다.
 

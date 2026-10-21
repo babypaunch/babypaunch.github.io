@@ -59,6 +59,9 @@ pages:
   netflix_mania_privacy:
     title: Netflix Mania Privacy Policy — BabyPaunch
     description: How Netflix Mania handles data and limits its access to the Netflix website.
+  ai_karaoke_privacy:
+    title: AI-Karaoke Privacy Policy — BabyPaunch
+    description: Local audio and lyrics processing, Chrome permissions, optional links and sharing, support and data deletion in AI-Karaoke.
   chord_sketch_privacy:
     title: Chord Sketch Privacy Policy — BabyPaunch
     description: How Chord Sketch handles settings and sketch files on your device.
