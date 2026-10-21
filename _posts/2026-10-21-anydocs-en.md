@@ -6,7 +6,7 @@ title: I made anydocs just to open a text file
 description: An Android app that started with files that would not open and grew to include Markdown previews, search and editing that preserves the original.
 category: Making
 date: 2026-10-21 18:39:00 +0900
-last_modified_at: 2026-10-21 18:48:00 +0900
+last_modified_at: 2026-10-21 18:57:00 +0900
 permalink: /en/blog/anydocs/
 language_url: /blog/anydocs/
 alternate_ko: /blog/anydocs/
@@ -193,4 +193,4 @@ Open a `.md` document, use the text-editing button to change the source of its h
 
 Edited copies use `UTF-8`, with the same separation from the original and an editing limit of roughly one million characters.
 
-<p class="article-summary"><strong>In one line:</strong> A text file that would not open because of its extension led me to build a small Android app that makes reading easier and saves edits separately from the original.</p>
+<p class="article-summary"><strong>In one line:</strong> A simple Android app that makes text files easy to open, even without a file extension. It can also edit Markdown files.</p>
