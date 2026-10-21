@@ -58,6 +58,24 @@
         ko: /policies/battle-gate/privacy/
         en: /en/policies/battle-gate/privacy/
 
+- slug: art-of-jigsaw
+  name:
+    ko: Art Of Jigsaw 싱글
+    en: Art Of Jigsaw Single-player
+  type:
+    ko: 웹·Windows 로컬 퍼즐
+    en: Web and Windows local puzzle
+  description:
+    ko: 싱글판의 로그인·로컬 사진·게임 저장과 협동판 경계를 안내합니다.
+    en: Covers single-player sign-in, local images and saves, separate from co-op.
+  documents:
+    - label:
+        ko: 개인정보처리방침·로컬 데이터 삭제
+        en: Privacy policy and local data deletion
+      url:
+        ko: /policies/art-of-jigsaw/privacy/
+        en: /en/policies/art-of-jigsaw/privacy/
+
 - slug: laftel-mania
   name:
     ko: Laftel Mania

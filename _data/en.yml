@@ -18,6 +18,9 @@ pages:
   babypaunch_account_privacy:
     title: BabyPaunch Account Privacy Policy — BabyPaunch
     description: How Google sign-in, shared accounts, and Art Of Jigsaw puzzle requests handle information.
+  art_of_jigsaw_privacy:
+    title: "Art Of Jigsaw Single-player Privacy Policy"
+    description: "This describes sign-in, images, and storage in the web single-player and Windows LÖVE editions. Local execution still uses the internet for authentication, piece generation, and artwork searches."
   battle_gate_privacy:
     title: Battle Gate Privacy Policy — BabyPaunch
     description: How Battle Gate handles sign-in, co-op puzzles, shared photos, and account deletion.

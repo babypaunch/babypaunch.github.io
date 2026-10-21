@@ -8,39 +8,29 @@ alternate_ko: /policies/battle-gate/privacy/
 alternate_en: /en/policies/battle-gate/privacy/
 ---
 <main id="main" class="page-shell privacy-shell">
-  <p class="eyebrow" lang="en">Privacy · Battle Gate</p>
-  <h1>Battle Gate Privacy Policy</h1>
-  <p class="page-intro">This policy explains how the Battle Gate web and Android apps handle information during Google sign-in and Art Of Jigsaw co-op play.</p>
-  <article class="article-body">
-    <p><strong>First effective: October 18, 2026</strong><br><strong>Last revised: October 18, 2026</strong></p>
-    <p>Battle Gate is a game access service operated by BabyPaunch. This policy covers the Art Of Jigsaw co-op mode offered through Battle Gate. The separate Art Of Jigsaw single-player mode and BabyPaunch Account handle information differently from the co-op rooms and photo sharing described here.</p>
-
-    <h2>Information processed and why</h2>
-    <p>We use the account identifier, name, and email address returned by Google sign-in to identify your account and sign you in. We do not receive or store your Google password. Login sessions are stored as hashes of random tokens with expiration times.</p>
-    <p>When you create or join a co-op room, we store the room title, participants' account identifiers and names, connection times, puzzle settings, and board progress. Participants can see the title, names, and progress in the same room. An invitation code lets you invite others to join.</p>
-    <p>If the host chooses a personal photo, the browser converts it to PNG and uploads it to Battle Gate. The server checks the image, removes its metadata, and stores it so members of that room can view it. Personal photos are not uploaded through this feature unless the host chooses to share one.</p>
-
-    <h2>Other services and transfers</h2>
-    <p>Google handles sign-in under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. If you search for public artwork, your search terms and request information may be sent to <a href="https://www.metmuseum.org/information/terms-and-conditions">The Metropolitan Museum of Art</a>. Artwork image requests may pass through BabyPaunch Access Gate.</p>
-    <p>BabyPaunch Logic Hub generates puzzle piece paths. It receives puzzle dimensions, image dimensions, and a generation value, but not your shared photo file or Google account information. Battle Gate has no advertising or payment features.</p>
-
-    <h2>Retention and security</h2>
-    <p>We keep account information while you use the service. Login sessions expire seven days after they are issued or renewed. We remove a room and its shared photo about five minutes after nobody remains connected. If deleting a photo file temporarily fails, we keep a deletion record and retry.</p>
-    <p>The production service transfers data over HTTPS and uses HttpOnly and Secure attributes on login cookies. Server and proxy access logs used for operation and security may contain IP addresses, request paths, times, and error details. Backups and access logs may be kept for the period needed for service operation and security.</p>
-
-    <h2 id="data-deletion">Account and data deletion</h2>
-    <p>If you can sign in to Battle Gate, you can delete your account from the account page. Deletion removes your account, sessions, admission records, participation records, rooms you own, and their shared photos from service data. Puzzle progress in rooms owned by someone else remains, while your participation records are removed.</p>
-    <p>If you uninstalled the app or cannot sign in, you can still request Battle Gate account deletion at <a href="mailto:babypaunch@gmail.com?subject=Battle%20Gate%20account%20deletion%20request">babypaunch@gmail.com</a>. After verifying your identity, we will explain the scope and result. Do not email your password, authentication token, or original photos. Backups or access logs needed for security or legal reasons may be excluded from deletion; we will explain any such scope when handling your request.</p>
-
-    <h2>Changes to this policy</h2>
-    <p>We will update this policy to reflect changes to sign-in, connected games, or information processing.</p>
-
+  <p class="eyebrow" lang="en">Privacy · Battle Gate</p><h1>Battle Gate Privacy Policy</h1>
+  <p class="page-intro">Battle Gate is a game access service operated by BabyPaunch. The sections below distinguish shared platform processing from additional rules for games currently offered. A new game will receive its own disclosure; the AOJ section does not automatically apply to other games.</p><article class="article-body">
+    <p><strong>First effective: October 18, 2026</strong><br><strong>Last revised: October 21, 2026</strong></p>
+    <section id="platform"><h2>1. Shared Battle Gate platform</h2>
+      <h3>Sign-in and accounts</h3><p>We use the account identifier, name, and email address returned by Google sign-in to identify your account and sign you in. We do not receive or store your Google password. Sessions are stored as hashes of random tokens with expiration times and expire seven days after issue or renewal.</p>
+      <h3>Access and external services</h3><p>Game admission permissions and access records are managed per game. Google authentication is covered by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. The web and Android apps use the same production service. Battle Gate currently has no advertising, payment, or user-to-user chat features.</p>
+      <h3>Retention and security</h3><p>Account information is kept while you use the service. We use HTTPS and HttpOnly and Secure login cookies. Operational and security server or proxy logs may include IP addresses, request paths, times, and errors. Backups and access logs may be kept for the period needed for operation and security.</p>
+    </section>
+    <section id="game-art-of-jigsaw"><h2>2. Game-specific rules — Art Of Jigsaw co-op</h2>
+      <h3>Rooms and shared progress</h3><p>We process room titles, participant account identifiers and names, connection times, puzzle settings, and shared board progress. Members of the same room can see its title, participant names, and progress. An invite code can be shared with others; a signed-in user with that code must still meet room capacity and other admission conditions.</p>
+      <h3>Selected shared photos</h3><p>Only a photo explicitly selected by the host and confirmed for sharing is converted to PNG in the browser and uploaded to Battle Gate. The server validates it, removes metadata, and serves it to admitted members of that room. Other device photos not shared in the room are not uploaded.</p>
+      <h3>Artwork and piece generation</h3><p>Public artwork searches may send search terms and request information to <a href="https://www.metmuseum.org/information/terms-and-conditions">The Metropolitan Museum of Art</a>. Artwork image requests may pass through BabyPaunch Access Gate. Logic Hub receives grid dimensions, image dimensions, and generation values to create piece paths, but not shared photo files or Google account information.</p>
+      <h3>Room retention and scope</h3><p>After nobody remains connected for about five minutes, the room and shared photo are removed. Failed photo deletions are recorded and retried. This section covers only AOJ co-op in Battle Gate. For the separate web or local single-player edition, see the <a href="/en/policies/art-of-jigsaw/privacy/">Art Of Jigsaw Single-player Privacy Policy</a>.</p>
+    </section>
+    <section id="data-deletion"><h2>3. Account and data deletion</h2>
+      <h3>Delete in the app or website</h3><p>After signing in, use Delete account on the account page to remove your account, sessions, admission records, participation records, owned co-op rooms, and shared photos from service data. Puzzle progress in rooms owned by someone else remains, while your participation records are removed.</p>
+      <h3>Request deletion without the app</h3><p>If you uninstalled the app or cannot sign in, request deletion at <a href="mailto:babypaunch@gmail.com?subject=Battle%20Gate%20account%20deletion%20request">babypaunch@gmail.com</a>. After verifying your identity, we will explain the scope and result. Do not email passwords, authentication tokens, or original photos. Backups or logs needed for security or legal reasons may be excluded; we will explain any such scope on request.</p>
+    </section>
+    <section id="future-games"><h2>4. New games and policy changes</h2>
+      <h3>Per-game management</h3><p>Each new game will have a separate section identifying its name, mode, processed information, recipients, transfers, retention, and deletion. This does not authorize undisclosed collection or sharing for games not yet offered. We update the policy and revision history when processing changes.</p>
+    </section>
     <h2>Revision history</h2>
-    <div class="data-cards data-cards-compact">
-      <section class="data-card"><h3><time datetime="2026-10-18">October 18, 2026</time></h3><p>First publication covering Battle Gate Google sign-in and Art Of Jigsaw co-op data</p></section>
-    </div>
-
-    <h2>Contact</h2>
-    <p>Privacy inquiries: <a href="mailto:babypaunch@gmail.com">babypaunch@gmail.com</a>.</p>
+    <div class="data-cards data-cards-compact"><section class="data-card"><h3><time datetime="2026-10-21">2026-10-21</time></h3><p>Separated platform and AOJ co-op rules and linked the single-player and local policy</p></section><section class="data-card"><h3><time datetime="2026-10-18">2026-10-18</time></h3><p>First publication covering Google sign-in and AOJ co-op data</p></section></div>
+    <h2>Contact</h2><p><a href="mailto:babypaunch@gmail.com">babypaunch@gmail.com</a></p>
   </article>
 </main>
