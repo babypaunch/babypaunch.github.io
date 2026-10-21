@@ -15,6 +15,9 @@ routes:
   contact: /contact/
   not_found: /
 pages:
+  color_jamo_license:
+    title: Color Jamo 웹폰트 이용 조건 — BabyPaunch
+    description: Color Jamo v1.0 웹폰트의 공개 파일, 개인적 무료 이용, 재배포 제한과 문의 방법을 안내합니다.
   babypaunch_account_privacy:
     title: BabyPaunch Account 개인정보처리방침 — BabyPaunch
     description: Google 로그인과 공용 계정, Art Of Jigsaw 퍼즐 요청의 개인정보 처리를 안내합니다.

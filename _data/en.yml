@@ -15,6 +15,9 @@ routes:
   contact: /en/contact/
   not_found: /en/
 pages:
+  color_jamo_license:
+    title: Color Jamo Webfont Terms of Use — BabyPaunch
+    description: Public files, free personal use, redistribution limits, and contact details for Color Jamo v1.0.
   babypaunch_account_privacy:
     title: BabyPaunch Account Privacy Policy — BabyPaunch
     description: How Google sign-in, shared accounts, and Art Of Jigsaw puzzle requests handle information.

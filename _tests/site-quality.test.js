@@ -184,6 +184,8 @@ for (const excluded of ['AGENTS.html', 'SNAPSHOT.html', 'THIRD_PARTY_NOTICES.htm
   assert.ok(!sitemap.includes(excluded), `sitemap: excludes ${excluded}`);
 }
 for (const url of [
+  '/policies/color-jamo/license/',
+  '/en/policies/color-jamo/license/',
   '/policies/ai-karaoke/privacy/',
   '/en/policies/ai-karaoke/privacy/',
   '/policies/babypaunch-account/privacy/',
@@ -226,11 +228,13 @@ assert.equal(socialImage.readUInt32BE(16), 1200, 'social image: width');
 assert.equal(socialImage.readUInt32BE(20), 630, 'social image: height');
 
 const policyData = fs.readFileSync(path.join(__dirname, '..', '_data', 'policies.yml'), 'utf8');
-for (const project of ['babypaunch', 'babypaunch-account', 'battle-gate', 'art-of-jigsaw', 'laftel-mania', 'netflix-mania', 'chord-sketch', 'echo-note', 'rehearsal-mp3-player', 'anydocs']) {
+for (const project of ['color-jamo', 'babypaunch', 'babypaunch-account', 'battle-gate', 'art-of-jigsaw', 'laftel-mania', 'netflix-mania', 'chord-sketch', 'echo-note', 'rehearsal-mp3-player', 'anydocs']) {
   assert.ok(policyData.includes(`slug: ${project}`), `policies.yml: ${project}`);
 }
 
 for (const relative of [
+  'policies/color-jamo/license/index.html',
+  'en/policies/color-jamo/license/index.html',
   'policies/babypaunch-account/privacy/index.html',
   'en/policies/babypaunch-account/privacy/index.html',
   'policies/art-of-jigsaw/privacy/index.html',
@@ -273,6 +277,8 @@ for (const relative of ['support/chord-sketch/index.html', 'en/support/chord-ske
 }
 
 for (const [relative, required] of [
+  ['policies/color-jamo/license/index.html', ['ColorJamo.romanize', '개인적·비상업적', '2026-10-21', 'LICENSE-Koroman.txt']],
+  ['en/policies/color-jamo/license/index.html', ['ColorJamo.romanize', 'Personal, noncommercial', '2026-10-21', 'LICENSE-Koroman.txt']],
   ['policies/ai-karaoke/privacy/index.html', ['IndexedDB', 'chrome.storage.local', '클립보드', 'id="support"', 'id="data-deletion"', 'babypaunch@gmail.com', 'Limited Use', '2026-10-21']],
   ['en/policies/ai-karaoke/privacy/index.html', ['IndexedDB', 'chrome.storage.local', 'clipboard', 'id="support"', 'id="data-deletion"', 'babypaunch@gmail.com', 'Limited Use', '2026-10-21']],
   ['policies/battle-gate/privacy/index.html', ['Google 로그인', '공유 사진', 'Logic Hub', 'id="data-deletion"', 'mailto:babypaunch@gmail.com']],
@@ -303,6 +309,8 @@ for (const relative of ['policies/index.html', 'en/policies/index.html']) {
 }
 
 for (const [relative, required] of [
+  ['policies/color-jamo/license/index.html', ['ColorJamo.romanize', '개인적·비상업적', '2026-10-21', 'LICENSE-Koroman.txt']],
+  ['en/policies/color-jamo/license/index.html', ['ColorJamo.romanize', 'Personal, noncommercial', '2026-10-21', 'LICENSE-Koroman.txt']],
   ['policies/babypaunch/privacy/index.html', ['_ga', '이벤트 데이터 2개월', '사용자 데이터', '14개월', 'Google Signals', '국외 처리', 'Search Console', '정보 열람·삭제·처리정지', 'Google AdSense', 'Google 인증 동의 관리 플랫폼']],
   ['en/policies/babypaunch/privacy/index.html', ['_ga', 'Event data for two months', '14 months', 'Google Signals', 'International processing', 'Search Console', 'access, delete, or restrict', 'Google AdSense', 'Google-certified consent management platform']],
 ]) {

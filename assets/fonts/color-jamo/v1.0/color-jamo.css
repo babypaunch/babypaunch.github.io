@@ -1,0 +1,23 @@
+/* Terms: https://babypaunch.com/policies/color-jamo/license/ */
+@font-face {
+  font-family: "Color Jamo";
+  src: url("./ColorJamoMonoSoftHumanist-v1.0.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+.color-jamo {
+  font-family: "Color Jamo", sans-serif;
+}
+
+@font-palette-values --color-jamo-contrast {
+  font-family: "Color Jamo";
+  override-colors: 0 #1d63ad, 1 #a8420d;
+}
+@font-palette-values --color-jamo-black {
+  font-family: "Color Jamo";
+  override-colors: 0 #000, 1 #000;
+}
+.color-jamo-contrast { color: #172336; font-palette: --color-jamo-contrast; }
+.color-jamo-black { color: #000; font-palette: --color-jamo-black; }

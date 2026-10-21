@@ -2,6 +2,7 @@
 layout: default
 ---
 {% assign t = site.data[page.locale] %}
+<link rel="stylesheet" href="/assets/fonts/color-jamo/v1.0/color-jamo.css">
 <main id="main" class="article-shell">
   <header class="article-header" id="article-start" tabindex="-1">
     <h1>{{ t.pages.design.title }}</h1>
@@ -29,6 +30,13 @@ layout: default
   <section aria-labelledby="apps-preview-label">
     <h2 id="apps-preview-label">{{ t.home.app_preview }}</h2>
     {% include app-groups.html %}
+  </section>
+  <section class="article-body" aria-labelledby="color-jamo-preview-label">
+    <h2 id="color-jamo-preview-label">{% if page.locale == 'en' %}Color Jamo font palettes{% else %}Color Jamo 글꼴 색상{% endif %}</h2>
+    <h3>{% if page.locale == 'en' %}High contrast{% else %}고대비 색상{% endif %}</h3>
+    <p class="color-jamo color-jamo-contrast">가나다 ABC · 한글을 읽어요.</p>
+    <h3>{% if page.locale == 'en' %}Black{% else %}검정색{% endif %}</h3>
+    <p class="color-jamo color-jamo-black">가나다 ABC · 한글을 읽어요.</p>
   </section>
   <div id="article-end" tabindex="-1" aria-label="{{ t.blog.end }}"></div>
 </main>

@@ -1,0 +1,68 @@
+---
+layout: default
+locale: en
+page_key: color_jamo_license
+permalink: /en/policies/color-jamo/license/
+language_url: /policies/color-jamo/license/
+alternate_ko: /policies/color-jamo/license/
+alternate_en: /en/policies/color-jamo/license/
+---
+<link rel="stylesheet" href="/assets/fonts/color-jamo/v1.0/color-jamo.css">
+<main id="main" class="page-shell privacy-shell">
+  <p class="eyebrow" lang="en">Color Jamo · Webfont</p>
+  <h1>Color Jamo Webfont Terms of Use</h1>
+  <p class="page-intro">The public release scope, free-use rights, restrictions, and contact details for Color Jamo v1.0.</p>
+  <article class="article-body">
+    <p><strong>First effective: October 21, 2026</strong><br><strong>Last revised: October 21, 2026</strong></p>
+
+    <h2>Public files and rights holder</h2>
+    <div class="data-cards data-cards-compact">
+      <section class="data-card"><h3>Rights holder and version</h3><p><strong>Rights holder and publisher:</strong> BabyPaunch</p><p><strong>Version:</strong> Color Jamo v1.0</p></section>
+      <section class="data-card"><h3>Public format</h3><p><strong>File:</strong> One WOFF2 webfont plus CSS and JavaScript</p><p><strong>Size:</strong> 2,266,668 bytes</p></section>
+      <section class="data-card"><h3>Integrity</h3><p><strong>SHA-256:</strong> <code>747f1ece4808b55364ce0ebe3593afd0cfcd8933e1a32f34564a1e2d27072909</code></p></section>
+    </div>
+    <p>You may view the <a href="/assets/fonts/color-jamo/v1.0/ColorJamoMonoSoftHumanist-v1.0.woff2">official WOFF2 file</a>, the <a href="/assets/fonts/color-jamo/v1.0/color-jamo.css">site CSS</a>, and the <a href="/assets/fonts/color-jamo/v1.0/LICENSE.txt">Korean and English terms</a>. The TTF, production sources, editing tools, and Git history are not part of the public release.</p>
+
+    <h2>Free permitted use</h2>
+    <p>Anyone may view pages using this webfont and allow their browser to cache the file temporarily to display text. Personal, noncommercial use is free. You may share personal documents, images, or videos made with the font for noncommercial purposes without attribution.</p>
+
+    <h2>Use requiring separate permission</h2>
+    <div class="data-cards data-cards-compact">
+      <section class="data-card"><h3>Commercial use</h3><p>Advertising, sales, sponsorship, paid services, and other commercial use require prior permission from the rights holder.</p></section>
+      <section class="data-card"><h3>Modification and redistribution</h3><p>Modifying or converting the font file, making derivative fonts, reuploading, redistributing, or selling it require prior permission.</p></section>
+      <section class="data-card"><h3>Other services</h3><p>Serving or bundling this file through another website, app, ebook, or CDN requires prior permission.</p></section>
+    </div>
+    <p>These terms do not restrict the rights holder or uses separately authorized by the rights holder. All other rights are reserved. WOFF2 is a web delivery format, not copy protection. Access to the file does not grant permission to redistribute it.</p>
+
+    <h2>Access and change permissions</h2>
+    <p>This policy page and webfont are provided as read-only static files. The public Color Jamo path has no font upload, editing, account creation, or upload API. Reading a file in a browser cannot change the site repository. Only users with write access to the BabyPaunch repository can change the public files.</p>
+
+    <h2>Display scope and site information</h2>
+    <p>The font includes 11,172 precomposed Hangul syllables and the 95 basic ASCII characters. Its Hangul jamo-related strokes use blue <code>#287FE0</code> and orange <code>#F07836</code> COLR v0 color layers. Display can vary with browser and operating-system color-font support. This does not mean that every glyph's jamo-stroke division has been visually verified.</p>
+    <p>For site-wide visit and analytics information, see the <a href="/en/policies/babypaunch/privacy/">BabyPaunch Privacy Policy</a>. See the <a href="/en/policies/babypaunch/accessibility/">Accessibility notice</a> for accessibility information.</p>
+
+    <h2>Using the webfont and JavaScript</h2>
+    <p>These examples are for BabyPaunch or sites with separate permission. Font display only requires CSS.</p>
+    <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://babypaunch.com/assets/fonts/color-jamo/v1.0/color-jamo.css&quot;&gt;
+&lt;p class=&quot;color-jamo color-jamo-contrast&quot;&gt;가나다 ABC&lt;/p&gt;</code></pre>
+    <h3>High-contrast font preview</h3><p class="color-jamo color-jamo-contrast">가나다 ABC · 한글을 읽어요.</p>
+    <h3>Black font preview</h3><p class="color-jamo color-jamo-black">가나다 ABC · 한글을 읽어요.</p>
+    <p>Use the high-contrast or black class for small body text. Browsers without palette support may retain the original colors.</p>
+    <p>Load the scripts below in order for pronunciation romanization. Conversion runs in the browser; the API itself does not transmit or store the text.</p>
+    <pre><code>&lt;script src=&quot;https://babypaunch.com/assets/fonts/color-jamo/v1.0/koroman.browser.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://babypaunch.com/assets/fonts/color-jamo/v1.0/color-jamo.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  ColorJamo.romanize(&quot;국물&quot;, { syllableSeparator: &quot;_&quot; }); // gung_mul
+  ColorJamo.withPronunciation(&quot;국물&quot;); // 국물\ngungmul
+&lt;/script&gt;</code></pre>
+    <p><code>syllableSeparator</code> accepts an empty string, a space, or an underscore. Punctuation and English text are preserved; <code>withPronunciation</code> adds pronunciation below lines containing Hangul. Some words and proper names may differ. Display the return value with <code>textContent</code>.</p>
+    <p>Preserve the <a href="/assets/fonts/color-jamo/v1.0/LICENSE-Koroman.txt">Koroman MIT notice</a> when redistributing it. The font terms and the third-party library's MIT terms are separate. A <a href="/assets/fonts/color-jamo/v1.0/SHA256SUMS.txt">SHA-256 list of public files</a> is available.</p>
+
+    <h2>Contact</h2>
+    <p>For commercial use, permission to serve the file, or display issues, use the <a href="/en/contact/">contact page</a> or email <a href="mailto:babypaunch@gmail.com">babypaunch@gmail.com</a>.</p>
+    <h2>Revision history</h2>
+    <div class="data-cards data-cards-compact">
+      <section class="data-card"><h3><time datetime="2026-10-21">October 21, 2026</time></h3><p>Color Jamo v1.0 webfont terms first published</p></section>
+    </div>
+  </article>
+</main>

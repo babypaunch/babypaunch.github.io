@@ -21,3 +21,7 @@ The `bp` logo glyph outlines are based on DM Serif Display Italic from [Google F
 Copyright 2014-2018 Adobe, with Reserved Font Name "Source". Copyright 2019 Google LLC.
 
 Licensed under the [SIL Open Font License, Version 1.1](https://openfontlicense.org/open-font-license-official-text/).
+
+## Koroman
+
+`assets/fonts/color-jamo/v1.0/koroman.browser.js` is the Koroman browser bundle. Its complete MIT license is included at `assets/fonts/color-jamo/v1.0/LICENSE-Koroman.txt`. These terms are separate from the Color Jamo font terms.

@@ -40,6 +40,24 @@
         ko: /policies/babypaunch/accessibility/
         en: /en/policies/babypaunch/accessibility/
 
+- slug: color-jamo
+  name:
+    ko: Color Jamo
+    en: Color Jamo
+  type:
+    ko: 웹폰트
+    en: Webfont
+  description:
+    ko: Color Jamo v1.0 웹폰트의 이용 범위와 공개 파일을 안내합니다.
+    en: Usage rights and public files for the Color Jamo v1.0 webfont.
+  documents:
+    - label:
+        ko: 웹폰트 이용 조건
+        en: Webfont Terms of Use
+      url:
+        ko: /policies/color-jamo/license/
+        en: /en/policies/color-jamo/license/
+
 - slug: babypaunch-account
   name:
     ko: BabyPaunch Account
