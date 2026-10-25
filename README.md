@@ -57,3 +57,7 @@ python -m http.server 8000 --directory _site
 ## 음악 추가
 
 새 음악은 `_data/music.yml`에 항목을 추가합니다. `slug`, `title`, `youtube_id`, `spotify_id`를 입력하면 `/music/`과 `/en/music/`에 함께 표시됩니다.
+
+## Node.js 개발 도구
+
+Node 스크립트와 테스트는 `.nvmrc`의 Node.js `24.22.1` LTS를 기준으로 실행합니다. 애플리케이션 자체의 런타임과는 별개입니다.

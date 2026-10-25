@@ -1,48 +1,39 @@
 # 프로젝트 스냅샷
 
-- 최종 갱신일: 2026-10-21 KST
+- 최종 갱신일: 2026-10-26 01:16:54 KST
 - 상태: 검증됨
 - 기준 브랜치: main
-- 기준 commit: 이 문서를 포함한 main 커밋
-- 현재 판단: Color Jamo 공개 배포와 CSS 버전 URL 적용까지 확인했다.
+- 기준 commit: 105c47d3444f 이후 이번 Node 보안 업데이트 변경분(정확한 반영 commit은 git log -1 -- SNAPSHOT.md)
+- 현재 판단: 프로젝트의 Node 사용 설정을 24.22.1 보안 수정판 기준으로 맞추고 필요한 관련 의존성을 갱신했다. 아래 로컬 검증 범위에서 확인했으며 운영 배포 완료를 뜻하지 않는다.
 
 ## 마지막 완료 작업
 
-- assets/fonts/color-jamo/v1.0/에 WOFF2·CSS·JS·이용 조건·Koroman MIT 고지·해시 7개 파일을 추가했다.
-- 한영 정책, 정책 허브, SEO 문구, 실제 폰트 사용 예와 JS API 사용법을 연결했다.
-- 한영 /design에 공용 CSS를 사용하는 고대비·검정색 예시를 추가했다.
-- 기존 개인적·비상업적 이용 조건을 유지하고 최초 공개일은 2026-10-21로 설정했다.
+- Node 버전 설정·설치 안내와 해당되는 의존성 잠금 파일을 갱신했다. 버전 전환 후 npm 패키지 디렉터리에서 npm ci를 사용한다.
+- 기존 제품 작업과 출시 상태의 과거 근거는 기준 commit의 SNAPSHOT.md와 기존 문서를 참조한다. 이번 작업으로 과거 출시 상태를 새로 확인한 것은 아니다.
 
 ## 변경 파일
 
-- assets/fonts/color-jamo/v1.0/, policies/color-jamo/license/, en/policies/color-jamo/license/
-- _data/policies.yml, _data/ko.yml, _data/en.yml, _layouts/design.html
-- _tests/site-quality.test.js, _tests/color-jamo.test.js, THIRD_PARTY_NOTICES.md
+- `.nvmrc`
+- `README.md`
+- `SNAPSHOT.md`
 
 ## 검증 결과
 
-- Docker Jekyll 3.8 빌드 통과.
-- 전체 Node 검사 6종 통과: 77페이지 품질, 번역 15쌍, 공개 자산 6개 해시와 JS API, 한영 정책 구조 및 /design 예시 확인.
-- 공개 묶음은 지정한 7개 파일만 포함하며 TTF·제작 원본·편집기는 포함하지 않는다.
-- git diff --check 통과.
-- 공개 commit ca5b557211d314aa76e582105b483c4ca9155479 Pages built. 한영 정책 및 WOFF2·JS·라이선스·해시 HTTP 200 및 내용 일치 확인. WOFF2 MIME은 font/woff2, CORS는 *다.
-- CSS는 배포 직전 404가 CDN에 남아 ?v=20261021 URL로 확인했고 모든 공개 사용 예에 같은 URL을 적용했다.
-
-- 최종 콘텐츠 commit 9d8f1e7d0c2ccd139b1015280547d6702fc2b4d6 Pages built. 한영 페이지에서 CSS 버전 URL 적용, 해당 CSS HTTP 200과 원본 바이트 일치 확인.
+- Node 테스트 파일 6개 실행 통과. 사이트 운영 게시 상태는 재확인하지 않았다..
+- git diff --check 통과. 실행 로그는 로컬 Downloads/Node-project-update-20261026에 보관한다.
 
 ## 차단 요소
 
-- 없음.
+- 이번 소스 업데이트의 차단 요소 없음. 운영 반영·스토어 제출은 별도 절차이다.
 
 ## 다음 작업 하나
 
-- 다음 공개 자산 갱신 시 버전 URL·해시·한영 사용 예를 함께 갱신한다.
+다음 공개 자산 갱신 시 버전 URL·해시·한영 사용 예를 함께 갱신한다.
 
 ## 사용자에게 필요한 작업
 
-- 없음. Color Jamo 검토 후 모든 수정과 배포를 승인받았다.
+- 이번 Git 반영을 위한 추가 작업 없음. 이후 운영 반영을 원하면 해당 프로젝트의 배포 절차를 진행한다.
 
 ## 경고
 
-- 브라우저 화면과 캡처는 수행하지 않았다. 고대비 팔레트는 브라우저 지원 여부에 따라 원래 색으로 표시될 수 있다.
-- 폰트 사용 조건과 Koroman MIT 이용 조건은 별개다.
+- 브라우저 화면·캡처·실기기·스토어·운영 서버 배포를 검증하지 않았다. npm audit 0건은 등록된 취약점 기준이며 모든 보안 문제의 부재를 보증하지 않는다.
